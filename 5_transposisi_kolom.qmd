@@ -1,11 +1,11 @@
 ---
-# title: "Front Page To Do List"
+# title: "Kriptografi Klasik"
 format: html
-categories: [ui, praktik, bootstrap]
+categories: [teori]
 toc-title: "On this page"
 ---
 
-# 4. Front Page {.unnumbered}
+# 5. Transposisi Kolom {.unnumbered}
 
 Setelah mempelajari responsive web dan framework bootstrap, selanjutnya adalah mengaplikasikan bootstrap ke php yang akan dibuat. Berikut adalah contoh tampilan front page sederhana untuk mengaplikasikan bootstrap pada website.
 

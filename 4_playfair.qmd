@@ -1,11 +1,11 @@
 ---
-# title: "Responsive Web Design"
+# title: "Kriptografi Klasik"
 format: html
-categories: [ui, bootstrap, responsive]
+categories: [teori]
 toc-title: "On this page"
 ---
 
-# 3. Responsive Web Design {.unnumbered}
+# 4. Playfair {.unnumbered}
 
 ## Pengenalan Responsive Web Design
 

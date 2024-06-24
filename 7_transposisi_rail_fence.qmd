@@ -1,11 +1,11 @@
 ---
-# title: "Praktik Database"
+# title: "Kriptografi Klasik"
 format: html
-categories: [database, praktik, 'studi kasus']
+categories: [teori]
 toc-title: "On this page"
 ---
 
-# 6. Praktik Database {.unnumbered}
+# 7. Transposisi Rail Fence {.unnumbered}
 
 Membuat database untuk aplikasi To Do List
 

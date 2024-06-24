@@ -1,11 +1,11 @@
 ---
-# title: "Pengenalan Tools"
+# title: "Kriptografi Klasik"
 format: html
-categories: [instalasi, tools]
+categories: [teori]
 toc-title: "On this page"
 ---
 
-# 2. Pengenalan Tools {.unnumbered}
+# 3. Vigenere Cipher {.unnumbered}
 Sebelum memulai ada tools-tools yang digunakan dan perlu diinstall terlebih dahulu!
 <br>
 

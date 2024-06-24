@@ -1,11 +1,11 @@
 ---
-# title: "Konsep Dasar Web Programming"
+# title: "Kriptografi Klasik"
 format: html
 categories: [teori]
 toc-title: "On this page"
 ---
 
-# 1. Konsep Dasar Web Programmming {.unnumbered}
+# 1. Caesar {.unnumbered}
 
 ## Apa itu Pemrograman Web?
 
@@ -25,7 +25,7 @@ Gunakan editor teks atau lingkungan pengembangan terintegrasi (IDE) seperti Visu
 <br>
 
 ### Browser
-
+****
 Berbagai browser seperti Chrome, Firefox, atau Safari digunakan untuk menguji dan melihat hasil dari halaman web yang dikembangkan.
 <br>
 
@@ -115,7 +115,7 @@ Contoh:
 - COLOR merupakan atribut,
 - RED adalah value
 
-::: {.callout-note title="Contoh HTML"}
+::: {.callout title="Contoh HTML"}
 
 ```php
 <html>

@@ -1,11 +1,11 @@
 ---
-# title: "Konsep Database"
+# title: "Kriptografi Klasik"
 format: html
-categories: [database, 'tipe data']
+categories: [teori]
 toc-title: "On this page"
 ---
 
-# 5. Konsep Database {.unnumbered}
+# 6. Transposisi Myzkowski {.unnumbered}
 
 ## Basis Data (Database) 
 

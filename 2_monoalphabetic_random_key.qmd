@@ -1,11 +1,11 @@
 ---
-# title: "Program To Do List"
+# title: "Kriptografi Klasik"
 format: html
-categories: [studi kasus]
+categories: [teori]
 toc-title: "On this page"
 ---
 
-# To Do List {.unnumbered}
+# 2. Monoalphabetica Random Key {.unnumbered}
 
 ## Studi Kasus Program To Do List
 

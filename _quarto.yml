@@ -2,35 +2,49 @@ project:
   type: book
 
 book:
-  title: "Junior Web Developer"
+  title: "Kriptografi"
   author: "Bengkel Koding"
   date: "6/3/2023"
   chapters:
     - index.qmd
-    - part: konsep.qmd
-      chapters: 
-        - 1_konsep_dasar_web.qmd
-        - 2_pengenalan_tools.qmd
-        - 3_responsive_web.qmd
-        - 4_pembuatan_front_page.qmd
-        - 5_konsep_database.qmd
-        - 6_praktik_database_todolist.qmd
-        - 9_penguji_web.qmd
-    - part: studi_kasus.qmd
-      chapters: 
-        - 7_program_todolist.qmd
-        - 8_studi_kasus_poliklinik.qmd
-   
+    - part: "Kriptografi Klasik"
+      chapters:
+        - 1_caesar.qmd
+        - 2_monoalphabetic_random_key.qmd
+        - 3_vigenere_cipher.qmd
+        - 4_playfair.qmd
+        - 5_transposisi_kolom.qmd
+        - 6_transposisi_myzkowski.qmd
+        - 7_transposisi_rail_fence.qmd
+    - part: "Kriptografi Modern"
+      chapters:
+        - 1_caesar.qmd
+        - 2_monoalphabetic_random_key.qmd
+        - 3_vigenere_cipher.qmd
+        - 4_playfair.qmd
+        - 5_transposisi_kolom.qmd
+        - 6_transposisi_myzkowski.qmd
+        - 7_transposisi_rail_fence.qmd
+    - part: "Steganografi"
+      chapters:
+        - 1_caesar.qmd
+        - 2_monoalphabetic_random_key.qmd
+        - 3_vigenere_cipher.qmd
+        - 4_playfair.qmd
+        - 5_transposisi_kolom.qmd
+        - 6_transposisi_myzkowski.qmd
+        - 7_transposisi_rail_fence.qmd
+    - part: "Studi Kasus"
+      chapters:
+        - 6_transposisi_myzkowski.qmd
+        - 7_transposisi_rail_fence.qmd
 
 # bibliography: references.bib
 
 format:
   html:
-    theme: 
+    theme:
       light: flatly
-      dark: darkly 
+      dark: darkly
   pdf:
     documentclass: scrreprt
-
-
-
