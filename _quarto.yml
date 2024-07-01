@@ -1,0 +1,50 @@
+project:
+  type: book
+
+book:
+  title: "Kriptografi"
+  author: "Bengkel Koding"
+  date: "6/3/2023"
+  chapters:
+    - index.qmd
+    - part: "Kriptografi Klasik"
+      chapters:
+        - 1_caesar.qmd
+        - 2_monoalphabetic_random_key.qmd
+        - 3_vigenere_cipher.qmd
+        - 4_playfair.qmd
+        - 5_transposisi_kolom.qmd
+        - 6_transposisi_myzkowski.qmd
+        - 7_transposisi_rail_fence.qmd
+    - part: "Kriptografi Modern"
+      chapters:
+        - 1_caesar.qmd
+        - 2_monoalphabetic_random_key.qmd
+        - 3_vigenere_cipher.qmd
+        - 4_playfair.qmd
+        - 5_transposisi_kolom.qmd
+        - 6_transposisi_myzkowski.qmd
+        - 7_transposisi_rail_fence.qmd
+    - part: "Steganografi"
+      chapters:
+        - 1_caesar.qmd
+        - 2_monoalphabetic_random_key.qmd
+        - 3_vigenere_cipher.qmd
+        - 4_playfair.qmd
+        - 5_transposisi_kolom.qmd
+        - 6_transposisi_myzkowski.qmd
+        - 7_transposisi_rail_fence.qmd
+    - part: "Studi Kasus"
+      chapters:
+        - 6_transposisi_myzkowski.qmd
+        - 7_transposisi_rail_fence.qmd
+
+# bibliography: references.bib
+
+format:
+  html:
+    theme:
+      light: flatly
+      dark: darkly
+  pdf:
+    documentclass: scrreprt
