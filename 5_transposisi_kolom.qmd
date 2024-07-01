@@ -292,18 +292,122 @@ Hasil Ciphertext : ENTKFINOKKM TIAIRA
 
 ### Proses Dekripsi
 
-Masukkan ciphertext
 ```python
 cipherTeks = input("masukkan kata : ")
 ```
 
-Masukkan kunci
 ```python
 key = input("masukkan kunci : ")
 ```
 
-
 ```python
-
+cleanCipherTeks = cipherTeks.replace(" ", " ")
+print(cleanCipherTeks)
 ```
 
+```python
+kolom = 0
+```
+
+```python
+angka_urutan = []
+```
+
+```python
+for huruf in key:
+    if huruf.isalpha():
+        angka_urutan.append(ascii[huruf.lower()])
+        kolom = kolom+1
+        cleanKey = angka_urutan
+
+print(f"Urutan kunci dari kata '{key}' adalah: {angka_urutan}")
+```
+
+```Python
+matrix = []
+```
+
+```python
+panjang = len(cleanCipherTeks)
+```
+
+```python
+temp = panjang/kolom
+```
+
+```python
+baris = round(temp)
+print(baris)
+```
+
+```python
+for i in range(baris):
+    row = []
+    for j in range(kolom):
+        if i * kolom + j < len(cleanCipherTeks):
+            elemen = cleanCipherTeks[i + baris * j]
+        else:
+            elemen = "a"
+        row.append(elemen)
+    matrix.append(row)
+```
+
+```python
+print("Matriks yang Anda buat:")
+for row in matrix:
+    print(row)
+```
+
+```python
+transposed_matrix = [[row[i] for row in matrix] for i in range(len(matrix[0]))]
+for row in transposed_matrix:
+    print(row)
+```
+
+```python
+order = [None] * len(cleanKey)
+i = 0
+while len(cleanKey) > 0:
+    non_none_values = list(filter(lambda x: x is not None, cleanKey))
+    if non_none_values:
+        nilai_terkecil = min(non_none_values)
+        marker = cleanKey.index(nilai_terkecil)
+        order[marker] = i
+        cleanKey[marker] = None  
+        i = i + 1
+    else:
+        break
+print(order)
+```
+
+```python
+transposed_matrix = [transposed_matrix[i] for i in order]
+
+for row in transposed_matrix:
+    print(row)
+```
+
+```python
+matriks = [[row[i] for row in transposed_matrix] for i in range(len(transposed_matrix[0]))]
+for row in matriks:
+    print(row)
+```
+
+```python
+result_string = ""
+
+for row in matriks:
+    for value in row:
+        result_string += str(value)
+
+result_string = result_string.strip()
+
+print(result_string)
+```
+
+`Hasil Dekripsi : TEKNIKINFORMATIKA`
+
+**Perbedaan Proses :**
+
+- Enkripsi: Teks asli diubah menjadi matriks berdasarkan kolom kunci, kemudian kolom-kolom diurutkan berdasarkan kunci. Pada enkripsi, `transposed_matrix` adalah matriks transposisi dari matrix awal
+- Dekripsi: Teks sandi diubah menjadi matriks berdasarkan kolom kunci, kemudian baris-baris diurutkan berdasarkan kunci untuk mengembalikan teks asli. Pada dekripsi, `transposed_matrix` diurutkan berdasarkan order untuk mengembalikan teks asli
