@@ -5,378 +5,409 @@ categories: [teori]
 toc-title: "On this page"
 ---
 
-# 2. Monoalphabetica Random Key {.unnumbered}
+# 2. Monoalphabetic Random Key {.unnumbered}
 
-## Studi Kasus Program To Do List
+Transposisi kolom dalam kriptografi adalah teknik enkripsi yang melibatkan pengubahan urutan karakter atau simbol dalam sebuah pesan atau teks dengan cara mengatur ulang posisi karakter berdasarkan aturan tertentu yang ditentukan oleh kunci. Dalam transposisi kolom, teks asli dibagi menjadi kolom-kolom, kemudian urutan kolom tersebut diubah sesuai dengan aturan yang ditentukan oleh kunci enkripsi. Kunci enkripsi transposisi kolom biasanya berupa susunan angka atau urutan yang menentukan urutan kolom mana yang harus diambil dan dalam urutan apa.
 
-To Do List merupakan program untuk mencatat serangkaian kegiatan yang akan dikerjakan hingga diselesaikan pada waktu tertentu. Sehingga dalam program tersebut harus mampu menyimpan lalu menampilkan hingga mengubah atau menghapus data seperti kegiatan, tanggal dan keterangan apakah sudah dilaksanakan atau belum.
+# Analogi Transposisi Kolom
+Bayangkan Kita memiliki rak buku dengan beberapa kolom dan setiap kolom berisi tumpukan buku. 
 
-Berikut adalah tampilan dari to do list untuk latihan membuat web sederhana.
+1. **Susunan Awal:**
+   - Kolom 1 : A, B, C
+   - Kolom 2 : D, E, F
+   - Kolom 3 : G, H, I
 
-![Tampilan Index](assets/todolist/index.png){width="80%" style="text-align:center;"}
+2. **Transposisi Kolom:**
+   - Kita akan memutuskan untuk menukar posisi kolom-kolom ini. Misalnya, kolom 1 dipindahkan ke tempat kolom 3, kolom 2 tetap di tempat, dan kolom 3 dipindahkan ke tempat kolom 1.
 
-Sebelum kita mulai membuat program to do list tersebut ada beberapa tahapan yang diperlukan, seperti menghidupkan server yang digunakan (xampp), membuat database, koneksi, hingga membuat tampilan dari program.
+3. **Susunan Setelah Transposisi:**
+   - Kolom 1 : G, H, I (dulu Kolom 3)
+   - Kolom 2 : D, E, F
+   - Kolom 3 : A, B, C (dulu Kolom 1) 
 
-## Server Lokal (XAMPP)
-Untuk dapat menampilkan file php memerlukan server sehingga diperlukan xampp untuk menampilkan php pada server dengan mengaktifkan apache.
-<br>
+Dengan kata lain, transposisi kolom mengubah urutan kolom tanpa mengubah isi kolom. Dalam kriptografi, ini dilakukan untuk mengacak data agar lebih sulit ditebak oleh pihak yang tidak berwenang.
 
-![Memulai XAMPP](assets/todolist/xampp.png){width="80%" style="text-align:center;"}
+# Contoh Soal
+Untuk lebih jelasnya, terdapat sebuah pesan yaitu
+“TENTUKAN PRIORITAS ANDA SEBAB KITA TIDAK DAPAT MENGERJAKAN SEMUANYA X” yang akan dienkripsi menggunakan metode transposisi kolom dengan kata kunci “PENTING” Maka proses enkripsi nya adalah sebagai berikut:
 
-<br>
-Pada panel xampp, klik start pada Apache dan MySQL untuk mengaktifkan. Apache diperlukan karena sebagai web server untuk mengakses localhost dan menampilkan file php. Sedangkan pada MySQL diperlukan untuk manajemen dan akses ke database.
+**Proses Penyandian**
 
-## Folder di htdocs
-Untuk dapat mengakses website localhost dari xampp, diperlukan folder project di direktori C:\\xampp\\htdocs, sesuai dengan direktori xampp yang sedang aktif.
+1. Buat tabel dengan ukuran kolom sesuai dengan panjang dari kata kunci yang telah diproses sebelumnya
 
-1. Buka direktori  C:\\xampp\\htdocs. Untuk memastikan lokasi direktori xampp dapat klik tombol **Explorer** pada control panel xampp
-<br>
+    ![](assets/kriptografi/tkolom2.png){width="70%" 
+    style="text-align:center;"}
 
-![Explorer XAMPP](assets/todolist/explorer.png){width="50%" style="text-align:center;"}
+2. Kemudian masukkan kunci kedalam kolom tabel
 
-<br>
+    ![](assets/kriptografi/tkolom3.png){width="70%" 
+    style="text-align:center;"}
 
-2. Setelah membuka folder xampp lalu htdocs, selanjutnya membuat folder projek.
+3. Selanjutnya, masukan pesan yang akan dienkripsi dengan cara menyisipkannya dari kiri ke kanan secara berurutan
 
-<br>
+    ![](assets/kriptografi/tkolom4.png){width="70%" 
+    style="text-align:center;"}
 
-![Folder Projek](assets/todolist/folder-projek.png){width="80%" style="text-align:center;"}
+4. Lalu kunci didefinisikan sesuai urutan abjad menjadi
 
-<br>
-Folder projek ini digunakan sebagai tempat menyimpan file php dan file lain untuk yang digunakan untuk membuat web yang berhubungan dengan projek.
-<br>
+    ![](assets/kriptografi/tkolom.png){width="70%" 
+    style="text-align:center;"}
 
-## Database 
-Dari contoh di atas hanya diperlukan 1 tabel, yaitu tabel yang dapat menyimpan daftar kegiatan. Berikut adalah komponen-komponen dari tabel yang diperlukan. <br>
+5. Setelah itu, kolom  dengan urutan abjad terkecil dipindahkan ke posisi depan, diikuti dengan kolom urutan abjad terkecil lainya
 
-![Tabel Kegiatan](assets/todolist/database.jpg){width="80%" style="text-align:center;"}
+    ![](assets/kriptografi/tkolom5.png){width="70%" 
+    style="text-align:center;"}
 
-<br>
+6. Baca huruf ciphertext dari atas kebawah kemudian dimulai lagi dari atas sesuai dengan kolom yang sudah diurutkan
 
-Membuat database pada localhost/phpmyadmin"
+    ![](assets/kriptografi/tkolom6.png){width="70%" 
+    style="text-align:center;"}
 
-1. Membuaka [localhost/phpmyadmin](http://localhost/phpmyadmin/){.external target="_blank"}.
-2. Membuat database baru lalu membuat tabel baru dengan nama tabel "kegiatan".
-3. Buat field dan sesuaikan pada tabel di atas mulai dari nama field, type dan sizenya. 
+## Implementasi Pada Python
 
-Proses pembuatan database secara lebih lengkap dapat diklik [disini](6_praktik_database_todolist.qmd#membuat-database)
-
-Field "id" berfungsi sebagai primary key. Pada field isi, tgl_awal, dan tgl_akhir tidak memerlukan size karena bertipe text dan date. Pada field status bertipe int dengan size hanya 1 karena nantinya akan menyimpan nilai 0 dan 1 yang merepresentasikan belum dan sudah.
-<br>
-
-## Koneksi
-
-Koneksi diperlukan untuk menghubungkan php dengan database yang kita buat, dimana sebelumnya kita membuat database sql. Untuk menghubungkan php dengan sql menggunakan argumen mysqli_connect. Maka perlu membuat file **koneksi.php** lalu di *include*-kan pada file php yang terhubung dengan database. 
-<br>
-
-```php
-<?php 
-$databaseHost = 'localhost';
-$databaseName = 'kegiatan';
-$databaseUsername = 'root';
-$databasePassword = '';
-
-$mysqli = mysqli_connect($databaseHost, $databaseUsername, 
-    $databasePassword, $databaseName);
+Masukkan plaintext
+```python
+plainText = input("Plaintext : ")
 ```
 
-<br>
-Pada mysqli_connect terdapat beberapa parameter, yaitu mysql_host, mysql_host, mysql_user, mysql_password, dan mysql_database. 
-<br>
-
-1. **mysql_host**
-<br> 
-Jika menjalankan MySQL menggunakan XAMPP di komputer yang sama dengan tempat web server Apache berjalan, maka alamat ini bisa diisi dengan "localhost" atau "127.0.0.1". Namun jika MySQL server dijalankan dari perangkat komputer server lain, argumen ini akan berisi IP address dari komputer server tersebut. 
-<br>
-
-2. **mysql_user**
-<br>
-berisi nama pengguna MySQL yang digunakan untuk login ke server database, seperti "root", "admin", atau "nama_anda". Karena kita menggunakan MySQL dari XAMPP, secara default, nama pengguna yang digunakan adalah "root". Jadi, jika Anda tidak mengubah pengaturan default XAMPP, Anda dapat menggunakan "root" sebagai nilai argumen nama pengguna saat memuat fungsi mysqli_connect().
-<br>
-
-3. **mysql_password**
-<br>
-diisi dengan password user yang terdaftar pada server mysql. Secara default karena kita menggunakan MySQL dari xampp tanpa mengubah passwordnya maka nilai passwordnya adalah kosong sehingga dapat diisikan "".
-<br>
-
-4. **mysql_database**
-<br>
-pada parameter mysql_database diisikan nama database yang telah kita buat. Database yang kita buat sebelumnya adalah kegiatan atau sesuai yang telah anda buat.
-
-
-## Index
-
-Pada langkah sebelumnya kita telah membuat database dan koneksi untuk menghubungkan database dengan file php, selanjutnya adalah membuat file website. File website utama yang akan otomatis ditampilkan ketika telah membuka `localhost/(folder projek dalam htdoc)` adalah index.php. Pada file index perlu memuat atau me*load* file koneksi.php yang telah dibuat sebelumnya agar website dapat terhubung pada database yang telah dibuat.
-<br>
-
-```php
-<?php
-include_once("koneksi.php");
-?>
+Masukkan kunci
+```python
+key = input("masukkan kunci : ")
 ```
 
-Untuk memuat file php lain dapat menggunakan fungsi php yaitu require, require_once atau include atau include_once. Lalu apa perbedaan fungsi-fungsi tersebut?
-<br>
-
-- Jika fungsi include, ketika terjadi error pada file yang dipanggil maka akan menampilkan warning error pada kode yang error saja, namun kode-kode selanjutnya akan tetap dijalankan.
-- Sedangkan fungsi require, ketika terjadi error pada file yang dipanggil maka akan menampilkan fatal error, atau menghentikan program yang berjalan sehingga kode program setelahnya tidak akan dieksekusi.
-- Untuk include_once dan require_once sama dengan fungsi include dan require, namun fungsi itu hanya akan me*load* file sekali, sehingga ketika terdapat program yang memuat file yang sama setelahnya tidak akan dijalankan.
-
-<br>
-
-### 1. Memulai html
-
-```php
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, 
-    initial-scale=1.0">
-
-    <!-- Bootstrap offline -->
-
-    <link rel="stylesheet" href="assets/css/bootstrap.css"> 
-
-    <!-- Bootstrap Online -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
-    rel="stylesheet" 
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-    crossorigin="anonymous">   
-    
-    <title>To Do List</title>   <!--Judul Halaman-->
-</head>
-<body>
-    
-</body>
-</html>
-```
-Pada vscode ketika menuliskan html maka akan muncul pilihan template html yang akan digunakan, pada kode diatas menggunakan html5. Seperti yang telah dipelajari sebelumnya mengenai framework bootstrap, perlu memuat file bootstrap. Jika dalam menjalankan program selalu terhubung dengan internet dapat memuat css maupun js bootstrap dapat diakses pada halaman dokumentasi bootstrap bagian introduction. Namun jika dalam keadaan jarang terhubung internet maka dapat mengunduh terlebih dahulu file bootstrap lalu dapat meng-*export*-nya dan membuat folder assets pada lokasi folder projek untuk menyimpan file paket dari bootstrap.
-<br>
-
-Pada body diisikan konten yang ingin ditampilkan, yaitu judul, form, tabel, dan button. Untuk menggunakan framework pada komponen tersebut dapat melihat pada halaman docs bootstrap untuk melihat dokumentasi dari penggunaan bootstrap lalu cari dokumentasi komponen yang ingin digunakan. Pilih dokumentasi yang sesuai dan modifikasi sesuai dengan kebutuhan yang ingin digunakan.
-<br>
-
-```php
-<div class="container">
+Membersihkan teks dari spasi ganda
+```python
+cleanPlainTeks = plainTeks.replace(" ", "")
+print(cleanPlainTeks)
 ```
 
-Pada tampilan yang diinginkan adalah memusatkan dan mengelompokkan konten utama, maka digunakan container.
-
-<br>
-
-### 2. Judul (heading)
-
-```php
-<h3>
-    To Do List
-    <small class="text-muted">
-        Catat semua hal yang akan kamu kerjakan disini.
-    </small>
-</h3>
-<hr>    
-```
-<br>
-
-Menampilkan judul dapat menggunakan heading 1 hingga 6. Semakin besar angka heading maka akan semakin kecil ukuran dari teks yang akan ditampilkan. Pada judul menampilkan kalimat **"To Do List"** sebagai kalimat utama dan **"Catat semua hal yang akan kamu kerjakan"** sebagai slogan atau kalimat penjelas sehingga pada slogan tersebut dimasukkan kedalam tag small dengan class text-muted untuk mengecilkan huruf dan memberikan warna seakan redup karena teks tersebut memiliki tingkat kepentingan lebih rendah.
-
-<br>
-
-### 3. Form
-
-```php
-<!--Form Input Data-->
-
-<form class="form row" method="POST" action="" name="myForm" onsubmit="return(validate());">
-    <!-- Kode php untuk menghubungkan form dengan database -->
-    <?php
-    $isi = '';
-    $tgl_awal = '';
-    $tgl_akhir = '';
-    if (isset($_GET['id'])) {
-        $ambil = mysqli_query($mysqli, 
-        "SELECT * FROM kegiatan 
-        WHERE id='" . $_GET['id'] . "'");
-        while ($row = mysqli_fetch_array($ambil)) {
-            $isi = $row['isi'];
-            $tgl_awal = $row['tgl_awal'];
-            $tgl_akhir = $row['tgl_akhir'];
-        }
-    ?>
-        <input type="hidden" name="id" value="<?php echo
-        $_GET['id'] ?>">
-    <?php
-    }
-    ?>
-    <div class="col">
-        <label for="inputIsi" class="form-label fw-bold">
-            Kegiatan
-        </label>
-        <input type="text" class="form-control" name="isi" id="inputIsi" placeholder="Kegiatan" value="<?php echo $isi ?>">
-    </div>
-    <div class="col">
-        <label for="inputTanggalAwal" class="form-label fw-bold">
-            Tanggal Awal
-        </label>
-        <input type="date" class="form-control" name="tgl_awal" id="inputTanggalAwal" placeholder="Tanggal Awal" value="<?php echo $tgl_awal ?>">
-    </div>
-    <div class="col mb-2">
-        <label for="inputTanggalAkhir" class="form-label fw-bold">
-        Tanggal Akhir
-        </label>
-        <input type="date" class="form-control" name="tgl_akhir" id="inputTanggalAkhir" placeholder="Tanggal Akhir" value="<?php echo $tgl_akhir ?>">
-    </div>
-    <div class="col">
-        <button type="submit" class="btn btn-primary rounded-pill px-3" name="simpan">Simpan</button>
-    </div>
-</form>
-```
-<br>
-
-Terdapat tiga input pada form, yaitu kegiatan, tanggal awal, dan tanggal akhir. Namun pada database terdapat field id yang diatur untuk autoincrement sehingga akan terisi otomatis sesuai urutan data disimpan. pada bootstrap v5 untuk membuat form dalam satu baris dapat menggunakan grid, yaitu dengan class "row" dan "col". Pada form akan menampilkan placeholder keterangan sesuai inputan form. 
-<br>
-
-Terdapat kode PHP untuk menghubungkan form dengan database, dengan cara mengambil data dari database lalu dimunculkan melalui value berdasarkan variabel yang sesuai, berdasarkan id dari data ketika dilakukan ubah data. Untuk mengambil data dari database digunakan perintah SQl:
-<br>
-
-```php
-SELECT * FROM kegiatan WHERE id='" . $_GET['id'] . "'
-```
-
-Nilai id didapat dari get data id yang dikirimkan ketika klik tombol ubah.
-<br>
-
-Selain form juga terdapat button yang  bertipe submit dengan class dari btn, btn-primary untuk memberikan warna biru atau dapat memberi variasi lain yang sesuai dengan btn-(kode warna yang ada pada dokumentasi bootstrap). Dalam pemilihan warna pada tombol harus disesuaikan dengan user experience.
-
-<br>
-
-### 4. Tabel
-
-```php
-<!-- Table-->
-<table class="table table-hover">
-    <!--thead atau baris judul-->
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Kegiatan</th>
-            <th scope="col">Awal</th>
-            <th scope="col">Akhir</th>
-            <th scope="col">Status</th>
-            <th scope="col">Aksi</th>
-        </tr>
-    </thead>
-    <!--tbody berisi isi tabel sesuai dengan judul atau head-->
-    <tbody>
-        <!-- Kode PHP untuk menampilkan semua isi dari tabel urut
-        berdasarkan status dan tanggal awal-->
-        <?php
-        $result = mysqli_query(
-            $mysqli,"SELECT * FROM kegiatan ORDER BY status,tgl_awal"
-            );
-        $no = 1;
-        while ($data = mysqli_fetch_array($result)) {
-        ?>
-            <tr>
-                <th scope="row"><?php echo $no++ ?></th>
-                <td><?php echo $data['isi'] ?></td>
-                <td><?php echo $data['tgl_awal'] ?></td>
-                <td><?php echo $data['tgl_akhir'] ?></td>
-                <td>
-                    <?php
-                    if ($data['status'] == '1') {
-                    ?>
-                        <a class="btn btn-success rounded-pill px-3" type="button" 
-                        href="index.php?id=<?php echo $data['id'] ?>&aksi=ubah_status&status=0">
-                        Sudah
-                        </a>
-                    <?php
-                    } else {
-                    ?>
-                        <a class="btn btn-warning rounded-pill px-3" type="button" 
-                        href="index.php?id=<?php echo $data['id'] ?>&aksi=ubah_status&status=1">
-                        Belum</a>
-                    <?php
-                    }
-                    ?>
-                </td>
-                <td>
-                    <a class="btn btn-info rounded-pill px-3" 
-                    href="index.php?id=<?php echo $data['id'] ?>">Ubah
-                    </a>
-                    <a class="btn btn-danger rounded-pill px-3" 
-                    href="index.php?id=<?php echo $data['id'] ?>&aksi=hapus">Hapus
-                    </a>
-                </td>
-            </tr>
-        <?php
-        }
-        ?>
-    </tbody>
-</table>
-```
-<br>
-
-Pada Tabel akan menampilkan data-data dari database kegiatan yang diurutkan berdasarkan status dan tanggal awal melalui perintah SQL :
-<br>
-
-```sql
-SELECT * FROM kegiatan ORDER BY status,tgl_awal
-```
-
-<br>
-Selain itu pada kode php juga mendeklarasikan dan memberi nilai awal $no = 1 untuk menampilkan nomor urut data dengan menggunakan looping while sebanyak data yang ada dalam database. Nomor yang ditampilkan bukanlah id dari database.
-<br>
-
-Selain menampilkan data juga terdapat bagian status yang menggunakan kondisi ketika belum maka nilai awalnya adalah 0 namun ketika di klik maka akan melakukan fungsi ubah_status (yang akan kita buat nanti) menjadi 1 atau sudah begitupun sebaliknya jika data statusnya sudah.
-<br>
-
-Ada juga tombol ubah dan hapus, dimana tombol ubah berfungsi untuk mengubah data pada baris yang dipilih dan hapus juga akan menghapus data pada baris yang dipilih.
-<br>
-
-```php
- <?php
-if (isset($_POST['simpan'])) {
-    if (isset($_POST['id'])) {
-        $ubah = mysqli_query($mysqli, "UPDATE kegiatan SET 
-                                        isi = '" . $_POST['isi'] . "',
-                                        tgl_awal = '" . $_POST['tgl_awal'] . "',
-                                        tgl_akhir = '" . $_POST['tgl_akhir'] . "'
-                                        WHERE
-                                        id = '" . $_POST['id'] . "'");
-    } else {
-        $tambah = mysqli_query($mysqli, "INSERT INTO kegiatan(isi,tgl_awal,tgl_akhir,status) 
-                                        VALUES ( 
-                                            '" . $_POST['isi'] . "',
-                                            '" . $_POST['tgl_awal'] . "',
-                                            '" . $_POST['tgl_akhir'] . "',
-                                            '0'
-                                            )");
-    }
-
-    echo "<script> 
-            document.location='index.php';
-            </script>";
+Deklarasi urutan huruf dalam alfabet
+```python
+ascii = {
+'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8, 'i': 9, 'j': 10, 'k': 11, 
+'l': 12, 'm': 13, 'n': 14, 'o': 15, 'p': 16, 'q': 17, 'r': 18, 's': 19, 't': 20, 'u': 21, 
+'v': 22, 'w': 23, 'x': 24, 'y': 25, 'z': 26
 }
-
-if (isset($_GET['aksi'])) {
-    if ($_GET['aksi'] == 'hapus') {
-        $hapus = mysqli_query($mysqli, "DELETE FROM kegiatan WHERE id = '" . $_GET['id'] . "'");
-    } else if ($_GET['aksi'] == 'ubah_status') {
-        $ubah_status = mysqli_query($mysqli, "UPDATE kegiatan SET 
-                                        status = '" . $_GET['status'] . "' 
-                                        WHERE
-                                        id = '" . $_GET['id'] . "'");
-    }
-
-    echo "<script> 
-            document.location='index.php';
-            </script>";
-}
-?>
 ```
 
-Kode tersebut merupakan bagian dari skrip PHP yang digunakan untuk memproses data yang dikirim melalui formulir atau melalui parameter pada URL. Berikut adalah penjelasan baris per baris:
-<br>
+### Proses Enkripsi
 
-Dengan menggunakan kode di atas, data yang dikirim melalui formulir akan diproses dan disimpan atau diubah dalam tabel "kegiatan" berdasarkan tindakan yang diambil. Jika terdapat permintaan melalui parameter pada URL, seperti menghapus data atau mengubah status, tindakan tersebut akan dieksekusi dan kemudian pengguna akan diarahkan kembali ke halaman "index.php".
+Inisialisasi list untuk menyimpan urutan numerik dari setiap huruf alfabet
+```python
+kolom = 0
+angka_urutan = []
+```
+
+Mengonversi setiap huruf dalam kata kunci menjadi urutan numeriknya sesuai dengan posisi dalam alfabet
+```python
+for huruf in key:
+    if huruf.isalpha():
+        angka_urutan.append(ascii[huruf.lower()])
+        kolom = kolom+1
+        cleanKey = angka_urutan
+
+print(f"Urutan kunci dari kata '{key}' adalah {angka_urutan}")
+```
+
+For More Detail :
+
+- `for huruf in key` : Loop ini digunakan untuk memeriksa setiap huruf dalam variabel key, yang diharapkan merupakan kata kunci yang diberikan oleh pengguna
+-  `if huruf.isalpha()` : Kondisi ini memastikan bahwa hanya karakter alfabet yang akan diproses. Karakter non-alfabet akan dilewati
+- `huruf.lower(): Mengubah huruf menjadi huruf kecil untuk konsistensi, sehingga tidak ada perbedaan antara huruf besar dan kecil
+- `ascii[huruf.lower()]` : Mengambil nilai urutan numerik dari huruf. Di sini diasumsikan ada sebuah kamus (dictionary) bernama ascii yang memetakan setiap huruf ke urutan numeriknya
+- `angka_urutan.append(...)` : Menambahkan urutan numerik dari huruf ke dalam list angka_urutan
+- `kolom = kolom + 1` : Menghitung jumlah kolom dengan menambah nilai kolom setiap kali huruf diproses
+- `cleanKey = angka_urutan` : Menyimpan hasil akhir urutan numerik ke dalam variabel cleanKey
+
+
+Membuat sebuah matriks kosong untuk menyimpan teks yang telah diolah dalam bentuk matriks
+```python
+matrix = []
+```
+
+Menghitung panjang dari teks yang telah dibersihkan dan disimpan dalam variabel cleanPlainTeks
+```python
+panjang = len(cleanPlainTeks)
+```
+
+Mencari tahu berapa kali kolom dapat digunakan untuk memuat seluruh teks, dengan membagi panjang teks dengan jumlah kolom
+```python
+temp = panjang/kolom
+```
+
+Membulatkan hasil pembagian sebelumnya ke bilangan bulat terdekat
+```python
+bulat = round(temp)
+```
+
+Menghitung jumlah baris untuk memuat teks dalam matriks
+```python
+if temp - bulat == 0:
+    baris = bulat
+else:
+    if temp - bulat < 0:
+        baris = bulat
+    else:
+        baris = bulat + 1
+print(baris)
+```
+
+For More Detail :
+
+- `temp` : hasil pembagian panjang teks dengan jumlah kolom
+- `bulat`: hasil pembagian yang dibulatkan ke bilangan bulat terdekat. Jika `temp` adalah bilangan bulat (tidak ada sisa), jumlah baris adalah bulat. Jika ada sisa, jumlah baris adalah `bulat + 1`
+
+Mengisi matriks dengan karakter dari teks yang telah dibersihkan (cleanPlainTeks)
+```python
+for i in range(baris):
+    row = []
+    for j in range(kolom):
+        if i * kolom + j < len(cleanPlainTeks):
+            elemen = cleanPlainTeks[i * kolom + j]
+        else:
+            elemen = " "
+        row.append(elemen)
+    matrix.append(row)
+```
+
+For More Detail :
+
+- `for i in range(baris)` : Loop untuk setiap baris dalam matriks
+- `row = []` : Inisialisasi list kosong untuk setiap baris
+- `if i * kolom + j < len(cleanPlainTeks)` : Memeriksa apakah indeks saat ini berada dalam rentang panjang teks yang dibersihkan.
+- `elemen = cleanPlainTeks[i * kolom + j]` : Jika indeks berada dalam rentang, maka ambil karakter dari `cleanPlainTeks` berdasarkan indeks yang dihitung.
+- `else` : Jika indeks melebihi panjang teks, isi elemen dengan spasi.
+- `row.append(elemen)` : Menambahkan elemen ke dalam baris.
+- `matrix.append(row)` : Menambahkan baris yang telah diisi ke dalam matriks.`
+
+Mencetak matriks
+```python
+print("Matriks yang Anda buat:")
+for row in matrix:
+    print(row)
+```
+
+Mentransposisikan matriks yang telah dibuat dan kemudian mencetak matriks yang telah ditransposisikan
+```python
+transposed_matrix = [[row[i] for row in matrix] for i in range(len(matrix[0]))]
+for row in transposed_matrix:
+    print(row)
+```
+
+For More Detail :
+
+- `for i in range(len(matrix[0]))` : Iterasi melalui indeks kolom matriks asli
+- `row[i] for row in matrix` : Untuk setiap indeks kolom i, ambil elemen i dari setiap baris dalam matriks asli dan akan menghasilkan kolom baru dari elemen-elemen tersebut, membentuk baris baru di matriks yang ditransposisikan
+
+Membuat list kosong dengan panjang yang sama dengan cleanKey untuk menyimpan urutan indeks
+```python
+order = [None] * len(cleanKey)
+```
+
+Mengurutkan elemen-elemen dalam cleanKey berdasarkan nilai terkecil hingga terbesar
+```python
+i = 0
+while len(cleanKey) > 0:
+    non_none_values = list(filter(lambda x: x is not None, cleanKey))
+    if non_none_values:
+        nilai_terkecil = min(non_none_values)
+        marker = cleanKey.index(nilai_terkecil)
+
+        order[marker] = i
+        cleanKey[marker] = None 
+        i = i + 1
+    else:
+        break
+print(order)
+```
+
+For More Detail :
+
+- `i = 0` : Inisialisasi counter i
+- `while len(cleanKey) > 0` : Loop hingga cleanKey kosong (semua elemen None)
+- `non_none_values = list(filter(lambda x: x is not None, cleanKey))` : Membuat list yang hanya berisi elemen-elemen cleanKey yang bukan None
+- `if non_none_values` : Mengecek apakah list non_none_values tidak kosong
+` nilai_terkecil = min(non_none_values)` : Mencari nilai terkecil dari non_none_values
+- `marker = cleanKey.index(nilai_terkecil)` : Mendapatkan indeks dari nilai terkecil dalam cleanKey
+Menyimpan Urutan dan Menghapus Nilai Terkecil:
+- `order[marker] = i` : Menyimpan urutan i pada indeks marker di list order
+- `cleanKey[marker] = None` : Menghapus nilai terkecil dari cleanKey dengan mengubahnya menjadi None
+- `i = i + 1` : Increment counter i.
+
+Mengubah urutan kolom matriks `transposed_matrix` berdasarkan urutan yang telah diatur dalam `order`, dan kemudian mencetak matriks yang sudah diubah urutan kolomnya
+```python
+new_matrix = []
+while len(order) > 0:
+    non_none_values = list(filter(lambda x: x is not None, order))
+    if non_none_values:
+        nilai_terkecil = min(non_none_values)
+        marker = order.index(nilai_terkecil)
+       
+        new_matrix.append(transposed_matrix[marker])
+        order[marker] = None
+    else:
+        break
+
+for row in new_matrix:
+    print(row)
+```
+
+For More Detail :
+
+- `new_matrix = []` : Membuat list kosong new_matrix untuk menampung baris-baris matriks yang baru diurutkan
+Looping untuk Mengubah Urutan Kolom:
+- `while len(order) > 0` : Melakukan looping selama masih ada elemen yang tersisa dalam order
+- `non_none_values = list(filter(lambda x: x is not None, order))` : Membuat list non_none_values yang hanya berisi nilai-nilai yang bukan None dari order
+- `if non_none_values` : Memeriksa apakah non_none_values tidak kosong
+- `nilai_terkecil = min(non_none_values)` : Menemukan nilai terkecil dari non_none_values
+- `marker = order.index(nilai_terkecil)` : Mencari indeks dari nilai_terkecil dalam order
+- `new_matrix.append(transposed_matrix[marker])` : Menambahkan baris dari transposed_matrix yang sesuai dengan marker ke new_matrix
+- `order[marker] = None` : Menghapus nilai yang telah diproses dengan mengubahnya menjadi None
+- `else: break` : Menghentikan loop jika `non_none_values kosong`, yang berarti semua nilai dalam order telah diproses
+
+Mengonversi matriks `new_matrix` menjadi string tunggal dengan menggabungkan nilai-nilainya secara berurutan dan menghapus spasi ekstra di akhir string
+```python
+result_string = ""
+
+for row in new_matrix:
+    for value in row:
+        result_string += str(value)
+
+result_string = result_string.strip()
+
+print(result_string)
+```
+
+For More Detail :
+
+- `result_string = ""` : Inisialisasi string kosong result_string yang akan digunakan untuk menyimpan hasil akhir
+- `for row in new_matrix:` : Melakukan iterasi melalui setiap baris dalam new_matrix
+- `for value in row:` : Melakukan iterasi melalui setiap nilai dalam baris row
+- `result_string += str(value)` : Mengonversi nilai value menjadi string (jika belum string) dan menambahkannya ke result_string
+- `result_string = result_string.strip()` : Menghapus spasi ekstra di awal dan akhir string menggunakan metode strip()
+
+```python
+Hasil Ciphertext : ENTKFINOKKM TIAIRA
+```
+
+### Proses Dekripsi
+
+```python
+cipherTeks = input("masukkan kata : ")
+```
+
+```python
+key = input("masukkan kunci : ")
+```
+
+```python
+cleanCipherTeks = cipherTeks.replace(" ", " ")
+print(cleanCipherTeks)
+```
+
+```python
+kolom = 0
+```
+
+```python
+angka_urutan = []
+```
+
+```python
+for huruf in key:
+    if huruf.isalpha():
+        angka_urutan.append(ascii[huruf.lower()])
+        kolom = kolom+1
+        cleanKey = angka_urutan
+
+print(f"Urutan kunci dari kata '{key}' adalah: {angka_urutan}")
+```
+
+```Python
+matrix = []
+```
+
+```python
+panjang = len(cleanCipherTeks)
+```
+
+```python
+temp = panjang/kolom
+```
+
+```python
+baris = round(temp)
+print(baris)
+```
+
+```python
+for i in range(baris):
+    row = []
+    for j in range(kolom):
+        if i * kolom + j < len(cleanCipherTeks):
+            elemen = cleanCipherTeks[i + baris * j]
+        else:
+            elemen = "a"
+        row.append(elemen)
+    matrix.append(row)
+```
+
+```python
+print("Matriks yang Anda buat:")
+for row in matrix:
+    print(row)
+```
+
+```python
+transposed_matrix = [[row[i] for row in matrix] for i in range(len(matrix[0]))]
+for row in transposed_matrix:
+    print(row)
+```
+
+```python
+order = [None] * len(cleanKey)
+i = 0
+while len(cleanKey) > 0:
+    non_none_values = list(filter(lambda x: x is not None, cleanKey))
+    if non_none_values:
+        nilai_terkecil = min(non_none_values)
+        marker = cleanKey.index(nilai_terkecil)
+        order[marker] = i
+        cleanKey[marker] = None  
+        i = i + 1
+    else:
+        break
+print(order)
+```
+
+```python
+transposed_matrix = [transposed_matrix[i] for i in order]
+
+for row in transposed_matrix:
+    print(row)
+```
+
+```python
+matriks = [[row[i] for row in transposed_matrix] for i in range(len(transposed_matrix[0]))]
+for row in matriks:
+    print(row)
+```
+
+```python
+result_string = ""
+
+for row in matriks:
+    for value in row:
+        result_string += str(value)
+
+result_string = result_string.strip()
+
+print(result_string)
+```
+
+`Hasil Dekripsi : TEKNIKINFORMATIKA`
+
+**Perbedaan Proses :**
+
+- Enkripsi: Teks asli diubah menjadi matriks berdasarkan kolom kunci, kemudian kolom-kolom diurutkan berdasarkan kunci. Pada enkripsi, `transposed_matrix` adalah matriks transposisi dari matrix awal
+- Dekripsi: Teks sandi diubah menjadi matriks berdasarkan kolom kunci, kemudian baris-baris diurutkan berdasarkan kunci untuk mengembalikan teks asli. Pada dekripsi, `transposed_matrix` diurutkan berdasarkan order untuk mengembalikan teks asli

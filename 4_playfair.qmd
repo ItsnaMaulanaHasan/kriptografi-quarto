@@ -7,236 +7,407 @@ toc-title: "On this page"
 
 # 4. Playfair {.unnumbered}
 
-## Pengenalan Responsive Web Design
+Transposisi kolom dalam kriptografi adalah teknik enkripsi yang melibatkan pengubahan urutan karakter atau simbol dalam sebuah pesan atau teks dengan cara mengatur ulang posisi karakter berdasarkan aturan tertentu yang ditentukan oleh kunci. Dalam transposisi kolom, teks asli dibagi menjadi kolom-kolom, kemudian urutan kolom tersebut diubah sesuai dengan aturan yang ditentukan oleh kunci enkripsi. Kunci enkripsi transposisi kolom biasanya berupa susunan angka atau urutan yang menentukan urutan kolom mana yang harus diambil dan dalam urutan apa.
 
-Desain Web Responsif (Responsive Web Design) merupakan penggunaan HTML dan CSS untuk dapat mengubah ukuran, menyembunyikan, mengecilkan, atau memperbesar situs web secara otomatis, agar dapat terlihat bagus pada semua perangkat (desktop, tablet, dan handphone).
-<br>
+# Analogi Transposisi Kolom
+Bayangkan Kita memiliki rak buku dengan beberapa kolom dan setiap kolom berisi tumpukan buku. 
 
-![Responsive Web](assets/responsive/responsive_web.jpg){width="70%" style="text-align:center;"}
+1. **Susunan Awal:**
+   - Kolom 1 : A, B, C
+   - Kolom 2 : D, E, F
+   - Kolom 3 : G, H, I
 
-<br>
+2. **Transposisi Kolom:**
+   - Kita akan memutuskan untuk menukar posisi kolom-kolom ini. Misalnya, kolom 1 dipindahkan ke tempat kolom 3, kolom 2 tetap di tempat, dan kolom 3 dipindahkan ke tempat kolom 1.
 
-Halaman web responsive dilakukan dengan menambahkan elemen meta pada dokumen HTML seperti berikut:
-<br>
+3. **Susunan Setelah Transposisi:**
+   - Kolom 1 : G, H, I (dulu Kolom 3)
+   - Kolom 2 : D, E, F
+   - Kolom 3 : A, B, C (dulu Kolom 1) 
 
-```html
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+Dengan kata lain, transposisi kolom mengubah urutan kolom tanpa mengubah isi kolom. Dalam kriptografi, ini dilakukan untuk mengacak data agar lebih sulit ditebak oleh pihak yang tidak berwenang.
+
+# Contoh Soal
+Untuk lebih jelasnya, terdapat sebuah pesan yaitu
+“TENTUKAN PRIORITAS ANDA SEBAB KITA TIDAK DAPAT MENGERJAKAN SEMUANYA X” yang akan dienkripsi menggunakan metode transposisi kolom dengan kata kunci “PENTING” Maka proses enkripsi nya adalah sebagai berikut:
+
+**Proses Penyandian**
+
+1. Buat tabel dengan ukuran kolom sesuai dengan panjang dari kata kunci yang telah diproses sebelumnya
+
+    ![](assets/kriptografi/tkolom2.png){width="70%" 
+    style="text-align:center;"}
+
+2. Kemudian masukkan kunci kedalam kolom tabel
+
+    ![](assets/kriptografi/tkolom3.png){width="70%" 
+    style="text-align:center;"}
+
+3. Selanjutnya, masukan pesan yang akan dienkripsi dengan cara menyisipkannya dari kiri ke kanan secara berurutan
+
+    ![](assets/kriptografi/tkolom4.png){width="70%" 
+    style="text-align:center;"}
+
+4. Lalu kunci didefinisikan sesuai urutan abjad menjadi
+
+    ![](assets/kriptografi/tkolom.png){width="70%" 
+    style="text-align:center;"}
+
+5. Setelah itu, kolom  dengan urutan abjad terkecil dipindahkan ke posisi depan, diikuti dengan kolom urutan abjad terkecil lainya
+
+    ![](assets/kriptografi/tkolom5.png){width="70%" 
+    style="text-align:center;"}
+
+6. Baca huruf ciphertext dari atas kebawah kemudian dimulai lagi dari atas sesuai dengan kolom yang sudah diurutkan
+
+    ![](assets/kriptografi/tkolom6.png){width="70%" 
+    style="text-align:center;"}
+
+## Implementasi Pada Python
+
+Masukkan plaintext
+```python
+plainText = input("Plaintext : ")
 ```
 
-<br>
-
-Penambahan elemen meta digunakan untuk mengatur viewport pada dokumen HTML sehingga dapat tampil lintas perangkat. Pada penambahan elemen meta tersebut juga akan memberikan instruksi ke web browser dalam mengatur dimensi dan skala halaman web.
-<br>
-
-**Responsive pada Image**
-<br>
-
-Penerapan responsive dapat diberlakukan juga pada image dengan menambahkan atribut width dengan nilai 100%.
-<br>
-
-```html
-<img src="images.jpg" style="width:100%;">
+Masukkan kunci
+```python
+key = input("masukkan kunci : ")
 ```
 
-**Responsive pada Text**
-<br>
-
-Responsive pada text dapat diterapkan dengan menggunakan unit "vw", yang berarti "viewport width" atau "lebar viewport".Viewport adalah ukuran jendela browser. 1 vw adalah 1% dari lebar viewport. Jika viewport lebar 50cm, 1vw adalah 0,5cm.
-<br>
-
-```html
-<h1 style="font-size:10vw">Hello World</h1>
+Membersihkan teks dari spasi ganda
+```python
+cleanPlainTeks = plainTeks.replace(" ", "")
+print(cleanPlainTeks)
 ```
-<br>
 
-## Responsive Web Design Framework (Bootstrap)
-
-Bootstrap merupakan HTML, CSS dan Javascript framework paling popular untuk mengambangkan responsive web design yang mengutamakan tampilan mobile (mobile first) Bootstrap dapat diunduh secara gratis pada laman [https://getbootstrap.com/](https://getbootstrap.com/){.external target="_blank"}. Sampai saat modul ini dibuat versi terakhir adalah Bootstrap v5.3.
-
-### Mengapa menggunakan Bootstrap?
-
-Banyak keuntungan dan kemudahan yang diberikan Bootstrap diantaranya adalah:
-<br>
-
-Berikut adalah beberapa penjelasan mengenai Bootstrap:
-<br>
-
-- Responsif: Salah satu fitur utama Bootstrap adalah kemampuannya untuk menghasilkan tampilan yang responsif secara otomatis. Dengan menggunakan class CSS yang telah disediakan oleh Bootstrap, elemen-elemen halaman web dapat menyesuaikan diri dengan baik pada berbagai perangkat dan ukuran layar, mulai dari desktop hingga perangkat mobile.
-
-- Grid System: Bootstrap menyediakan sistem grid yang fleksibel untuk membagi layout halaman web menjadi kolom-kolom yang responsif. Grid system ini memungkinkan pengaturan layout yang mudah dan dapat diatur untuk menciptakan tampilan yang rapi dan terstruktur pada berbagai perangkat.
-
-- Komponen Siap Pakai: Bootstrap menyediakan beragam komponen UI siap pakai seperti tombol, navigasi, formulir, jumbotron, kartu, jendela modal, dan banyak lagi. Komponen ini telah dirancang dengan baik dan dapat langsung digunakan dalam proyek tanpa perlu memikirkan desain atau gaya dasar, menghemat waktu dan usaha pengembangan.
-
-- Gaya dan Tema: Bootstrap memiliki gaya dan tema default yang estetis dan modern. Selain itu, Bootstrap juga menyediakan beragam tema kustom yang dapat diterapkan dengan mudah untuk memberikan tampilan yang unik dan sesuai dengan kebutuhan proyek Anda. Anda juga dapat menyesuaikan gaya dan tema Bootstrap sesuai dengan preferensi Anda sendiri.
-
-- Kompatibilitas Browser: Bootstrap dirancang untuk mendukung sebagian besar browser modern. Ini berarti tampilan dan fungsionalitas situs web yang dibangun dengan menggunakan Bootstrap akan konsisten dan berfungsi dengan baik di berbagai browser yang umum digunakan.
-
-- Dokumentasi dan Komunitas: Bootstrap memiliki dokumentasi yang sangat baik, lengkap dengan contoh-contoh kode dan penjelasan yang rinci. Selain itu, karena popularitasnya, Bootstrap memiliki komunitas pengembang yang besar dan aktif, yang dapat memberikan dukungan dan sumber daya yang berguna untuk menjawab pertanyaan, memecahkan masalah, dan berbagi pengalaman.
-
-<br>
-
-### HTML5
-
-Penambahan doctype dilakukan untuk menetapkan dokumen HTML sebagai HTML versi 5 (HTML5), agar dapat menggunakan elemen-elemen HTML5 dan properti CSS Bootstrap. Sebagai contohnya pada script berikut.
-<br>
-
-```html
-<!DOCTYPE html>
-<html>
-
-</html>
+Deklarasi urutan huruf dalam alfabet
+```python
+ascii = {
+'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8, 'i': 9, 'j': 10, 'k': 11, 
+'l': 12, 'm': 13, 'n': 14, 'o': 15, 'p': 16, 'q': 17, 'r': 18, 's': 19, 't': 20, 'u': 21, 
+'v': 22, 'w': 23, 'x': 24, 'y': 25, 'z': 26
+}
 ```
-<br>
 
-Jika menggunakan Text Editor Visual Studio Code, ketika mengetikan html di awal kode maka akan muncul snippets yang memunculkan beberapa pilihan template kode
-<br>
+### Proses Enkripsi
 
-![Snippets](assets/tools/vscode/snippets.png){width="70%" style="text-align:center;"}
+Inisialisasi list untuk menyimpan urutan numerik dari setiap huruf alfabet
+```python
+kolom = 0
+angka_urutan = []
+```
 
-### Grid System
+Mengonversi setiap huruf dalam kata kunci menjadi urutan numeriknya sesuai dengan posisi dalam alfabet
+```python
+for huruf in key:
+    if huruf.isalpha():
+        angka_urutan.append(ascii[huruf.lower()])
+        kolom = kolom+1
+        cleanKey = angka_urutan
 
-Pada Bootstrap menerapkan grid system dengan 12 (dua belas) kolom pada setiap halaman. Jika kita tidak menginginkan layout menggunakan
-ke-12 kolom, kita bisa mengelompokkan kolom bersama untuk membuat kolom yang lebih lebar. Sebagai contoh gambaran dari grid system dengan 12 kolom ditampilkan seperti pada gambar di bawah ini.
-<br>
+print(f"Urutan kunci dari kata '{key}' adalah {angka_urutan}")
+```
 
-![Contoh Grid System Bootstrap](assets/responsive/grid.png){width="70%" style="text-align:center;"}
+For More Detail :
 
-<br>
-Sistem grid pada bootstrap dapat menyesuaikan terhadap enam keadaan atau ukuran diantaranya adalah :
-<br>
-
-- Ekstra kecil atau extra small (xs)
-- Kecil atau small (sm)
-- Sedang atau medium (md)
-- Besar atau large (lg)
-- Ekstra besar atau extra large (xl)
-- Ekstra ekstra besar atau extra extra large (xxl)
-<br>
-
-![Tabel Breakpoint Grid](assets/responsive/gridtable.png){width="70%" style="text-align:center;"}
-
-### Fungsi Bootsrtap yang umum digunakan
-
-1. **Grid**
-<br>
-Seperti yang telah dijelaskan pada [Grid System](#grid-system), bahwa pada bootstrap dapat mengelompokkan layout menjadi 12 kolom, dimana kita dapat menggunakan grid ini dengan kelas row yang didalamnya terdapat kelas col, seperti berikut:<br>
-
-    ```html
-    <div class="row">
-        <div class="col"></div>
-        ...
-    </div><!-- row-->
-    ```
-<br>
-Dalam kelas col ini dapat dituliskan dengan value seperti col-4, yang artinya objek yang diberikan kelas tersebut pada row atau baris akan mengisi sebanyak 4 kolom. Dalam 1 row tersebut dapat berisi dengan akumulai 12 kolom.
-<br><br>
-Selain iitu juga bisa dikombinasikan dengan class breakpoint. Pada seperti yang dijelaskan pada tabel penjelasan grid system bahwa kolom akan mengikuti ukuran breakppoint dari device yang dimasukkan. Misalkan col-md-4, maka ketika ukuran dari device yang digunakan lebih besar dari atau sama dengan 768px maka tampilan kolom akan mendatar memenuhi row, namun akan berubah tampilannya jika ukuran devicenya berkurang 1 pixel saja (kurang dari 768px).
-
-2. **Warna**
-<br>
-Terdapat beberapa template kelas warna yang disediakan oleh Bootstrap diantaranya
-<br>
-    * Primary: (Biru tua)
-    * Secondary: (Abu-abu)
-    * Success: (Hijau)
-    * Danger: (Merah)
-    * Warning: (Kuning)
-    * Info: (Biru cerah)
-    * Light: (Putih atau hampir putih)
-    * Dark: (Hitam atau hampir hitam)
-<br>
-
-    Pemilihan warna juga merupakan hal yang sangat penting dan perlu diperhatikan.Pemilihan warna akan sangat berpengaruh pada tampilan atau UI sehingga akan mempercantik tampilan dan menarik bagi user. Selain itu dengan warna yang sesuai akan membantu menyampaikan fungsi dari fitur, misalnya merah menandakan suatu yang penting yang memerlukan perhatian lebih, hal tersebut akan memudahkan konsumen dalam menggunakan aplikasi atau disebut *user experience*
-
-3. **Typografi**
-<br>
-Dalam cara penulisan pada bootstrap memberikan kemudahan dalam mengatur tampilan teks, melalui beberapa class, seperti
-<br>
-    * **Heading**, selain menggunakan tag `<h1>,<h2>,..,<h6>` pada bootstrap juga terdapat kelas heading contohnya:<br>
-
-        ```html
-        <p class="h1">Heading 1<p>
-        ```
-    * **Display**, dengan manambahkan class display pada teks akan memberikan tampilan teks yang besar namun dengan style font yang tipis, misalnya: <br>
-
-        ```html
-        <p class="display-1">Display 1</p>
-        ```
-    * **Font Size**, class font size atau yang ditulis fs memberikan styling berupa ukuran dari teks dimana semakin besar nilai fs akan semakin kecil font yang ditampilkan: <br>
-
-        ```html
-        <p class="fs-1">ini teks</p>
-        ```
-    * **Font Weight**, melalui font weight dapat memberikan pengaturan terhadap tebal tipis dari font atau teks, dengan parameter bolder, bold, light, lighter, dan normal, berikut contoh penggunaannya: <br>
-
-        ```html
-        <p class="fw-bold">Ini tebal</p>
-        ```
-
-    * **Font Style**, dengan font style kita dapat merubah style dari font atau teks bold dan italic tanpa menggunakan tag html `<b> dan <i>`, atau sebagai berikut: <br>
-    
-        ```html
-        <p class="fst-italic">ini font style</p>
-        <p class="fst-normal">ini font style</p>
-        ```
+- `for huruf in key` : Loop ini digunakan untuk memeriksa setiap huruf dalam variabel key, yang diharapkan merupakan kata kunci yang diberikan oleh pengguna
+-  `if huruf.isalpha()` : Kondisi ini memastikan bahwa hanya karakter alfabet yang akan diproses. Karakter non-alfabet akan dilewati
+- `huruf.lower(): Mengubah huruf menjadi huruf kecil untuk konsistensi, sehingga tidak ada perbedaan antara huruf besar dan kecil
+- `ascii[huruf.lower()]` : Mengambil nilai urutan numerik dari huruf. Di sini diasumsikan ada sebuah kamus (dictionary) bernama ascii yang memetakan setiap huruf ke urutan numeriknya
+- `angka_urutan.append(...)` : Menambahkan urutan numerik dari huruf ke dalam list angka_urutan
+- `kolom = kolom + 1` : Menghitung jumlah kolom dengan menambah nilai kolom setiap kali huruf diproses
+- `cleanKey = angka_urutan` : Menyimpan hasil akhir urutan numerik ke dalam variabel cleanKey
 
 
-4. Spacing & Sizing
-<br>
+Membuat sebuah matriks kosong untuk menyimpan teks yang telah diolah dalam bentuk matriks
+```python
+matrix = []
+```
 
-    Pengaturan Spasi dan ukuran pada Bootstrap dapat menggunakan padding dan margin, Padding merupakan bagian yang membatasi konten dengan border, sedangkan margin merupakkan bagian yang membatasi antara border dengan bagian luar dari konten. Pengaturan margin dan padding dapat dilakukan dengan mudah hanya dengan menambahkan class m untuk margin dan p untuk padding yang diikuti dengan parameter t (top), b (bottom), s (start), e (end), x (menambahkan pada kedua sis horizontal), y (menambahkan pada kedua sisi vertikal), serta diikuti oleh besar margin atau padding yang diinginkan dengan nilai mulai dari 1 hingga 5, atau seperti berikut:
-    
-        ```html
-        <!-- Heading -->
-        <div class="item mt-5 mb-3">item1</div>
-        <div class="item ms-2 me-3">item2</div>
-        <div class="item my-5">item3</div>
-        <div class="item mx-3">item4</div>
-        <div class="item m-3">item4</div>
+Menghitung panjang dari teks yang telah dibersihkan dan disimpan dalam variabel cleanPlainTeks
+```python
+panjang = len(cleanPlainTeks)
+```
 
-        <!-- Padding -->
-        <div class="item pt-5 pb-3">item1</div>
-        <div class="item ps-2 pe-3">item2</div>
-        <div class="item py-5">item3</div>
-        <div class="item px-3">item4</div>
-        <div class="item p-3">item4</div>
-        ```
+Mencari tahu berapa kali kolom dapat digunakan untuk memuat seluruh teks, dengan membagi panjang teks dengan jumlah kolom
+```python
+temp = panjang/kolom
+```
 
-![Margin-Padding-Border](assets/responsive/margin-padding.png){width="70%" style="text-align:center;"}
+Membulatkan hasil pembagian sebelumnya ke bilangan bulat terdekat
+```python
+bulat = round(temp)
+```
 
-<br>
+Menghitung jumlah baris untuk memuat teks dalam matriks
+```python
+if temp - bulat == 0:
+    baris = bulat
+else:
+    if temp - bulat < 0:
+        baris = bulat
+    else:
+        baris = bulat + 1
+print(baris)
+```
 
+For More Detail :
 
-### Komponen yang umum digunakan
+- `temp` : hasil pembagian panjang teks dengan jumlah kolom
+- `bulat`: hasil pembagian yang dibulatkan ke bilangan bulat terdekat. Jika `temp` adalah bilangan bulat (tidak ada sisa), jumlah baris adalah bulat. Jika ada sisa, jumlah baris adalah `bulat + 1`
 
-1. **Navbar**
-Navbar pada bootstrap sudah memiliki kemampuan untuk responsif ketika ukuran dari perangkat yang digunakan terlalu kecil untuk menampilkan konten atau menu didalamnya akan otomatis menjadi *humberger menu*, berikut salah satu contoh dokumentasi navbar yang umum digunakan.
+Mengisi matriks dengan karakter dari teks yang telah dibersihkan (cleanPlainTeks)
+```python
+for i in range(baris):
+    row = []
+    for j in range(kolom):
+        if i * kolom + j < len(cleanPlainTeks):
+            elemen = cleanPlainTeks[i * kolom + j]
+        else:
+            elemen = " "
+        row.append(elemen)
+    matrix.append(row)
+```
 
-![Navbar](assets/responsive/navbar.png){width="70%" style="text-align:center;"}
+For More Detail :
 
-2. Table
-Pada class yang disediakan bootstrap terdapat beberapa pilihan tampilan table dan modifikasi yang diberikan, dengan memasukkan tag table ke dalam div yang diberikan kelas dari table yang diinginkan misalnya seperti berikut :
+- `for i in range(baris)` : Loop untuk setiap baris dalam matriks
+- `row = []` : Inisialisasi list kosong untuk setiap baris
+- `if i * kolom + j < len(cleanPlainTeks)` : Memeriksa apakah indeks saat ini berada dalam rentang panjang teks yang dibersihkan.
+- `elemen = cleanPlainTeks[i * kolom + j]` : Jika indeks berada dalam rentang, maka ambil karakter dari `cleanPlainTeks` berdasarkan indeks yang dihitung.
+- `else` : Jika indeks melebihi panjang teks, isi elemen dengan spasi.
+- `row.append(elemen)` : Menambahkan elemen ke dalam baris.
+- `matrix.append(row)` : Menambahkan baris yang telah diisi ke dalam matriks.`
 
-![Table](assets/responsive/table.png){width="70%" style="text-align:center;"}
+Mencetak matriks
+```python
+print("Matriks yang Anda buat:")
+for row in matrix:
+    print(row)
+```
 
-3. Button
-Tombol merupakan bagian terpenting dalam suatu tampilan website yang dapat mengirimkan input dari pengguna ke server. Dalam bootstrap terdapat beberapa variasi yang diberikan untuk penggunaan tombol atau button misalnya warna, bentuk, style, rounded dan masih banyak lagi yang bisa didalami melalui dokumentasi yang ada pada halaman bootstrap 
+Mentransposisikan matriks yang telah dibuat dan kemudian mencetak matriks yang telah ditransposisikan
+```python
+transposed_matrix = [[row[i] for row in matrix] for i in range(len(matrix[0]))]
+for row in transposed_matrix:
+    print(row)
+```
 
-![Button](assets/responsive/button.png){width="70%" style="text-align:center;"}
+For More Detail :
 
-4. Card
-Pada website blog atau e-commerce biasanya menampilkan artikel-artikel mereka pada card dapat menampilkan gambar, serta deskripsi atau tombol untuk melihat lebih banyak mengenai informasi dari blog tersebut. berikut adalah contoh penggunaan card:
+- `for i in range(len(matrix[0]))` : Iterasi melalui indeks kolom matriks asli
+- `row[i] for row in matrix` : Untuk setiap indeks kolom i, ambil elemen i dari setiap baris dalam matriks asli dan akan menghasilkan kolom baru dari elemen-elemen tersebut, membentuk baris baru di matriks yang ditransposisikan
 
-![Card](assets/responsive/card.png){width="70%" style="text-align:center;"}
+Membuat list kosong dengan panjang yang sama dengan cleanKey untuk menyimpan urutan indeks
+```python
+order = [None] * len(cleanKey)
+```
 
-<br>
-<hr>
+Mengurutkan elemen-elemen dalam cleanKey berdasarkan nilai terkecil hingga terbesar
+```python
+i = 0
+while len(cleanKey) > 0:
+    non_none_values = list(filter(lambda x: x is not None, cleanKey))
+    if non_none_values:
+        nilai_terkecil = min(non_none_values)
+        marker = cleanKey.index(nilai_terkecil)
 
+        order[marker] = i
+        cleanKey[marker] = None 
+        i = i + 1
+    else:
+        break
+print(order)
+```
 
-:::{.callout title="Responsive design menggunakan Bootstrap"}
-*Berikut penjelasan mengenai penggunaan bootstrap dan elemen-elemen yang banyak digunakan!*
+For More Detail :
 
-{{< video https://youtu.be/VWY3yFcq-Ho >}}
+- `i = 0` : Inisialisasi counter i
+- `while len(cleanKey) > 0` : Loop hingga cleanKey kosong (semua elemen None)
+- `non_none_values = list(filter(lambda x: x is not None, cleanKey))` : Membuat list yang hanya berisi elemen-elemen cleanKey yang bukan None
+- `if non_none_values` : Mengecek apakah list non_none_values tidak kosong
+` nilai_terkecil = min(non_none_values)` : Mencari nilai terkecil dari non_none_values
+- `marker = cleanKey.index(nilai_terkecil)` : Mendapatkan indeks dari nilai terkecil dalam cleanKey
+Menyimpan Urutan dan Menghapus Nilai Terkecil:
+- `order[marker] = i` : Menyimpan urutan i pada indeks marker di list order
+- `cleanKey[marker] = None` : Menghapus nilai terkecil dari cleanKey dengan mengubahnya menjadi None
+- `i = i + 1` : Increment counter i.
 
-:::
+Mengubah urutan kolom matriks `transposed_matrix` berdasarkan urutan yang telah diatur dalam `order`, dan kemudian mencetak matriks yang sudah diubah urutan kolomnya
+```python
+new_matrix = []
+while len(order) > 0:
+    non_none_values = list(filter(lambda x: x is not None, order))
+    if non_none_values:
+        nilai_terkecil = min(non_none_values)
+        marker = order.index(nilai_terkecil)
+       
+        new_matrix.append(transposed_matrix[marker])
+        order[marker] = None
+    else:
+        break
 
+for row in new_matrix:
+    print(row)
+```
+
+For More Detail :
+
+- `new_matrix = []` : Membuat list kosong new_matrix untuk menampung baris-baris matriks yang baru diurutkan
+Looping untuk Mengubah Urutan Kolom:
+- `while len(order) > 0` : Melakukan looping selama masih ada elemen yang tersisa dalam order
+- `non_none_values = list(filter(lambda x: x is not None, order))` : Membuat list non_none_values yang hanya berisi nilai-nilai yang bukan None dari order
+- `if non_none_values` : Memeriksa apakah non_none_values tidak kosong
+- `nilai_terkecil = min(non_none_values)` : Menemukan nilai terkecil dari non_none_values
+- `marker = order.index(nilai_terkecil)` : Mencari indeks dari nilai_terkecil dalam order
+- `new_matrix.append(transposed_matrix[marker])` : Menambahkan baris dari transposed_matrix yang sesuai dengan marker ke new_matrix
+- `order[marker] = None` : Menghapus nilai yang telah diproses dengan mengubahnya menjadi None
+- `else: break` : Menghentikan loop jika `non_none_values kosong`, yang berarti semua nilai dalam order telah diproses
+
+Mengonversi matriks `new_matrix` menjadi string tunggal dengan menggabungkan nilai-nilainya secara berurutan dan menghapus spasi ekstra di akhir string
+```python
+result_string = ""
+
+for row in new_matrix:
+    for value in row:
+        result_string += str(value)
+
+result_string = result_string.strip()
+
+print(result_string)
+```
+
+For More Detail :
+
+- `result_string = ""` : Inisialisasi string kosong result_string yang akan digunakan untuk menyimpan hasil akhir
+- `for row in new_matrix:` : Melakukan iterasi melalui setiap baris dalam new_matrix
+- `for value in row:` : Melakukan iterasi melalui setiap nilai dalam baris row
+- `result_string += str(value)` : Mengonversi nilai value menjadi string (jika belum string) dan menambahkannya ke result_string
+- `result_string = result_string.strip()` : Menghapus spasi ekstra di awal dan akhir string menggunakan metode strip()
+
+```python
+Hasil Ciphertext : ENTKFINOKKM TIAIRA
+```
+
+### Proses Dekripsi
+
+```python
+cipherTeks = input("masukkan kata : ")
+```
+
+```python
+key = input("masukkan kunci : ")
+```
+
+```python
+cleanCipherTeks = cipherTeks.replace(" ", " ")
+print(cleanCipherTeks)
+```
+
+```python
+kolom = 0
+```
+
+```python
+angka_urutan = []
+```
+
+```python
+for huruf in key:
+    if huruf.isalpha():
+        angka_urutan.append(ascii[huruf.lower()])
+        kolom = kolom+1
+        cleanKey = angka_urutan
+
+print(f"Urutan kunci dari kata '{key}' adalah: {angka_urutan}")
+```
+
+```Python
+matrix = []
+```
+
+```python
+panjang = len(cleanCipherTeks)
+```
+
+```python
+temp = panjang/kolom
+```
+
+```python
+baris = round(temp)
+print(baris)
+```
+
+```python
+for i in range(baris):
+    row = []
+    for j in range(kolom):
+        if i * kolom + j < len(cleanCipherTeks):
+            elemen = cleanCipherTeks[i + baris * j]
+        else:
+            elemen = "a"
+        row.append(elemen)
+    matrix.append(row)
+```
+
+```python
+print("Matriks yang Anda buat:")
+for row in matrix:
+    print(row)
+```
+
+```python
+transposed_matrix = [[row[i] for row in matrix] for i in range(len(matrix[0]))]
+for row in transposed_matrix:
+    print(row)
+```
+
+```python
+order = [None] * len(cleanKey)
+i = 0
+while len(cleanKey) > 0:
+    non_none_values = list(filter(lambda x: x is not None, cleanKey))
+    if non_none_values:
+        nilai_terkecil = min(non_none_values)
+        marker = cleanKey.index(nilai_terkecil)
+        order[marker] = i
+        cleanKey[marker] = None  
+        i = i + 1
+    else:
+        break
+print(order)
+```
+
+```python
+transposed_matrix = [transposed_matrix[i] for i in order]
+
+for row in transposed_matrix:
+    print(row)
+```
+
+```python
+matriks = [[row[i] for row in transposed_matrix] for i in range(len(transposed_matrix[0]))]
+for row in matriks:
+    print(row)
+```
+
+```python
+result_string = ""
+
+for row in matriks:
+    for value in row:
+        result_string += str(value)
+
+result_string = result_string.strip()
+
+print(result_string)
+```
+
+`Hasil Dekripsi : TEKNIKINFORMATIKA`
+
+**Perbedaan Proses :**
+
+- Enkripsi: Teks asli diubah menjadi matriks berdasarkan kolom kunci, kemudian kolom-kolom diurutkan berdasarkan kunci. Pada enkripsi, `transposed_matrix` adalah matriks transposisi dari matrix awal
+- Dekripsi: Teks sandi diubah menjadi matriks berdasarkan kolom kunci, kemudian baris-baris diurutkan berdasarkan kunci untuk mengembalikan teks asli. Pada dekripsi, `transposed_matrix` diurutkan berdasarkan order untuk mengembalikan teks asli
