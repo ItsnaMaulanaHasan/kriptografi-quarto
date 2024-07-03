@@ -163,7 +163,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./1_caesar.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Caesar</span></a>
+ <span class="menu-text">1. Caesar Cipher</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -216,7 +216,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./1_caesar.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Caesar</span></a>
+ <span class="menu-text">1. Caesar Cipher</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -269,7 +269,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./1_caesar.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Caesar</span></a>
+ <span class="menu-text">1. Caesar Cipher</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -343,10 +343,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#teks-editor" id="toc-teks-editor" class="nav-link active" data-scroll-target="#teks-editor">Teks Editor</a></li>
-  <li><a href="#web-browser" id="toc-web-browser" class="nav-link" data-scroll-target="#web-browser">Web Browser</a></li>
-  <li><a href="#web-server" id="toc-web-server" class="nav-link" data-scroll-target="#web-server">Web Server</a></li>
-  <li><a href="#bootstrap" id="toc-bootstrap" class="nav-link" data-scroll-target="#bootstrap">Bootstrap</a></li>
+  <li><a href="#analogi-vigenere-cipher" id="toc-analogi-vigenere-cipher" class="nav-link active" data-scroll-target="#analogi-vigenere-cipher">Analogi Vigenere Cipher</a></li>
+  <li><a href="#contoh-soal" id="toc-contoh-soal" class="nav-link" data-scroll-target="#contoh-soal">Contoh Soal</a>
+  <ul class="collapse">
+  <li><a href="#implementasi-pada-python" id="toc-implementasi-pada-python" class="nav-link" data-scroll-target="#implementasi-pada-python">Implementasi Pada Python</a>
+  <ul class="collapse">
+  <li><a href="#proses-enkripsi" id="toc-proses-enkripsi" class="nav-link" data-scroll-target="#proses-enkripsi">Proses Enkripsi</a></li>
+  <li><a href="#proses-dekripsi" id="toc-proses-dekripsi" class="nav-link" data-scroll-target="#proses-dekripsi">Proses Dekripsi</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -375,247 +380,144 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Sebelum memulai ada tools-tools yang digunakan dan perlu diinstall terlebih dahulu! <br></p>
-<div class="quarto-figure quarto-figure-center" style="text-align:center;">
-<figure class="figure">
-<p><img src="assets/tools/toolsWeb.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>Tools Pemrograman Web</figcaption>
-</figure>
-</div>
-<section id="teks-editor" class="level2">
-<h2 class="anchored" data-anchor-id="teks-editor">Teks Editor</h2>
-<p>Banyak pilihan untuk teks editor yang dapat digunakan, seperti <em>Notepad++</em>, <em>Sublime Text</em>, dan <em>Visual Studio Code</em>. <br></p>
-<p><strong>Visual Studio Code</strong> <br></p>
-<p>Teks Editor yang umum digunakan saat ini adalah Visual Studio Code. Untuk melakukan instalasi Visual Studio Code silah ikuti langkah-langkah berikut: <br></p>
+<p>Vigenere Cipher adalah metode enkripsi klasik yang menggunakan tabel tabula recta (atau tabel Vigenere) untuk mengenkripsi teks. Enkripsi ini menggunakan kata kunci (key) untuk menggeser setiap huruf dalam teks asli. Setiap huruf kunci mengindikasikan jumlah geseran huruf untuk huruf yang sesuai dalam teks asli.</p>
+<section id="analogi-vigenere-cipher" class="level1">
+<h1>Analogi Vigenere Cipher</h1>
+<p>Misalnya, jika kita memiliki teks “HELLO” dan kunci “KEY”, kita akan menggeser huruf-huruf dalam teks “HELLO” sesuai dengan urutan huruf dalam kata kunci “KEY”.</p>
 <ol type="1">
-<li>Silahkan download file installer dari <a href="https://code.visualstudio.com/download" class="external" target="_blank">Visual Studio Code</a>. Klik download pada halaman web Visual Studio Code sesuai dengan sistem operasi yang digunakan.</li>
-</ol>
-<div class="quarto-figure quarto-figure-center" style="text-align:center;">
-<figure class="figure">
-<p><img src="assets/tools/vscode/webvscode.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>Laman VSCode</figcaption>
-</figure>
-</div>
-<ol start="2" type="1">
-<li><p>Setelah selesai download, klik dua kali pada file installer.</p></li>
-<li><p>Jika muncul peringatan Run as Administrator, klik Yes.</p></li>
-<li><p>Kemudian akan tampil window Installer Microsoft Visual Studio Code. Untuk menyetujui <em>License Agreement</em>, pilih “I accept the agreement” lalu next.</p></li>
-</ol>
-<div class="quarto-figure quarto-figure-center" style="text-align:center;">
-<figure class="figure">
-<p><img src="assets/tools/vscode/vscodeagreement.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>License Agreement VS Code</figcaption>
-</figure>
-</div>
-<ol start="5" type="1">
-<li>Lalu pilih lokasi instalasinya. Jika ingin menggunakan lokasi default dapat langsung klik next.</li>
-</ol>
-<div class="quarto-figure quarto-figure-center" style="text-align:center;">
-<figure class="figure">
-<p><img src="assets/tools/vscode/dirvscode.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>Lokasi instalasi VS Code</figcaption>
-</figure>
-</div>
-<ol start="6" type="1">
-<li><p>Memilih lokasi shortcuts program. Jika ingin menggunakan default dapat langsung klik next.</p></li>
-<li><p>Pada bagian <strong>Select Additional Tasks</strong>, terdapat beberapa tasks yang bisa diinstall atau tidak. Untuk memudahkan ketika membuka file melalui berkas atau explorer dapat dipilih semua dan klik next.</p></li>
-<li><p>Klik install dan jalankan Visual Studio Code</p></li>
-</ol>
-<div class="quarto-figure quarto-figure-center" style="text-align:center;">
-<figure class="figure">
-<p><img src="assets/tools/vscode/vscode.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>vscode</figcaption>
-</figure>
-</div>
-<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Intalasi Visual Studio Code">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Intalasi Visual Studio Code
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/fPG5FeLBJbA" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</div>
-</div>
-</section>
-<section id="web-browser" class="level2">
-<h2 class="anchored" data-anchor-id="web-browser">Web Browser</h2>
-<p>Web browser adalah perangkat lunak yang awalnya dirancang untuk menampilkan dokumen web/HTML. Namun, pada saat ini, web browser harus memiliki kemampuan untuk menginterpretasikan dan menjalankan JavaScript atau VBScript, menjalankan Java Applet, memahami dokumen XML, dan menjalankan dokumen khusus dengan menggunakan fasilitas plugin seperti file .swf Macromedia Flash, dan lain sebagainya. <br></p>
-<p>Banyak web browser yang dapat digunakan, dan paling umum digunakan adalah Google Chrome dan Mozilla Firefox atau dapat menggunakan web browser yang tersedia pada laptop atau pc yang digunakan seperti safari atau microsoft edge. <br></p>
-<div>
-
-</div>
-<div class="quarto-layout-panel" style="text-align:center;" data-layout="[[43,-4,43]]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 47.8%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="assets/tools/chrome.png" class="img-fluid figure-img"></p>
-<figcaption>Chrome</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 4.4%;justify-content: flex-start;">
-<p>&nbsp;</p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 47.8%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="assets/tools/firefox.png" class="img-fluid figure-img"></p>
-<figcaption>Mozilla Firefox</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p><br></p>
-</section>
-<section id="web-server" class="level2">
-<h2 class="anchored" data-anchor-id="web-server">Web Server</h2>
-<p>Web Server adalah server HTTP yang bertugas menyediakan dokumen yang diminta oleh web browser. Saat ini, web server telah berkembang menjadi lebih kompleks karena harus melayani banyak fungsi dan bahkan menjadi pusat layanan-layanan lain. <br></p>
-<p>Web server juga menjadi komponen yang sangat penting dalam application server. Sebagai server HTTP, web server harus dapat menangani permintaan dokumen yang diberikan oleh web browser dan juga harus bisa dikonfigurasi untuk berinteraksi dengan program-program seperti JSP, ASP, PHP, melalui CGI, dan sebagainya. Contoh-contoh web server yang populer antara lain Apache dan IIS (Internet Information Service). <br></p>
-<p><strong>XAMPP</strong> <br></p>
-<p>XAMPP adalah sebuah web server open source yang dapat berjalan diberbagai sistem operasi seperti Windows, Linux, dan MacOS. <br></p>
-<p>XAMPP menyediakan semua komponen yang diperlukan untuk mengelola sebuah website, termasuk Apache, MySQL/MariaDB, PHP, dan Perl. XAMPP dapat digunakan untuk membuat web server lokal di komputer. <br></p>
-<p>Untuk menginstall XAMPP ikuti langkah-langkah berikut: <br></p>
+<li><strong>Susunan Awal:</strong>
+<ul>
+<li>Plaintext/Pesan : “HELLO”</li>
+<li>Key/Kunci : “KEY”</li>
+<li>Ciphertext/Hasil Enkripsi : ?</li>
+</ul></li>
+<li><strong>Enkripsi Caesar Cipher:</strong>
+<ul>
+<li>Contoh Proses Enkripsi <br> Prosesnya adalah sebagai berikut dengan: <br></li>
+</ul>
 <ol type="1">
-<li>Unduh file installer dari website <a href="https://www.apachefriends.org/download.html" class="external" target="_blank">XAMPP</a>. Unduh sesuai dengan sistem operasi atau komputer yang digunakan. <br></li>
+<li>H (teks)(8) + K (kunci)(11) = S(19) <br></li>
+<li>E (teks)(5) + E (kunci)(5) = J(10) <br></li>
+<li>L (teks)(12) + Y (kunci)(25) = K(37-26)=11 <br></li>
+<li>L (teks)(12) + K (kunci)(11)= W(23) <br></li>
+<li>O (teks)(15) + E (kunci)(5) = T(20) <br></li>
+</ol></li>
+<li><strong>Susunan Setelah Enkripsi:</strong> <br> Teks asli : H E L L O <br> Kunci : K E Y K E <br> Hasil Enkripsi : S J K W T <br> Setiap huruf dalam teks asli digeser sesuai dengan huruf dalam kunci untuk menghasilkan teks terenkripsi. <br> Sehingga hasil enkripsi dari “HELLO” dengan kunci “KEY” adalah “SJKWT”.</li>
 </ol>
-<div class="quarto-figure quarto-figure-center" style="text-align:center;">
-<figure class="figure">
-<p><img src="assets/tools/xampp/webxampp.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>Web XAMPP</figcaption>
-</figure>
-</div>
-<ol start="2" type="1">
-<li>Lakukan instalasi XAMPP sesuai panduan (wizard) yang ditampilkan dan pilih Yes untuk melanjutkan instalasi. Bila ada pesan error biarkan saja. <br></li>
-</ol>
-<div class="quarto-figure quarto-figure-center" style="text-align:center;">
-<figure class="figure">
-<p><img src="assets/tools/xampp/pesan_error.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>Pesan error</figcaption>
-</figure>
-</div>
-<ol start="3" type="1">
-<li><p>Pilih komponen yang Anda butuhkan dalam instalasi tersebut. Sebagai contoh, centang MySQL dan phpMyAdmin.</p></li>
-<li><p>Tentukan direktori instalasi yang tepat, misalnya C:\xampp.</p></li>
-<li><p>Lanjutkan tahapan dan klik install.</p></li>
-</ol>
-<p><br> Untuk melihat konfigurasi php dapat membuka config pada baris apache lalu membuka php.ini <br></p>
-<div class="quarto-figure quarto-figure-center" style="text-align:center;">
-<figure class="figure">
-<p><img src="assets/tools/php-config.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>Apache Config</figcaption>
-</figure>
-</div>
-<p>Cek versi php dan ekstensi lain dengan cara membuat file “info.php” yang isinya <code>&lt;?php phpinfo(); ?&gt;</code>, letakkan pada <a href="C:\xampp\htdocs" class="external" target="_blank"><code>C:\xampp\htdocs</code></a>. Lalu buka <a href="http://localhost/info.php" class="external" target="_blank"><code>localhost/info.php</code></a> pada browser</p>
-<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Instalasi Xampp">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Instalasi Xampp
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/hNotk93jtDQ" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</div>
-</div>
-<p><br></p>
 </section>
-<section id="bootstrap" class="level2">
-<h2 class="anchored" data-anchor-id="bootstrap">Bootstrap</h2>
-<p>Bootstrap adalah sebuah kerangka kerja (framework) front-end yang populer untuk pengembangan desain web responsif (responsive web design). Dikembangkan oleh tim Twitter, Bootstrap menyediakan serangkaian komponen dan gaya CSS yang dapat digunakan untuk membangun tampilan web yang konsisten, menarik, dan responsif secara cepat. Sampai dengan modul ini dibuat, Bootstrap telah mengalami pembaruan Bootstrap versi 5.</p>
-<p><br></p>
-<div class="quarto-figure quarto-figure-center" style="text-align:center;">
-<figure class="figure">
-<p><img src="assets/tools/bootstrap/bootstrap1.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>Bootstrap</figcaption>
-</figure>
-</div>
-<p><br></p>
-<p><strong>Cara instalasi Bootstrap</strong> <br></p>
-<ol type="1">
-<li><p>Buka halaman resmi Bootstrap di <a href="https://getbootstrap.com" class="external" target="_blank">https://getbootstrap.com</a>.</p></li>
-<li><p>Di halaman utama, Anda akan melihat tombol “Download” di bagian bawah. Klik tombol tersebut untuk mengunduh file Bootstrap. <br></p></li>
-</ol>
-<div>
+<section id="contoh-soal" class="level1">
+<h1>Contoh Soal</h1>
+<p>Berikut ini adalah contoh input pesan “udinus24” yang akan dienkripsi menggunakan metode vigenere cipher kolom dengan kunci “key” Maka proses enkripsi nya adalah sebagai berikut:</p>
+<section id="implementasi-pada-python" class="level2">
+<h2 class="anchored" data-anchor-id="implementasi-pada-python">Implementasi Pada Python</h2>
+<p>LANGKAH 1 : <br> Deklarasi kamus (dictionary) abjad -&gt; Kamus ini memetakan setiap huruf alfabet ke sebuah indeks numerik.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>abjad <span class="op">=</span> {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'A'</span>: <span class="dv">1</span>, <span class="st">'B'</span>: <span class="dv">2</span>, <span class="st">'C'</span>: <span class="dv">3</span>, <span class="st">'D'</span>: <span class="dv">4</span>, <span class="st">'E'</span>: <span class="dv">5</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'F'</span>: <span class="dv">6</span>, <span class="st">'G'</span>: <span class="dv">7</span>, <span class="st">'H'</span>: <span class="dv">8</span>, <span class="st">'I'</span>: <span class="dv">9</span>, <span class="st">'J'</span>: <span class="dv">10</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'K'</span>: <span class="dv">11</span>, <span class="st">'L'</span>: <span class="dv">12</span>, <span class="st">'M'</span>: <span class="dv">13</span>, <span class="st">'N'</span>: <span class="dv">14</span>, <span class="st">'O'</span>: <span class="dv">15</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'P'</span>: <span class="dv">16</span>, <span class="st">'Q'</span>: <span class="dv">17</span>, <span class="st">'R'</span>: <span class="dv">18</span>, <span class="st">'S'</span>: <span class="dv">19</span>, <span class="st">'T'</span>: <span class="dv">20</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'U'</span>: <span class="dv">21</span>, <span class="st">'V'</span>: <span class="dv">22</span>, <span class="st">'W'</span>: <span class="dv">23</span>, <span class="st">'X'</span>: <span class="dv">24</span>, <span class="st">'Y'</span>: <span class="dv">25</span>, <span class="st">'Z'</span>: <span class="dv">26</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>LANGKAH 2 : <br> Masukkan Plaintext dan Kunci</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Input teks asli dan kunci</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>teks <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Masukkan Plaintext : "</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>kunci <span class="op">=</span> <span class="st">"key"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>teks <span class="op">=</span> teks.upper()</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>kunci <span class="op">=</span> kunci.upper()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Masukkan Plaintext : udinus24</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="proses-enkripsi" class="level3">
+<h3 class="anchored" data-anchor-id="proses-enkripsi">Proses Enkripsi</h3>
+<p>LANGKAH 3 : <br> Melakukan Enkripsi</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Inisialisasi variabel hasil</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>pesan_terenkripsi <span class="op">=</span> <span class="st">''</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>panjang_kunci <span class="op">=</span> <span class="bu">len</span>(kunci)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>indeks_kunci <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Iterasi melalui setiap karakter di teks asli</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> huruf <span class="kw">in</span> teks:</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Periksa apakah karakter adalah huruf alfabet</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> huruf <span class="kw">in</span> abjad:</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Temukan indeks dari teks asli dan kunci</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>        indeks_teks <span class="op">=</span> abjad[huruf]</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        huruf_kunci <span class="op">=</span> kunci[indeks_kunci <span class="op">%</span> panjang_kunci]</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>        indeks_huruf_kunci <span class="op">=</span> abjad[huruf_kunci]</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Hitung indeks hasil menggunakan rumus Vigenere cipher</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>        indeks_hasil <span class="op">=</span> (indeks_teks <span class="op">+</span> indeks_huruf_kunci <span class="op">-</span> <span class="dv">1</span>) <span class="op">%</span> <span class="dv">26</span> <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Temukan karakter hasil berdasarkan indeks</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> k, v <span class="kw">in</span> abjad.items():</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> v <span class="op">==</span> indeks_hasil:</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>                pesan_terenkripsi <span class="op">+=</span> k</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>                <span class="cf">break</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Pindah ke karakter berikutnya dalam kunci</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>        indeks_kunci <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Jika karakter bukan alfabet, tambahkan tanpa perubahan</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>        pesan_terenkripsi <span class="op">+=</span> huruf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>CETAK HASIL ENKRIPSI : <br></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>teks_per_huruf <span class="op">=</span> <span class="st">', '</span>.join(<span class="ss">f"'</span><span class="sc">{</span>char<span class="sc">}</span><span class="ss">'"</span> <span class="cf">for</span> char <span class="kw">in</span> teks)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Menyusun kunci berulang sesuai panjang teks asli</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>kunci_berulang <span class="op">=</span> (kunci <span class="op">*</span> (<span class="bu">len</span>(teks) <span class="op">//</span> panjang_kunci)) <span class="op">+</span> kunci[:<span class="bu">len</span>(teks) <span class="op">%</span> panjang_kunci]</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>kunci_per_huruf <span class="op">=</span> <span class="st">', '</span>.join(<span class="ss">f"'</span><span class="sc">{</span>char<span class="sc">}</span><span class="ss">'"</span> <span class="cf">for</span> char <span class="kw">in</span> kunci_berulang)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># output</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>hasil_encrypt <span class="op">=</span> <span class="st">', '</span>.join(<span class="ss">f"'</span><span class="sc">{</span>char<span class="sc">}</span><span class="ss">'"</span> <span class="cf">for</span> char <span class="kw">in</span> pesan_terenkripsi)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Plaintext     : </span><span class="sc">{</span>teks_per_huruf<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">""</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Kunci         : </span><span class="sc">{</span>kunci_per_huruf<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">""</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Hasil Encrypt : </span><span class="sc">{</span>hasil_encrypt<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>Plaintext     : <span class="st">'U'</span>, <span class="st">'D'</span>, <span class="st">'I'</span>, <span class="st">'N'</span>, <span class="st">'U'</span>, <span class="st">'S'</span>, <span class="st">'2'</span>, <span class="st">'4'</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>Kunci         : <span class="st">'K'</span>, <span class="st">'E'</span>, <span class="st">'Y'</span>, <span class="st">'K'</span>, <span class="st">'E'</span>, <span class="st">'Y'</span>, <span class="st">'K'</span>, <span class="st">'E'</span> </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>Hasil Encrypt : <span class="st">'F'</span>, <span class="st">'I'</span>, <span class="st">'H'</span>, <span class="st">'Y'</span>, <span class="st">'Z'</span>, <span class="st">'R'</span>, <span class="st">'2'</span>, <span class="st">'4'</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="proses-dekripsi" class="level3">
+<h3 class="anchored" data-anchor-id="proses-dekripsi">Proses Dekripsi</h3>
+<p>LANGKAH 4 : <br> Melakukan Dekripsi</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Inisialisasi variabel hasil</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>pesan_terdekripsi <span class="op">=</span> <span class="st">''</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>panjang_kunci <span class="op">=</span> <span class="bu">len</span>(kunci)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>indeks_kunci <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Iterasi melalui setiap karakter di teks asli</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> huruf <span class="kw">in</span> pesan_terenkripsi:</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Periksa apakah karakter adalah huruf alfabet</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> huruf <span class="kw">in</span> abjad:</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Temukan indeks dari teks asli dan kunci</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>        indeks_teks <span class="op">=</span> abjad[huruf]</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>        huruf_kunci <span class="op">=</span> kunci[indeks_kunci <span class="op">%</span> panjang_kunci]</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>        indeks_huruf_kunci <span class="op">=</span> abjad[huruf_kunci]</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Hitung indeks hasil menggunakan rumus Vigenere cipher</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>        indeks_hasil <span class="op">=</span> (indeks_teks <span class="op">-</span> indeks_huruf_kunci <span class="op">-</span> <span class="dv">1</span>) <span class="op">%</span> <span class="dv">26</span> <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Temukan karakter hasil berdasarkan indeks</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> k, v <span class="kw">in</span> abjad.items():</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> v <span class="op">==</span> indeks_hasil:</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>                pesan_terdekripsi <span class="op">+=</span> k</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>                <span class="cf">break</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Pindah ke karakter berikutnya dalam kunci</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>        indeks_kunci <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Jika karakter bukan alfabet, tambahkan tanpa perubahan</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>        pesan_terdekripsi <span class="op">+=</span> huruf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>CETAK HASIL DEKRIPSI : <br></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>hasil_decrypt <span class="op">=</span> <span class="st">', '</span>.join(<span class="ss">f"'</span><span class="sc">{</span>char<span class="sc">}</span><span class="ss">'"</span> <span class="cf">for</span> char <span class="kw">in</span> pesan_terdekripsi)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Ciphertext    : </span><span class="sc">{</span>hasil_encrypt<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">""</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Kunci         : </span><span class="sc">{</span>kunci_per_huruf<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">""</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Hasil Decrypt : </span><span class="sc">{</span>hasil_decrypt<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>Ciphertext    : <span class="st">'F'</span>, <span class="st">'I'</span>, <span class="st">'H'</span>, <span class="st">'Y'</span>, <span class="st">'Z'</span>, <span class="st">'R'</span>, <span class="st">'2'</span>, <span class="st">'4'</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>Kunci         : <span class="st">'K'</span>, <span class="st">'E'</span>, <span class="st">'Y'</span>, <span class="st">'K'</span>, <span class="st">'E'</span>, <span class="st">'Y'</span>, <span class="st">'K'</span>, <span class="st">'E'</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>Hasil Decrypt : <span class="st">'U'</span>, <span class="st">'D'</span>, <span class="st">'I'</span>, <span class="st">'N'</span>, <span class="st">'U'</span>, <span class="st">'S'</span>, <span class="st">'2'</span>, <span class="st">'4'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
-</div>
-<div class="quarto-layout-panel" data-layout="[[43,-4,43]]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 47.8%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="assets/tools/bootstrap/bootstrap2.png" class="img-fluid figure-img"></p>
-<figcaption>Tampilan Halaman Bootstrap</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 4.4%;justify-content: flex-start;">
-<p>&nbsp;</p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 47.8%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="assets/tools/bootstrap/bootstrap3.png" class="img-fluid figure-img"></p>
-<figcaption>Download Paket Bootstrap</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<ol start="3" type="1">
-<li>Setelah selesai mengunduh, ekstrak file zip Bootstrap yang telah diunduh ke direktori proyek web Anda. <br></li>
-</ol>
-<div class="quarto-figure quarto-figure-center" style="text-align:center;">
-<figure class="figure">
-<p><img src="assets/tools/bootstrap/bootstrap4.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>Ekstrak File</figcaption>
-</figure>
-</div>
-<ol start="4" type="1">
-<li>Di dalam direktori proyek, buatlah folder baru (misalnya “css” dan “js”) untuk menyimpan file CSS dan JavaScript Bootstrap. <br></li>
-</ol>
-<div class="quarto-figure quarto-figure-center" style="text-align:center;">
-<figure class="figure">
-<p><img src="assets/tools/bootstrap/bootstrap5.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>Ekstrak File</figcaption>
-</figure>
-</div>
-<ol start="5" type="1">
-<li><p>Salin file bootstrap.min.css yang ada di dalam direktori “dist/css” dalam file Bootstrap yang telah diekstrak, ke dalam folder “css” di dalam direktori proyek Anda.</p></li>
-<li><p>Salin file bootstrap.min.js yang ada di dalam direktori “dist/js” dalam file Bootstrap yang telah diekstrak, ke dalam folder “js” di dalam direktori proyek Anda.</p></li>
-<li><p>Setelah itu, Anda dapat menggunakan Bootstrap dengan menautkan file CSS dan JavaScript ke dalam halaman HTML Anda. Dalam elemen <code>&lt;head&gt;</code> dari file HTML, tambahkan tag link berikut untuk menautkan file CSS Bootstrap: <br></p></li>
-</ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"stylesheet"</span><span class="ot"> href</span><span class="op">=</span><span class="st">"css/bootstrap.min.css"</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="8" type="1">
-<li>Juga di dalam elemen <code>&lt;body&gt;</code> atau sebelum penutup tag <code>&lt;/body&gt;</code> dalam file HTML, tambahkan tag script berikut untuk menautkan file JavaScript Bootstrap: <br></li>
-</ol>
-<div class="sourceCode" id="cb2"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> src</span><span class="op">=</span><span class="st">"js/bootstrap.min.js"</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="9" type="1">
-<li>Sekarang, Anda dapat menggunakan kelas-kelas, komponen, dan gaya Bootstrap dalam halaman web Anda.Sekarang, Anda dapat menggunakan kelas-kelas, komponen, dan gaya Bootstrap dalam halaman web Anda.</li>
-</ol>
-<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Instalasi Bootstrap">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Instalasi Bootstrap
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><em>Berikut adalah penjelasan mengenai instalasi bootstrap!</em></p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/p_sqxUZ6b0Q" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</div>
-</div>
 
-
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

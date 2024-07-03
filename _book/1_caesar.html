@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1. Caesar – Kriptografi</title>
+<title>1. Caesar Cipher – Kriptografi</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1_caesar.html">Kriptografi Klasik</a></li><li class="breadcrumb-item"><a href="./1_caesar.html">1. Caesar</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1_caesar.html">Kriptografi Klasik</a></li><li class="breadcrumb-item"><a href="./1_caesar.html">1. Caesar Cipher</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -163,7 +163,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./1_caesar.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">1. Caesar</span></a>
+ <span class="menu-text">1. Caesar Cipher</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -216,7 +216,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./1_caesar.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Caesar</span></a>
+ <span class="menu-text">1. Caesar Cipher</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -269,7 +269,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./1_caesar.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Caesar</span></a>
+ <span class="menu-text">1. Caesar Cipher</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -343,31 +343,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#apa-itu-pemrograman-web" id="toc-apa-itu-pemrograman-web" class="nav-link active" data-scroll-target="#apa-itu-pemrograman-web">Apa itu Pemrograman Web?</a></li>
-  <li><a href="#lingkungan-pengembangan-web" id="toc-lingkungan-pengembangan-web" class="nav-link" data-scroll-target="#lingkungan-pengembangan-web">Lingkungan Pengembangan Web</a>
+  <li><a href="#analogi-caesar-cipher" id="toc-analogi-caesar-cipher" class="nav-link active" data-scroll-target="#analogi-caesar-cipher">Analogi Caesar Cipher</a></li>
+  <li><a href="#contoh-soal" id="toc-contoh-soal" class="nav-link" data-scroll-target="#contoh-soal">Contoh Soal</a>
   <ul class="collapse">
-  <li><a href="#editor-kode" id="toc-editor-kode" class="nav-link" data-scroll-target="#editor-kode">Editor kode</a></li>
-  <li><a href="#browser" id="toc-browser" class="nav-link" data-scroll-target="#browser">Browser</a></li>
-  <li><a href="#server-lokal" id="toc-server-lokal" class="nav-link" data-scroll-target="#server-lokal">Server lokal</a></li>
-  <li><a href="#url-uniform-resource-locator" id="toc-url-uniform-resource-locator" class="nav-link" data-scroll-target="#url-uniform-resource-locator">URL (Uniform Resource Locator)</a></li>
-  <li><a href="#http-hypertext-transfer-protocol" id="toc-http-hypertext-transfer-protocol" class="nav-link" data-scroll-target="#http-hypertext-transfer-protocol">HTTP (Hypertext Transfer Protocol)</a></li>
-  <li><a href="#markup-languages" id="toc-markup-languages" class="nav-link" data-scroll-target="#markup-languages">Markup Languages</a></li>
-  <li><a href="#arsitektur-klien-dan-server" id="toc-arsitektur-klien-dan-server" class="nav-link" data-scroll-target="#arsitektur-klien-dan-server">Arsitektur Klien dan Server</a></li>
-  <li><a href="#database" id="toc-database" class="nav-link" data-scroll-target="#database">Database</a></li>
-  <li><a href="#framework" id="toc-framework" class="nav-link" data-scroll-target="#framework">Framework</a></li>
-  <li><a href="#web-servers" id="toc-web-servers" class="nav-link" data-scroll-target="#web-servers">Web Servers</a></li>
-  <li><a href="#version-control" id="toc-version-control" class="nav-link" data-scroll-target="#version-control">Version Control</a></li>
-  <li><a href="#resposive-web-design" id="toc-resposive-web-design" class="nav-link" data-scroll-target="#resposive-web-design">Resposive Web Design</a></li>
-  <li><a href="#testing-and-debugging" id="toc-testing-and-debugging" class="nav-link" data-scroll-target="#testing-and-debugging">Testing and Debugging</a></li>
-  <li><a href="#api-application-programming-interface" id="toc-api-application-programming-interface" class="nav-link" data-scroll-target="#api-application-programming-interface">API (Application Programming Interface)</a></li>
+  <li><a href="#implementasi-pada-python" id="toc-implementasi-pada-python" class="nav-link" data-scroll-target="#implementasi-pada-python">Implementasi Pada Python</a>
+  <ul class="collapse">
+  <li><a href="#proses-enkripsi" id="toc-proses-enkripsi" class="nav-link" data-scroll-target="#proses-enkripsi">Proses Enkripsi</a></li>
+  <li><a href="#proses-dekripsi" id="toc-proses-dekripsi" class="nav-link" data-scroll-target="#proses-dekripsi">Proses Dekripsi</a></li>
   </ul></li>
-  <li><a href="#php-hypertext-preprocessor" id="toc-php-hypertext-preprocessor" class="nav-link" data-scroll-target="#php-hypertext-preprocessor">PHP (Hypertext Preprocessor)</a>
-  <ul class="collapse">
-  <li><a href="#memulai-php" id="toc-memulai-php" class="nav-link" data-scroll-target="#memulai-php">Memulai PHP</a></li>
-  <li><a href="#php---kondisional" id="toc-php---kondisional" class="nav-link" data-scroll-target="#php---kondisional">PHP - Kondisional</a></li>
-  <li><a href="#php-isset-dan-empty" id="toc-php-isset-dan-empty" class="nav-link" data-scroll-target="#php-isset-dan-empty">PHP – isset dan empty</a></li>
-  <li><a href="#php---looping" id="toc-php---looping" class="nav-link" data-scroll-target="#php---looping">PHP - Looping</a></li>
-  <li><a href="#include---require" id="toc-include---require" class="nav-link" data-scroll-target="#include---require">Include - Require</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -375,9 +358,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1_caesar.html">Kriptografi Klasik</a></li><li class="breadcrumb-item"><a href="./1_caesar.html">1. Caesar</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1_caesar.html">Kriptografi Klasik</a></li><li class="breadcrumb-item"><a href="./1_caesar.html">1. Caesar Cipher</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">1. Caesar</h1>
+<h1 class="title">1. Caesar Cipher</h1>
   <div class="quarto-categories">
     <div class="quarto-category">teori</div>
   </div>
@@ -397,327 +380,87 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="apa-itu-pemrograman-web" class="level2">
-<h2 class="anchored" data-anchor-id="apa-itu-pemrograman-web">Apa itu Pemrograman Web?</h2>
-<p>Pemrograman web adalah proses menciptakan dan mengembangkan aplikasi web menggunakan bahasa pemrograman, teknologi, dan standar web.</p>
-<p>Aplikasi web dapat diakses melalui browser web dan memungkinkan pengguna untuk berinteraksi dengan konten dan layanan yang disediakan.</p>
-<p><br></p>
-</section>
-<section id="lingkungan-pengembangan-web" class="level2">
-<h2 class="anchored" data-anchor-id="lingkungan-pengembangan-web">Lingkungan Pengembangan Web</h2>
-<section id="editor-kode" class="level3">
-<h3 class="anchored" data-anchor-id="editor-kode">Editor kode</h3>
-<div class="quarto-figure quarto-figure-center" style="text-align:center;">
-<figure class="figure">
-<p><img src="assets/tools/vscode/vscode.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption>Visual Studio Code</figcaption>
-</figure>
-</div>
-<p>Gunakan editor teks atau lingkungan pengembangan terintegrasi (IDE) seperti Visual Studio Code, Sublime Text, atau Atom untuk menulis kode web. <br></p>
-</section>
-<section id="browser" class="level3">
-<h3 class="anchored" data-anchor-id="browser">Browser</h3>
-<hr>
-<p>Berbagai browser seperti Chrome, Firefox, atau Safari digunakan untuk menguji dan melihat hasil dari halaman web yang dikembangkan. <br></p>
-</section>
-<section id="server-lokal" class="level3">
-<h3 class="anchored" data-anchor-id="server-lokal">Server lokal</h3>
-<p>Anda dapat menginstal server web lokal seperti Apache, Nginx, atau XAMPP untuk menguji halaman web secara lokal sebelum diunggah ke server publik.</p>
-</section>
-<section id="url-uniform-resource-locator" class="level3">
-<h3 class="anchored" data-anchor-id="url-uniform-resource-locator">URL (Uniform Resource Locator)</h3>
-<p>Alamat yang digunakan untuk mengakses halaman web. URL terdiri dari protokol (misalnya http:// atau https://), nama domain, dan path halaman.</p>
-<hr>
-</section>
-<section id="http-hypertext-transfer-protocol" class="level3">
-<h3 class="anchored" data-anchor-id="http-hypertext-transfer-protocol">HTTP (Hypertext Transfer Protocol)</h3>
-<p>Protokol komunikasi yang digunakan untuk mentransfer data antara klien dan server. Permintaan klien dan respons server terjadi melalui metode HTTP seperti GET, POST, PUT, dan DELETE.</p>
-<hr>
-</section>
-<section id="markup-languages" class="level3">
-<h3 class="anchored" data-anchor-id="markup-languages">Markup Languages</h3>
-<p>Markup languages adalah bahasa yang digunakan untuk membuat struktur dan tampilan konten dalam halaman web.</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/hMDJyb7VkYw" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-<p>HTML (HyperText Markup Language) adalah markup language yang paling umum digunakan untuk membangun struktur halaman web. XML (eXtensible Markup Language) digunakan untuk menyimpan dan mengirim data secara terstruktur.</p>
-<p><strong>Struktur Dasar HTML</strong></p>
-<p>Merupakan bahasa markup paling popular, disusul eXtensible Markup Language (XML). XML adalah bahasa yang digunakan untuk membuat bahasa markup lain yaitu Wireless Markup Language (WML).Bahasa markup bukan bahasa pemrograman. Oleh karena itu, penyebutan bahasa pemrograman HTML adalah kurang tepat.</p>
-<p><strong>Format Dasar HTML</strong></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode php code-with-copy"><code class="sourceCode php"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>html<span class="op">&gt;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>head<span class="op">&gt;</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>title<span class="op">&gt;</span>Untitled Document<span class="op">&lt;/</span>title<span class="op">&gt;</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>meta http<span class="op">-</span>equiv<span class="op">=</span><span class="st">"Content-Type"</span> content<span class="op">=</span><span class="st">"text/html;</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="st">charset=iso-8859-1"</span><span class="op">&gt;</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>head<span class="op">&gt;</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>body<span class="op">&gt;</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>{ Tempat untuk coding }</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>body<span class="op">&gt;</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>html<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>&lt; HTML &gt;</strong></p>
-<p>Dokumen HTML harus diawali dengan tag &lt; html &gt; dan diakhiri dengan &lt; /html &gt;memberi tahu kepada browser bahwa yang berada dalam kedua tag tersebut adalah dokumen HTML.</p>
-<p><strong>&lt; HEAD &gt;</strong> Bagian header dalam dokumen HTML. Biasanya berisi judul halaman web. Bentuk secara umum:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode php code-with-copy"><code class="sourceCode php"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>head<span class="op">&gt;</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>title<span class="op">&gt;</span>Judul ini akan ditampilkan pada bagian atas</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>browser</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>title<span class="op">&gt;</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>head<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>&lt; BODY &gt;</strong></p>
-<p>Bagian isi dari dokumen HTML yang dapat disisipkan teks, gambar, video maupun link. Sesuatu yang ditulis di dalam bodyakan ditampilkan pada halaman web.</p>
-<p><strong>HTML Tags</strong></p>
-<p>Instruksi/perintah dalam HTML disebut tag. Tag pada HTML tidak bersifat case sensitive.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">element</span><span class="ot"> atribut</span><span class="op">=</span><span class="st">value</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Keterangan:</p>
+<p>Caesar Cipher adalah metode enkripsi sederhana yang menggeser setiap huruf dalam teks sejumlah posisi tertentu dalam alfabet. Misalnya, dengan pergeseran tiga posisi ke kanan, huruf A akan menjadi D, huruf B menjadi E, dan seterusnya. Ini adalah teknik kriptografi klasik yang dinamai dari Julius Caesar, yang dikatakan menggunakannya untuk mengamankan pesan-pesan militer.</p>
+<section id="analogi-caesar-cipher" class="level1">
+<h1>Analogi Caesar Cipher</h1>
+<p>Misalkan kita memiliki teks “HELLO” dan kita ingin mengenkripsinya dengan kunci pergeseran 3 posisi ke kanan.</p>
+<ol type="1">
+<li><strong>Susunan Awal:</strong>
 <ul>
-<li>element = nama tag</li>
-<li>atribut = atribut</li>
-<li>value = nilai dari atribut Contoh:</li>
-</ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">font</span><span class="ot"> color</span><span class="op">=</span><span class="st">red</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<li>Plaintext/Pesan : HELLO</li>
+<li>Ciphertext : ?</li>
+</ul></li>
+<li><strong>Enkripsi Caesar Cipher:</strong>
 <ul>
-<li>FONT merupakan element,</li>
-<li>COLOR merupakan atribut,</li>
-<li>RED adalah value</li>
+<li>Contoh Proses Enkripsi dengan menggeser setiap huruf ke kanan sebanyak 3 posisi. <br> H -&gt; K <br> E -&gt; H <br> L -&gt; O <br> L -&gt; O <br> O -&gt; R</li>
+</ul></li>
+<li><strong>Susunan Setelah Enkripsi:</strong> Jadi, hasil enkripsi dari “HELLO” adalah “KHOOR”. <br> Ciphertext : “KHOOR”</li>
+</ol>
+</section>
+<section id="contoh-soal" class="level1">
+<h1>Contoh Soal</h1>
+<p>Berikut ini adalah contoh soal yang akan kita kerjakan “mahardhika@23#” yang akan dienkripsi menggunakan metode caesar cipher kolom dengan kunci 3 Maka proses enkripsi nya adalah sebagai berikut:</p>
+<section id="implementasi-pada-python" class="level2">
+<h2 class="anchored" data-anchor-id="implementasi-pada-python">Implementasi Pada Python</h2>
+<p>LANGKAH 1 : <br> Deklarasi kamus (dictionary) abjad_indeks -&gt; Kamus ini memetakan setiap huruf alfabet ke sebuah indeks numerik.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>abjad_indeks <span class="op">=</span> {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'a'</span>: <span class="dv">1</span>, <span class="st">'b'</span>: <span class="dv">2</span>, <span class="st">'c'</span>: <span class="dv">3</span>, <span class="st">'d'</span>: <span class="dv">4</span>, <span class="st">'e'</span>: <span class="dv">5</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'f'</span>: <span class="dv">6</span>, <span class="st">'g'</span>: <span class="dv">7</span>, <span class="st">'h'</span>: <span class="dv">8</span>, <span class="st">'i'</span>: <span class="dv">9</span>, <span class="st">'j'</span>: <span class="dv">10</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'k'</span>: <span class="dv">11</span>, <span class="st">'l'</span>: <span class="dv">12</span>, <span class="st">'m'</span>: <span class="dv">13</span>, <span class="st">'n'</span>: <span class="dv">14</span>, <span class="st">'o'</span>: <span class="dv">15</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'p'</span>: <span class="dv">16</span>, <span class="st">'q'</span>: <span class="dv">17</span>, <span class="st">'r'</span>: <span class="dv">18</span>, <span class="st">'s'</span>: <span class="dv">19</span>, <span class="st">'t'</span>: <span class="dv">20</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'u'</span>: <span class="dv">21</span>, <span class="st">'v'</span>: <span class="dv">22</span>, <span class="st">'w'</span>: <span class="dv">23</span>, <span class="st">'x'</span>: <span class="dv">24</span>, <span class="st">'y'</span>: <span class="dv">25</span>, <span class="st">'z'</span>: <span class="dv">26</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>LANGKAH 2 : <br> Deklarasi variabel <code>key</code> -&gt; Nilai key ditetapkan ke 3, yang berarti setiap huruf dalam pesan akan <strong>digeser sebanyak 3 posisi dalam alfabet</strong> untuk enkripsi. Selanjutnya Input variabel <code>pesan</code> -&gt; Pesan yang akan dienkripsi.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Key untuk pergeseran</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>key <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Deklarasi variabel pesan: Pesan yang akan dienkripsi.</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>pesan <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Masukkan pesan     : "</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>cleanPesan <span class="op">=</span> pesan.replace(<span class="st">" "</span>, <span class="st">""</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Pesan Anda         :"</span>,cleanPesan)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Pesan Anda : udinus</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="proses-enkripsi" class="level3">
+<h3 class="anchored" data-anchor-id="proses-enkripsi">Proses Enkripsi</h3>
+<p>LANGKAH 3 : <br> Inisialisasi <code>pesan_terenkripsi</code>: String kosong untuk menyimpan hasil enkripsi.</p>
+<ul>
+<li>Iterasi melalui setiap huruf dalam pesan: Menggunakan loop for. Cek apakah <code>huruf</code> ada di <code>abjad_indeks</code>:</li>
+<li>Jika <strong>Ya</strong> Hitung indeks baru dengan formula <code>(abjad_indeks[huruf] + key) % 26</code>. Ini menggeser posisi huruf dalam alfabet.</li>
+<li>Cari huruf baru yang sesuai dengan indeks baru dari daftar kunci <code>abjad_indeks</code> dan tambahkan ke <code>pesan_terenkripsi</code>.</li>
+<li>Jika <strong>Tidak</strong> (misalnya angka atau simbol): Tambahkan huruf tersebut langsung ke<code>pesan_terenkripsi</code> tanpa perubahan.</li>
 </ul>
-<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Contoh HTML">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Contoh HTML
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb5"><pre class="sourceCode php code-with-copy"><code class="sourceCode php"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>html<span class="op">&gt;</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>head<span class="op">&gt;</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>title<span class="op">&gt;</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>Halaman Latihan <span class="dv">1</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>title<span class="op">&gt;</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>head<span class="op">&gt;</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>body<span class="op">&gt;</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>h1<span class="op">&gt;</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>Ini adalah latihan pemrograman web pertamaku<span class="op">.</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>h1<span class="op">&gt;</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>body<span class="op">&gt;</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>html<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<p>CSS (Cascading Style Sheets) digunakan untuk mengatur tampilan dan gaya elemen-elemen dalam halaman web.</p>
-<hr>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>pesan_terenkripsi <span class="op">=</span> <span class="st">''</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> huruf <span class="kw">in</span> cleanPesan:</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> huruf <span class="kw">in</span> abjad_indeks:</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        indeks <span class="op">=</span> (abjad_indeks[huruf] <span class="op">+</span> key) <span class="op">%</span> <span class="dv">26</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        pesan_terenkripsi <span class="op">+=</span> <span class="bu">list</span>(abjad_indeks.keys())[indeks <span class="op">-</span> <span class="dv">1</span>]</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        pesan_terenkripsi <span class="op">+=</span> huruf</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Pesan terenkripsi:"</span>, pesan_terenkripsi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Pesan terenkripsi: xglqxv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="arsitektur-klien-dan-server" class="level3">
-<h3 class="anchored" data-anchor-id="arsitektur-klien-dan-server">Arsitektur Klien dan Server</h3>
-<div class="quarto-figure quarto-figure-center" style="text-align:center;">
-<figure class="figure">
-<p><img src="assets/dasar/server-client.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>Arsitektur Klien dan Server</figcaption>
-</figure>
-</div>
-<p>Pada pemrograman web, arsitektur klien dan server digunakan. Klien (misalnya browser web) mengirimkan permintaan ke server, dan server merespons dengan mengirimkan halaman web yang diminta.</p>
-<p>Klien menginterpretasikan halaman web menggunakan HTML, CSS, dan JavaScript, sementara server mengurus pemrosesan data dan logika di balik halaman.</p>
-<hr>
-</section>
-<section id="database" class="level3">
-<h3 class="anchored" data-anchor-id="database">Database</h3>
-<div class="quarto-figure quarto-figure-center" style="text-align:center;">
-<figure class="figure">
-<p><img src="assets/dasar/db-mysql.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>Database MySQL</figcaption>
-</figure>
-</div>
-<p>DBMS atau Database Management System digunakan untuk menyimpan dan mengelola data dalam aplikasi web. Beberapa sistem database yang umum digunakan termasuk MySQL, PostgreSQL, MongoDB, dan Oracle. Pemahaman tentang database meliputi pembuatan tabel dan relasi antar tabel, manipulasi data dengan menggunakan bahasa query seperti SQL, dan pengoptimalan kinerja database</p>
-<hr>
-</section>
-<section id="framework" class="level3">
-<h3 class="anchored" data-anchor-id="framework">Framework</h3>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout-ncol="2" style="text-align:center;">
-<div class="quarto-layout-row quarto-layout-valign-bottom">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="assets/dasar/laravel.jpg" class="p-3 m-auto img-fluid figure-img"></p>
-<figcaption>Laravel</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="assets/dasar/Bootstrap.png" class="p-3 img-fluid figure-img"></p>
-<figcaption>Bootstrap</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>Framework adalah kerangka kerja perangkat lunak yang menyediakan struktur, komponen, dan alat bantu untuk membangun aplikasi web dengan lebih cepat dan efisien. Framework menyediakan aturan dan konvensi yang konsisten, menyederhanakan tugas umum, jika seperti routing, validasi data, interaksi dengan database, dan lainnya. Dalam pemrograman web khsusnya dengan menggunakan bahasa pemrograman php yang populer termasuk Laravel dan CodeIgniter. Dalam pemrograman web,</p>
-<hr>
-</section>
-<section id="web-servers" class="level3">
-<h3 class="anchored" data-anchor-id="web-servers">Web Servers</h3>
-<div class="quarto-figure quarto-figure-center" style="text-align:center;">
-<figure class="figure">
-<p><img src="assets/dasar/Apache-server.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>Apache Server</figcaption>
-</figure>
-</div>
-<p>Web server adalah perangkat lunak yang mengelola permintaan dari browser dan mengirimkan halaman web ke pengguna melalui protokol HTTP. Beberapa server web yang umum digunakan adalah Apache, Nginx, dan IIS (Internet Information Services). Pemahaman tentang konfigurasi server web, manajemen domain, dan penanganan permintaan HTTP penting dalam pengembangan web.</p>
-<hr>
-</section>
-<section id="version-control" class="level3">
-<h3 class="anchored" data-anchor-id="version-control">Version Control</h3>
-<p>Version control adalah metode untuk melacak perubahan kode sumber selama pengembangan aplikasi. Git adalah sistem version control yang populer yang memungkinkan pengembang untuk bekerja secara kolaboratif, membuat cabang (branch), menggabungkan perubahan (merge), dan melakukan pemulihan (revert) jika terjadi kesalahan. Version control membantu dalam manajemen kode, pengendalian versi, dan kolaborasi tim.</p>
-<hr>
-</section>
-<section id="resposive-web-design" class="level3">
-<h3 class="anchored" data-anchor-id="resposive-web-design">Resposive Web Design</h3>
-<p>Responsive web design adalah pendekatan desain web yang memastikan tampilan dan pengalaman pengguna yang optimal di berbagai perangkat dan ukuran layar. Ini melibatkan penggunaan teknik seperti media queries, flexible grids, dan CSS frameworks (seperti Bootstrap atau Foundation) untuk mengatur tata letak dan tampilan halaman web secara responsif.</p>
-<hr>
-</section>
-<section id="testing-and-debugging" class="level3">
-<h3 class="anchored" data-anchor-id="testing-and-debugging">Testing and Debugging</h3>
-<p>Testing dan debugging adalah proses penting dalam pengembangan web untuk memastikan aplikasi berfungsi dengan baik dan bebas dari kesalahan. Testing adalah proses verifikasi dan validasi untuk memastikan bahwa aplikasi web berfungsi sesuai dengan yang diharapkan dan memenuhi persyaratan bisnis yang telah ditetapkan. Tujuan dari testing adalah untuk menemukan bug atau kesalahan dalam aplikasi sebelum dirilis ke pengguna akhir. Debugging adalah proses untuk menemukan, mendiagnosis, dan memperbaiki bug atau kesalahan dalam kode aplikasi web.</p>
-<hr>
-</section>
-<section id="api-application-programming-interface" class="level3">
-<h3 class="anchored" data-anchor-id="api-application-programming-interface">API (Application Programming Interface)</h3>
-<p>API adalah antarmuka yang memungkinkan aplikasi web berkomunikasi dan berbagi data dengan aplikasi atau layanan lain. RESTful API adalah pendekatan populer untuk mengembangkan API yang menggunakan protokol HTTP dan standar seperti JSON atau XML untuk bertukar data.</p>
-<hr>
-<p><br></p>
-</section>
-</section>
-<section id="php-hypertext-preprocessor" class="level2">
-<h2 class="anchored" data-anchor-id="php-hypertext-preprocessor">PHP (Hypertext Preprocessor)</h2>
-<p>PHP adalah bahasa pemrograman server-side yang populer untuk pengembangan web. PHP digunakan untuk memproses permintaan dari klien, mengakses basis data, dan menghasilkan respons yang dikirimkan kembali ke klien.</p>
-<section id="memulai-php" class="level3">
-<h3 class="anchored" data-anchor-id="memulai-php">Memulai PHP</h3>
-<p>Setiap memulai kode php selalu diawali dengan <code>&lt;?php</code> dan ditutup dengan <code>?&gt;</code> <br></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode php code-with-copy"><code class="sourceCode php"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;?php</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="va">$kata</span> <span class="op">=</span> <span class="st">"Hello World!"</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">echo</span> <span class="st">"</span><span class="va">$kata</span><span class="st">"</span><span class="ot">;</span> <span class="co">// Output: Hello World!</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="kw">?&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Menggunakan echo untuk print</p>
-<p>Dalam variabel php menggunakan tanda $ ($variable) untuk inisialisasi variabel</p>
-</section>
-<section id="php---kondisional" class="level3">
-<h3 class="anchored" data-anchor-id="php---kondisional">PHP - Kondisional</h3>
-<p>Kondisional dalam bahasa pemrograman adalah proses yang berfungsi untuk menentukan blok instruksi akan dieksekusi atau tidak, tergantung pada kondisinya sendiri seperti nilainya sudah benar (True) atau belum (False). Ada beberapa jenis percabangan yaitu if-else, switch case dll.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode php code-with-copy"><code class="sourceCode php"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="va">$angka</span> <span class="op">=</span> <span class="op">-</span><span class="dv">5</span><span class="ot">;</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="va">$angka</span> <span class="op">&lt;</span> <span class="dv">0</span>){</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">echo</span> <span class="st">'Angka negatif'</span><span class="ot">;</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    echo<span class="st">'Angka positif '</span><span class="ot">;</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>}<span class="ot">;</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">//Output : Angka Negatif</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb8"><pre class="sourceCode php code-with-copy"><code class="sourceCode php"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="va">$input</span> <span class="op">=</span> <span class="dv">3</span><span class="ot">;</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">switch</span>(<span class="va">$input</span>){</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">case</span> <span class="st">"1"</span><span class="ot">:</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    echo<span class="st">"Inputan adalah satu"</span><span class="ot">;</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">break</span><span class="ot">;</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">case</span> <span class="st">"2"</span><span class="ot">:</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    echo<span class="st">"Inputan adalah dua"</span><span class="ot">;</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">break</span><span class="ot">;</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">case</span> <span class="st">"3"</span><span class="ot">:</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    echo<span class="st">"Inputan adalah tiga"</span><span class="ot">;</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">break</span><span class="ot">;</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">default</span><span class="ot">:</span></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    echo<span class="st">"Tidak ada input yang cocok dengan pilihan anda."</span><span class="ot">;</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="co">/* Output: Inputan adalah tiga</span></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co">    Jika nilai dari variable `$input` bukan sama dengan `case`,</span></span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="co">    maka akan menampilkan pesan “Tidak ada input yang cocok</span></span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="co">    */</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br></p>
-</section>
-<section id="php-isset-dan-empty" class="level3">
-<h3 class="anchored" data-anchor-id="php-isset-dan-empty">PHP – isset dan empty</h3>
-<p>Fungsi <strong>isset</strong> digunakan untuk memeriksa apakah suatu variabel telah diatur atau tidak. Sintaks fungsi ini sebagai berikut:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode php code-with-copy"><code class="sourceCode php"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="va">$nama</span> <span class="op">=</span> <span class="st">"Bengkel Koding"</span><span class="ot">;</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="kw">isset</span>(<span class="va">$nama</span>)){</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">print</span>(<span class="st">"Nama telah diatur"</span>)<span class="ot">;</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">print</span>(<span class="st">"Nama belum diatur"</span>)</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">// output : Nama telah diatur</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br></p>
-<p>Fungsi <strong>empty</strong> digunakan untuk memeriksa apakah suatu variabel kosong atau tidak. Sintaks fungsi ini sebagai berikut:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode php code-with-copy"><code class="sourceCode php"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="va">$nama</span> <span class="op">=</span> <span class="st">""</span><span class="ot">;</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="kw">empty</span>(<span class="va">$nama</span>)) {</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">print</span>(<span class="st">"nama kosong"</span>)<span class="ot">;</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">print</span>(<span class="st">"nama tidak kosong"</span>)<span class="ot">;</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">// output : Nama kosong</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br></p>
-</section>
-<section id="php---looping" class="level3">
-<h3 class="anchored" data-anchor-id="php---looping">PHP - Looping</h3>
-<p>Perulangan pada php terdapat beberapa fungsi yang dapat digunakan, diantaranya adalah for, while, do while, dan foreach</p>
-<section id="looping-for" class="level4">
-<h4 class="anchored" data-anchor-id="looping-for">Looping For</h4>
-<p>Looping For adalah salah satu looping statement pada bahasa pemrograman php, yang memiliki sintaks seperti for (expression1; expression2; expression3) {} dimana expression 1 merupakan awal dari pengulangan, expression 2 menentukan kondisi yang harus terpenuhi agar perintah d iterasi lebih lanjut, sedangkan expresion 3 mengubah nilai variable dalam setiap iterasinya.</p>
-<p>Contoh Penggunaannya:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode php code-with-copy"><code class="sourceCode php"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (<span class="va">$i</span><span class="op">=</span><span class="dv">0</span><span class="ot">;</span><span class="va">$i</span><span class="op">&lt;=</span><span class="dv">5</span><span class="ot">;</span><span class="va">$i</span><span class="op">++</span>){</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">echo</span> <span class="st">"</span><span class="va">$i</span><span class="st"> "</span><span class="ot">;</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">// Output: 0 1 2 3 4 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Dalam contoh diatas, nilai x mulai dari angka 0 dan terus ditambah sampai batas yaitu &lt;=5. Setelah itu akan di eksekusi dengan cara mencetak isi value dari x ke layar.</p>
-</section>
-<section id="while" class="level4">
-<h4 class="anchored" data-anchor-id="while">While</h4>
-<p>Looping while juga ada didalam bahasa pemograman PHP, sintaksnya sama tapi bedanya hanya bisa melakukan looping selama kondisinya benar/true.</p>
-<p>Contohnya:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode php code-with-copy"><code class="sourceCode php"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="va">$x</span> <span class="op">=</span> <span class="dv">0</span><span class="ot">;</span> <span class="co">//awal variabel $x</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(<span class="va">$x</span> <span class="op">&lt;=</span> <span class="dv">5</span>){</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">echo</span> <span class="st">"</span><span class="va">$x</span><span class="st"> "</span><span class="ot">;</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="va">$x</span><span class="op">++</span><span class="ot">;</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">// Output : 0 1 2 3 4 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="do-while" class="level4">
-<h4 class="anchored" data-anchor-id="do-while">Do While</h4>
-<p>Perulangan do-while adalah perintah yang digunakan untuk mengulang suatu proses terhadap nilai kondisional (expression) saat awal loop dilanjutkan dengan evaluasi ulang pada akhir setiap iterasi.</p>
-<p>Sintaks nya adalah sebagai berikut:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode php code-with-copy"><code class="sourceCode php"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="va">$i</span> <span class="op">=</span> <span class="dv">1</span><span class="ot">;</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span>{</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">echo</span> <span class="va">$i</span><span class="ot">;</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="va">$i</span><span class="op">++</span><span class="ot">;</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>} <span class="cf">while</span> (<span class="va">$i</span> <span class="op">&lt;=</span> <span class="dv">5</span>)<span class="ot">;</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">// Output : 0 1 2 3 4 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="foreach" class="level4">
-<h4 class="anchored" data-anchor-id="foreach">Foreach</h4>
-<p>Foreach merupakan perintah yang digunakan untuk mengiterasi set data array dalam bahasa pemrograman php. Sintaks nya seperti ini:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode php code-with-copy"><code class="sourceCode php"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="va">$buah</span> <span class="op">=</span> <span class="dt">array</span>(<span class="st">"Apel"</span><span class="ot">,</span> <span class="st">"Jeruk"</span><span class="ot">,</span> <span class="st">"Mangga"</span><span class="ot">,</span> <span class="st">"Pisang"</span>)<span class="ot">;</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="cf">foreach</span> (<span class="va">$buah</span> <span class="kw">as</span> <span class="va">$item</span>) <span class="ot">:</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">echo</span> <span class="va">$item</span> <span class="op">.</span> <span class="st">"</span><span class="sc">\n</span><span class="st">"</span><span class="ot">;</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="cf">endforeach</span><span class="ot">;</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co">/* output : </span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co">apel</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co">jeruk</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co">mangga</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co">pisang</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co">*/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Selain menggnakan endforeach bisa juga menggunakan kurung kurawal {}</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode php code-with-copy"><code class="sourceCode php"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="va">$buah</span> <span class="op">=</span> <span class="dt">array</span>(<span class="st">"Apel"</span><span class="ot">,</span> <span class="st">"Jeruk"</span><span class="ot">,</span> <span class="st">"Mangga"</span><span class="ot">,</span> <span class="st">"Pisang"</span>)<span class="ot">;</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="cf">foreach</span> (<span class="va">$buah</span> <span class="kw">as</span> <span class="va">$item</span>) {</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">echo</span> <span class="va">$item</span> <span class="op">.</span> <span class="st">"</span><span class="sc">\n</span><span class="st">"</span><span class="ot">;</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co">/* output : </span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co">apel</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co">jeruk</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co">mangga</span></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co">pisang</span></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co">*/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-<section id="include---require" class="level3">
-<h3 class="anchored" data-anchor-id="include---require">Include - Require</h3>
-<p>Fungsi-fungsi ini digunakan untuk menyisipkan (include) atau memasukkan (require) file PHP eksternal ke dalam file PHP yang sedang aktif. Berguna untuk mengorganisir kode secara modular.</p>
+<section id="proses-dekripsi" class="level3">
+<h3 class="anchored" data-anchor-id="proses-dekripsi">Proses Dekripsi</h3>
+<p>LANGKAH 4 : <br> Inisialisasi <code>pesan_terdekripsi</code>: String kosong untuk menyimpan hasil dekripsi.</p>
+<ul>
+<li>Iterasi melalui setiap huruf dalam pesan: Menggunakan loop for. Cek apakah <code>huruf</code> ada di <code>abjad_indeks</code>:</li>
+<li>Jika <strong>Ya</strong> Hitung indeks baru dengan formula <code>(abjad_indeks[huruf] - key) % 26</code>. Ini menggeser posisi huruf dalam alfabet.</li>
+<li>Cari huruf baru yang sesuai dengan indeks baru dari daftar kunci <code>abjad_indeks</code> dan tambahkan ke <code>pesan_terenkripsi</code>.</li>
+<li>Jika <strong>Tidak</strong> (misalnya angka atau simbol): Tambahkan huruf tersebut langsung ke<code>pesan_terenkripsi</code> tanpa perubahan.</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pesan_terdekripsi <span class="op">=</span> <span class="st">''</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> huruf <span class="kw">in</span> pesan_terenkripsi:</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> huruf <span class="kw">in</span> abjad_indeks:</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        indeks <span class="op">=</span> (abjad_indeks[huruf] <span class="op">-</span> key) <span class="op">%</span> <span class="dv">26</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        pesan_terdekripsi <span class="op">+=</span> <span class="bu">list</span>(abjad_indeks.keys())[indeks <span class="op">-</span> <span class="dv">1</span>]</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        pesan_terdekripsi <span class="op">+=</span> huruf</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Pesan terdekripsi:"</span>, pesan_terdekripsi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Pesan terdekripsi:: udinus</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
 </section>
 </section>
 
