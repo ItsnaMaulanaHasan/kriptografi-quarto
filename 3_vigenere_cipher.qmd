@@ -6,184 +6,169 @@ toc-title: "On this page"
 ---
 
 # 3. Vigenere Cipher {.unnumbered}
-Sebelum memulai ada tools-tools yang digunakan dan perlu diinstall terlebih dahulu!
-<br>
 
-![Tools Pemrograman Web](assets/tools/toolsWeb.png){width="70%" style="text-align:center;"}
-
-## Teks Editor
-
-Banyak pilihan untuk teks editor yang dapat digunakan, seperti *Notepad++*, *Sublime Text*, dan *Visual Studio Code*. 
-<br>
-
-**Visual Studio Code**
-<br>
-
-Teks Editor yang umum digunakan saat ini adalah Visual Studio Code. Untuk melakukan instalasi Visual Studio Code silah ikuti langkah-langkah berikut:
-<br>
-
-1. Silahkan download file installer dari [Visual Studio Code](https://code.visualstudio.com/download){.external target="_blank"}. Klik download pada halaman web Visual Studio Code sesuai dengan sistem operasi yang digunakan.
-
-![Laman VSCode](assets/tools/vscode/webvscode.png){width="70%" style="text-align:center;"}
-
-2. Setelah selesai download, klik dua kali pada file installer.
-
-3. Jika muncul peringatan Run as Administrator, klik Yes.
-
-4. Kemudian akan tampil window Installer Microsoft Visual Studio Code. Untuk menyetujui *License Agreement*, pilih "I accept the agreement" lalu next.
-
-![License Agreement VS Code](assets/tools/vscode/vscodeagreement.png){width="70%" style="text-align:center;"}
-
-5. Lalu pilih lokasi instalasinya. Jika ingin menggunakan lokasi default dapat langsung klik next.
-
-![Lokasi instalasi VS Code](assets/tools/vscode/dirvscode.png){width="70%" style="text-align:center;"}
-
-6. Memilih lokasi shortcuts program. Jika ingin menggunakan default dapat langsung klik next.
-
-7. Pada bagian **Select Additional Tasks**, terdapat beberapa tasks yang bisa diinstall atau tidak. Untuk memudahkan ketika membuka file melalui berkas atau explorer dapat dipilih semua dan klik next.
-
-8. Klik install dan jalankan Visual Studio Code
-
-![vscode](assets/tools/vscode/vscode.png){width="70%" style="text-align:center;"}
-
-:::{.callout title="Intalasi Visual Studio Code"}
-
-{{< video https://youtu.be/fPG5FeLBJbA >}}
-
-:::
-
-
-## Web Browser
-
-Web browser adalah perangkat lunak yang awalnya dirancang untuk menampilkan dokumen web/HTML. Namun, pada saat ini, web browser harus memiliki kemampuan untuk menginterpretasikan dan menjalankan JavaScript atau VBScript, menjalankan Java Applet, memahami dokumen XML, dan menjalankan dokumen khusus dengan menggunakan fasilitas plugin seperti file .swf Macromedia Flash, dan lain sebagainya.
-<br>
-
-Banyak web browser yang dapat digunakan, dan paling umum digunakan adalah Google Chrome dan Mozilla Firefox atau dapat menggunakan web browser yang tersedia pada laptop atau pc yang digunakan seperti safari atau microsoft edge.
-<br>
-
-::: {layout="[[43,-4,43]]" style="text-align:center;"}
-![Chrome](assets/tools/chrome.png)
-
-![Mozilla Firefox](assets/tools/firefox.png)
-:::
-
-<br>
-
-## Web Server 
-
-Web Server adalah server HTTP yang bertugas menyediakan dokumen yang diminta oleh web browser. Saat ini, web server telah berkembang menjadi lebih kompleks karena harus melayani banyak fungsi dan bahkan menjadi pusat layanan-layanan lain.
-<br>
-
-Web server juga menjadi komponen yang sangat penting dalam application server. Sebagai server HTTP, web server harus dapat menangani permintaan dokumen yang diberikan oleh web browser dan juga harus bisa dikonfigurasi untuk berinteraksi dengan program-program seperti JSP, ASP, PHP, melalui CGI, dan sebagainya. Contoh-contoh web server yang populer antara lain Apache dan IIS (Internet Information Service).
-<br>
-
-
-**XAMPP**
-<br>
-
-XAMPP adalah sebuah web server open source yang dapat berjalan diberbagai sistem operasi seperti Windows, Linux, dan MacOS.
-<br>
-
-XAMPP menyediakan semua komponen yang diperlukan untuk mengelola sebuah website, termasuk Apache, MySQL/MariaDB, PHP, dan Perl. XAMPP dapat digunakan untuk membuat web server lokal di komputer.
-<br>
-
-Untuk menginstall XAMPP ikuti langkah-langkah berikut:
-<br>
-
-1. Unduh file installer dari website [XAMPP](https://www.apachefriends.org/download.html){.external target="_blank"}. Unduh sesuai dengan sistem operasi atau komputer yang digunakan.
-<br>
-
-![Web XAMPP](assets/tools/xampp/webxampp.png){width="70%" style="text-align:center;"}
-
-2. Lakukan instalasi XAMPP sesuai panduan (wizard) yang ditampilkan dan pilih Yes untuk melanjutkan instalasi. Bila ada pesan error biarkan saja.
-<br>
-
-![Pesan error](assets/tools/xampp/pesan_error.png){width="70%" style="text-align:center;"}
-
-3. Pilih komponen yang Anda butuhkan dalam instalasi tersebut. Sebagai contoh, centang MySQL dan phpMyAdmin.
-
-4. Tentukan direktori instalasi yang tepat, misalnya C:\\xampp.
-
-5. Lanjutkan tahapan dan klik install.
-
-<br>
-Untuk melihat konfigurasi php dapat membuka config pada baris apache lalu membuka php.ini
-<br>
-
-![Apache Config](assets/tools/php-config.png){width="70%" style="text-align:center;"}
-
-
-Cek versi php dan ekstensi lain dengan cara membuat file “info.php” yang isinya `<?php phpinfo(); ?>`, letakkan pada [`C:\xampp\htdocs`](C:\xampp\htdocs){.external target="_blank"}.  Lalu buka [`localhost/info.php`](http://localhost/info.php){.external target="_blank"} pada browser
-
-
-:::{.callout title="Instalasi Xampp"}
-
-{{< video https://youtu.be/hNotk93jtDQ >}}
-
-:::
-
-<br>
-
-## Bootstrap
-
-Bootstrap adalah sebuah kerangka kerja (framework) front-end yang populer untuk pengembangan desain web responsif (responsive web design). Dikembangkan oleh tim Twitter, Bootstrap menyediakan serangkaian komponen dan gaya CSS yang dapat digunakan untuk membangun tampilan web yang konsisten, menarik, dan responsif secara cepat. Sampai dengan modul ini dibuat, Bootstrap telah mengalami pembaruan Bootstrap versi 5. 
-
-<br>
-
-![Bootstrap](assets/tools/bootstrap/bootstrap1.png){width="70%" style="text-align:center;"}
-
-<br>
-
-
-**Cara instalasi Bootstrap**
-<br>
-
-1.	Buka halaman resmi Bootstrap di [https://getbootstrap.com](https://getbootstrap.com){.external target="_blank"}.
-
-2.	Di halaman utama, Anda akan melihat tombol "Download" di bagian bawah. Klik tombol tersebut untuk mengunduh file Bootstrap.
-<br>
-
-:::{layout="[[43,-4,43]]"}
-![Tampilan Halaman Bootstrap](assets/tools/bootstrap/bootstrap2.png)
-
-![Download Paket Bootstrap](assets/tools/bootstrap/bootstrap3.png)
-:::
-
-3.	Setelah selesai mengunduh, ekstrak file zip Bootstrap yang telah diunduh ke direktori proyek web Anda.
-<br>
-
-![Ekstrak File](assets/tools/bootstrap/bootstrap4.png){width="70%" style="text-align:center;"}
-
-4.	Di dalam direktori proyek, buatlah folder baru (misalnya "css" dan "js") untuk menyimpan file CSS dan JavaScript Bootstrap.
-<br>
-
-![Ekstrak File](assets/tools/bootstrap/bootstrap5.png){width="70%" style="text-align:center;"}
-
-5.	Salin file bootstrap.min.css yang ada di dalam direktori "dist/css" dalam file Bootstrap yang telah diekstrak, ke dalam folder "css" di dalam direktori proyek Anda.
-
-6.	Salin file bootstrap.min.js yang ada di dalam direktori "dist/js" dalam file Bootstrap yang telah diekstrak, ke dalam folder "js" di dalam direktori proyek Anda.
-
-7.	Setelah itu, Anda dapat menggunakan Bootstrap dengan menautkan file CSS dan JavaScript ke dalam halaman HTML Anda. Dalam elemen `<head>` dari file HTML, tambahkan tag link berikut untuk menautkan file CSS Bootstrap:
-<br>
-
-```html
-<link rel="stylesheet" href="css/bootstrap.min.css">
+Vigenere Cipher adalah metode enkripsi klasik yang menggunakan tabel tabula recta (atau tabel Vigenere) untuk mengenkripsi teks. Enkripsi ini menggunakan kata kunci (key) untuk menggeser setiap huruf dalam teks asli. Setiap huruf kunci mengindikasikan jumlah geseran huruf untuk huruf yang sesuai dalam teks asli.
+
+
+# Analogi Vigenere Cipher
+Misalnya, jika kita memiliki teks "HELLO" dan kunci "KEY", kita akan menggeser huruf-huruf dalam teks "HELLO" sesuai dengan urutan huruf dalam kata kunci "KEY". 
+
+1. **Susunan Awal:**
+   - Plaintext/Pesan : "HELLO"
+   - Key/Kunci       :  "KEY"
+   - Ciphertext/Hasil Enkripsi : ?
+
+2. **Enkripsi Caesar Cipher:**
+   - Contoh Proses Enkripsi <br>
+    Prosesnya adalah sebagai berikut dengan: <br>
+    1. H (teks)(8) + K (kunci)(11) = S(19) <br>
+    2. E (teks)(5) + E (kunci)(5) = J(10) <br>
+    3. L (teks)(12) + Y (kunci)(25) = K(37-26)=11 <br>
+    4. L (teks)(12) + K (kunci)(11)= W(23) <br>
+    5. O (teks)(15) + E (kunci)(5) = T(20) <br>
+    
+3. **Susunan Setelah Enkripsi:** <br>
+    Teks asli          :  H   E   L   L   O <br>
+    Kunci              :  K   E   Y   K   E <br>
+    Hasil Enkripsi     :  S   J   K   W   T <br>
+    Setiap huruf dalam teks asli digeser sesuai dengan huruf dalam kunci untuk menghasilkan teks terenkripsi. <br>
+    Sehingga hasil enkripsi dari "HELLO" dengan kunci "KEY" adalah "SJKWT".
+
+
+# Contoh Soal
+Berikut ini adalah contoh input pesan "udinus24" yang akan dienkripsi menggunakan metode vigenere cipher kolom dengan kunci "key" Maka proses enkripsi nya adalah sebagai berikut:
+
+## Implementasi Pada Python
+
+LANGKAH 1 : <br>
+Deklarasi kamus (dictionary) abjad -> Kamus ini memetakan setiap huruf alfabet ke sebuah indeks numerik.
+```python
+abjad = {
+    'A': 1, 'B': 2, 'C': 3, 'D': 4, 'E': 5,
+    'F': 6, 'G': 7, 'H': 8, 'I': 9, 'J': 10,
+    'K': 11, 'L': 12, 'M': 13, 'N': 14, 'O': 15,
+    'P': 16, 'Q': 17, 'R': 18, 'S': 19, 'T': 20,
+    'U': 21, 'V': 22, 'W': 23, 'X': 24, 'Y': 25, 'Z': 26
+}
 ```
 
-8.	Juga di dalam elemen `<body>` atau sebelum penutup tag `</body>` dalam file HTML, tambahkan tag script berikut untuk menautkan file JavaScript Bootstrap:
-<br>
+LANGKAH 2 : <br>
+Masukkan Plaintext dan Kunci
 
-```html
-<script src="js/bootstrap.min.js"></script> 
+```python
+# Input teks asli dan kunci
+teks = input("Masukkan Plaintext : ")
+kunci = "key"
+teks = teks.upper()
+kunci = kunci.upper()
 ```
 
-9.	Sekarang, Anda dapat menggunakan kelas-kelas, komponen, dan gaya Bootstrap dalam halaman web Anda.Sekarang, Anda dapat menggunakan kelas-kelas, komponen, dan gaya Bootstrap dalam halaman web Anda.
+```python
+Masukkan Plaintext : udinus24
+```
+### Proses Enkripsi
+LANGKAH 3 : <br>
+Melakukan Enkripsi
+
+```python
+# Inisialisasi variabel hasil
+pesan_terenkripsi = ''
+panjang_kunci = len(kunci)
+indeks_kunci = 0
+
+# Iterasi melalui setiap karakter di teks asli
+for huruf in teks:
+    # Periksa apakah karakter adalah huruf alfabet
+    if huruf in abjad:
+        # Temukan indeks dari teks asli dan kunci
+        indeks_teks = abjad[huruf]
+        huruf_kunci = kunci[indeks_kunci % panjang_kunci]
+        indeks_huruf_kunci = abjad[huruf_kunci]
+
+        # Hitung indeks hasil menggunakan rumus Vigenere cipher
+        indeks_hasil = (indeks_teks + indeks_huruf_kunci - 1) % 26 + 1
+
+        # Temukan karakter hasil berdasarkan indeks
+        for k, v in abjad.items():
+            if v == indeks_hasil:
+                pesan_terenkripsi += k
+                break
+
+        # Pindah ke karakter berikutnya dalam kunci
+        indeks_kunci += 1
+    else:
+        # Jika karakter bukan alfabet, tambahkan tanpa perubahan
+        pesan_terenkripsi += huruf
+```
+
+CETAK HASIL ENKRIPSI : <br>
+```python
+teks_per_huruf = ', '.join(f"'{char}'" for char in teks)
+# Menyusun kunci berulang sesuai panjang teks asli
+kunci_berulang = (kunci * (len(teks) // panjang_kunci)) + kunci[:len(teks) % panjang_kunci]
+kunci_per_huruf = ', '.join(f"'{char}'" for char in kunci_berulang)
+# output
+hasil_encrypt = ', '.join(f"'{char}'" for char in pesan_terenkripsi)
+
+print(f"Plaintext     : {teks_per_huruf}")
+print("")
+print(f"Kunci         : {kunci_per_huruf}")
+print("")
+print(f"Hasil Encrypt : {hasil_encrypt}")
+```
+```python
+Plaintext     : 'U', 'D', 'I', 'N', 'U', 'S', '2', '4' 
+Kunci         : 'K', 'E', 'Y', 'K', 'E', 'Y', 'K', 'E' 
+Hasil Encrypt : 'F', 'I', 'H', 'Y', 'Z', 'R', '2', '4' 
+```
 
 
-::: {.callout title="Instalasi Bootstrap"}
+### Proses Dekripsi
+LANGKAH 4 : <br> 
+Melakukan Dekripsi
+```python
+# Inisialisasi variabel hasil
+pesan_terdekripsi = ''
+panjang_kunci = len(kunci)
+indeks_kunci = 0
 
-*Berikut adalah penjelasan mengenai instalasi bootstrap!*
+# Iterasi melalui setiap karakter di teks asli
+for huruf in pesan_terenkripsi:
+    # Periksa apakah karakter adalah huruf alfabet
+    if huruf in abjad:
+        # Temukan indeks dari teks asli dan kunci
+        indeks_teks = abjad[huruf]
+        huruf_kunci = kunci[indeks_kunci % panjang_kunci]
+        indeks_huruf_kunci = abjad[huruf_kunci]
 
-{{< video https://youtu.be/p_sqxUZ6b0Q >}}
+        # Hitung indeks hasil menggunakan rumus Vigenere cipher
+        indeks_hasil = (indeks_teks - indeks_huruf_kunci - 1) % 26 + 1
 
-:::
+        # Temukan karakter hasil berdasarkan indeks
+        for k, v in abjad.items():
+            if v == indeks_hasil:
+                pesan_terdekripsi += k
+                break
+
+        # Pindah ke karakter berikutnya dalam kunci
+        indeks_kunci += 1
+    else:
+        # Jika karakter bukan alfabet, tambahkan tanpa perubahan
+        pesan_terdekripsi += huruf
+```
+CETAK HASIL DEKRIPSI : <br>
+```python
+hasil_decrypt = ', '.join(f"'{char}'" for char in pesan_terdekripsi)
+print(f"Ciphertext    : {hasil_encrypt}")
+print("")
+print(f"Kunci         : {kunci_per_huruf}")
+print("")
+print(f"Hasil Decrypt : {hasil_decrypt}")
+```
+
+```python
+Ciphertext    : 'F', 'I', 'H', 'Y', 'Z', 'R', '2', '4'
+Kunci         : 'K', 'E', 'Y', 'K', 'E', 'Y', 'K', 'E'
+Hasil Decrypt : 'U', 'D', 'I', 'N', 'U', 'S', '2', '4'
+```
+
