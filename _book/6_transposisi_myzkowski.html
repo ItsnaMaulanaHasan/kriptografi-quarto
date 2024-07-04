@@ -163,7 +163,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./1_caesar.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Caesar</span></a>
+ <span class="menu-text">1. Caesar Cipher</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -216,7 +216,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./1_caesar.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Caesar</span></a>
+ <span class="menu-text">1. Caesar Cipher</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -269,7 +269,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./1_caesar.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Caesar</span></a>
+ <span class="menu-text">1. Caesar Cipher</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -343,24 +343,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#basis-data-database" id="toc-basis-data-database" class="nav-link active" data-scroll-target="#basis-data-database">Basis Data (Database)</a></li>
-  <li><a href="#tipe-data" id="toc-tipe-data" class="nav-link" data-scroll-target="#tipe-data">Tipe Data</a>
+  <li><a href="#prinsip-dasar" id="toc-prinsip-dasar" class="nav-link active" data-scroll-target="#prinsip-dasar">Prinsip Dasar</a></li>
+  <li><a href="#contoh-soal" id="toc-contoh-soal" class="nav-link" data-scroll-target="#contoh-soal">Contoh Soal</a></li>
+  <li><a href="#implementasi-pada-python" id="toc-implementasi-pada-python" class="nav-link" data-scroll-target="#implementasi-pada-python">Implementasi Pada Python</a>
   <ul class="collapse">
-  <li><a href="#tipe-data-numerik" id="toc-tipe-data-numerik" class="nav-link" data-scroll-target="#tipe-data-numerik">Tipe Data Numerik</a></li>
-  <li><a href="#tipe-data-string" id="toc-tipe-data-string" class="nav-link" data-scroll-target="#tipe-data-string">Tipe Data String</a></li>
-  <li><a href="#tipe-data-date" id="toc-tipe-data-date" class="nav-link" data-scroll-target="#tipe-data-date">Tipe Data Date</a></li>
-  </ul></li>
-  <li><a href="#constraint-kekangan-nilai" id="toc-constraint-kekangan-nilai" class="nav-link" data-scroll-target="#constraint-kekangan-nilai">Constraint / Kekangan Nilai</a>
-  <ul class="collapse">
-  <li><a href="#constraint-not-null" id="toc-constraint-not-null" class="nav-link" data-scroll-target="#constraint-not-null">Constraint NOT NULL</a></li>
-  <li><a href="#constraint-unique" id="toc-constraint-unique" class="nav-link" data-scroll-target="#constraint-unique">Constraint UNIQUE</a></li>
-  <li><a href="#constraint-auto-increment" id="toc-constraint-auto-increment" class="nav-link" data-scroll-target="#constraint-auto-increment">Constraint AUTO INCREMENT</a></li>
-  </ul></li>
-  <li><a href="#pembuatan-database" id="toc-pembuatan-database" class="nav-link" data-scroll-target="#pembuatan-database">Pembuatan Database</a></li>
-  <li><a href="#perintah-mysql-ddl-dml-dcl" id="toc-perintah-mysql-ddl-dml-dcl" class="nav-link" data-scroll-target="#perintah-mysql-ddl-dml-dcl">Perintah MySQL (DDL, DML, DCL)</a>
-  <ul class="collapse">
-  <li><a href="#data-definition-language-ddl" id="toc-data-definition-language-ddl" class="nav-link" data-scroll-target="#data-definition-language-ddl">Data Definition Language (DDL)</a></li>
-  <li><a href="#data-manipulation-language-dml" id="toc-data-manipulation-language-dml" class="nav-link" data-scroll-target="#data-manipulation-language-dml">Data Manipulation Language (DML)</a></li>
+  <li><a href="#pemrosesan-kunci" id="toc-pemrosesan-kunci" class="nav-link" data-scroll-target="#pemrosesan-kunci">Pemrosesan Kunci</a></li>
+  <li><a href="#proses-enkripsi" id="toc-proses-enkripsi" class="nav-link" data-scroll-target="#proses-enkripsi">Proses Enkripsi</a></li>
+  <li><a href="#proses-dekripsi" id="toc-proses-dekripsi" class="nav-link" data-scroll-target="#proses-dekripsi">Proses Dekripsi</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -390,363 +379,330 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="basis-data-database" class="level2">
-<h2 class="anchored" data-anchor-id="basis-data-database">Basis Data (Database)</h2>
-<p>Secara umum, sekumpulan data terintegrasi dengan ukuran yang sangat besar, dikelola (diolah) dengan cara tertentu yang secara khusus menjelaskan aktifitas - aktifitas dari satu atau beberapa organisasi yang satu sama lain saling terkait. <br></p>
-</section>
-<section id="tipe-data" class="level2">
-<h2 class="anchored" data-anchor-id="tipe-data">Tipe Data</h2>
-<p>Tipe Data dalam ilmu komputer erat kaitannya dengan pemrgoraman dan database. Didalam pemrograman tipe data biasa digunakan untuk mendefinisikan (menetapkan) isi dari sebuah variabel.</p>
-<p>Perbedaannya dalam database, tipe data ini digunakan untuk menentukan isi dari sebuah data yang akan disimpan.</p>
-<p>Tipe data ini berbeda-beda tergantung dari bahasa pemgrograman atau jenis database yang kita gunakan.</p>
-<p>Tipe data ini akan dikelompokan menjadi 5 bagian utama. Pada tipe data dalam MySQL dibagi menjadi 3, yaitu :</p>
-<ul>
-<li>Tipe Data Numerik,</li>
-<li>Tipe Data String, dan</li>
-<li>Tipe Data Date/Time.</li>
-</ul>
-<section id="tipe-data-numerik" class="level3">
-<h3 class="anchored" data-anchor-id="tipe-data-numerik">Tipe Data Numerik</h3>
-<p>Adalah tipe data numerik untuk mengukur nilai secara matematik, misalnya mata uang, angka desimal, dll.</p>
-<div class="table-responsive">
-<table class="table-striped table-hover caption-top table">
-<caption>Tabel Tipe Data Numerik</caption>
-<colgroup>
-<col style="width: 9%">
-<col style="width: 16%">
-<col style="width: 50%">
-<col style="width: 22%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">No</th>
-<th>Tipe</th>
-<th>Keterangan</th>
-<th>Penerapan</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">1.</td>
-<td>INTEGER(size)</td>
-<td>Tipe data yang berisi kumpulan bilangan bulat, baik dalam bentuk bilangan positif maupun negatif</td>
-<td>Angka secara umum</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">2.</td>
-<td>FLOAT(size)</td>
-<td>Bilangan desimal dengan presisi tunggal (single-precision)</td>
-<td>π, desimal dengan fokus pada nilai input contoh : 3.14159265359</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">3.</td>
-<td>DOUBLE(size, d)</td>
-<td>Bilangan desimal dengan presisi ganda (double-precision). Jumlah total digit ditentukan oleh size, jumlah digit setelah titik decimal ditentukan oleh d</td>
-<td>Uang, dengan fokus jumlah desimal 2 angka di belakang koma <br> contoh: 2.500,00</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="tipe-data-string" class="level3">
-<h3 class="anchored" data-anchor-id="tipe-data-string">Tipe Data String</h3>
-<p>Merupakan suatu teks dengan panjang variabel dimana setiap huruf dapat memiliki ukuran lebih kecil atau besar daripada satuan lainnya. Misalkan nama depan, nama belakang, alamat, nomor telepon, website, serta informasi lainnya.</p>
-<div class="table-responsive">
-<table class="table-striped table-hover caption-top table">
-<caption>Tabel Tipe Data String</caption>
-<colgroup>
-<col style="width: 9%">
-<col style="width: 16%">
-<col style="width: 50%">
-<col style="width: 22%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">No</th>
-<th>Tipe</th>
-<th>Keterangan</th>
-<th>Penerapan</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">1.</td>
-<td>CHAR(size)</td>
-<td>Menyatakan deretan karakter (String) yang lebarnya tetap. <br> Size : 0 hingga 255 karakter</td>
-<td>Jenis_kelamin (L/P) <br> contoh : L</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">2.</td>
-<td>VARCHAR(size)</td>
-<td>Menyatakan data String yang lebarnya bervariasi. <br> Size : 0 hingga 255 karakter</td>
-<td>Nama pengguna <br> contoh : Amanda</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">3.</td>
-<td>TEXT(size, d)</td>
-<td>Menampung string Panjang yang lebarnya tidak dapat diprediksi.</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="tipe-data-date" class="level3">
-<h3 class="anchored" data-anchor-id="tipe-data-date">Tipe Data Date</h3>
-<p>Menyimpan tanggal dan waktu dalam format tertentu seperti tahun, bulan, dan hari, jam, menit, dan detik. Tipe data date bisa digunakan untuk mengatur kronologis dari peristiwa.</p>
-<div class="table-responsive">
-<table class="table-striped table-hover caption-top table">
-<caption>Tabel Tipe Data Date</caption>
-<colgroup>
-<col style="width: 9%">
-<col style="width: 16%">
-<col style="width: 50%">
-<col style="width: 22%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">No</th>
-<th>Tipe</th>
-<th>Keterangan</th>
-<th>Penerapan</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">1.</td>
-<td>DATE(size)</td>
-<td>Digunakan dengan tanggal dengan format “YYYY-MM-DD”</td>
-<td>2004-09-21</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">2.</td>
-<td>TIME(size)</td>
-<td>Digunakan untuk waktu dengan format “hh:mm:ss”</td>
-<td>12:33:12</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">3.</td>
-<td>DATETIME(size, d)</td>
-<td>Digunakan untuk tanggal dan waktu dengan format “YYYY-MM-DD hh:mm:ss”</td>
-<td>2012-11-29 11:55:23</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-</section>
-<section id="constraint-kekangan-nilai" class="level2">
-<h2 class="anchored" data-anchor-id="constraint-kekangan-nilai">Constraint / Kekangan Nilai</h2>
-<p>Constraint atau kekangan nilai digunakan untuk menentukan aturan yang mengizinkan atau membatasi nilai yang akan dimasukkan dalam tabel. Kekangan Nilai Menyediakan Metode Yang sesuai untuk memastikan akurasi dan integritas data di dalam table.</p>
-<p>Contoh constraint, yaitu :</p>
-<ul>
-<li>Membuat Nilai Tidak Kosong(NOT NULL)</li>
-<li>Membuat Nilai Unik(UNIQUE)</li>
-<li>Membuat kenaikan nilai secara otomatis(AUTO INCREMENT)</li>
-<li>Membuat Kunci tamu(FOREIGN KEY)</li>
-<li>Menggunakan Alias table dan query antartable (INNER JOIN)</li>
-</ul>
-<section id="constraint-not-null" class="level3">
-<h3 class="anchored" data-anchor-id="constraint-not-null">Constraint NOT NULL</h3>
-<p>Constraint NOT NULL mengatur agar data tertentu harus terisi atau tidak kosong. Ada kolom tertentu dari suatu table harus terisi dengan nilai valid. Contoh case :</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> `mahasiswa`(</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    `nama` <span class="dt">VARCHAR</span>(<span class="dv">50</span>), <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    `nim` <span class="dt">VARCHAR</span>(<span class="dv">30</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>  </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Untuk case di atas maka nama dan nim yang diinputkan ke dalam database tidak boleh kosong.</p>
-</section>
-<section id="constraint-unique" class="level3">
-<h3 class="anchored" data-anchor-id="constraint-unique">Constraint UNIQUE</h3>
-<p>Constraint UNIQUE ditujukan untuk memastikan bahwa nilai dalam kolom unik, artinya kolom tidak dapat menyimpan nilai duplikat. Contoh case:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> `mahasiswa`(</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    `nama` <span class="dt">VARCHAR</span>(<span class="dv">50</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    `nim` <span class="dt">VARCHAR</span>(<span class="dv">50</span>) <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">UNIQUE</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Untuk case di atas nama mahasiswa bisa saja sama, tapi NIM mahasiswa tidak akan pernah sama maka diberi Constraint UNIQUE</p>
-</section>
-<section id="constraint-auto-increment" class="level3">
-<h3 class="anchored" data-anchor-id="constraint-auto-increment">Constraint AUTO INCREMENT</h3>
-<p>Auto increment digunakan untuk menaikkan nilai secara otomatis pada field numerik. Ada beberapa hal yang harus diperhatikan dalam menggunakan auto increment:</p>
-<ul>
-<li>Hanya Dapat Digunakan Pada field numerik</li>
-<li>Field harus bersifat primary key atau unik</li>
-<li>Field tidak boleh bersifat null</li>
-<li>Dalam Satu Tabel hanya ada satu field yang menggunakan auto increment</li>
-</ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> `mahasiswa`(</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    `id` <span class="dt">VARCHAR</span>(<span class="dv">11</span>) <span class="kw">NOT</span> <span class="kw">NULL</span> AUTO_INCREMENT,</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    `nama` <span class="dt">VARCHAR</span>(<span class="dv">50</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    `nim` <span class="dt">VARCHAR</span>(<span class="dv">50</span>) <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">UNIQUE</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-<section id="pembuatan-database" class="level2">
-<h2 class="anchored" data-anchor-id="pembuatan-database">Pembuatan Database</h2>
-<p>Dalam pembuatan database dapat dibuat dalam 2 cara, yaitu menggunakan platform dan menggunakan scripting</p>
-<div>
-
-</div>
-<div class="quarto-layout-panel" style="text-align:center;" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="assets/database/platform.png" class="img-fluid figure-img"></p>
-<figcaption>Menggunakan Platform</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="assets/database/scripting.png" class="img-fluid figure-img"></p>
-<figcaption>Menggunakan scripting</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="perintah-mysql-ddl-dml-dcl" class="level2">
-<h2 class="anchored" data-anchor-id="perintah-mysql-ddl-dml-dcl">Perintah MySQL (DDL, DML, DCL)</h2>
-<p>Secara umum perintah fungsi MySQL dibagi menjadi 3, yaitu :</p>
-<ul>
-<li>DDL (Data Definition Language),</li>
-<li>DML(Data Manipulation), dan</li>
-<li>DCL (Data Control Language).</li>
-</ul>
-<p>Pada modul ini akan dibatasi pada DDL dan DML untuk praktek.</p>
-<div class="quarto-figure quarto-figure-center" style="text-align:center;">
-<figure class="figure">
-<p><img src="assets/database/arsitekturdb.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption>DDL, DML, DCL</figcaption>
-</figure>
-</div>
-<section id="data-definition-language-ddl" class="level3">
-<h3 class="anchored" data-anchor-id="data-definition-language-ddl">Data Definition Language (DDL)</h3>
-<p>Data Definition Language (DDL) adalah bagian dari SQL (Structured Query Language) yang digunakan untuk mendefinisikan struktur database dan objeknya, seperti tabel, tampilan, indeks, dan prosedur dalam sebuah database. Pernyataan DDL digunakan untuk membuat, mengubah, dan menghapus objek database, termasuk tabel, tampilan, indeks, dan prosedur tersimpan. Beberapa pernyataan DDL yang paling umum meliputi:</p>
-<section id="create" class="level4">
-<h4 class="anchored" data-anchor-id="create">CREATE</h4>
-<p>Pernyataan ini membuat objek database baru, seperti tabel, tampilan, atau indeks. Misalnya, pernyataan SQL berikut membuat tabel yang disebut “pelanggan”:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> pelanggan ( <span class="kw">id</span> <span class="dt">INT</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span>, name <span class="dt">VARCHAR</span>(<span class="dv">255</span>), address <span class="dt">VARCHAR</span>(<span class="dv">255</span>));</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="alter" class="level4">
-<h4 class="anchored" data-anchor-id="alter">ALTER</h4>
-<p>Pernyataan ini digunakan untuk memodifikasi objek database yang sudah ada. Misalnya, pernyataan SQL berikut menambahkan kolom baru bernama ” email ” ke tabel ” customers “:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pelanggan <span class="kw">ALTER</span> <span class="kw">TABLE</span> <span class="kw">ADD</span> email <span class="dt">VARCHAR</span>(<span class="dv">255</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="drop" class="level4">
-<h4 class="anchored" data-anchor-id="drop">DROP</h4>
-<p>Pernyataan ini digunakan untuk menghapus objek database yang sudah ada. Misalnya, pernyataan SQL berikut menghapus tabel “pelanggan”:</p>
-<p>pelanggan DROP TABLE;</p>
-</section>
-<section id="truncate" class="level4">
-<h4 class="anchored" data-anchor-id="truncate">TRUNCATE</h4>
-<p>Pernyataan ini digunakan untuk menghapus semua baris dalam tabel, tetapi tidak seperti pernyataan DROP, pernyataan ini mempertahankan struktur dan indeks tabel. <br></p>
-</section>
-<section id="rename" class="level4">
-<h4 class="anchored" data-anchor-id="rename">RENAME</h4>
-<p>Pernyataan ini digunakan untuk mengganti nama objek database yang sudah ada. Misalnya, pernyataan SQL berikut mengganti nama tabel “pelanggan” menjadi “klien”:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">RENAME</span> <span class="kw">TABLE</span> pelanggan <span class="kw">TO</span> klien;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Penting untuk dicatat bahwa pernyataan DDL dieksekusi segera dan bersifat permanen, artinya setelah objek dibuat, diubah, atau dihapus, perubahan tidak dapat diurungkan. Oleh karena itu, sangat penting untuk berhati-hati dan memastikan bahwa Anda memiliki cadangan basis data sebelum menjalankan pernyataan DDL apa pun. Selain itu, pernyataan DDL biasanya dijalankan oleh administrator database atau pengembang dengan hak istimewa dan izin yang sesuai untuk mengubah struktur database. <br></p>
-</section>
-<section id="show" class="level4">
-<h4 class="anchored" data-anchor-id="show">SHOW</h4>
-<p>Perintah DDL ini digunakan untuk menampilkan daftar database atau tabel yang ada.</p>
-<p>Penerapan :</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>SHOW <span class="kw">TABLES</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br></p>
-<div class="callout callout-style-default callout-note callout-titled" title="Latihan DDL">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Latihan DDL
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<p>Myzkowski merupakan pengembangan dari teknik transposisi kolom. Teknik ini ditemukan oleh Émile Victor Théodore Myszkowski di tahun 1902. Pengembangan yang dilakukan adalah perubahan dalam pendefinisian dan permutasi kata kuncinya.</p>
+<p>Misalnya kata kunci “NUSWANTORO” jika didefinisikan dengan teknik transposisi kolom akan menghasilkan urutan abjad 2 9 7 10 1 3 8 4 6 5. Namun jika kita menggunakan teknik transposisi myzkowski, kata kunci tersebut akan didefinisikan dengan hasil 2 7 5 8 1 2 6 3 4 3.</p>
+<p>Pada teknik Myszkowski, huruf yang muncul berulang memiliki indeks urutan yang sama. Sementara itu proses permutasi atau pengambilan ciphertext pada indeks yang sama dilakukan dengan pengambilan secara zig-zag.</p>
+<section id="prinsip-dasar" class="level1">
+<h1>Prinsip Dasar</h1>
 <ol type="1">
-<li><p>Create Database Mahasiswa dan Table identitas <br></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">DATABASE</span> mahasiswa;</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> identitas (`Nama` <span class="dt">VARCHAR</span>(<span class="dv">250</span>) <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Alter Table <br></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">TABLE</span> identitas <span class="kw">ADD</span> NIM <span class="dt">VARCHAR</span>(<span class="dv">15</span>) <span class="kw">UNIQUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Rename Table <br></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">RENAME</span> <span class="kw">TABLE</span> identitas <span class="kw">TO</span> id_mahasiswa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Show Table <br></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>SHOW <span class="kw">TABLES</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Drop Table <br></p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DROP</span> <span class="kw">TABLE</span> id_mahasiswa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Coba kreasikan Database kalian dengan perintah DDL!<br> Buatlah Database <code>kuliah</code> berisi 2 table yaitu <code>id_dosen</code> dan <code>id_mahasiswa</code><br> Table <code>id_dosen</code> berisi kolom : nama, NIDN, Jabatan<br> Table <code>id_mahasiswa</code> berisi kolom : nama, NIM, Prodi</p></li>
+<li><p><strong>Matriks Kunci (Key Matrix)</strong>: Playfair menggunakan matriks 5x5 yang berisi huruf-huruf alfabet. Karena hanya ada 25 tempat di matriks dan alfabet memiliki 26 huruf, biasanya huruf ‘J’ akan dihilangkan. Kunci ini digunakan untuk membentuk matriks.</p></li>
+<li><p><strong>Pengisian Matriks</strong>: Kunci yang digunakan untuk pengisian matriks harus berisi semua huruf yang tidak berulang. Jika ada huruf yang berulang, salah satunya diabaikan. Setelah semua huruf dari kunci dimasukkan, sisa tempat di matriks diisi dengan huruf alfabet lainnya yang belum digunakan.</p></li>
+<li><p><strong>Pemisahan Teks</strong>: Teks yang akan dienkripsi dipisahkan menjadi pasangan huruf (digraf). Jika ada pasangan yang berisi dua huruf yang sama, satu huruf dummy seperti ‘X’ atau ‘Q’ dimasukkan di antara mereka.</p></li>
+<li><p><strong>Pemrosesan Plainteks</strong>: Pesan yang akan dienkripsi diatur terlebih dahulu sebagai berikut:</p>
+<ul>
+<li>Ganti huruf J (bila ada) dengan I.</li>
+<li>Tulis pesan dalam pasangan huruf (bigram).</li>
+<li>Jangan sampai ada pasangan huruf yang sama. Jika ada, sisipkan Z di tengahnya.</li>
+<li>Jika dalam huruf ganjil, tambahkan huruf Z di akhir.</li>
+</ul></li>
+<li><p><strong>Aturan Enkripsi</strong>:</p>
+<ul>
+<li>Jika dua huruf terdapat pada baris kunci yang sama maka tiap huruf diganti dengan huruf di kanannya.</li>
+<li>Jika dua huruf terdapat pada kolom kunci yang sama maka tiap huruf diganti dengan huruf di bawahnya.</li>
+<li>Jika dua huruf tidak pada baris yang sama atau kolom yang sama, maka huruf pertama diganti dengan huruf pada perpotongan baris huruf pertama dengan kolom huruf kedua. Huruf kedua diganti dengan huruf pada titik sudut keempat dari persegi panjang yang dibentuk dari 3 huruf yang digunakan sampai sejauh ini.</li>
+</ul></li>
 </ol>
-</div>
-</div>
 </section>
-</section>
-<section id="data-manipulation-language-dml" class="level3">
-<h3 class="anchored" data-anchor-id="data-manipulation-language-dml">Data Manipulation Language (DML)</h3>
-<p>Data Manipulation Language (DML) adalah bagian dari SQL (Structured Query Language) yang digunakan untuk memanipulasi data dalam database. Sehingga pernyataan DML ini dapat digunakan ketika database dan tabel telah dibuat. Pernyataan DML digunakan untuk menyisipkan, memperbarui, dan menghapus data dalam database. Beberapa pernyataan DML yang paling umum meliputi:</p>
-<section id="insert" class="level4">
-<h4 class="anchored" data-anchor-id="insert">INSERT</h4>
-<p>Pernyataan ini digunakan untuk memasukkan data baru ke dalam tabel. Sebagai ilustrasi, pernyataan SQL berikut menyisipkan baris baru ke dalam tabel “pelanggan”:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> pelanggan (<span class="kw">id</span>, nama, alamat) <span class="kw">VALUES</span> (<span class="dv">1</span>, <span class="st">'John Smith,'</span> <span class="st">'123 Main St'</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="select" class="level4">
-<h4 class="anchored" data-anchor-id="select">SELECT</h4>
-<p>Pernyataan ini digunakan untuk mengambil data dari satu atau lebih tabel dalam database. Sebagai contoh, kueri SQL berikut mengambil semua rekaman dari tabel “pelanggan”:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> pelanggan;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="update" class="level4">
-<h4 class="anchored" data-anchor-id="update">UPDATE</h4>
-<p>Pernyataan ini digunakan untuk memodifikasi data yang ada dalam sebuah tabel. Misalnya, pernyataan SQL berikut memperbarui alamat pelanggan dengan ID 1 di tabel “pelanggan”:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> pelanggan <span class="kw">SET</span> address <span class="op">=</span> <span class="st">'456 Park Ave'</span> <span class="kw">WHERE</span> <span class="kw">id</span> <span class="op">=</span> <span class="dv">1</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="delete" class="level4">
-<h4 class="anchored" data-anchor-id="delete">DELETE</h4>
-<p>Pernyataan ini digunakan untuk menghapus data dari tabel. Misalnya, pernyataan SQL berikut menghapus pelanggan dengan ID 1 dari tabel “pelanggan”:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> pelanggan <span class="kw">WHERE</span> <span class="kw">id</span> <span class="op">=</span> <span class="dv">1</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-style-default callout-note callout-titled" title="Latihan DML">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Latihan DML
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Gunakan Database yang telah kalian kerjakan pada <code>Latihan DDL</code> sebelumnya!</p>
+<section id="contoh-soal" class="level1">
+<h1>Contoh Soal</h1>
+<p>Untuk lebih jelasnya, kita bisa membahas contoh soal berikut ini: “GOOD BROOMS SWEEP CLEAN” yang akan dienkripsi menggunakan metode Playfair dengan kunci “JALAN NAKULA SEBELAS” Maka proses enkripsi nya adalah sebagai berikut:</p>
+<p><strong>Proses Penyandian</strong></p>
 <ol type="1">
-<li><p>Insert Data</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> id_mahasiswa <span class="kw">VALUES</span> (<span class="st">'Amanda'</span>, <span class="st">'A11.2020.54321'</span>,);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Select Data</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Nama, NIM <span class="kw">FROM</span> id_mahasiswa;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Update Data</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> id_mahasiswa <span class="kw">SET</span> `Prodi`<span class="op">=</span><span class="st">'Ilmu Komunikasi'</span> <span class="kw">WHERE</span> `Prodi`<span class="op">=</span><span class="st">''</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Delete Data</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> id_mahasiswa <span class="kw">WHERE</span> `NIM`<span class="op">=</span><span class="st">'A11.2020.54321'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Kreasikan database kalian dengan perintah dari DDL dan DML !</p></li>
+<li><p>Pertama kita buat matrix kunci 5x5 dari Kunci “JALAN NAKULA SEBELAS”, Kita susun kuncinya ke dalam bentuk matrix lalu kita hilangkan huruf yang berulang dan huruf J jika ada, setelah itu kita perluas Matrix kuncinya menjadi 6x6.</p>
+<p><img src="assets/kriptografi/playfair1.png" class="img-fluid" style="text-align:center;;width:70.0%"></p></li>
+<li><p>Kedua kita proses Plainteks dengan aturan yang ada di atas tadi:</p>
+<ul>
+<li>Ganti huruf J (bila ada) dengan I.</li>
+<li>Tulis pesan dalam pasangan huruf (bigram).</li>
+<li>Jangan sampai ada pasangan huruf yang sama. Jika ada, sisipkan Z di tengahnya.</li>
+<li>Jika dalam huruf ganjil, tambahkan huruf Z di akhir.</li>
+</ul>
+<p><img src="assets/kriptografi/playfair2.png" class="img-fluid" style="text-align:center;;width:70.0%"></p></li>
+<li><p>Jadi hasil akhir dari pemrosesan dari plainteks yaitu : GO OD BR OZ OM SZ SW EZ EP CL EA NZ</p></li>
+<li><p>Selanjutnya kita akan belajar bagaimana proses enkripsi dari Plainteks yang sudah diproses terhadap Matrix kunci tadi yang sudah dibuat. dengan 3 aturan enkripsi yang ada di atas tadi.</p>
+<p><img src="assets/kriptografi/playfair3.png" class="img-fluid" style="text-align:center;;width:70.0%"></p></li>
+<li><p>Jadi Cipherteks yang terbentuk dari proses enkripsi adalah : FP TS CQ TV TF DV EV DW GW EK SL UX</p></li>
 </ol>
-</div>
-</div>
-<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Konsep Database">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Konsep Database
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><em>Berikut merupakan penjelasan dari konsep database!</em></p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/b2fWiClQYiM" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</div>
-</div>
-
-
 </section>
+<section id="implementasi-pada-python" class="level1">
+<h1>Implementasi Pada Python</h1>
+<p>Deklarasi list abjad yang berisi huruf a-z tanpa huruf j</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>abjad <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'d'</span>, <span class="st">'e'</span>, <span class="st">'f'</span>, <span class="st">'g'</span>, <span class="st">'h'</span>, <span class="st">'i'</span>, <span class="st">'j'</span>, <span class="st">'k'</span>, <span class="st">'l'</span>, <span class="st">'m'</span>, <span class="st">'n'</span>, <span class="st">'o'</span>, <span class="st">'p'</span>, <span class="st">'q'</span>, <span class="st">'r'</span>, <span class="st">'s'</span>, <span class="st">'t'</span>, <span class="st">'u'</span>, <span class="st">'v'</span>, <span class="st">'w'</span>, <span class="st">'x'</span>, <span class="st">'y'</span>, <span class="st">'z'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Memasukkan plaintext</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>plaintext_playfair <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Masukkan teks yang akan dienkripsi: "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Menghilangkan spasi pada plaintext dan membuat plaintext menjadi lowercase</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plaintext_playfair <span class="op">=</span> plaintext_playfair.replace(<span class="st">' '</span>,<span class="st">''</span>).lower()</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(plaintext_playfair)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Memasukkan kunci</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>key_playfair <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Masukkan kunci: "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="pemrosesan-kunci" class="level2">
+<h2 class="anchored" data-anchor-id="pemrosesan-kunci">Pemrosesan Kunci</h2>
+<p>Menghilangkan spasi pada kunci dan membuat kunci menjadi lowercase</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>key_playfair <span class="op">=</span> key_playfair.replace(<span class="st">' '</span>,<span class="st">''</span>).lower()</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(key_playfair)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Menghapus huruf ‘j’ jika ada di kunci</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>key_playfair <span class="op">=</span> key_playfair.replace(<span class="st">'j'</span>, <span class="st">''</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(key_playfair)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Menghapus huruf yang berulang</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>key_result <span class="op">=</span> []</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> key_playfair:</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> i <span class="kw">not</span> <span class="kw">in</span> key_result:</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    key_result.append(i)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(key_result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>perulangan untuk menghapus huruf yang berulang dengan menambahkan kondisi apakah huruf tersebut sudah ditambahkan ke list key_result</p>
+<p>Menambahkan sisa huruf alphabet yang belum ada ke dalam matrix kunci</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> abjad:</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> i <span class="op">!=</span> <span class="st">'j'</span> <span class="kw">and</span> i <span class="kw">not</span> <span class="kw">in</span> key_result:</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    key_result.append(i)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(key_result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Membuat matrix kunci 5x5</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>key_created <span class="op">=</span> []</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> key_result<span class="op">!=</span> []:</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  key_created.append(key_result[:<span class="dv">5</span>])</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  key_result <span class="op">=</span> key_result[<span class="dv">5</span>:]</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> row <span class="kw">in</span> key_created:</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="proses-enkripsi" class="level2">
+<h2 class="anchored" data-anchor-id="proses-enkripsi">Proses Enkripsi</h2>
+<p>Mengganti huruf ‘j’ yang ada di plainteks menjadi huruf ‘i’</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>plaintext_playfair <span class="op">=</span> plaintext_playfair.replace(<span class="st">'j'</span>, <span class="st">'i'</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(plaintext_playfair)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Proses pembuatan plaintext menjadi bentuk bigram atau pasangan huruf</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>bigram_plaintext <span class="op">=</span> []</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># perulangan untuk menambahkan pasangan huruf atau bigram ke dalam list bigram_plaintext</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i<span class="op">&lt;</span><span class="bu">len</span>(plaintext_playfair):</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  x <span class="op">=</span> plaintext_playfair[i]</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  y <span class="op">=</span> <span class="st">''</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># situasi jika berada di huruf terakhir di plaintext</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>((i<span class="op">+</span><span class="dv">1</span>) <span class="op">==</span> <span class="bu">len</span>(plaintext_playfair)):</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> <span class="st">'z'</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span>:</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> plaintext_playfair[i<span class="op">+</span><span class="dv">1</span>]</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># jika hurufnya keduanya sama, maka disisipkan z di tengahnya</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(x<span class="op">!=</span>y):</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    bigram_plaintext.append(x<span class="op">+</span>y)</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    i <span class="op">+=</span> <span class="dv">2</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span>:</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>    bigram_plaintext.append(x<span class="op">+</span><span class="st">'z'</span>)</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>    i <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(bigram_plaintext)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Penjelasan prosesnya:</p>
+<ul>
+<li><code>bigram_plaintext = []</code> adalah sebuah list kosong yang akan diisi dengan pasangan huruf (bigram) yang diambil dari <code>plaintext_playfair</code>.</li>
+<li><code>while</code> loop digunakan untuk iterasi melalui teks <code>plaintext_playfair</code> sampai semua huruf di teks tersebut telah diproses. Loop ini akan berlanjut selama <code>i</code> kurang dari panjang teks <code>plaintext_playfair</code>. Jadi perulangan ini digunakan untuk memproses semua huruf yang ada di <code>plaintext_playfair</code>.</li>
+<li><code>x = plaintext_playfair[i]</code> dan <code>y = ''</code> adalah variabel yang digunakan untuk menampung huruf bigram pertama dan kedua dengan inisiasi nilai awal itu nilai dari plaintext_playfair[i] dan string kosong.</li>
+<li>Selanjutnya untuk pengkondisian pertama itu digunakan untuk kondisi dimana sudah sampai huruf terkahir dalam <code>plaintext_playfair</code>.</li>
+<li>Terakhir untuk pengkondisian kedua itu digunakan untuk kondisi dimana kedua hurufnya itu sama.</li>
+</ul>
+<p>Proses substitusi plainteks dengan 3 aturan yang sudah di jelaskan diatas</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>bigram_ciphertext <span class="op">=</span> []</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># perulangan untuk mencari bigram ciphertex</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> bigram <span class="kw">in</span> bigram_plaintext:</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  flag <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># cek aturan 1, apakah pasangan huruf plaintext berada di baris yang sama</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> row <span class="kw">in</span> key_created:</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># jika berada di baris yang sama maka huruf yang berada di sebelah kanannya ditambahkan ke bigram ciphertext</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(bigram[<span class="dv">0</span>] <span class="kw">in</span> row <span class="kw">and</span> bigram[<span class="dv">1</span>] <span class="kw">in</span> row):</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>      x1 <span class="op">=</span> row.index(bigram[<span class="dv">0</span>])</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>      x2 <span class="op">=</span> row.index(bigram[<span class="dv">1</span>])</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>      cipher_created <span class="op">=</span> row[(x1 <span class="op">+</span> <span class="dv">1</span>) <span class="op">%</span> <span class="dv">5</span>] <span class="op">+</span> row[(x2 <span class="op">+</span> <span class="dv">1</span>) <span class="op">%</span> <span class="dv">5</span>]</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>      bigram_ciphertext.append(cipher_created)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>      flag <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> flag:</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">continue</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># cek aturan 2, apakah pasangan huruf plaintext berada di kolom yang sama</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>    col <span class="op">=</span> <span class="st">''</span>.join([key_created[i][j] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)])</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># jika berada di kolom yang sama maka huruf yang berada di bawahnya ditambahkan ke bigram ciphertext</span></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(bigram[<span class="dv">0</span>] <span class="kw">in</span> col <span class="kw">and</span> bigram[<span class="dv">1</span>] <span class="kw">in</span> col):</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>      y1 <span class="op">=</span> col.index(bigram[<span class="dv">0</span>])</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>      y2 <span class="op">=</span> col.index(bigram[<span class="dv">1</span>])</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>      cipher_created <span class="op">=</span> col[(y1 <span class="op">+</span> <span class="dv">1</span>) <span class="op">%</span> <span class="dv">5</span>] <span class="op">+</span> col[(y2 <span class="op">+</span> <span class="dv">1</span>) <span class="op">%</span> <span class="dv">5</span>]</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>      bigram_ciphertext.append(cipher_created)</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>      flag <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> flag:</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">continue</span></span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>  foundOne <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>  foundTwo <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># cek aturan 3, apakah pasangan huruf plaintext berada di baris dan kolom yang berbeda</span></span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>    row <span class="op">=</span> key_created[i]</span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>    <span class="co"># jika huruf pertama dalam bigram ada pada baris urutan ke 'i'</span></span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(bigram[<span class="dv">0</span>] <span class="kw">in</span> row):</span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>      x1 <span class="op">=</span> i</span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>      y1 <span class="op">=</span> row.index(bigram[<span class="dv">0</span>])</span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>      foundOne <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>    <span class="co"># jika huruf kedua dalam bigram ada pada baris urutan ke 'i'</span></span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(bigram[<span class="dv">1</span>] <span class="kw">in</span> row):</span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a>      x2 <span class="op">=</span> i</span>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a>      y2 <span class="op">=</span> row.index(bigram[<span class="dv">1</span>])</span>
+<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a>      foundTwo <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a>    <span class="co"># jika kedua posisi pasangan huruf atau bigram sudah diketahui, maka pembentukan cipher sesuai aturan ketiga dilakukan</span></span>
+<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> foundOne <span class="kw">and</span> foundTwo:</span>
+<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a>      cipher_created <span class="op">=</span> key_created[x1][y2] <span class="op">+</span> key_created[x2][y1]</span>
+<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a>      bigram_ciphertext.append(cipher_created)</span>
+<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a>      <span class="cf">break</span></span>
+<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(bigram_ciphertext)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Penjelasan prosesnya:</p>
+<ul>
+<li><code>bigram_ciphertext</code> adalah list kosong yang akan diisi dengan pasangan huruf (bigram) yang telah dienkripsi dari <code>bigram_plaintext</code>.</li>
+<li><code>for bigram in bigram_plaintext:</code> digunakan untuk iterasi melalui setiap bigram yang ada dalam <code>bigram_plaintext</code>.</li>
+<li><code>flag = False</code> adalah variabel boolean yang digunakan untuk menandai apakah aturan tertentu sudah dipenuhi sehingga tidak perlu memeriksa aturan lainnya untuk bigram yang sama.</li>
+<li>Pemeriksaan Aturan 1: Baris yang Sama</li>
+</ul>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> row <span class="kw">in</span> key_created:</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(bigram[<span class="dv">0</span>] <span class="kw">in</span> row <span class="kw">and</span> bigram[<span class="dv">1</span>] <span class="kw">in</span> row):</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>        x1 <span class="op">=</span> row.index(bigram[<span class="dv">0</span>])</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>        x2 <span class="op">=</span> row.index(bigram[<span class="dv">1</span>])</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>        cipher_created <span class="op">=</span> row[(x1 <span class="op">+</span> <span class="dv">1</span>) <span class="op">%</span> <span class="dv">5</span>] <span class="op">+</span> row[(x2 <span class="op">+</span> <span class="dv">1</span>) <span class="op">%</span> <span class="dv">5</span>]</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>        bigram_ciphertext.append(cipher_created)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>        flag <span class="op">=</span> <span class="va">True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Loop ini memeriksa setiap baris (<code>row</code>) dalam matriks kunci (<code>key_created</code>).</li>
+<li>Jika kedua huruf dalam bigram (<code>bigram[0]</code> dan <code>bigram[1]</code>) berada di baris yang sama (<code>row</code>), maka:
+<ul>
+<li>Indeks masing-masing huruf dalam baris ditemukan (<code>x1</code> dan <code>x2</code>).</li>
+<li>Huruf di sebelah kanan dari masing-masing huruf ditentukan dengan menggunakan (<code>index + 1) % 5</code> untuk menangani kasus melingkar (huruf di ujung kanan).</li>
+<li>Huruf-huruf ini kemudian digabungkan menjadi <code>cipher_created</code> dan ditambahkan ke <code>bigram_ciphertext</code>.</li>
+<li><code>flag</code> diatur ke <code>True</code> untuk menandai bahwa aturan ini telah diterapkan, dan loop berhenti memeriksa aturan lain untuk bigram ini.</li>
+</ul></li>
+<li>Lanjut ke Bigram Berikutnya Jika Aturan 1 Terpenuhi</li>
+</ul>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> flag:</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">continue</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Jika <code>flag</code> <code>True</code>, bigram ini sudah diproses, dan loop lanjut ke bigram berikutnya tanpa memeriksa aturan lainnya.</li>
+<li>Pemeriksaan Aturan 2: Kolom yang Sama</li>
+</ul>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    col <span class="op">=</span> <span class="st">''</span>.join([key_created[i][j] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)])</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(bigram[<span class="dv">0</span>] <span class="kw">in</span> col <span class="kw">and</span> bigram[<span class="dv">1</span>] <span class="kw">in</span> col):</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>        y1 <span class="op">=</span> col.index(bigram[<span class="dv">0</span>])</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>        y2 <span class="op">=</span> col.index(bigram[<span class="dv">1</span>])</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>        cipher_created <span class="op">=</span> col[(y1 <span class="op">+</span> <span class="dv">1</span>) <span class="op">%</span> <span class="dv">5</span>] <span class="op">+</span> col[(y2 <span class="op">+</span> <span class="dv">1</span>) <span class="op">%</span> <span class="dv">5</span>]</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>        bigram_ciphertext.append(cipher_created)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>        flag <span class="op">=</span> <span class="va">True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Loop ini memeriksa setiap kolom dalam matriks kunci (<code>key_created</code>).</li>
+<li>Setiap kolom (<code>col</code>) dibentuk dengan menggabungkan huruf-huruf dari setiap baris pada indeks <code>j</code>.</li>
+<li>Jika kedua huruf dalam bigram (<code>bigram[0]</code> dan <code>bigram[1]</code>) berada di kolom yang sama (<code>col</code>), maka:
+<ul>
+<li>Indeks masing-masing huruf dalam kolom ditemukan (<code>y1</code> dan <code>y2</code>).</li>
+<li>Huruf di bawah masing-masing huruf ditentukan dengan menggunakan <code>(index + 1) % 5</code> untuk menangani kasus melingkar (huruf di ujung bawah).</li>
+<li>Huruf-huruf ini kemudian digabungkan menjadi <code>cipher_created</code> dan ditambahkan ke <code>bigram_ciphertext</code>.</li>
+<li><code>flag</code> diatur ke <code>True</code>, dan loop berhenti memeriksa aturan lain untuk bigram ini.</li>
+</ul></li>
+<li>Lanjut ke Bigram Berikutnya Jika Aturan 2 Terpenuhi</li>
+</ul>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> flag:</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">continue</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Jika <code>flag</code> <code>True</code>, bigram ini sudah diproses, dan loop lanjut ke bigram berikutnya tanpa memeriksa aturan lainnya.</li>
+<li>Pemeriksaan Aturan 3: Baris dan Kolom Berbeda</li>
+</ul>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>foundOne <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>foundTwo <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    row <span class="op">=</span> key_created[i]</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(bigram[<span class="dv">0</span>] <span class="kw">in</span> row):</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>        x1 <span class="op">=</span> i</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>        y1 <span class="op">=</span> row.index(bigram[<span class="dv">0</span>])</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>        foundOne <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(bigram[<span class="dv">1</span>] <span class="kw">in</span> row):</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>        x2 <span class="op">=</span> i</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>        y2 <span class="op">=</span> row.index(bigram[<span class="dv">1</span>])</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>        foundTwo <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> foundOne <span class="kw">and</span> foundTwo:</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>        cipher_created <span class="op">=</span> key_created[x1][y2] <span class="op">+</span> key_created[x2][y1]</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>        bigram_ciphertext.append(cipher_created)</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Loop ini memeriksa setiap baris dalam matriks kunci (<code>key_created</code>) untuk menemukan posisi huruf pertama dan kedua dari bigram.</li>
+<li>Jika huruf pertama (<code>bigram[0]</code>) ditemukan dalam baris <code>i</code>, indeks baris (<code>x1</code>) dan kolom (<code>y1</code>) disimpan, dan <code>foundOne</code> diatur ke <code>True</code>.</li>
+<li>Jika huruf kedua (<code>bigram[1]</code>) ditemukan dalam baris <code>i</code>, indeks baris (<code>x2</code>) dan kolom (<code>y2</code>) disimpan, dan <code>foundTwo</code> diatur ke True.</li>
+<li>Jika kedua huruf ditemukan (<code>foundOne</code> dan <code>foundTwo</code>), aturan ketiga diterapkan:
+<ul>
+<li>Huruf di posisi silang yang berlawanan diambil dari matriks kunci: <code>key_created[x1][y2]</code> dan <code>key_created[x2][y1]</code>.</li>
+<li>Huruf-huruf ini digabungkan menjadi <code>cipher_created</code> dan ditambahkan ke <code>bigram_ciphertext</code>.</li>
+<li>Loop dihentikan dengan <code>break</code> karena bigram telah diproses.</li>
+</ul></li>
+</ul>
+<p>Hasil enkripsi</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>hasil_enkripsi <span class="op">=</span> <span class="st">''</span>.join(bigram_ciphertext)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hasil_enkripsi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="proses-dekripsi" class="level2">
+<h2 class="anchored" data-anchor-id="proses-dekripsi">Proses Dekripsi</h2>
+<p>Memasukkan ciphertext</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>ciphertext_playfair <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Masukkan teks yang akan di dekripsi: "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Proses pembuatan ciphertext menjadi bentuk bigram atau pasangan huruf</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>bigram_ciphertext <span class="op">=</span> [ciphertext_playfair[i:i<span class="op">+</span><span class="dv">2</span>] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(ciphertext_playfair), <span class="dv">2</span>)]</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(bigram_ciphertext)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Proses substitusi Cipherteks dengan 3 aturan yang sudah di jelaskan diatas</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>bigram_dekripsi <span class="op">=</span> []</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># perulangan untuk mencari bigram decrypt text</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> bigram <span class="kw">in</span> bigram_ciphertext:</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  flag <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># cek aturan 1, apakah pasangan huruf ciphertext berada di baris yang sama</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> row <span class="kw">in</span> key_created:</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># jika berada di baris yang sama maka huruf yang berada di sebelah kanannya ditambahkan ke bigram decrypt text</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(bigram[<span class="dv">0</span>] <span class="kw">in</span> row <span class="kw">and</span> bigram[<span class="dv">1</span>] <span class="kw">in</span> row):</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>      x1 <span class="op">=</span> row.index(bigram[<span class="dv">0</span>])</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>      x2 <span class="op">=</span> row.index(bigram[<span class="dv">1</span>])</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>      decrypt_created <span class="op">=</span> row[(x1 <span class="op">-</span> <span class="dv">1</span>) <span class="op">%</span> <span class="dv">5</span>] <span class="op">+</span> row[(x2 <span class="op">-</span> <span class="dv">1</span>) <span class="op">%</span> <span class="dv">5</span>]</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>      bigram_dekripsi.append(decrypt_created)</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>      flag <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> flag:</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">continue</span></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># cek aturan 2, apakah pasangan huruf ciphertext berada di kolom yang sama</span></span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>    col <span class="op">=</span> <span class="st">''</span>.join([key_created[i][j] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)])</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># jika berada di kolom yang sama maka huruf yang berada di bawahnya ditambahkan ke bigram decrypt text</span></span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(bigram[<span class="dv">0</span>] <span class="kw">in</span> col <span class="kw">and</span> bigram[<span class="dv">1</span>] <span class="kw">in</span> col):</span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>      y1 <span class="op">=</span> col.index(bigram[<span class="dv">0</span>])</span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>      y2 <span class="op">=</span> col.index(bigram[<span class="dv">1</span>])</span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>      decrypt_created <span class="op">=</span> col[(y1 <span class="op">-</span> <span class="dv">1</span>) <span class="op">%</span> <span class="dv">5</span>] <span class="op">+</span> col[(y2 <span class="op">-</span> <span class="dv">1</span>) <span class="op">%</span> <span class="dv">5</span>]</span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>      bigram_dekripsi.append(decrypt_created)</span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>      flag <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> flag:</span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">continue</span></span>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a>  foundOne <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a>  foundTwo <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># cek aturan 3, apakah pasangan huruf ciphertext berada di baris dan kolom yang berbeda</span></span>
+<span id="cb21-34"><a href="#cb21-34" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb21-35"><a href="#cb21-35" aria-hidden="true" tabindex="-1"></a>    row <span class="op">=</span> key_created[i]</span>
+<span id="cb21-36"><a href="#cb21-36" aria-hidden="true" tabindex="-1"></a>    <span class="co"># jika huruf pertama dalam bigram ada pada baris urutan ke 'i'</span></span>
+<span id="cb21-37"><a href="#cb21-37" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(bigram[<span class="dv">0</span>] <span class="kw">in</span> row):</span>
+<span id="cb21-38"><a href="#cb21-38" aria-hidden="true" tabindex="-1"></a>      x1 <span class="op">=</span> i</span>
+<span id="cb21-39"><a href="#cb21-39" aria-hidden="true" tabindex="-1"></a>      y1 <span class="op">=</span> row.index(bigram[<span class="dv">0</span>])</span>
+<span id="cb21-40"><a href="#cb21-40" aria-hidden="true" tabindex="-1"></a>      foundOne <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb21-41"><a href="#cb21-41" aria-hidden="true" tabindex="-1"></a>    <span class="co"># jika huruf kedua dalam bigram ada pada baris urutan ke 'i'</span></span>
+<span id="cb21-42"><a href="#cb21-42" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(bigram[<span class="dv">1</span>] <span class="kw">in</span> row):</span>
+<span id="cb21-43"><a href="#cb21-43" aria-hidden="true" tabindex="-1"></a>      x2 <span class="op">=</span> i</span>
+<span id="cb21-44"><a href="#cb21-44" aria-hidden="true" tabindex="-1"></a>      y2 <span class="op">=</span> row.index(bigram[<span class="dv">1</span>])</span>
+<span id="cb21-45"><a href="#cb21-45" aria-hidden="true" tabindex="-1"></a>      foundTwo <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb21-46"><a href="#cb21-46" aria-hidden="true" tabindex="-1"></a>    <span class="co"># jika kedua posisi pasangan huruf atau bigram sudah diketahui, maka pembentukan cipher sesuai aturan ketiga dilakukan</span></span>
+<span id="cb21-47"><a href="#cb21-47" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> foundOne <span class="kw">and</span> foundTwo:</span>
+<span id="cb21-48"><a href="#cb21-48" aria-hidden="true" tabindex="-1"></a>      decrypt_created <span class="op">=</span> key_created[x1][y2] <span class="op">+</span> key_created[x2][y1]</span>
+<span id="cb21-49"><a href="#cb21-49" aria-hidden="true" tabindex="-1"></a>      bigram_dekripsi.append(decrypt_created)</span>
+<span id="cb21-50"><a href="#cb21-50" aria-hidden="true" tabindex="-1"></a>      <span class="cf">break</span></span>
+<span id="cb21-51"><a href="#cb21-51" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(bigram_dekripsi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Hasil dekripsi</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>hasil_dekripsi <span class="op">=</span> <span class="st">''</span>.join(bigram_dekripsi)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hasil_dekripsi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+
 </section>
 </section>
 
