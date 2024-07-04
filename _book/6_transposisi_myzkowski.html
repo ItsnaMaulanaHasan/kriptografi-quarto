@@ -343,8 +343,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#prinsip-dasar" id="toc-prinsip-dasar" class="nav-link active" data-scroll-target="#prinsip-dasar">Prinsip Dasar</a></li>
-  <li><a href="#contoh-soal" id="toc-contoh-soal" class="nav-link" data-scroll-target="#contoh-soal">Contoh Soal</a></li>
+  <li><a href="#cara-kerja" id="toc-cara-kerja" class="nav-link active" data-scroll-target="#cara-kerja">Cara Kerja</a></li>
   <li><a href="#implementasi-pada-python" id="toc-implementasi-pada-python" class="nav-link" data-scroll-target="#implementasi-pada-python">Implementasi Pada Python</a>
   <ul class="collapse">
   <li><a href="#pemrosesan-kunci" id="toc-pemrosesan-kunci" class="nav-link" data-scroll-target="#pemrosesan-kunci">Pemrosesan Kunci</a></li>
@@ -382,325 +381,351 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Myzkowski merupakan pengembangan dari teknik transposisi kolom. Teknik ini ditemukan oleh Émile Victor Théodore Myszkowski di tahun 1902. Pengembangan yang dilakukan adalah perubahan dalam pendefinisian dan permutasi kata kuncinya.</p>
 <p>Misalnya kata kunci “NUSWANTORO” jika didefinisikan dengan teknik transposisi kolom akan menghasilkan urutan abjad 2 9 7 10 1 3 8 4 6 5. Namun jika kita menggunakan teknik transposisi myzkowski, kata kunci tersebut akan didefinisikan dengan hasil 2 7 5 8 1 2 6 3 4 3.</p>
 <p>Pada teknik Myszkowski, huruf yang muncul berulang memiliki indeks urutan yang sama. Sementara itu proses permutasi atau pengambilan ciphertext pada indeks yang sama dilakukan dengan pengambilan secara zig-zag.</p>
-<section id="prinsip-dasar" class="level1">
-<h1>Prinsip Dasar</h1>
+<section id="cara-kerja" class="level1">
+<h1>Cara Kerja</h1>
+<p>Misalkan kita memiliki teks “TENTUKAN PRIORITAS ANDA SEBAB KITA TIDAK DAPAT MENGERJAKAN SEMUANYA X” dengan kunci “BOROBUDUR”, maka proses pengenkripsiannya adalah sebagai berikut</p>
 <ol type="1">
-<li><p><strong>Matriks Kunci (Key Matrix)</strong>: Playfair menggunakan matriks 5x5 yang berisi huruf-huruf alfabet. Karena hanya ada 25 tempat di matriks dan alfabet memiliki 26 huruf, biasanya huruf ‘J’ akan dihilangkan. Kunci ini digunakan untuk membentuk matriks.</p></li>
-<li><p><strong>Pengisian Matriks</strong>: Kunci yang digunakan untuk pengisian matriks harus berisi semua huruf yang tidak berulang. Jika ada huruf yang berulang, salah satunya diabaikan. Setelah semua huruf dari kunci dimasukkan, sisa tempat di matriks diisi dengan huruf alfabet lainnya yang belum digunakan.</p></li>
-<li><p><strong>Pemisahan Teks</strong>: Teks yang akan dienkripsi dipisahkan menjadi pasangan huruf (digraf). Jika ada pasangan yang berisi dua huruf yang sama, satu huruf dummy seperti ‘X’ atau ‘Q’ dimasukkan di antara mereka.</p></li>
-<li><p><strong>Pemrosesan Plainteks</strong>: Pesan yang akan dienkripsi diatur terlebih dahulu sebagai berikut:</p>
-<ul>
-<li>Ganti huruf J (bila ada) dengan I.</li>
-<li>Tulis pesan dalam pasangan huruf (bigram).</li>
-<li>Jangan sampai ada pasangan huruf yang sama. Jika ada, sisipkan Z di tengahnya.</li>
-<li>Jika dalam huruf ganjil, tambahkan huruf Z di akhir.</li>
-</ul></li>
-<li><p><strong>Aturan Enkripsi</strong>:</p>
-<ul>
-<li>Jika dua huruf terdapat pada baris kunci yang sama maka tiap huruf diganti dengan huruf di kanannya.</li>
-<li>Jika dua huruf terdapat pada kolom kunci yang sama maka tiap huruf diganti dengan huruf di bawahnya.</li>
-<li>Jika dua huruf tidak pada baris yang sama atau kolom yang sama, maka huruf pertama diganti dengan huruf pada perpotongan baris huruf pertama dengan kolom huruf kedua. Huruf kedua diganti dengan huruf pada titik sudut keempat dari persegi panjang yang dibentuk dari 3 huruf yang digunakan sampai sejauh ini.</li>
-</ul></li>
-</ol>
-</section>
-<section id="contoh-soal" class="level1">
-<h1>Contoh Soal</h1>
-<p>Untuk lebih jelasnya, kita bisa membahas contoh soal berikut ini: “GOOD BROOMS SWEEP CLEAN” yang akan dienkripsi menggunakan metode Playfair dengan kunci “JALAN NAKULA SEBELAS” Maka proses enkripsi nya adalah sebagai berikut:</p>
-<p><strong>Proses Penyandian</strong></p>
-<ol type="1">
-<li><p>Pertama kita buat matrix kunci 5x5 dari Kunci “JALAN NAKULA SEBELAS”, Kita susun kuncinya ke dalam bentuk matrix lalu kita hilangkan huruf yang berulang dan huruf J jika ada, setelah itu kita perluas Matrix kuncinya menjadi 6x6.</p>
-<p><img src="assets/kriptografi/playfair1.png" class="img-fluid" style="text-align:center;;width:70.0%"></p></li>
-<li><p>Kedua kita proses Plainteks dengan aturan yang ada di atas tadi:</p>
-<ul>
-<li>Ganti huruf J (bila ada) dengan I.</li>
-<li>Tulis pesan dalam pasangan huruf (bigram).</li>
-<li>Jangan sampai ada pasangan huruf yang sama. Jika ada, sisipkan Z di tengahnya.</li>
-<li>Jika dalam huruf ganjil, tambahkan huruf Z di akhir.</li>
-</ul>
-<p><img src="assets/kriptografi/playfair2.png" class="img-fluid" style="text-align:center;;width:70.0%"></p></li>
-<li><p>Jadi hasil akhir dari pemrosesan dari plainteks yaitu : GO OD BR OZ OM SZ SW EZ EP CL EA NZ</p></li>
-<li><p>Selanjutnya kita akan belajar bagaimana proses enkripsi dari Plainteks yang sudah diproses terhadap Matrix kunci tadi yang sudah dibuat. dengan 3 aturan enkripsi yang ada di atas tadi.</p>
-<p><img src="assets/kriptografi/playfair3.png" class="img-fluid" style="text-align:center;;width:70.0%"></p></li>
-<li><p>Jadi Cipherteks yang terbentuk dari proses enkripsi adalah : FP TS CQ TV TF DV EV DW GW EK SL UX</p></li>
+<li><p>Dari kata “BOROBUDUR” akan didefinisikan urutan abjadnya sebagai berikut : 1 3 4 3 1 5 2 5 4</p>
+<p><img src="assets/kriptografi/myzkowski1.png" class="img-fluid" style="text-align:center;;width:50.0%"></p></li>
+<li><p>Setelah itu kita akan membuat tabel yang panjangnya menyesuaikan dengan panjang kuncinya. Kemudian memasukkan setiap urutan kata kunci ke dalam baris paling atas, dan memasukkan Plainteks ke dalam tabel dengan urut dari kiri ke kanan.</p>
+<p><img src="assets/kriptografi/myzkowski2.png" class="img-fluid" style="text-align:center;;width:50.0%"></p></li>
+<li><p>Lalu baca dari urutan kunci yang paling kecil, jika hanya terdapat 1 nomor urut kunci makan membacanya dari atas ke bawah, jika lebih dari 1 maka cara membacanya dengan zig-zag.</p>
+<p><img src="assets/kriptografi/myzkowski3.png" class="img-fluid" style="text-align:center;;width:50.0%"></p></li>
+<li><p>Dari proses transposisi maka didapatkan cipherteks sebagai berikut: TURIN&nbsp;EIIAM RAUAA AAANS ETIRD STTPT JKNYN POAAK ADAEA MNKNT SBBDK EGNEX</p></li>
 </ol>
 </section>
 <section id="implementasi-pada-python" class="level1">
 <h1>Implementasi Pada Python</h1>
-<p>Deklarasi list abjad yang berisi huruf a-z tanpa huruf j</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>abjad <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'d'</span>, <span class="st">'e'</span>, <span class="st">'f'</span>, <span class="st">'g'</span>, <span class="st">'h'</span>, <span class="st">'i'</span>, <span class="st">'j'</span>, <span class="st">'k'</span>, <span class="st">'l'</span>, <span class="st">'m'</span>, <span class="st">'n'</span>, <span class="st">'o'</span>, <span class="st">'p'</span>, <span class="st">'q'</span>, <span class="st">'r'</span>, <span class="st">'s'</span>, <span class="st">'t'</span>, <span class="st">'u'</span>, <span class="st">'v'</span>, <span class="st">'w'</span>, <span class="st">'x'</span>, <span class="st">'y'</span>, <span class="st">'z'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Import library</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Deklarasi urutan huruf dalam alfabet</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>abjad <span class="op">=</span> {<span class="st">'a'</span>: <span class="dv">1</span>, <span class="st">'b'</span>: <span class="dv">2</span>, <span class="st">'c'</span>: <span class="dv">3</span>, <span class="st">'d'</span>: <span class="dv">4</span>, <span class="st">'e'</span>: <span class="dv">5</span>, <span class="st">'f'</span>: <span class="dv">6</span>, <span class="st">'g'</span>: <span class="dv">7</span>, <span class="st">'h'</span>: <span class="dv">8</span>, <span class="st">'i'</span>: <span class="dv">9</span>, <span class="st">'j'</span>: <span class="dv">10</span>, <span class="st">'k'</span>: <span class="dv">11</span>, <span class="st">'l'</span>: <span class="dv">12</span>, <span class="st">'m'</span>: <span class="dv">13</span>,</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>         <span class="st">'n'</span>: <span class="dv">14</span>, <span class="st">'o'</span>: <span class="dv">15</span>, <span class="st">'p'</span>: <span class="dv">16</span>, <span class="st">'q'</span>: <span class="dv">17</span>, <span class="st">'r'</span>: <span class="dv">18</span>, <span class="st">'s'</span>: <span class="dv">19</span>, <span class="st">'t'</span>: <span class="dv">20</span>, <span class="st">'u'</span>: <span class="dv">21</span>, <span class="st">'v'</span>: <span class="dv">22</span>, <span class="st">'w'</span>: <span class="dv">23</span>, <span class="st">'x'</span>: <span class="dv">24</span>, <span class="st">'y'</span>: <span class="dv">25</span>, <span class="st">'z'</span>: <span class="dv">26</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Memasukkan plaintext</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>plaintext_playfair <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Masukkan teks yang akan dienkripsi: "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Menghilangkan spasi pada plaintext dan membuat plaintext menjadi lowercase</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plaintext_playfair <span class="op">=</span> plaintext_playfair.replace(<span class="st">' '</span>,<span class="st">''</span>).lower()</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(plaintext_playfair)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plaintext_myzkowski <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Masukkan teks yang ingin dienkripsi: "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Menghilangkan spasi ganda dan mengubah plaintext menjadi uppercase</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plaintext_myzkowski <span class="op">=</span> plaintext_myzkowski.replace(<span class="st">"  "</span>, <span class="st">" "</span>).upper()</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(plaintext_myzkowski)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Memasukkan kunci</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>key_playfair <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Masukkan kunci: "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>key_myzkowski <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Masukkan kunci: "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Menghilangkan spasi dalam kunci</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>key_myzkowski <span class="op">=</span> key_myzkowski.replace(<span class="st">" "</span>, <span class="st">""</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(key_myzkowski)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="pemrosesan-kunci" class="level2">
 <h2 class="anchored" data-anchor-id="pemrosesan-kunci">Pemrosesan Kunci</h2>
-<p>Menghilangkan spasi pada kunci dan membuat kunci menjadi lowercase</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>key_playfair <span class="op">=</span> key_playfair.replace(<span class="st">' '</span>,<span class="st">''</span>).lower()</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(key_playfair)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Menghapus huruf ‘j’ jika ada di kunci</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>key_playfair <span class="op">=</span> key_playfair.replace(<span class="st">'j'</span>, <span class="st">''</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(key_playfair)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Menghapus huruf yang berulang</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>key_result <span class="op">=</span> []</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> key_playfair:</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> i <span class="kw">not</span> <span class="kw">in</span> key_result:</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    key_result.append(i)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(key_result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>perulangan untuk menghapus huruf yang berulang dengan menambahkan kondisi apakah huruf tersebut sudah ditambahkan ke list key_result</p>
-<p>Menambahkan sisa huruf alphabet yang belum ada ke dalam matrix kunci</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> abjad:</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> i <span class="op">!=</span> <span class="st">'j'</span> <span class="kw">and</span> i <span class="kw">not</span> <span class="kw">in</span> key_result:</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    key_result.append(i)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(key_result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Membuat matrix kunci 5x5</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>key_created <span class="op">=</span> []</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> key_result<span class="op">!=</span> []:</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  key_created.append(key_result[:<span class="dv">5</span>])</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  key_result <span class="op">=</span> key_result[<span class="dv">5</span>:]</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> row <span class="kw">in</span> key_created:</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Membuat urutan dari tiap huruf di kunci</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>sortkey <span class="op">=</span> []</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>kolom <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Perulangan untuk menambahkan urutan huruf kunci ke list sortkey</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> huruf <span class="kw">in</span> key_myzkowski:</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Periksa apakah karakter saat ini adalah huruf alfabet</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> huruf.isalpha():</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        sortkey.append(abjad[huruf.lower()])</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        kolom <span class="op">=</span> kolom<span class="op">+</span><span class="dv">1</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Urutan kunci dari kata '</span><span class="sc">{</span>key_myzkowski<span class="sc">}</span><span class="ss">' adalah: </span><span class="sc">{</span>sortkey<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Menghitung jumlah kemunculan tiap huruf di kunci</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat dictionary untuk melacak jumlah kemunculan setiap nilai</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>count_key <span class="op">=</span> {}</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> nilai <span class="kw">in</span> sortkey:</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Jika nilai sudah ada dalam dictionary, tambahkan 1 ke jumlahnya</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> nilai <span class="kw">in</span> count_key:</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        count_key[nilai] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Jika nilai belum ada dalam dictionary, tambahkan ke dictionary dengan jumlah 1</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>        count_key[nilai] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(count_key)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Membuat urutan kolom dalam kunci</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>hasil_kunci <span class="op">=</span> [<span class="va">None</span>] <span class="op">*</span> <span class="bu">len</span>(key_myzkowski)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i<span class="op">&lt;</span><span class="bu">len</span>(key_myzkowski):</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    non_none_values <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> x: x <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>, sortkey))</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> non_none_values:</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>        nilai_terkecil <span class="op">=</span> <span class="bu">min</span>(non_none_values)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> count_key[nilai_terkecil]<span class="op">&gt;</span><span class="dv">1</span>:</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(count_key[nilai_terkecil]):</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>                marker <span class="op">=</span> sortkey.index(nilai_terkecil)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>                hasil_kunci[marker] <span class="op">=</span> n</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>                sortkey[marker] <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>                nilai_terkecil <span class="op">=</span> <span class="bu">min</span>(non_none_values)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>          marker <span class="op">=</span> sortkey.index(nilai_terkecil)</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>          hasil_kunci[marker] <span class="op">=</span> n</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>          sortkey[marker] <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    n<span class="op">+=</span><span class="dv">1</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    i<span class="op">+=</span><span class="dv">1</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hasil_kunci)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Penjelasan prosesnya - <code>hasil_kunci</code> adalah list yang panjangnya sama dengan <code>key_myzkowski</code> dan diisi dengan <code>None</code>. List ini akan diisi dengan nomor urut sesuai urutan karakter dalam <code>key_myzkowski</code>.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="bu">len</span>(key_myzkowski):</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    non_none_values <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> x: x <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>, sortkey))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>while i &lt; len(key_myzkowski)</code>: Loop ini akan berjalan hingga semua karakter dalam <code>key_myzkowski</code> diproses.</li>
+<li><code>non_none_values</code>: List yang berisi nilai dari <code>sortkey</code> yang tidak <code>None</code>. <code>sortkey</code> adalah list yang berisi urutan karakter <code>key_myzkowski</code> yang telah diurutkan. <code>filter(lambda x: x is not None, sortkey)</code> digunakan untuk mendapatkan nilai yang valid (bukan <code>None</code>).</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> non_none_values:</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    nilai_terkecil <span class="op">=</span> <span class="bu">min</span>(non_none_values)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Jika <code>non_none_values</code> tidak kosong, berarti masih ada karakter yang perlu diproses.</li>
+<li><code>nilai_terkecil</code> adalah nilai terkecil dalam <code>non_none_values</code>. Ini digunakan untuk menentukan urutan karakter yang akan diberi nomor.</li>
+</ul>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> count_key[nilai_terkecil] <span class="op">&gt;</span> <span class="dv">1</span>:</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(count_key[nilai_terkecil]):</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        marker <span class="op">=</span> sortkey.index(nilai_terkecil)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>        hasil_kunci[marker] <span class="op">=</span> n</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>        sortkey[marker] <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>        nilai_terkecil <span class="op">=</span> <span class="bu">min</span>(non_none_values)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>if count_key[nilai_terkecil] &gt; 1</code>: Jika <code>nilai_terkecil</code> memiliki pengulangan (<code>count_key[nilai_terkecil]</code> adalah jumlah pengulangan karakter tersebut dalam <code>key_myzkowski</code>).</li>
+<li><code>for j in range(count_key[nilai_terkecil])</code>: Loop untuk memproses setiap pengulangan karakter.</li>
+<li><code>marker = sortkey.index(nilai_terkecil)</code>: Temukan indeks dari <code>nilai_terkecil</code> di <code>sortkey</code>.</li>
+<li><code>hasil_kunci[marker] = n</code>: Beri nomor urut <code>n</code> pada posisi yang sesuai di <code>hasil_kunci</code>.</li>
+<li><code>sortkey[marker] = None</code>: Tandai posisi yang telah diproses dengan None agar tidak diproses lagi di iterasi berikutnya.</li>
+<li><code>nilai_terkecil = min(non_none_values)</code>: Update <code>nilai_terkecil</code> dengan nilai terkecil berikutnya dari <code>non_none_values</code>.</li>
+</ul>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    marker <span class="op">=</span> sortkey.index(nilai_terkecil)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    hasil_kunci[marker] <span class="op">=</span> n</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    sortkey[marker] <span class="op">=</span> <span class="va">None</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Jika <code>nilai_terkecil</code> tidak memiliki pengulangan (<code>count_key[nilai_terkecil]</code> adalah 1), cukup tandai posisi <code>marker</code> di <code>hasil_kunci</code> dengan <code>n</code>, dan ubah nilai di <code>sortkey</code> menjadi <code>None</code>.</li>
+</ul>
 </section>
 <section id="proses-enkripsi" class="level2">
 <h2 class="anchored" data-anchor-id="proses-enkripsi">Proses Enkripsi</h2>
-<p>Mengganti huruf ‘j’ yang ada di plainteks menjadi huruf ‘i’</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>plaintext_playfair <span class="op">=</span> plaintext_playfair.replace(<span class="st">'j'</span>, <span class="st">'i'</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(plaintext_playfair)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Proses pembuatan plaintext menjadi bentuk bigram atau pasangan huruf</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>bigram_plaintext <span class="op">=</span> []</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># perulangan untuk menambahkan pasangan huruf atau bigram ke dalam list bigram_plaintext</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i<span class="op">&lt;</span><span class="bu">len</span>(plaintext_playfair):</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  x <span class="op">=</span> plaintext_playfair[i]</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  y <span class="op">=</span> <span class="st">''</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># situasi jika berada di huruf terakhir di plaintext</span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>((i<span class="op">+</span><span class="dv">1</span>) <span class="op">==</span> <span class="bu">len</span>(plaintext_playfair)):</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> <span class="st">'z'</span></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span>:</span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> plaintext_playfair[i<span class="op">+</span><span class="dv">1</span>]</span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># jika hurufnya keduanya sama, maka disisipkan z di tengahnya</span></span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(x<span class="op">!=</span>y):</span>
-<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    bigram_plaintext.append(x<span class="op">+</span>y)</span>
-<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    i <span class="op">+=</span> <span class="dv">2</span></span>
-<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span>:</span>
-<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>    bigram_plaintext.append(x<span class="op">+</span><span class="st">'z'</span>)</span>
-<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>    i <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(bigram_plaintext)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Membuat susunan plaintext sesuai dengan panjang kunci</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># membuat variabel list kosong</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>enkripsi <span class="op">=</span> []</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># perulangan untuk membagi plaintext menjadi potongan-potongan sepanjang panjang kunci dan menyimpan potongan-potongan tersebut ke dalam list</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span> (<span class="dv">0</span>, <span class="bu">len</span>(plaintext_myzkowski), <span class="bu">len</span>(key_myzkowski)):</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> plaintext_myzkowski[i:i<span class="op">+</span><span class="bu">len</span>(key_myzkowski)]</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="bu">list</span>(x)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    enkripsi.append(x)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co"># perulangan untuk menambahkan # ke dalam list enkripsi index terakhir jika panjangnya kurang dari panjang kunci</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="bu">len</span>(enkripsi[<span class="bu">len</span>(enkripsi)<span class="op">-</span><span class="dv">1</span>])<span class="op">&lt;</span><span class="bu">len</span>(key_myzkowski):</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    enkripsi[<span class="bu">len</span>(enkripsi)<span class="op">-</span><span class="dv">1</span>].append(<span class="st">" "</span>)</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hasil_kunci)</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> row <span class="kw">in</span> enkripsi:</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Menghitung jumlah kemunculan tiap angka dalam kunci</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat dictionary untuk melacak jumlah kemunculan setiap nilai</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>count_hasil_kunci <span class="op">=</span> {}</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Loop melalui setiap nilai dalam list</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> nilai <span class="kw">in</span> hasil_kunci:</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Jika nilai sudah ada dalam dictionary, tambahkan 1 ke jumlahnya</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> nilai <span class="kw">in</span> count_hasil_kunci:</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>        count_hasil_kunci[nilai] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Jika nilai belum ada dalam dictionary, tambahkan ke dictionary dengan jumlah 1</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>        count_hasil_kunci[nilai] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Cetak dictionary yang berisi jumlah kemunculan setiap nilai</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(count_hasil_kunci)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Proses pengenkripsian susuna plainteks</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>hasil_enkripsi <span class="op">=</span> []</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># perulangan untuk menentukan hasil enkripsi</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="bu">len</span>(key_myzkowski):</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    non_none_values <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> x: x <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>, hasil_kunci))</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> non_none_values:</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>        nilai_terkecil <span class="op">=</span> <span class="bu">min</span>(non_none_values)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> count_hasil_kunci[nilai_terkecil] <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>            marker <span class="op">=</span> hasil_kunci.index(nilai_terkecil)</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(enkripsi)):</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>                hasil_enkripsi.append(enkripsi[j][marker])</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>            hasil_kunci[marker] <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>            temp <span class="op">=</span> []</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(i, count_hasil_kunci[nilai_terkecil] <span class="op">+</span> i):</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>                marker <span class="op">=</span> hasil_kunci.index(nilai_terkecil)</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>                temp.append(marker)</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>                hasil_kunci[marker] <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>                nilai_terkecil <span class="op">=</span> <span class="bu">min</span>(non_none_values)</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(enkripsi)):</span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>                <span class="cf">for</span> indeks <span class="kw">in</span> temp:</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>                    hasil_enkripsi.append(enkripsi[j][indeks])</span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>    i <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>hasil_enkripsi <span class="op">=</span> <span class="st">''</span>.join(hasil_enkripsi)</span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hasil Enkripsi = "</span>, hasil_enkripsi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Penjelasan prosesnya:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="bu">len</span>(key_myzkowski):</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    non_none_values <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> x: x <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>, hasil_kunci))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li><code>bigram_plaintext = []</code> adalah sebuah list kosong yang akan diisi dengan pasangan huruf (bigram) yang diambil dari <code>plaintext_playfair</code>.</li>
-<li><code>while</code> loop digunakan untuk iterasi melalui teks <code>plaintext_playfair</code> sampai semua huruf di teks tersebut telah diproses. Loop ini akan berlanjut selama <code>i</code> kurang dari panjang teks <code>plaintext_playfair</code>. Jadi perulangan ini digunakan untuk memproses semua huruf yang ada di <code>plaintext_playfair</code>.</li>
-<li><code>x = plaintext_playfair[i]</code> dan <code>y = ''</code> adalah variabel yang digunakan untuk menampung huruf bigram pertama dan kedua dengan inisiasi nilai awal itu nilai dari plaintext_playfair[i] dan string kosong.</li>
-<li>Selanjutnya untuk pengkondisian pertama itu digunakan untuk kondisi dimana sudah sampai huruf terkahir dalam <code>plaintext_playfair</code>.</li>
-<li>Terakhir untuk pengkondisian kedua itu digunakan untuk kondisi dimana kedua hurufnya itu sama.</li>
+<li><code>while i &lt; len(key_myzkowski)</code>: Loop ini berjalan selama <code>i</code> kurang dari panjang <code>key_myzkowski</code>.</li>
+<li><code>non_none_values</code>: List ini berisi nilai-nilai dari <code>hasil_kunci</code> yang bukan <code>None</code>, yang menandakan kolom yang belum diproses.</li>
 </ul>
-<p>Proses substitusi plainteks dengan 3 aturan yang sudah di jelaskan diatas</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>bigram_ciphertext <span class="op">=</span> []</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># perulangan untuk mencari bigram ciphertex</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> bigram <span class="kw">in</span> bigram_plaintext:</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  flag <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># cek aturan 1, apakah pasangan huruf plaintext berada di baris yang sama</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> row <span class="kw">in</span> key_created:</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># jika berada di baris yang sama maka huruf yang berada di sebelah kanannya ditambahkan ke bigram ciphertext</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(bigram[<span class="dv">0</span>] <span class="kw">in</span> row <span class="kw">and</span> bigram[<span class="dv">1</span>] <span class="kw">in</span> row):</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>      x1 <span class="op">=</span> row.index(bigram[<span class="dv">0</span>])</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>      x2 <span class="op">=</span> row.index(bigram[<span class="dv">1</span>])</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>      cipher_created <span class="op">=</span> row[(x1 <span class="op">+</span> <span class="dv">1</span>) <span class="op">%</span> <span class="dv">5</span>] <span class="op">+</span> row[(x2 <span class="op">+</span> <span class="dv">1</span>) <span class="op">%</span> <span class="dv">5</span>]</span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>      bigram_ciphertext.append(cipher_created)</span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>      flag <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> flag:</span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">continue</span></span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># cek aturan 2, apakah pasangan huruf plaintext berada di kolom yang sama</span></span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>    col <span class="op">=</span> <span class="st">''</span>.join([key_created[i][j] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)])</span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># jika berada di kolom yang sama maka huruf yang berada di bawahnya ditambahkan ke bigram ciphertext</span></span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(bigram[<span class="dv">0</span>] <span class="kw">in</span> col <span class="kw">and</span> bigram[<span class="dv">1</span>] <span class="kw">in</span> col):</span>
-<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>      y1 <span class="op">=</span> col.index(bigram[<span class="dv">0</span>])</span>
-<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>      y2 <span class="op">=</span> col.index(bigram[<span class="dv">1</span>])</span>
-<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>      cipher_created <span class="op">=</span> col[(y1 <span class="op">+</span> <span class="dv">1</span>) <span class="op">%</span> <span class="dv">5</span>] <span class="op">+</span> col[(y2 <span class="op">+</span> <span class="dv">1</span>) <span class="op">%</span> <span class="dv">5</span>]</span>
-<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>      bigram_ciphertext.append(cipher_created)</span>
-<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>      flag <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> flag:</span>
-<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">continue</span></span>
-<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>  foundOne <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>  foundTwo <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># cek aturan 3, apakah pasangan huruf plaintext berada di baris dan kolom yang berbeda</span></span>
-<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
-<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>    row <span class="op">=</span> key_created[i]</span>
-<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>    <span class="co"># jika huruf pertama dalam bigram ada pada baris urutan ke 'i'</span></span>
-<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(bigram[<span class="dv">0</span>] <span class="kw">in</span> row):</span>
-<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>      x1 <span class="op">=</span> i</span>
-<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>      y1 <span class="op">=</span> row.index(bigram[<span class="dv">0</span>])</span>
-<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>      foundOne <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>    <span class="co"># jika huruf kedua dalam bigram ada pada baris urutan ke 'i'</span></span>
-<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(bigram[<span class="dv">1</span>] <span class="kw">in</span> row):</span>
-<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a>      x2 <span class="op">=</span> i</span>
-<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a>      y2 <span class="op">=</span> row.index(bigram[<span class="dv">1</span>])</span>
-<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a>      foundTwo <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a>    <span class="co"># jika kedua posisi pasangan huruf atau bigram sudah diketahui, maka pembentukan cipher sesuai aturan ketiga dilakukan</span></span>
-<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> foundOne <span class="kw">and</span> foundTwo:</span>
-<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a>      cipher_created <span class="op">=</span> key_created[x1][y2] <span class="op">+</span> key_created[x2][y1]</span>
-<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a>      bigram_ciphertext.append(cipher_created)</span>
-<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a>      <span class="cf">break</span></span>
-<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(bigram_ciphertext)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Penjelasan prosesnya:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> count_hasil_kunci[nilai_terkecil] <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    marker <span class="op">=</span> hasil_kunci.index(nilai_terkecil)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(enkripsi)):</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>        hasil_enkripsi.append(enkripsi[j][marker])</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    hasil_kunci[marker] <span class="op">=</span> <span class="va">None</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li><code>bigram_ciphertext</code> adalah list kosong yang akan diisi dengan pasangan huruf (bigram) yang telah dienkripsi dari <code>bigram_plaintext</code>.</li>
-<li><code>for bigram in bigram_plaintext:</code> digunakan untuk iterasi melalui setiap bigram yang ada dalam <code>bigram_plaintext</code>.</li>
-<li><code>flag = False</code> adalah variabel boolean yang digunakan untuk menandai apakah aturan tertentu sudah dipenuhi sehingga tidak perlu memeriksa aturan lainnya untuk bigram yang sama.</li>
-<li>Pemeriksaan Aturan 1: Baris yang Sama</li>
+<li><code>if count_hasil_kunci[nilai_terkecil] == 1</code>: Jika <code>nilai_terkecil</code> hanya muncul sekali (tidak ada pengulangan).</li>
+<li><code>marker = hasil_kunci.index(nilai_terkecil)</code>: Temukan indeks dari <code>nilai_terkecil</code> di <code>hasil_kunci</code>.</li>
+<li><code>for j in range(len(enkripsi))</code>: Loop melalui setiap baris dalam matriks <code>enkripsi</code>.</li>
+<li><code>hasil_enkripsi.append(enkripsi[j][marker])</code>: Tambahkan karakter di kolom <code>marker</code> dari setiap baris ke <code>hasil_enkripsi</code>.</li>
+<li><code>hasil_kunci[marker] = None</code>: Tandai kolom ini sebagai sudah diproses dengan mengubah nilai di <code>hasil_kunci</code> menjadi <code>None</code>.</li>
 </ul>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> row <span class="kw">in</span> key_created:</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(bigram[<span class="dv">0</span>] <span class="kw">in</span> row <span class="kw">and</span> bigram[<span class="dv">1</span>] <span class="kw">in</span> row):</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>        x1 <span class="op">=</span> row.index(bigram[<span class="dv">0</span>])</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>        x2 <span class="op">=</span> row.index(bigram[<span class="dv">1</span>])</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>        cipher_created <span class="op">=</span> row[(x1 <span class="op">+</span> <span class="dv">1</span>) <span class="op">%</span> <span class="dv">5</span>] <span class="op">+</span> row[(x2 <span class="op">+</span> <span class="dv">1</span>) <span class="op">%</span> <span class="dv">5</span>]</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>        bigram_ciphertext.append(cipher_created)</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>        flag <span class="op">=</span> <span class="va">True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    temp <span class="op">=</span> []</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(i, count_hasil_kunci[nilai_terkecil] <span class="op">+</span> i):</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>        marker <span class="op">=</span> hasil_kunci.index(nilai_terkecil)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>        temp.append(marker)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>        hasil_kunci[marker] <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>        nilai_terkecil <span class="op">=</span> <span class="bu">min</span>(non_none_values)</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(enkripsi)):</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> indeks <span class="kw">in</span> temp:</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>            hasil_enkripsi.append(enkripsi[j][indeks])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>Loop ini memeriksa setiap baris (<code>row</code>) dalam matriks kunci (<code>key_created</code>).</li>
-<li>Jika kedua huruf dalam bigram (<code>bigram[0]</code> dan <code>bigram[1]</code>) berada di baris yang sama (<code>row</code>), maka:
-<ul>
-<li>Indeks masing-masing huruf dalam baris ditemukan (<code>x1</code> dan <code>x2</code>).</li>
-<li>Huruf di sebelah kanan dari masing-masing huruf ditentukan dengan menggunakan (<code>index + 1) % 5</code> untuk menangani kasus melingkar (huruf di ujung kanan).</li>
-<li>Huruf-huruf ini kemudian digabungkan menjadi <code>cipher_created</code> dan ditambahkan ke <code>bigram_ciphertext</code>.</li>
-<li><code>flag</code> diatur ke <code>True</code> untuk menandai bahwa aturan ini telah diterapkan, dan loop berhenti memeriksa aturan lain untuk bigram ini.</li>
-</ul></li>
-<li>Lanjut ke Bigram Berikutnya Jika Aturan 1 Terpenuhi</li>
+<li><code>else</code>: Jika <code>nilai_terkecil</code> muncul lebih dari sekali.</li>
+<li><code>temp = []</code>: List sementara untuk menyimpan indeks kolom yang akan diproses.</li>
+<li><code>for k in range(i, count_hasil_kunci[nilai_terkecil] + i)</code>: Loop untuk menambahkan semua indeks kolom yang memiliki nilai <code>nilai_terkecil</code> ke <code>temp</code>.</li>
+<li><code>marker = hasil_kunci.index(nilai_terkecil)</code>: Temukan indeks dari <code>nilai_terkecil</code> di <code>hasil_kunci</code>.</li>
+<li><code>temp.append(marker)</code>: Tambahkan indeks <code>marker</code> ke <code>temp</code>.</li>
+<li><code>hasil_kunci[marker] = None</code>: Tandai kolom ini sebagai sudah diproses dengan mengubah nilai di <code>hasil_kunci</code> menjadi <code>None</code>.</li>
+<li><code>nilai_terkecil = min(non_none_values)</code>: Update <code>nilai_terkecil</code> dengan nilai terkecil berikutnya dari <code>non_none_values</code>.</li>
+<li><code>for j in range(len(enkripsi))</code>: Loop melalui setiap baris dalam matriks <code>enkripsi</code>.</li>
+<li><code>for indeks in temp</code>: Loop melalui setiap indeks yang disimpan di <code>temp</code>.</li>
+<li><code>hasil_enkripsi.append(enkripsi[j][indeks])</code>: Tambahkan karakter di kolom <code>indeks</code> dari setiap baris ke <code>hasil_enkripsi</code>.</li>
 </ul>
-<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> flag:</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">continue</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>hasil_enkripsi <span class="op">=</span> <span class="st">''</span>.join(hasil_enkripsi)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hasil Enkripsi = "</span>, hasil_enkripsi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>Jika <code>flag</code> <code>True</code>, bigram ini sudah diproses, dan loop lanjut ke bigram berikutnya tanpa memeriksa aturan lainnya.</li>
-<li>Pemeriksaan Aturan 2: Kolom yang Sama</li>
+<li><code>hasil_enkripsi = ''.join(hasil_enkripsi)</code>: Gabungkan semua karakter di <code>hasil_enkripsi</code> menjadi satu string.</li>
+<li><code>print("Hasil Enkripsi = ", hasil_enkripsi)</code>: Cetak hasil enkripsi.</li>
 </ul>
-<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    col <span class="op">=</span> <span class="st">''</span>.join([key_created[i][j] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)])</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(bigram[<span class="dv">0</span>] <span class="kw">in</span> col <span class="kw">and</span> bigram[<span class="dv">1</span>] <span class="kw">in</span> col):</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>        y1 <span class="op">=</span> col.index(bigram[<span class="dv">0</span>])</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>        y2 <span class="op">=</span> col.index(bigram[<span class="dv">1</span>])</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>        cipher_created <span class="op">=</span> col[(y1 <span class="op">+</span> <span class="dv">1</span>) <span class="op">%</span> <span class="dv">5</span>] <span class="op">+</span> col[(y2 <span class="op">+</span> <span class="dv">1</span>) <span class="op">%</span> <span class="dv">5</span>]</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>        bigram_ciphertext.append(cipher_created)</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>        flag <span class="op">=</span> <span class="va">True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>Loop ini memeriksa setiap kolom dalam matriks kunci (<code>key_created</code>).</li>
-<li>Setiap kolom (<code>col</code>) dibentuk dengan menggabungkan huruf-huruf dari setiap baris pada indeks <code>j</code>.</li>
-<li>Jika kedua huruf dalam bigram (<code>bigram[0]</code> dan <code>bigram[1]</code>) berada di kolom yang sama (<code>col</code>), maka:
-<ul>
-<li>Indeks masing-masing huruf dalam kolom ditemukan (<code>y1</code> dan <code>y2</code>).</li>
-<li>Huruf di bawah masing-masing huruf ditentukan dengan menggunakan <code>(index + 1) % 5</code> untuk menangani kasus melingkar (huruf di ujung bawah).</li>
-<li>Huruf-huruf ini kemudian digabungkan menjadi <code>cipher_created</code> dan ditambahkan ke <code>bigram_ciphertext</code>.</li>
-<li><code>flag</code> diatur ke <code>True</code>, dan loop berhenti memeriksa aturan lain untuk bigram ini.</li>
-</ul></li>
-<li>Lanjut ke Bigram Berikutnya Jika Aturan 2 Terpenuhi</li>
-</ul>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> flag:</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">continue</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>Jika <code>flag</code> <code>True</code>, bigram ini sudah diproses, dan loop lanjut ke bigram berikutnya tanpa memeriksa aturan lainnya.</li>
-<li>Pemeriksaan Aturan 3: Baris dan Kolom Berbeda</li>
-</ul>
-<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>foundOne <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>foundTwo <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    row <span class="op">=</span> key_created[i]</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(bigram[<span class="dv">0</span>] <span class="kw">in</span> row):</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>        x1 <span class="op">=</span> i</span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>        y1 <span class="op">=</span> row.index(bigram[<span class="dv">0</span>])</span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>        foundOne <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(bigram[<span class="dv">1</span>] <span class="kw">in</span> row):</span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>        x2 <span class="op">=</span> i</span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>        y2 <span class="op">=</span> row.index(bigram[<span class="dv">1</span>])</span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>        foundTwo <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> foundOne <span class="kw">and</span> foundTwo:</span>
-<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>        cipher_created <span class="op">=</span> key_created[x1][y2] <span class="op">+</span> key_created[x2][y1]</span>
-<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>        bigram_ciphertext.append(cipher_created)</span>
-<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>Loop ini memeriksa setiap baris dalam matriks kunci (<code>key_created</code>) untuk menemukan posisi huruf pertama dan kedua dari bigram.</li>
-<li>Jika huruf pertama (<code>bigram[0]</code>) ditemukan dalam baris <code>i</code>, indeks baris (<code>x1</code>) dan kolom (<code>y1</code>) disimpan, dan <code>foundOne</code> diatur ke <code>True</code>.</li>
-<li>Jika huruf kedua (<code>bigram[1]</code>) ditemukan dalam baris <code>i</code>, indeks baris (<code>x2</code>) dan kolom (<code>y2</code>) disimpan, dan <code>foundTwo</code> diatur ke True.</li>
-<li>Jika kedua huruf ditemukan (<code>foundOne</code> dan <code>foundTwo</code>), aturan ketiga diterapkan:
-<ul>
-<li>Huruf di posisi silang yang berlawanan diambil dari matriks kunci: <code>key_created[x1][y2]</code> dan <code>key_created[x2][y1]</code>.</li>
-<li>Huruf-huruf ini digabungkan menjadi <code>cipher_created</code> dan ditambahkan ke <code>bigram_ciphertext</code>.</li>
-<li>Loop dihentikan dengan <code>break</code> karena bigram telah diproses.</li>
-</ul></li>
-</ul>
-<p>Hasil enkripsi</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>hasil_enkripsi <span class="op">=</span> <span class="st">''</span>.join(bigram_ciphertext)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hasil_enkripsi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="proses-dekripsi" class="level2">
 <h2 class="anchored" data-anchor-id="proses-dekripsi">Proses Dekripsi</h2>
-<p>Memasukkan ciphertext</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>ciphertext_playfair <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Masukkan teks yang akan di dekripsi: "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Proses pembuatan ciphertext menjadi bentuk bigram atau pasangan huruf</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>bigram_ciphertext <span class="op">=</span> [ciphertext_playfair[i:i<span class="op">+</span><span class="dv">2</span>] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(ciphertext_playfair), <span class="dv">2</span>)]</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(bigram_ciphertext)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Proses substitusi Cipherteks dengan 3 aturan yang sudah di jelaskan diatas</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>bigram_dekripsi <span class="op">=</span> []</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># perulangan untuk mencari bigram decrypt text</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> bigram <span class="kw">in</span> bigram_ciphertext:</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  flag <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># cek aturan 1, apakah pasangan huruf ciphertext berada di baris yang sama</span></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> row <span class="kw">in</span> key_created:</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># jika berada di baris yang sama maka huruf yang berada di sebelah kanannya ditambahkan ke bigram decrypt text</span></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(bigram[<span class="dv">0</span>] <span class="kw">in</span> row <span class="kw">and</span> bigram[<span class="dv">1</span>] <span class="kw">in</span> row):</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>      x1 <span class="op">=</span> row.index(bigram[<span class="dv">0</span>])</span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>      x2 <span class="op">=</span> row.index(bigram[<span class="dv">1</span>])</span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>      decrypt_created <span class="op">=</span> row[(x1 <span class="op">-</span> <span class="dv">1</span>) <span class="op">%</span> <span class="dv">5</span>] <span class="op">+</span> row[(x2 <span class="op">-</span> <span class="dv">1</span>) <span class="op">%</span> <span class="dv">5</span>]</span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>      bigram_dekripsi.append(decrypt_created)</span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>      flag <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> flag:</span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">continue</span></span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># cek aturan 2, apakah pasangan huruf ciphertext berada di kolom yang sama</span></span>
-<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
-<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>    col <span class="op">=</span> <span class="st">''</span>.join([key_created[i][j] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)])</span>
-<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># jika berada di kolom yang sama maka huruf yang berada di bawahnya ditambahkan ke bigram decrypt text</span></span>
-<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(bigram[<span class="dv">0</span>] <span class="kw">in</span> col <span class="kw">and</span> bigram[<span class="dv">1</span>] <span class="kw">in</span> col):</span>
-<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>      y1 <span class="op">=</span> col.index(bigram[<span class="dv">0</span>])</span>
-<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>      y2 <span class="op">=</span> col.index(bigram[<span class="dv">1</span>])</span>
-<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>      decrypt_created <span class="op">=</span> col[(y1 <span class="op">-</span> <span class="dv">1</span>) <span class="op">%</span> <span class="dv">5</span>] <span class="op">+</span> col[(y2 <span class="op">-</span> <span class="dv">1</span>) <span class="op">%</span> <span class="dv">5</span>]</span>
-<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>      bigram_dekripsi.append(decrypt_created)</span>
-<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>      flag <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> flag:</span>
-<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">continue</span></span>
-<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a>  foundOne <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a>  foundTwo <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># cek aturan 3, apakah pasangan huruf ciphertext berada di baris dan kolom yang berbeda</span></span>
-<span id="cb21-34"><a href="#cb21-34" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
-<span id="cb21-35"><a href="#cb21-35" aria-hidden="true" tabindex="-1"></a>    row <span class="op">=</span> key_created[i]</span>
-<span id="cb21-36"><a href="#cb21-36" aria-hidden="true" tabindex="-1"></a>    <span class="co"># jika huruf pertama dalam bigram ada pada baris urutan ke 'i'</span></span>
-<span id="cb21-37"><a href="#cb21-37" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(bigram[<span class="dv">0</span>] <span class="kw">in</span> row):</span>
-<span id="cb21-38"><a href="#cb21-38" aria-hidden="true" tabindex="-1"></a>      x1 <span class="op">=</span> i</span>
-<span id="cb21-39"><a href="#cb21-39" aria-hidden="true" tabindex="-1"></a>      y1 <span class="op">=</span> row.index(bigram[<span class="dv">0</span>])</span>
-<span id="cb21-40"><a href="#cb21-40" aria-hidden="true" tabindex="-1"></a>      foundOne <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb21-41"><a href="#cb21-41" aria-hidden="true" tabindex="-1"></a>    <span class="co"># jika huruf kedua dalam bigram ada pada baris urutan ke 'i'</span></span>
-<span id="cb21-42"><a href="#cb21-42" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(bigram[<span class="dv">1</span>] <span class="kw">in</span> row):</span>
-<span id="cb21-43"><a href="#cb21-43" aria-hidden="true" tabindex="-1"></a>      x2 <span class="op">=</span> i</span>
-<span id="cb21-44"><a href="#cb21-44" aria-hidden="true" tabindex="-1"></a>      y2 <span class="op">=</span> row.index(bigram[<span class="dv">1</span>])</span>
-<span id="cb21-45"><a href="#cb21-45" aria-hidden="true" tabindex="-1"></a>      foundTwo <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb21-46"><a href="#cb21-46" aria-hidden="true" tabindex="-1"></a>    <span class="co"># jika kedua posisi pasangan huruf atau bigram sudah diketahui, maka pembentukan cipher sesuai aturan ketiga dilakukan</span></span>
-<span id="cb21-47"><a href="#cb21-47" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> foundOne <span class="kw">and</span> foundTwo:</span>
-<span id="cb21-48"><a href="#cb21-48" aria-hidden="true" tabindex="-1"></a>      decrypt_created <span class="op">=</span> key_created[x1][y2] <span class="op">+</span> key_created[x2][y1]</span>
-<span id="cb21-49"><a href="#cb21-49" aria-hidden="true" tabindex="-1"></a>      bigram_dekripsi.append(decrypt_created)</span>
-<span id="cb21-50"><a href="#cb21-50" aria-hidden="true" tabindex="-1"></a>      <span class="cf">break</span></span>
-<span id="cb21-51"><a href="#cb21-51" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(bigram_dekripsi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Hasil dekripsi</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>hasil_dekripsi <span class="op">=</span> <span class="st">''</span>.join(bigram_dekripsi)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hasil_dekripsi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Memasukkan cipherteks</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>chipertext_myzkowski <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Masukkan teks yang ingin dienkripsi: "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Proses membuat list yang berisi kunci dan nomor urut hurufnya</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># membuat variabel list kosong</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>dekripsi <span class="op">=</span> []</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>key_myzkowski <span class="op">=</span> <span class="bu">list</span>(key_myzkowski)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># menambahkan kunci ke dalam list dekripsi</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>dekripsi.append(key_myzkowski)</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co"># menambahkan list kosong yang akan berisi nomor urutan dari tiap abjad kunci</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>dekripsi.append([])</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="co"># perulangan untuk menambahkan urutan nomor dari tiap abjad kunci</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i<span class="op">&lt;</span><span class="bu">len</span>(key_myzkowski):</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    dekripsi[<span class="dv">1</span>].append(i<span class="op">+</span><span class="dv">1</span>)</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    i<span class="op">+=</span><span class="dv">1</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dekripsi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Outputnya:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>[[<span class="st">'u'</span>, <span class="st">'d'</span>, <span class="st">'i'</span>, <span class="st">'n'</span>, <span class="st">'u'</span>, <span class="st">'s'</span>, <span class="st">'u'</span>, <span class="st">'n'</span>, <span class="st">'g'</span>, <span class="st">'g'</span>, <span class="st">'u'</span>, <span class="st">'l'</span>], [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Mengurutkan isi list berdasarkan dari list pertama yang berisi kunci</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>dekripsi <span class="op">=</span> np.array(dekripsi)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>dekripsi <span class="op">=</span> dekripsi [ :, dekripsi[<span class="dv">0</span>].argsort()]</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>dekripsi <span class="op">=</span> dekripsi.tolist()</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dekripsi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Outputnya:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>[[<span class="st">'d'</span>, <span class="st">'g'</span>, <span class="st">'g'</span>, <span class="st">'i'</span>, <span class="st">'l'</span>, <span class="st">'n'</span>, <span class="st">'n'</span>, <span class="st">'s'</span>, <span class="st">'u'</span>, <span class="st">'u'</span>, <span class="st">'u'</span>, <span class="st">'u'</span>], [<span class="st">'2'</span>, <span class="st">'9'</span>, <span class="st">'10'</span>, <span class="st">'3'</span>, <span class="st">'12'</span>, <span class="st">'4'</span>, <span class="st">'8'</span>, <span class="st">'6'</span>, <span class="st">'1'</span>, <span class="st">'5'</span>, <span class="st">'7'</span>, <span class="st">'11'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Menghitung jumlah frekuensi abjad dari list yang berisi kunci</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>count_key_decrypt <span class="op">=</span> {}</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> nilai <span class="kw">in</span> dekripsi[<span class="dv">0</span>]:</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Jika nilai sudah ada dalam dictionary, tambahkan 1 ke jumlahnya</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> nilai <span class="kw">in</span> count_key_decrypt:</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>        count_key_decrypt[nilai] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Jika nilai belum ada dalam dictionary, tambahkan ke dictionary dengan jumlah 1</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>        count_key_decrypt[nilai] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(count_key_decrypt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Membaca karakter dari ciphertext dan menempatkannya ke dalam list dekripsi berdasarkan kunci yang telah diuraikan</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>indeks <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co"># perulangan untuk menambahkan abjad ciphertext ke dalam list berdasarkan kunci dan jumlah frekuensi abjad kunci</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i<span class="op">&lt;</span><span class="bu">len</span>(key_myzkowski):</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> count_key_decrypt[dekripsi[<span class="dv">0</span>][i]]<span class="op">&gt;</span><span class="dv">1</span>:</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>,<span class="bu">int</span>((<span class="bu">len</span>(chipertext_myzkowski)<span class="op">/</span><span class="bu">len</span>(key_myzkowski))<span class="op">+</span><span class="dv">2</span>)):</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(count_key_decrypt[dekripsi[<span class="dv">0</span>][i]]):</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>                dekripsi[k].append(chipertext_myzkowski[indeks])</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>                indeks<span class="op">+=</span><span class="dv">1</span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>        i<span class="op">+=</span>(count_key_decrypt[dekripsi[<span class="dv">0</span>][i]]<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="bu">int</span>((<span class="bu">len</span>(chipertext_myzkowski) <span class="op">/</span> <span class="bu">len</span>(key_myzkowski)) <span class="op">+</span> <span class="dv">2</span>)):</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>            dekripsi[k].append(chipertext_myzkowski[indeks])</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>            indeks<span class="op">+=</span><span class="dv">1</span></span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>    i<span class="op">+=</span><span class="dv">1</span></span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dekripsi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Penjelasan prosesnya:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="bu">len</span>(key_myzkowski):</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> count_key_decrypt[dekripsi[<span class="dv">0</span>][i]] <span class="op">&gt;</span> <span class="dv">1</span>:</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>while i &lt; len(key_myzkowski)</code>: Loop ini berjalan selama <code>i</code> kurang dari panjang <code>key_myzkowski</code>.</li>
+<li><code>if count_key_decrypt[dekripsi[0][i]] &gt; 1</code>: Memeriksa apakah karakter pada posisi <code>i</code> di <code>dekripsi[0]</code> (baris kunci) memiliki pengulangan. Jika iya, berarti kita akan menangani kolom yang berulang.</li>
+</ul>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="bu">int</span>((<span class="bu">len</span>(chipertext_myzkowski) <span class="op">/</span> <span class="bu">len</span>(key_myzkowski)) <span class="op">+</span> <span class="dv">2</span>)):</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(count_key_decrypt[dekripsi[<span class="dv">0</span>][i]]):</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>        dekripsi[k].append(chipertext_myzkowski[indeks])</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>        indeks <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>i <span class="op">+=</span> (count_key_decrypt[dekripsi[<span class="dv">0</span>][i]] <span class="op">-</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>for k in range(2, int((len(chipertext_myzkowski) / len(key_myzkowski)) + 2))</code>: Loop melalui setiap baris dalam list <code>dekripsi</code>, dimulai dari baris kedua. Perulangan ini dilakukan sesuai dengan jumlah kolom dan panjang ciphertext.</li>
+<li><code>for j in range(count_key_decrypt[dekripsi[0][i]])</code>: Loop ini dilakukan sesuai dengan jumlah pengulangan karakter yang sama dalam kunci.</li>
+<li><code>dekripsi[k].append(chipertext_myzkowski[indeks])</code>: Tambahkan karakter dari <code>chipertext_myzkowski</code> pada posisi indeks ke baris <code>k</code> dalam list <code>dekripsi</code>.</li>
+<li><code>indeks += 1</code>: Update <code>indeks</code> untuk karakter berikutnya.</li>
+<li><code>i += (count_key_decrypt[dekripsi[0][i]] - 1)</code>: Lewati jumlah karakter pengulangan di <code>key_myzkowski</code>.</li>
+</ul>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="bu">int</span>((<span class="bu">len</span>(chipertext_myzkowski) <span class="op">/</span> <span class="bu">len</span>(key_myzkowski)) <span class="op">+</span> <span class="dv">2</span>)):</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>        dekripsi[k].append(chipertext_myzkowski[indeks])</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>        indeks <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>else</code>: Jika karakter pada posisi <code>i</code> di <code>dekripsi[0]</code> tidak memiliki pengulangan.</li>
+<li><code>for k in range(2, int((len(chipertext_myzkowski) / len(key_myzkowski)) + 2))</code>: Loop melalui setiap baris dalam list <code>dekripsi</code>, dimulai dari baris kedua.</li>
+<li><code>dekripsi[k].append(chipertext_myzkowski[indeks])</code>: Tambahkan karakter dari <code>chipertext_myzkowski</code> pada posisi <code>indeks</code> ke baris <code>k</code> dalam list <code>dekripsi</code>.</li>
+<li><code>indeks += 1</code>: Update <code>indeks</code> untuk karakter berikutnya.</li>
+</ul>
+<p>Outputnya:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>[[<span class="st">'d'</span>, <span class="st">'g'</span>, <span class="st">'g'</span>, <span class="st">'i'</span>, <span class="st">'l'</span>, <span class="st">'n'</span>, <span class="st">'n'</span>, <span class="st">'s'</span>, <span class="st">'u'</span>, <span class="st">'u'</span>, <span class="st">'u'</span>, <span class="st">'u'</span>], [<span class="st">'2'</span>, <span class="st">'9'</span>, <span class="st">'10'</span>, <span class="st">'3'</span>, <span class="st">'12'</span>, <span class="st">'4'</span>, <span class="st">'8'</span>, <span class="st">'6'</span>, <span class="st">'1'</span>, <span class="st">'5'</span>, <span class="st">'7'</span>, <span class="st">'11'</span>], [<span class="st">'E'</span>, <span class="st">'N'</span>, <span class="st">'F'</span>, <span class="st">'K'</span>, <span class="st">'R'</span>, <span class="st">'N'</span>, <span class="st">'I'</span>, <span class="st">'K'</span>, <span class="st">'T'</span>, <span class="st">'I'</span>, <span class="st">' '</span>, <span class="st">'O'</span>], [<span class="st">'A'</span>, <span class="st">'D'</span>, <span class="st">'I'</span>, <span class="st">'T'</span>, <span class="st">'U'</span>, <span class="st">'I'</span>, <span class="st">'U'</span>, <span class="st">'A'</span>, <span class="st">'M'</span>, <span class="st">'K'</span>, <span class="st">' '</span>, <span class="st">'N'</span>], [<span class="st">' '</span>, <span class="st">' '</span>, <span class="st">' '</span>, <span class="st">' '</span>, <span class="st">' '</span>, <span class="st">' '</span>, <span class="st">' '</span>, <span class="st">' '</span>, <span class="st">'S'</span>, <span class="st">' '</span>, <span class="st">' '</span>, <span class="st">' '</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Mengurutkan list dekripsi berdasarkan nilai pada list kedua dan kemudian menggabungkan karakter dari dekripsi untuk menghasilkan teks dekripsi akhir</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>dekripsi <span class="op">=</span> np.array(dekripsi)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mengurutkan list berdasarkan list kedua dan menampilkan hasil dari dekripsinya</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>dekripsi <span class="op">=</span> dekripsi [ :, dekripsi[<span class="dv">1</span>].astype(<span class="bu">int</span>).argsort()]</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>hasil_dekripsi <span class="op">=</span> []</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, row <span class="kw">in</span> <span class="bu">enumerate</span>(dekripsi):</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> index <span class="op">!=</span> <span class="dv">0</span> <span class="kw">and</span> index <span class="op">!=</span> <span class="dv">1</span>:</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(row)</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>,<span class="bu">len</span>(dekripsi)):</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(dekripsi[<span class="dv">0</span>])):</span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>      hasil_dekripsi.append(dekripsi[i][j])</span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>hasil_dekripsi <span class="op">=</span> <span class="st">''</span>.join(hasil_dekripsi)</span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Hasil Dekripsi = "</span>, hasil_dekripsi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Penjelasan Prosesnya:</p>
+<ul>
+<li><code>dekripsi = np.array(dekripsi)</code> : <code>dekripsi</code> dikonversi menjadi array NumPy untuk memudahkan manipulasi data, terutama untuk sorting.</li>
+</ul>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>dekripsi <span class="op">=</span> dekripsi[:, dekripsi[<span class="dv">1</span>].astype(<span class="bu">int</span>).argsort()]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>dekripsi[:, ...]</code>: Mengambil semua baris (<code>:</code>) dari <code>dekripsi</code>, tetapi hanya kolom yang diurutkan berdasarkan baris kedua.</li>
+<li><code>dekripsi[1]</code>: Mengambil baris kedua dari <code>dekripsi</code>, yang berisi nilai-nilai kunci yang digunakan untuk pengurutan.</li>
+<li><code>.astype(int)</code>: Mengonversi nilai di baris kedua menjadi tipe integer jika belum dalam tipe ini, agar bisa diurutkan.</li>
+<li><code>.argsort()</code>: Mengembalikan indeks yang akan mengurutkan array. Indeks ini digunakan untuk mengurutkan <code>dekripsi</code> berdasarkan nilai di baris kedua.</li>
+</ul>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, row <span class="kw">in</span> <span class="bu">enumerate</span>(dekripsi):</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> index <span class="op">!=</span> <span class="dv">0</span> <span class="kw">and</span> index <span class="op">!=</span> <span class="dv">1</span>:</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>for index, row in enumerate(dekripsi)</code>: Loop ini berjalan melalui setiap baris dalam <code>dekripsi</code>.</li>
+<li><code>if index != 0 and index != 1</code>: Memeriksa apakah indeks tidak sama dengan 0 atau 1, karena baris ini adalah kunci dan mungkin tidak perlu ditampilkan atau diproses lebih lanjut.</li>
+<li><code>print(row)</code>: Mencetak baris yang relevan untuk melihat hasil sementara dari <code>dekripsi</code>.</li>
+</ul>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="bu">len</span>(dekripsi)):</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(dekripsi[<span class="dv">0</span>])):</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>        hasil_dekripsi.append(dekripsi[i][j])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>for i in range(2, len(dekripsi))</code>: Loop melalui baris <code>dekripsi</code> dimulai dari baris ketiga, karena baris pertama dan kedua adalah kunci dan pengurutan.</li>
+<li><code>for j in range(len(dekripsi[0]))</code>: Loop melalui setiap kolom dalam baris <code>dekripsi</code>.</li>
+<li><code>hasil_dekripsi.append(dekripsi[i][j])</code>: Menambahkan karakter dari posisi <code>(i, j)</code> di <code>dekripsi</code> ke <code>hasil_dekripsi</code>.</li>
+</ul>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>hasil_dekripsi <span class="op">=</span> <span class="st">''</span>.join(hasil_dekripsi)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Hasil Dekripsi = "</span>, hasil_dekripsi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>hasil_dekripsi = ''.join(hasil_dekripsi)</code>: Menggabungkan semua karakter di <code>hasil_dekripsi</code> menjadi satu string.</li>
+<li><code>print("\nHasil Dekripsi = ", hasil_dekripsi)</code>: Mencetak hasil dekripsi akhir.</li>
+</ul>
 
 
 </section>
