@@ -7,7 +7,9 @@ toc-title: "On this page"
 
 # 4. Playfair {.unnumbered}
 
-Transposisi kolom dalam kriptografi adalah teknik enkripsi yang melibatkan pengubahan urutan karakter atau simbol dalam sebuah pesan atau teks dengan cara mengatur ulang posisi karakter berdasarkan aturan tertentu yang ditentukan oleh kunci. Dalam transposisi kolom, teks asli dibagi menjadi kolom-kolom, kemudian urutan kolom tersebut diubah sesuai dengan aturan yang ditentukan oleh kunci enkripsi. Kunci enkripsi transposisi kolom biasanya berupa susunan angka atau urutan yang menentukan urutan kolom mana yang harus diambil dan dalam urutan apa.
+Playfair Cipher adalah algoritma kriptografi dengan teknik substitusi yang caranya dengan mengenkripsi pasangan huruf (digram atau digraf), bukan huruf tunggal seperti pada cipher klasik lainnya. Tujuannya adalah untuk membuat analisis frekuensi menjadi sangat sulit sebab frekuensi kemunculan huruf-huruf di dalam cipherteks menjadi datar (flat).
+
+Di dalam Playfair, pembentukan kuncinya dengan cara menyusun 25 huruf dalam tabel 5x5. Sebelum disusun ke dalam tabel, huruf j di dalam kunci harus dihilangkan dan huruf yang berulang juga harus dihilangkan.
 
 # Analogi Transposisi Kolom
 Bayangkan Kita memiliki rak buku dengan beberapa kolom dan setiap kolom berisi tumpukan buku. 
