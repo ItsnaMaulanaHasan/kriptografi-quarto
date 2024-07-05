@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7. Transposisi Rail Fence – Kriptografi</title>
+<title>8. Transposisi Route – Kriptografi</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./8_transposisi_route.html" rel="next">
-<link href="./6_transposisi_myzkowski.html" rel="prev">
+<link href="./7_transposisi_rail_fence.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -117,7 +116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1_caesar.html">Kriptografi Klasik</a></li><li class="breadcrumb-item"><a href="./7_transposisi_rail_fence.html">7. Transposisi Rail Fence</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1_caesar.html">Kriptografi Klasik</a></li><li class="breadcrumb-item"><a href="./8_transposisi_route.html">8. Transposisi Route</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -198,13 +197,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./7_transposisi_rail_fence.html" class="sidebar-item-text sidebar-link active">
+  <a href="./7_transposisi_rail_fence.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">7. Transposisi Rail Fence</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./8_transposisi_route.html" class="sidebar-item-text sidebar-link">
+  <a href="./8_transposisi_route.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">8. Transposisi Route</span></a>
   </div>
 </li>
@@ -362,9 +361,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1_caesar.html">Kriptografi Klasik</a></li><li class="breadcrumb-item"><a href="./7_transposisi_rail_fence.html">7. Transposisi Rail Fence</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1_caesar.html">Kriptografi Klasik</a></li><li class="breadcrumb-item"><a href="./8_transposisi_route.html">8. Transposisi Route</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">7. Transposisi Rail Fence</h1>
+<h1 class="title">8. Transposisi Route</h1>
   <div class="quarto-categories">
     <div class="quarto-category">teori</div>
   </div>
@@ -384,8 +383,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Transposisi rail fence merupakan salah satu jenis transposisi cipher di mana huruf-huruf dalam pesan dibagi menjadi beberapa “rail” atau baris. Kemudian huruf-huruf tersebut diurutkan secara zigzag antara baris-baris tersebut.</p>
-<p>Dalam transposisi rail fence, jumlah baris yang digunakan biasanya menjadi bagian dari kunci untuk enkripsi dan dekripsi pesan. Jumlah baris yang digunakan mempengaruhi pola zigzag dalam menyusun huruf-huruf pesan, sehingga jumlah baris dapat dianggap sebagai bagian dari kunci untuk proses enkripsi dan dekripsi.</p>
+<p>Transposisi Route merupakan metode yang dilakukan dengan cara pesan disusun dalam grid (biasanya persegi atau persegi panjang), dan huruf-huruf pesan ditempatkan di dalam sel-sel grid sesuai dengan suatu pola atau rute tertentu. Setelah pesan disusun dalam grid, pesan diambil dengan mengikuti pola atau rute yang telah ditentukan, seperti zigzag, spiral, atau pola lainnya.</p>
+<p>Salah satu contoh teknik transposisi terkenal adalah Union Route yang dipakai oleh Tentara Union selama Perang Saudara Amerika. Dengan cara pesan disusun dalam grid, lalu diambil kembali dengan mengikuti pola atau rute tertentu. Ini memberikan tingkat keamanan tambahan dalam komunikasi militer. Penyandian Transposisi Route dilakukan dengan cara menuliskan teks asli secara kolom dari atas kebawah dalam sebuah kisi-kisi imajiner dengan ukuran yang telah disepakati. Teks sandinya dibaca dengan arah (route) sesuai perjanjian, misalnya :</p>
 <section id="analogi-transposisi-railfence" class="level3">
 <h3 class="anchored" data-anchor-id="analogi-transposisi-railfence">Analogi Transposisi Railfence</h3>
 <p>Mari kita analogikan transposisi railfence dengan menyusun pesan di pagar besi sebagai proses enkripsinya dan membaca pesan tersembunyi dalam sebuah pagar besi sebagai proses dekripsinya</p>
@@ -1205,14 +1204,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./6_transposisi_myzkowski.html" class="pagination-link" aria-label="6. Transposisi Myzkowski">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">6. Transposisi Myzkowski</span>
+      <a href="./7_transposisi_rail_fence.html" class="pagination-link" aria-label="7. Transposisi Rail Fence">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">7. Transposisi Rail Fence</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./8_transposisi_route.html" class="pagination-link" aria-label="8. Transposisi Route">
-        <span class="nav-page-text">8. Transposisi Route</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

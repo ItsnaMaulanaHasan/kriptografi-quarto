@@ -16,6 +16,7 @@ book:
         - 5_transposisi_kolom.qmd
         - 6_transposisi_myzkowski.qmd
         - 7_transposisi_rail_fence.qmd
+        - 8_transposisi_route.qmd
     - part: "Kriptografi Modern"
       chapters:
         - 1_caesar.qmd
