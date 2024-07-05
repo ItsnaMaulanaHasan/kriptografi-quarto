@@ -7,407 +7,384 @@ toc-title: "On this page"
 
 # 4. Playfair {.unnumbered}
 
-Transposisi kolom dalam kriptografi adalah teknik enkripsi yang melibatkan pengubahan urutan karakter atau simbol dalam sebuah pesan atau teks dengan cara mengatur ulang posisi karakter berdasarkan aturan tertentu yang ditentukan oleh kunci. Dalam transposisi kolom, teks asli dibagi menjadi kolom-kolom, kemudian urutan kolom tersebut diubah sesuai dengan aturan yang ditentukan oleh kunci enkripsi. Kunci enkripsi transposisi kolom biasanya berupa susunan angka atau urutan yang menentukan urutan kolom mana yang harus diambil dan dalam urutan apa.
+Playfair Cipher adalah algoritma kriptografi dengan teknik substitusi yang caranya dengan mengenkripsi pasangan huruf (digram atau digraf), bukan huruf tunggal seperti pada cipher klasik lainnya. Tujuannya adalah untuk membuat analisis frekuensi menjadi sangat sulit sebab frekuensi kemunculan huruf-huruf di dalam cipherteks menjadi datar (flat).
 
-# Analogi Transposisi Kolom
-Bayangkan Kita memiliki rak buku dengan beberapa kolom dan setiap kolom berisi tumpukan buku. 
+Di dalam Playfair, pembentukan kuncinya dengan cara menyusun 25 huruf dalam tabel 5x5. Sebelum disusun ke dalam tabel, huruf j di dalam kunci harus dihilangkan dan huruf yang berulang juga harus dihilangkan.
 
-1. **Susunan Awal:**
-   - Kolom 1 : A, B, C
-   - Kolom 2 : D, E, F
-   - Kolom 3 : G, H, I
+# Prinsip Dasar 
 
-2. **Transposisi Kolom:**
-   - Kita akan memutuskan untuk menukar posisi kolom-kolom ini. Misalnya, kolom 1 dipindahkan ke tempat kolom 3, kolom 2 tetap di tempat, dan kolom 3 dipindahkan ke tempat kolom 1.
+1. **Matriks Kunci (Key Matrix)**: Playfair menggunakan matriks 5x5 yang berisi huruf-huruf alfabet. Karena hanya ada 25 tempat di matriks dan alfabet memiliki 26 huruf, biasanya huruf 'J' akan dihilangkan. Kunci ini digunakan untuk membentuk matriks.
 
-3. **Susunan Setelah Transposisi:**
-   - Kolom 1 : G, H, I (dulu Kolom 3)
-   - Kolom 2 : D, E, F
-   - Kolom 3 : A, B, C (dulu Kolom 1) 
+2. **Pengisian Matriks**: Kunci yang digunakan untuk pengisian matriks harus berisi semua huruf yang tidak berulang. Jika ada huruf yang berulang, salah satunya diabaikan. Setelah semua huruf dari kunci dimasukkan, sisa tempat di matriks diisi dengan huruf alfabet lainnya yang belum digunakan.
 
-Dengan kata lain, transposisi kolom mengubah urutan kolom tanpa mengubah isi kolom. Dalam kriptografi, ini dilakukan untuk mengacak data agar lebih sulit ditebak oleh pihak yang tidak berwenang.
+3. **Pemisahan Teks**: Teks yang akan dienkripsi dipisahkan menjadi pasangan huruf (digraf). Jika ada pasangan yang berisi dua huruf yang sama, satu huruf dummy seperti 'X' atau 'Q' dimasukkan di antara mereka.
+
+4. **Pemrosesan Plainteks**: Pesan yang akan dienkripsi diatur terlebih dahulu sebagai berikut:
+    - Ganti huruf J (bila ada) dengan I.
+    - Tulis pesan dalam pasangan huruf (bigram).
+    - Jangan sampai ada pasangan huruf yang sama. Jika ada, sisipkan Z di tengahnya.
+    - Jika dalam huruf ganjil, tambahkan huruf Z di akhir.
+
+5. **Aturan Enkripsi**:
+    - Jika dua huruf terdapat pada baris kunci yang sama maka tiap huruf diganti dengan huruf di kanannya.
+    - Jika dua huruf terdapat pada kolom kunci yang sama maka tiap huruf diganti dengan huruf di bawahnya.
+    - Jika dua huruf tidak pada baris yang sama atau kolom yang sama, maka huruf pertama diganti dengan huruf pada perpotongan baris huruf pertama dengan kolom huruf kedua. Huruf kedua diganti dengan huruf pada titik sudut keempat dari persegi panjang yang dibentuk dari 3 huruf yang digunakan sampai sejauh ini.
 
 # Contoh Soal
-Untuk lebih jelasnya, terdapat sebuah pesan yaitu
-“TENTUKAN PRIORITAS ANDA SEBAB KITA TIDAK DAPAT MENGERJAKAN SEMUANYA X” yang akan dienkripsi menggunakan metode transposisi kolom dengan kata kunci “PENTING” Maka proses enkripsi nya adalah sebagai berikut:
+Untuk lebih jelasnya, kita bisa membahas contoh soal berikut ini:
+“GOOD BROOMS SWEEP CLEAN” yang akan dienkripsi menggunakan metode Playfair dengan kunci “JALAN NAKULA SEBELAS” Maka proses enkripsi nya adalah sebagai berikut:
 
 **Proses Penyandian**
 
-1. Buat tabel dengan ukuran kolom sesuai dengan panjang dari kata kunci yang telah diproses sebelumnya
+1. Pertama kita buat matrix kunci 5x5 dari Kunci "JALAN NAKULA SEBELAS", Kita susun kuncinya ke dalam bentuk matrix lalu kita hilangkan huruf yang berulang dan huruf J jika ada, setelah itu kita perluas Matrix kuncinya menjadi 6x6.
 
-    ![](assets/kriptografi/tkolom2.png){width="70%" 
+    ![](assets/kriptografi/playfair1.png){width="70%" 
     style="text-align:center;"}
 
-2. Kemudian masukkan kunci kedalam kolom tabel
+2. Kedua kita proses Plainteks dengan aturan yang ada di atas tadi:
+    - Ganti huruf J (bila ada) dengan I.
+    - Tulis pesan dalam pasangan huruf (bigram).
+    - Jangan sampai ada pasangan huruf yang sama. Jika ada, sisipkan Z di tengahnya.
+    - Jika dalam huruf ganjil, tambahkan huruf Z di akhir.
 
-    ![](assets/kriptografi/tkolom3.png){width="70%" 
+    ![](assets/kriptografi/playfair2.png){width="70%" 
     style="text-align:center;"}
 
-3. Selanjutnya, masukan pesan yang akan dienkripsi dengan cara menyisipkannya dari kiri ke kanan secara berurutan
+3. Jadi hasil akhir dari pemrosesan dari plainteks yaitu : GO OD BR OZ OM SZ SW EZ EP CL EA NZ
 
-    ![](assets/kriptografi/tkolom4.png){width="70%" 
+4. Selanjutnya kita akan belajar bagaimana proses enkripsi dari Plainteks yang sudah diproses terhadap Matrix kunci tadi yang sudah dibuat. dengan 3 aturan enkripsi yang ada di atas tadi.
+
+    ![](assets/kriptografi/playfair3.png){width="70%" 
     style="text-align:center;"}
 
-4. Lalu kunci didefinisikan sesuai urutan abjad menjadi
+5. Jadi Cipherteks yang terbentuk dari proses enkripsi adalah :
+    FP TS CQ TV TF DV EV DW GW EK SL UX
 
-    ![](assets/kriptografi/tkolom.png){width="70%" 
-    style="text-align:center;"}
+# Implementasi Pada Python
 
-5. Setelah itu, kolom  dengan urutan abjad terkecil dipindahkan ke posisi depan, diikuti dengan kolom urutan abjad terkecil lainya
-
-    ![](assets/kriptografi/tkolom5.png){width="70%" 
-    style="text-align:center;"}
-
-6. Baca huruf ciphertext dari atas kebawah kemudian dimulai lagi dari atas sesuai dengan kolom yang sudah diurutkan
-
-    ![](assets/kriptografi/tkolom6.png){width="70%" 
-    style="text-align:center;"}
-
-## Implementasi Pada Python
-
-Masukkan plaintext
+Deklarasi list abjad yang berisi huruf a-z tanpa huruf j
 ```python
-plainText = input("Plaintext : ")
+abjad = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 ```
 
-Masukkan kunci
+Memasukkan plaintext
 ```python
-key = input("masukkan kunci : ")
+plaintext_playfair = input("Masukkan teks yang akan dienkripsi: ")
 ```
 
-Membersihkan teks dari spasi ganda
+Menghilangkan spasi pada plaintext dan membuat plaintext menjadi lowercase
 ```python
-cleanPlainTeks = plainTeks.replace(" ", "")
-print(cleanPlainTeks)
+plaintext_playfair = plaintext_playfair.replace(' ','').lower()
+print(plaintext_playfair)
 ```
 
-Deklarasi urutan huruf dalam alfabet
+Memasukkan kunci
 ```python
-ascii = {
-'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8, 'i': 9, 'j': 10, 'k': 11, 
-'l': 12, 'm': 13, 'n': 14, 'o': 15, 'p': 16, 'q': 17, 'r': 18, 's': 19, 't': 20, 'u': 21, 
-'v': 22, 'w': 23, 'x': 24, 'y': 25, 'z': 26
-}
+key_playfair = input("Masukkan kunci: ")
 ```
 
-### Proses Enkripsi
+## Pemrosesan Kunci
 
-Inisialisasi list untuk menyimpan urutan numerik dari setiap huruf alfabet
+Menghilangkan spasi pada kunci dan membuat kunci menjadi lowercase
 ```python
-kolom = 0
-angka_urutan = []
+key_playfair = key_playfair.replace(' ','').lower()
+print(key_playfair)
 ```
 
-Mengonversi setiap huruf dalam kata kunci menjadi urutan numeriknya sesuai dengan posisi dalam alfabet
+Menghapus huruf 'j' jika ada di kunci
 ```python
-for huruf in key:
-    if huruf.isalpha():
-        angka_urutan.append(ascii[huruf.lower()])
-        kolom = kolom+1
-        cleanKey = angka_urutan
+key_playfair = key_playfair.replace('j', '')
+print(key_playfair)
+```
+Menghapus huruf yang berulang
+```python
+key_result = []
+for i in key_playfair:
+  if i not in key_result:
+    key_result.append(i)
+print(key_result)
+```
+perulangan untuk menghapus huruf yang berulang dengan menambahkan kondisi apakah huruf tersebut sudah ditambahkan ke list key_result
 
-print(f"Urutan kunci dari kata '{key}' adalah {angka_urutan}")
+Menambahkan sisa huruf alphabet yang belum ada ke dalam matrix kunci
+```python
+for i in abjad:
+  if i != 'j' and i not in key_result:
+    key_result.append(i)
+print(key_result)
 ```
 
-For More Detail :
-
-- `for huruf in key` : Loop ini digunakan untuk memeriksa setiap huruf dalam variabel key, yang diharapkan merupakan kata kunci yang diberikan oleh pengguna
--  `if huruf.isalpha()` : Kondisi ini memastikan bahwa hanya karakter alfabet yang akan diproses. Karakter non-alfabet akan dilewati
-- `huruf.lower(): Mengubah huruf menjadi huruf kecil untuk konsistensi, sehingga tidak ada perbedaan antara huruf besar dan kecil
-- `ascii[huruf.lower()]` : Mengambil nilai urutan numerik dari huruf. Di sini diasumsikan ada sebuah kamus (dictionary) bernama ascii yang memetakan setiap huruf ke urutan numeriknya
-- `angka_urutan.append(...)` : Menambahkan urutan numerik dari huruf ke dalam list angka_urutan
-- `kolom = kolom + 1` : Menghitung jumlah kolom dengan menambah nilai kolom setiap kali huruf diproses
-- `cleanKey = angka_urutan` : Menyimpan hasil akhir urutan numerik ke dalam variabel cleanKey
-
-
-Membuat sebuah matriks kosong untuk menyimpan teks yang telah diolah dalam bentuk matriks
+Membuat matrix kunci 5x5
 ```python
-matrix = []
+key_created = []
+while key_result!= []:
+  key_created.append(key_result[:5])
+  key_result = key_result[5:]
+for row in key_created:
+        print(row)
+```
+## Proses Enkripsi
+
+Mengganti huruf 'j' yang ada di plainteks menjadi huruf 'i'
+```python
+plaintext_playfair = plaintext_playfair.replace('j', 'i')
+print(plaintext_playfair)
 ```
 
-Menghitung panjang dari teks yang telah dibersihkan dan disimpan dalam variabel cleanPlainTeks
+Proses pembuatan plaintext menjadi bentuk bigram atau pasangan huruf
 ```python
-panjang = len(cleanPlainTeks)
-```
-
-Mencari tahu berapa kali kolom dapat digunakan untuk memuat seluruh teks, dengan membagi panjang teks dengan jumlah kolom
-```python
-temp = panjang/kolom
-```
-
-Membulatkan hasil pembagian sebelumnya ke bilangan bulat terdekat
-```python
-bulat = round(temp)
-```
-
-Menghitung jumlah baris untuk memuat teks dalam matriks
-```python
-if temp - bulat == 0:
-    baris = bulat
-else:
-    if temp - bulat < 0:
-        baris = bulat
-    else:
-        baris = bulat + 1
-print(baris)
-```
-
-For More Detail :
-
-- `temp` : hasil pembagian panjang teks dengan jumlah kolom
-- `bulat`: hasil pembagian yang dibulatkan ke bilangan bulat terdekat. Jika `temp` adalah bilangan bulat (tidak ada sisa), jumlah baris adalah bulat. Jika ada sisa, jumlah baris adalah `bulat + 1`
-
-Mengisi matriks dengan karakter dari teks yang telah dibersihkan (cleanPlainTeks)
-```python
-for i in range(baris):
-    row = []
-    for j in range(kolom):
-        if i * kolom + j < len(cleanPlainTeks):
-            elemen = cleanPlainTeks[i * kolom + j]
-        else:
-            elemen = " "
-        row.append(elemen)
-    matrix.append(row)
-```
-
-For More Detail :
-
-- `for i in range(baris)` : Loop untuk setiap baris dalam matriks
-- `row = []` : Inisialisasi list kosong untuk setiap baris
-- `if i * kolom + j < len(cleanPlainTeks)` : Memeriksa apakah indeks saat ini berada dalam rentang panjang teks yang dibersihkan.
-- `elemen = cleanPlainTeks[i * kolom + j]` : Jika indeks berada dalam rentang, maka ambil karakter dari `cleanPlainTeks` berdasarkan indeks yang dihitung.
-- `else` : Jika indeks melebihi panjang teks, isi elemen dengan spasi.
-- `row.append(elemen)` : Menambahkan elemen ke dalam baris.
-- `matrix.append(row)` : Menambahkan baris yang telah diisi ke dalam matriks.`
-
-Mencetak matriks
-```python
-print("Matriks yang Anda buat:")
-for row in matrix:
-    print(row)
-```
-
-Mentransposisikan matriks yang telah dibuat dan kemudian mencetak matriks yang telah ditransposisikan
-```python
-transposed_matrix = [[row[i] for row in matrix] for i in range(len(matrix[0]))]
-for row in transposed_matrix:
-    print(row)
-```
-
-For More Detail :
-
-- `for i in range(len(matrix[0]))` : Iterasi melalui indeks kolom matriks asli
-- `row[i] for row in matrix` : Untuk setiap indeks kolom i, ambil elemen i dari setiap baris dalam matriks asli dan akan menghasilkan kolom baru dari elemen-elemen tersebut, membentuk baris baru di matriks yang ditransposisikan
-
-Membuat list kosong dengan panjang yang sama dengan cleanKey untuk menyimpan urutan indeks
-```python
-order = [None] * len(cleanKey)
-```
-
-Mengurutkan elemen-elemen dalam cleanKey berdasarkan nilai terkecil hingga terbesar
-```python
+bigram_plaintext = []
+# perulangan untuk menambahkan pasangan huruf atau bigram ke dalam list bigram_plaintext
 i = 0
-while len(cleanKey) > 0:
-    non_none_values = list(filter(lambda x: x is not None, cleanKey))
-    if non_none_values:
-        nilai_terkecil = min(non_none_values)
-        marker = cleanKey.index(nilai_terkecil)
+while i<len(plaintext_playfair):
+  x = plaintext_playfair[i]
+  y = ''
 
-        order[marker] = i
-        cleanKey[marker] = None 
-        i = i + 1
-    else:
-        break
-print(order)
+  # situasi jika berada di huruf terakhir di plaintext
+  if((i+1) == len(plaintext_playfair)):
+    y = 'z'
+  else:
+    y = plaintext_playfair[i+1]
+
+  # jika hurufnya keduanya sama, maka disisipkan z di tengahnya
+  if(x!=y):
+    bigram_plaintext.append(x+y)
+    i += 2
+  else:
+    bigram_plaintext.append(x+'z')
+    i += 1
+print(bigram_plaintext)
 ```
 
-For More Detail :
+Penjelasan prosesnya:
 
-- `i = 0` : Inisialisasi counter i
-- `while len(cleanKey) > 0` : Loop hingga cleanKey kosong (semua elemen None)
-- `non_none_values = list(filter(lambda x: x is not None, cleanKey))` : Membuat list yang hanya berisi elemen-elemen cleanKey yang bukan None
-- `if non_none_values` : Mengecek apakah list non_none_values tidak kosong
-` nilai_terkecil = min(non_none_values)` : Mencari nilai terkecil dari non_none_values
-- `marker = cleanKey.index(nilai_terkecil)` : Mendapatkan indeks dari nilai terkecil dalam cleanKey
-Menyimpan Urutan dan Menghapus Nilai Terkecil:
-- `order[marker] = i` : Menyimpan urutan i pada indeks marker di list order
-- `cleanKey[marker] = None` : Menghapus nilai terkecil dari cleanKey dengan mengubahnya menjadi None
-- `i = i + 1` : Increment counter i.
+- `bigram_plaintext = []` adalah sebuah list kosong yang akan diisi dengan pasangan huruf (bigram) yang diambil dari `plaintext_playfair`.
+- `while` loop digunakan untuk iterasi melalui teks `plaintext_playfair` sampai semua huruf di teks tersebut telah diproses. Loop ini akan berlanjut selama `i` kurang dari panjang teks `plaintext_playfair`. Jadi perulangan ini digunakan untuk memproses semua huruf yang ada di `plaintext_playfair`.
+- `x = plaintext_playfair[i]` dan `y = ''` adalah variabel yang digunakan untuk menampung huruf bigram pertama dan kedua dengan inisiasi nilai awal itu nilai dari plaintext_playfair[i] dan string kosong.
+- Selanjutnya untuk pengkondisian pertama itu digunakan untuk kondisi dimana sudah sampai huruf terkahir dalam `plaintext_playfair`.
+- Terakhir untuk pengkondisian kedua itu digunakan untuk kondisi dimana kedua hurufnya itu sama.
 
-Mengubah urutan kolom matriks `transposed_matrix` berdasarkan urutan yang telah diatur dalam `order`, dan kemudian mencetak matriks yang sudah diubah urutan kolomnya
+Proses substitusi plainteks dengan 3 aturan yang sudah di jelaskan diatas
 ```python
-new_matrix = []
-while len(order) > 0:
-    non_none_values = list(filter(lambda x: x is not None, order))
-    if non_none_values:
-        nilai_terkecil = min(non_none_values)
-        marker = order.index(nilai_terkecil)
-       
-        new_matrix.append(transposed_matrix[marker])
-        order[marker] = None
-    else:
-        break
+bigram_ciphertext = []
+# perulangan untuk mencari bigram ciphertex
+for bigram in bigram_plaintext:
+  flag = False
+  # cek aturan 1, apakah pasangan huruf plaintext berada di baris yang sama
+  for row in key_created:
+    # jika berada di baris yang sama maka huruf yang berada di sebelah kanannya ditambahkan ke bigram ciphertext
+    if(bigram[0] in row and bigram[1] in row):
+      x1 = row.index(bigram[0])
+      x2 = row.index(bigram[1])
+      cipher_created = row[(x1 + 1) % 5] + row[(x2 + 1) % 5]
+      bigram_ciphertext.append(cipher_created)
+      flag = True
+  if flag:
+    continue
 
-for row in new_matrix:
-    print(row)
+  # cek aturan 2, apakah pasangan huruf plaintext berada di kolom yang sama
+  for j in range(5):
+    col = ''.join([key_created[i][j] for i in range(5)])
+    # jika berada di kolom yang sama maka huruf yang berada di bawahnya ditambahkan ke bigram ciphertext
+    if(bigram[0] in col and bigram[1] in col):
+      y1 = col.index(bigram[0])
+      y2 = col.index(bigram[1])
+      cipher_created = col[(y1 + 1) % 5] + col[(y2 + 1) % 5]
+      bigram_ciphertext.append(cipher_created)
+      flag = True
+  if flag:
+    continue
+
+  foundOne = False
+  foundTwo = False
+
+  # cek aturan 3, apakah pasangan huruf plaintext berada di baris dan kolom yang berbeda
+  for i in range(5):
+    row = key_created[i]
+    # jika huruf pertama dalam bigram ada pada baris urutan ke 'i'
+    if(bigram[0] in row):
+      x1 = i
+      y1 = row.index(bigram[0])
+      foundOne = True
+    # jika huruf kedua dalam bigram ada pada baris urutan ke 'i'
+    if(bigram[1] in row):
+      x2 = i
+      y2 = row.index(bigram[1])
+      foundTwo = True
+    # jika kedua posisi pasangan huruf atau bigram sudah diketahui, maka pembentukan cipher sesuai aturan ketiga dilakukan
+    if foundOne and foundTwo:
+      cipher_created = key_created[x1][y2] + key_created[x2][y1]
+      bigram_ciphertext.append(cipher_created)
+      break
+print(bigram_ciphertext)
 ```
 
-For More Detail :
+Penjelasan prosesnya:
 
-- `new_matrix = []` : Membuat list kosong new_matrix untuk menampung baris-baris matriks yang baru diurutkan
-Looping untuk Mengubah Urutan Kolom:
-- `while len(order) > 0` : Melakukan looping selama masih ada elemen yang tersisa dalam order
-- `non_none_values = list(filter(lambda x: x is not None, order))` : Membuat list non_none_values yang hanya berisi nilai-nilai yang bukan None dari order
-- `if non_none_values` : Memeriksa apakah non_none_values tidak kosong
-- `nilai_terkecil = min(non_none_values)` : Menemukan nilai terkecil dari non_none_values
-- `marker = order.index(nilai_terkecil)` : Mencari indeks dari nilai_terkecil dalam order
-- `new_matrix.append(transposed_matrix[marker])` : Menambahkan baris dari transposed_matrix yang sesuai dengan marker ke new_matrix
-- `order[marker] = None` : Menghapus nilai yang telah diproses dengan mengubahnya menjadi None
-- `else: break` : Menghentikan loop jika `non_none_values kosong`, yang berarti semua nilai dalam order telah diproses
-
-Mengonversi matriks `new_matrix` menjadi string tunggal dengan menggabungkan nilai-nilainya secara berurutan dan menghapus spasi ekstra di akhir string
-```python
-result_string = ""
-
-for row in new_matrix:
-    for value in row:
-        result_string += str(value)
-
-result_string = result_string.strip()
-
-print(result_string)
-```
-
-For More Detail :
-
-- `result_string = ""` : Inisialisasi string kosong result_string yang akan digunakan untuk menyimpan hasil akhir
-- `for row in new_matrix:` : Melakukan iterasi melalui setiap baris dalam new_matrix
-- `for value in row:` : Melakukan iterasi melalui setiap nilai dalam baris row
-- `result_string += str(value)` : Mengonversi nilai value menjadi string (jika belum string) dan menambahkannya ke result_string
-- `result_string = result_string.strip()` : Menghapus spasi ekstra di awal dan akhir string menggunakan metode strip()
-
-```python
-Hasil Ciphertext : ENTKFINOKKM TIAIRA
-```
-
-### Proses Dekripsi
-
-```python
-cipherTeks = input("masukkan kata : ")
-```
-
-```python
-key = input("masukkan kunci : ")
-```
+- `bigram_ciphertext` adalah list kosong yang akan diisi dengan pasangan huruf (bigram) yang telah dienkripsi dari `bigram_plaintext`.
+- `for bigram in bigram_plaintext:` digunakan untuk iterasi melalui setiap bigram yang ada dalam `bigram_plaintext`.
+- `flag = False` adalah variabel boolean yang digunakan untuk menandai apakah aturan tertentu sudah dipenuhi sehingga tidak perlu memeriksa aturan lainnya untuk bigram yang sama.
+- Pemeriksaan Aturan 1: Baris yang Sama
 
 ```python
-cleanCipherTeks = cipherTeks.replace(" ", " ")
-print(cleanCipherTeks)
+for row in key_created:
+    if(bigram[0] in row and bigram[1] in row):
+        x1 = row.index(bigram[0])
+        x2 = row.index(bigram[1])
+        cipher_created = row[(x1 + 1) % 5] + row[(x2 + 1) % 5]
+        bigram_ciphertext.append(cipher_created)
+        flag = True
 ```
+
+- Loop ini memeriksa setiap baris (`row`) dalam matriks kunci (`key_created`).
+- Jika kedua huruf dalam bigram (`bigram[0]` dan `bigram[1]`) berada di baris yang sama (`row`), maka:
+    - Indeks masing-masing huruf dalam baris ditemukan (`x1` dan `x2`).
+    - Huruf di sebelah kanan dari masing-masing huruf ditentukan dengan menggunakan (`index + 1) % 5` untuk menangani kasus melingkar (huruf di ujung kanan).
+    - Huruf-huruf ini kemudian digabungkan menjadi `cipher_created` dan ditambahkan ke `bigram_ciphertext`.
+    - `flag` diatur ke `True` untuk menandai bahwa aturan ini telah diterapkan, dan loop berhenti memeriksa aturan lain untuk bigram ini.
+- Lanjut ke Bigram Berikutnya Jika Aturan 1 Terpenuhi
 
 ```python
-kolom = 0
+if flag:
+    continue
 ```
 
-```python
-angka_urutan = []
-```
-
-```python
-for huruf in key:
-    if huruf.isalpha():
-        angka_urutan.append(ascii[huruf.lower()])
-        kolom = kolom+1
-        cleanKey = angka_urutan
-
-print(f"Urutan kunci dari kata '{key}' adalah: {angka_urutan}")
-```
+- Jika `flag` `True`, bigram ini sudah diproses, dan loop lanjut ke bigram berikutnya tanpa memeriksa aturan lainnya.
+- Pemeriksaan Aturan 2: Kolom yang Sama
 
 ```Python
-matrix = []
+for j in range(5):
+    col = ''.join([key_created[i][j] for i in range(5)])
+    if(bigram[0] in col and bigram[1] in col):
+        y1 = col.index(bigram[0])
+        y2 = col.index(bigram[1])
+        cipher_created = col[(y1 + 1) % 5] + col[(y2 + 1) % 5]
+        bigram_ciphertext.append(cipher_created)
+        flag = True
 ```
 
-```python
-panjang = len(cleanCipherTeks)
+- Loop ini memeriksa setiap kolom dalam matriks kunci (`key_created`).
+- Setiap kolom (`col`) dibentuk dengan menggabungkan huruf-huruf dari setiap baris pada indeks `j`.
+- Jika kedua huruf dalam bigram (`bigram[0]` dan `bigram[1]`) berada di kolom yang sama (`col`), maka:
+    - Indeks masing-masing huruf dalam kolom ditemukan (`y1` dan `y2`).
+    - Huruf di bawah masing-masing huruf ditentukan dengan menggunakan `(index + 1) % 5` untuk menangani kasus melingkar (huruf di ujung bawah).
+    - Huruf-huruf ini kemudian digabungkan menjadi `cipher_created` dan ditambahkan ke `bigram_ciphertext`.
+    - `flag` diatur ke `True`, dan loop berhenti memeriksa aturan lain untuk bigram ini.
+- Lanjut ke Bigram Berikutnya Jika Aturan 2 Terpenuhi
+
+```Python
+if flag:
+    continue
+
 ```
 
-```python
-temp = panjang/kolom
-```
+- Jika `flag` `True`, bigram ini sudah diproses, dan loop lanjut ke bigram berikutnya tanpa memeriksa aturan lainnya.
+- Pemeriksaan Aturan 3: Baris dan Kolom Berbeda
 
-```python
-baris = round(temp)
-print(baris)
-```
+```Python
+foundOne = False
+foundTwo = False
 
-```python
-for i in range(baris):
-    row = []
-    for j in range(kolom):
-        if i * kolom + j < len(cleanCipherTeks):
-            elemen = cleanCipherTeks[i + baris * j]
-        else:
-            elemen = "a"
-        row.append(elemen)
-    matrix.append(row)
-```
-
-```python
-print("Matriks yang Anda buat:")
-for row in matrix:
-    print(row)
-```
-
-```python
-transposed_matrix = [[row[i] for row in matrix] for i in range(len(matrix[0]))]
-for row in transposed_matrix:
-    print(row)
-```
-
-```python
-order = [None] * len(cleanKey)
-i = 0
-while len(cleanKey) > 0:
-    non_none_values = list(filter(lambda x: x is not None, cleanKey))
-    if non_none_values:
-        nilai_terkecil = min(non_none_values)
-        marker = cleanKey.index(nilai_terkecil)
-        order[marker] = i
-        cleanKey[marker] = None  
-        i = i + 1
-    else:
+for i in range(5):
+    row = key_created[i]
+    if(bigram[0] in row):
+        x1 = i
+        y1 = row.index(bigram[0])
+        foundOne = True
+    if(bigram[1] in row):
+        x2 = i
+        y2 = row.index(bigram[1])
+        foundTwo = True
+    if foundOne and foundTwo:
+        cipher_created = key_created[x1][y2] + key_created[x2][y1]
+        bigram_ciphertext.append(cipher_created)
         break
-print(order)
 ```
 
-```python
-transposed_matrix = [transposed_matrix[i] for i in order]
+- Loop ini memeriksa setiap baris dalam matriks kunci (`key_created`) untuk menemukan posisi huruf pertama dan kedua dari bigram.
+- Jika huruf pertama (`bigram[0]`) ditemukan dalam baris `i`, indeks baris (`x1`) dan kolom (`y1`) disimpan, dan `foundOne` diatur ke `True`.
+- Jika huruf kedua (`bigram[1]`) ditemukan dalam baris `i`, indeks baris (`x2`) dan kolom (`y2`) disimpan, dan `foundTwo` diatur ke True.
+- Jika kedua huruf ditemukan (`foundOne` dan `foundTwo`), aturan ketiga diterapkan:
+    - Huruf di posisi silang yang berlawanan diambil dari matriks kunci: `key_created[x1][y2]` dan `key_created[x2][y1]`.
+    - Huruf-huruf ini digabungkan menjadi `cipher_created` dan ditambahkan ke `bigram_ciphertext`.
+    - Loop dihentikan dengan `break` karena bigram telah diproses.
 
-for row in transposed_matrix:
-    print(row)
+Hasil enkripsi
+```Python
+hasil_enkripsi = ''.join(bigram_ciphertext)
+print(hasil_enkripsi)
 ```
 
-```python
-matriks = [[row[i] for row in transposed_matrix] for i in range(len(transposed_matrix[0]))]
-for row in matriks:
-    print(row)
+## Proses Dekripsi
+
+Memasukkan ciphertext
+```Python
+ciphertext_playfair = input("Masukkan teks yang akan di dekripsi: ")
 ```
 
-```python
-result_string = ""
-
-for row in matriks:
-    for value in row:
-        result_string += str(value)
-
-result_string = result_string.strip()
-
-print(result_string)
+Proses pembuatan ciphertext menjadi bentuk bigram atau pasangan huruf
+```Python
+bigram_ciphertext = [ciphertext_playfair[i:i+2] for i in range(0, len(ciphertext_playfair), 2)]
+print(bigram_ciphertext)
 ```
 
-`Hasil Dekripsi : TEKNIKINFORMATIKA`
+Proses substitusi Cipherteks dengan 3 aturan yang sudah di jelaskan diatas
+```Python
+bigram_dekripsi = []
+# perulangan untuk mencari bigram decrypt text
+for bigram in bigram_ciphertext:
+  flag = False
+  # cek aturan 1, apakah pasangan huruf ciphertext berada di baris yang sama
+  for row in key_created:
+    # jika berada di baris yang sama maka huruf yang berada di sebelah kanannya ditambahkan ke bigram decrypt text
+    if(bigram[0] in row and bigram[1] in row):
+      x1 = row.index(bigram[0])
+      x2 = row.index(bigram[1])
+      decrypt_created = row[(x1 - 1) % 5] + row[(x2 - 1) % 5]
+      bigram_dekripsi.append(decrypt_created)
+      flag = True
+  if flag:
+    continue
 
-**Perbedaan Proses :**
+  # cek aturan 2, apakah pasangan huruf ciphertext berada di kolom yang sama
+  for j in range(5):
+    col = ''.join([key_created[i][j] for i in range(5)])
+    # jika berada di kolom yang sama maka huruf yang berada di bawahnya ditambahkan ke bigram decrypt text
+    if(bigram[0] in col and bigram[1] in col):
+      y1 = col.index(bigram[0])
+      y2 = col.index(bigram[1])
+      decrypt_created = col[(y1 - 1) % 5] + col[(y2 - 1) % 5]
+      bigram_dekripsi.append(decrypt_created)
+      flag = True
+  if flag:
+    continue
 
-- Enkripsi: Teks asli diubah menjadi matriks berdasarkan kolom kunci, kemudian kolom-kolom diurutkan berdasarkan kunci. Pada enkripsi, `transposed_matrix` adalah matriks transposisi dari matrix awal
-- Dekripsi: Teks sandi diubah menjadi matriks berdasarkan kolom kunci, kemudian baris-baris diurutkan berdasarkan kunci untuk mengembalikan teks asli. Pada dekripsi, `transposed_matrix` diurutkan berdasarkan order untuk mengembalikan teks asli
+  foundOne = False
+  foundTwo = False
+
+  # cek aturan 3, apakah pasangan huruf ciphertext berada di baris dan kolom yang berbeda
+  for i in range(5):
+    row = key_created[i]
+    # jika huruf pertama dalam bigram ada pada baris urutan ke 'i'
+    if(bigram[0] in row):
+      x1 = i
+      y1 = row.index(bigram[0])
+      foundOne = True
+    # jika huruf kedua dalam bigram ada pada baris urutan ke 'i'
+    if(bigram[1] in row):
+      x2 = i
+      y2 = row.index(bigram[1])
+      foundTwo = True
+    # jika kedua posisi pasangan huruf atau bigram sudah diketahui, maka pembentukan cipher sesuai aturan ketiga dilakukan
+    if foundOne and foundTwo:
+      decrypt_created = key_created[x1][y2] + key_created[x2][y1]
+      bigram_dekripsi.append(decrypt_created)
+      break
+print(bigram_dekripsi)
+```
+
+Hasil dekripsi
+```Python
+hasil_dekripsi = ''.join(bigram_dekripsi)
+print(hasil_dekripsi)
+```

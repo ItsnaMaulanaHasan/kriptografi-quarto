@@ -7,315 +7,456 @@ toc-title: "On this page"
 
 # 6. Transposisi Myzkowski {.unnumbered}
 
-## Basis Data (Database) 
+Myzkowski merupakan pengembangan dari teknik transposisi kolom. Teknik ini ditemukan oleh Émile Victor Théodore Myszkowski di tahun 1902. Pengembangan yang dilakukan adalah perubahan dalam pendefinisian dan permutasi kata kuncinya.
 
-Secara umum, sekumpulan data terintegrasi dengan ukuran yang sangat besar, dikelola (diolah) dengan cara tertentu yang secara khusus menjelaskan aktifitas - aktifitas dari satu atau beberapa organisasi yang satu sama lain saling terkait.
-<br>
+Misalnya kata kunci “NUSWANTORO” jika didefinisikan dengan teknik transposisi kolom akan menghasilkan urutan abjad 2 9 7 10 1 3 8 4 6 5. Namun jika kita menggunakan teknik transposisi myzkowski, kata kunci tersebut akan didefinisikan dengan hasil 2 7 5 8 1 2 6 3 4 3.
 
-## Tipe Data
+Pada teknik Myszkowski, huruf yang muncul berulang memiliki indeks urutan yang sama. Sementara itu proses permutasi atau pengambilan ciphertext pada indeks yang sama dilakukan dengan pengambilan secara zig-zag.
 
-Tipe Data dalam ilmu komputer erat kaitannya dengan pemrgoraman dan database. Didalam pemrograman tipe data biasa digunakan untuk mendefinisikan (menetapkan) isi dari sebuah variabel. 
+# Cara Kerja
+ Misalkan kita memiliki teks "TENTUKAN PRIORITAS ANDA SEBAB KITA TIDAK DAPAT MENGERJAKAN SEMUANYA X" dengan kunci "BOROBUDUR", maka proses pengenkripsiannya adalah sebagai berikut
 
-Perbedaannya dalam database, tipe data ini digunakan untuk menentukan isi dari sebuah data yang akan disimpan. 
+1. Dari kata "BOROBUDUR" akan didefinisikan urutan abjadnya sebagai berikut : 1 3 4 3 1 5 2 5 4
 
-Tipe data ini berbeda-beda tergantung dari bahasa pemgrograman atau jenis database yang kita gunakan. 
+    ![](assets/kriptografi/myzkowski1.png){width="50%" 
+    style="text-align:center;"}
 
-Tipe data ini akan dikelompokan menjadi 5 bagian utama. Pada tipe data dalam MySQL dibagi menjadi 3, yaitu :
+2. Setelah itu kita akan membuat tabel yang panjangnya menyesuaikan dengan panjang kuncinya. Kemudian memasukkan setiap urutan kata kunci ke dalam baris paling atas, dan memasukkan Plainteks ke dalam tabel dengan urut dari kiri ke kanan.
 
-- Tipe Data Numerik,
-- Tipe Data String, dan
-- Tipe Data Date/Time.
+    ![](assets/kriptografi/myzkowski2.png){width="50%" 
+    style="text-align:center;"}
 
-### Tipe Data Numerik
-Adalah tipe data numerik untuk mengukur nilai secara matematik, misalnya mata uang, angka desimal, dll.
+3. Lalu baca dari urutan kunci yang paling kecil, jika hanya terdapat 1 nomor urut kunci makan membacanya dari atas ke bawah, jika lebih dari 1 maka cara membacanya dengan zig-zag.
 
-| No  |  Tipe   |        Keterangan         |  Penerapan |
-|:---:|---------|---------------------------|------------|
-|1.| INTEGER(size) | Tipe data yang berisi kumpulan bilangan bulat, baik dalam bentuk bilangan positif maupun negatif | Angka secara umum |
-|2.| FLOAT(size) | Bilangan desimal dengan presisi tunggal (single-precision) | π, desimal dengan fokus pada nilai input contoh : 3.14159265359 |
-|3.|  DOUBLE(size, d) | Bilangan desimal dengan presisi ganda (double-precision).  Jumlah total digit ditentukan oleh size, jumlah digit setelah titik decimal ditentukan oleh d | Uang, dengan fokus jumlah desimal 2 angka di belakang koma <br> contoh: 2.500,00 |
+    ![](assets/kriptografi/myzkowski3.png){width="50%" 
+    style="text-align:center;"}
 
-: Tabel Tipe Data Numerik {.striped .responsive .hover}
+4. Dari proses transposisi maka didapatkan cipherteks sebagai berikut: 
+   TURIN EIIAM RAUAA AAANS ETIRD STTPT JKNYN POAAK ADAEA MNKNT SBBDK EGNEX
 
+# Implementasi Pada Python
 
-### Tipe Data String
-Merupakan suatu teks dengan panjang variabel dimana setiap huruf 
-dapat memiliki ukuran lebih kecil atau besar daripada satuan lainnya. Misalkan nama depan, nama belakang, alamat, nomor telepon, website, serta informasi lainnya.
-
-| No  |  Tipe   |        Keterangan         |  Penerapan |
-|:---:|---------|---------------------------|------------|
-| 1. | CHAR(size) | Menyatakan deretan karakter (String) yang lebarnya tetap. <br> Size : 0 hingga 255 karakter | Jenis_kelamin (L/P) <br> contoh : L |
-| 2. | VARCHAR(size) | Menyatakan data String yang lebarnya bervariasi. <br> Size : 0 hingga 255 karakter | Nama pengguna <br> contoh : Amanda |
-| 3. |  TEXT(size, d) | Menampung string Panjang yang lebarnya tidak dapat diprediksi. | |
-
-: Tabel Tipe Data String {.striped .responsive .hover}
-
-
-### Tipe Data Date
-
-Menyimpan tanggal dan waktu dalam format tertentu seperti tahun, bulan, dan hari, jam, menit, dan detik. Tipe data date bisa digunakan untuk mengatur kronologis dari peristiwa.
-
-| No  |  Tipe   |        Keterangan         |  Penerapan |
-|:---:|---------|---------------------------|------------|
-| 1. | DATE(size) | Digunakan dengan tanggal dengan format “YYYY-MM-DD" | 2004-09-21 |
-| 2. | TIME(size) | Digunakan untuk waktu dengan format “hh:mm:ss” | 12:33:12 |
-| 3. | DATETIME(size, d) | Digunakan untuk tanggal dan waktu dengan format “YYYY-MM-DD hh:mm:ss” | 2012-11-29 11:55:23 |
-
-: Tabel Tipe Data Date {.striped .responsive .hover}
-
-## Constraint / Kekangan Nilai
-
-Constraint atau kekangan nilai digunakan untuk menentukan aturan yang mengizinkan atau membatasi nilai yang akan dimasukkan dalam tabel. Kekangan Nilai Menyediakan Metode Yang sesuai untuk memastikan akurasi dan integritas data di dalam table.
-
-Contoh constraint, yaitu :
-
-- Membuat Nilai Tidak Kosong(NOT NULL)
-- Membuat Nilai Unik(UNIQUE)
-- Membuat kenaikan nilai secara otomatis(AUTO INCREMENT)
-- Membuat Kunci tamu(FOREIGN KEY)
-- Menggunakan Alias table dan query antartable (INNER JOIN)
-
-### Constraint NOT NULL
-
-Constraint NOT NULL mengatur agar data tertentu harus terisi atau tidak kosong. Ada kolom tertentu dari suatu table harus terisi dengan nilai valid. 
-Contoh case :
-
-```sql
-CREATE TABLE `mahasiswa`(
-    `nama` VARCHAR(50), NOT NULL,
-    `nim` VARCHAR(30) NOT NULL  
-)
-```
-Untuk case di atas maka nama dan nim yang diinputkan ke dalam database tidak boleh kosong.
-
-### Constraint UNIQUE
-
-Constraint UNIQUE ditujukan untuk memastikan bahwa nilai dalam kolom unik, artinya kolom tidak dapat menyimpan nilai duplikat.
-Contoh case:
-
-```sql
-CREATE TABLE `mahasiswa`(
-    `nama` VARCHAR(50) NOT NULL,
-    `nim` VARCHAR(50) NOT NULL UNIQUE
-)
+Import library
+```python
+import numpy as np
 ```
 
-Untuk case di atas nama mahasiswa bisa saja sama, tapi NIM mahasiswa tidak akan pernah sama maka diberi Constraint UNIQUE
-
-
-### Constraint AUTO INCREMENT
-
-Auto increment digunakan untuk menaikkan nilai secara otomatis pada field numerik. Ada beberapa hal yang harus diperhatikan dalam menggunakan auto increment:
-
-- Hanya Dapat Digunakan Pada field numerik
-- Field harus bersifat primary key atau unik
-- Field tidak boleh bersifat null
-- Dalam Satu Tabel hanya ada satu field yang menggunakan auto increment
-
-```sql
-CREATE TABLE `mahasiswa`(
-    `id` VARCHAR(11) NOT NULL AUTO_INCREMENT,
-    `nama` VARCHAR(50) NOT NULL,
-    `nim` VARCHAR(50) NOT NULL UNIQUE
-)
+Deklarasi urutan huruf dalam alfabet
+```python
+abjad = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8, 'i': 9, 'j': 10, 'k': 11, 'l': 12, 'm': 13,
+         'n': 14, 'o': 15, 'p': 16, 'q': 17, 'r': 18, 's': 19, 't': 20, 'u': 21, 'v': 22, 'w': 23, 'x': 24, 'y': 25, 'z': 26}
 ```
 
-
-## Pembuatan Database
-
-Dalam pembuatan database dapat dibuat dalam 2 cara, yaitu menggunakan platform dan menggunakan scripting
-
-:::{layout-ncol=2 style="text-align:center;"}
-![Menggunakan Platform](assets/database/platform.png)
-
-![Menggunakan scripting](assets/database/scripting.png)
-:::
-
-## Perintah MySQL (DDL, DML, DCL)
-
-Secara umum perintah fungsi MySQL dibagi menjadi 3, yaitu :
-
-- DDL (Data Definition Language), 
-- DML(Data Manipulation), dan 
-- DCL (Data Control Language).
-
-Pada modul ini akan dibatasi pada DDL dan DML untuk praktek.
-
-![DDL, DML, DCL](assets/database/arsitekturdb.png){width=80% style="text-align:center;"}
-
-
-### Data Definition Language (DDL)
-
-Data Definition Language (DDL) adalah bagian dari SQL (Structured Query Language) yang digunakan untuk mendefinisikan struktur database dan objeknya, seperti tabel, tampilan, indeks, dan prosedur dalam sebuah database. Pernyataan DDL digunakan untuk membuat, mengubah, dan menghapus objek database, termasuk tabel, tampilan, indeks, dan prosedur tersimpan. Beberapa pernyataan DDL yang paling umum meliputi:
-
-#### CREATE
-
-Pernyataan ini membuat objek database baru, seperti tabel, tampilan, atau indeks. Misalnya, pernyataan SQL berikut membuat tabel yang disebut "pelanggan":
-
-```sql
-CREATE TABLE pelanggan ( id INT PRIMARY KEY, name VARCHAR(255), address VARCHAR(255));
+Memasukkan plaintext
+```python
+plaintext_myzkowski = input("Masukkan teks yang ingin dienkripsi: ")
 ```
 
-
-#### ALTER
-
-Pernyataan ini digunakan untuk memodifikasi objek database yang sudah ada. Misalnya, pernyataan SQL berikut menambahkan kolom baru bernama " email " ke tabel " customers ":
-
-```sql
-pelanggan ALTER TABLE ADD email VARCHAR(255);
+Menghilangkan spasi ganda dan mengubah plaintext menjadi uppercase
+```python
+plaintext_myzkowski = plaintext_myzkowski.replace("  ", " ").upper()
+print(plaintext_myzkowski)
 ```
 
-
-#### DROP
-
-Pernyataan ini digunakan untuk menghapus objek database yang sudah ada. Misalnya, pernyataan SQL berikut menghapus tabel "pelanggan":
-
-pelanggan DROP TABLE;
-
-
-#### TRUNCATE
-
-Pernyataan ini digunakan untuk menghapus semua baris dalam tabel, tetapi tidak seperti pernyataan DROP, pernyataan ini mempertahankan struktur dan indeks tabel.
-<br>
-
-#### RENAME
-
-Pernyataan ini digunakan untuk mengganti nama objek database yang sudah ada. Misalnya, pernyataan SQL berikut mengganti nama tabel "pelanggan" menjadi "klien":
-
-```sql
-RENAME TABLE pelanggan TO klien;
+Memasukkan kunci
+```python
+key_myzkowski = input("Masukkan kunci: ")
 ```
 
-Penting untuk dicatat bahwa pernyataan DDL dieksekusi segera dan bersifat permanen, artinya setelah objek dibuat, diubah, atau dihapus, perubahan tidak dapat diurungkan. Oleh karena itu, sangat penting untuk berhati-hati dan memastikan bahwa Anda memiliki cadangan basis data sebelum menjalankan pernyataan DDL apa pun. Selain itu, pernyataan DDL biasanya dijalankan oleh administrator database atau pengembang dengan hak istimewa dan izin yang sesuai untuk mengubah struktur database.
-<br>
-
-#### SHOW
-
-Perintah DDL ini digunakan untuk menampilkan daftar database atau tabel yang ada.
-
-Penerapan :
-
-```sql
-SHOW TABLES;
+Menghilangkan spasi dalam kunci
+```python
+key_myzkowski = key_myzkowski.replace(" ", "")
+print(key_myzkowski)
 ```
 
-<br>
+## Pemrosesan Kunci
 
-::: {.callout-note title="Latihan DDL"}
-1. Create Database Mahasiswa dan Table identitas
-<br>
-    
-    ```sql
-    CREATE DATABASE mahasiswa;
-    CREATE TABLE identitas (`Nama` VARCHAR(250) NOT NULL PRIMARY KEY);
-    ```
-
-2. Alter Table
-<br>
-    
-    ```sql
-    ALTER TABLE identitas ADD NIM VARCHAR(15) UNIQUE
-    ```
-
-3. Rename Table
-<br>
-    
-    ```sql
-    RENAME TABLE identitas TO id_mahasiswa
-    ```
-
-4. Show Table
-<br>
-    
-    ```sql
-    SHOW TABLES;
-    ```
-
-5. Drop Table
-<br>
-    
-    ```sql
-    DROP TABLE id_mahasiswa
-    ```
-
-6. Coba kreasikan Database kalian dengan perintah DDL!</br>
-Buatlah Database `kuliah` berisi 2 table yaitu `id_dosen` dan `id_mahasiswa`</br>
-Table `id_dosen` berisi kolom : nama, NIDN, Jabatan</br>
-Table `id_mahasiswa` berisi kolom : nama, NIM, Prodi
-
-:::
-
-
-### Data Manipulation Language (DML)
-
-Data Manipulation Language (DML) adalah bagian dari SQL (Structured Query Language) yang digunakan untuk memanipulasi data dalam database. Sehingga pernyataan DML ini dapat digunakan ketika database dan tabel telah dibuat. Pernyataan DML digunakan untuk menyisipkan, memperbarui, dan menghapus data dalam database. Beberapa pernyataan DML yang paling umum meliputi:
-
-
-#### INSERT
-
-Pernyataan ini digunakan untuk memasukkan data baru ke dalam tabel. Sebagai ilustrasi, pernyataan SQL berikut menyisipkan baris baru ke dalam tabel "pelanggan":
-
-```sql
-INSERT INTO pelanggan (id, nama, alamat) VALUES (1, 'John Smith,' '123 Main St');
+Membuat urutan dari tiap huruf di kunci
+```python
+sortkey = []
+kolom = 0
+# Perulangan untuk menambahkan urutan huruf kunci ke list sortkey
+for huruf in key_myzkowski:
+    # Periksa apakah karakter saat ini adalah huruf alfabet
+    if huruf.isalpha():
+        sortkey.append(abjad[huruf.lower()])
+        kolom = kolom+1
+print(f"Urutan kunci dari kata '{key_myzkowski}' adalah: {sortkey}")
 ```
 
-
-#### SELECT 
-
-Pernyataan ini digunakan untuk mengambil data dari satu atau lebih tabel dalam database. Sebagai contoh, kueri SQL berikut mengambil semua rekaman dari tabel "pelanggan":
-
-```sql
-SELECT * FROM pelanggan;
+Menghitung jumlah kemunculan tiap huruf di kunci
+```python
+# Membuat dictionary untuk melacak jumlah kemunculan setiap nilai
+count_key = {}
+for nilai in sortkey:
+    # Jika nilai sudah ada dalam dictionary, tambahkan 1 ke jumlahnya
+    if nilai in count_key:
+        count_key[nilai] += 1
+    # Jika nilai belum ada dalam dictionary, tambahkan ke dictionary dengan jumlah 1
+    else:
+        count_key[nilai] = 1
+print(count_key)
 ```
 
-
-#### UPDATE
-
-Pernyataan ini digunakan untuk memodifikasi data yang ada dalam sebuah tabel. Misalnya, pernyataan SQL berikut memperbarui alamat pelanggan dengan ID 1 di tabel "pelanggan":
-
-```sql
-UPDATE pelanggan SET address = '456 Park Ave' WHERE id = 1;
+Membuat urutan kolom dalam kunci
+```python
+hasil_kunci = [None] * len(key_myzkowski)
+i = 0
+n = 1
+while i<len(key_myzkowski):
+    non_none_values = list(filter(lambda x: x is not None, sortkey))
+    if non_none_values:
+        nilai_terkecil = min(non_none_values)
+        if count_key[nilai_terkecil]>1:
+            for j in range(count_key[nilai_terkecil]):
+                marker = sortkey.index(nilai_terkecil)
+                hasil_kunci[marker] = n
+                sortkey[marker] = None
+                nilai_terkecil = min(non_none_values)
+        else:
+          marker = sortkey.index(nilai_terkecil)
+          hasil_kunci[marker] = n
+          sortkey[marker] = None
+    else:
+        break
+    n+=1
+    i+=1
+print(hasil_kunci)
 ```
 
+Penjelasan prosesnya
+- `hasil_kunci` adalah list yang panjangnya sama dengan `key_myzkowski` dan diisi dengan `None`. List ini akan diisi dengan nomor urut sesuai urutan karakter dalam `key_myzkowski`.
 
-#### DELETE
-
-Pernyataan ini digunakan untuk menghapus data dari tabel. Misalnya, pernyataan SQL berikut menghapus pelanggan dengan ID 1 dari tabel "pelanggan":
-
-```sql
-DELETE FROM pelanggan WHERE id = 1;
+```Python
+while i < len(key_myzkowski):
+    non_none_values = list(filter(lambda x: x is not None, sortkey))
 ```
 
-::: {.callout-note title="Latihan DML"}
-Gunakan Database yang telah kalian kerjakan pada `Latihan DDL` sebelumnya!
+- `while i < len(key_myzkowski)`: Loop ini akan berjalan hingga semua karakter dalam `key_myzkowski` diproses.
+- `non_none_values`: List yang berisi nilai dari `sortkey` yang tidak `None`. `sortkey` adalah list yang berisi urutan karakter `key_myzkowski` yang telah diurutkan. `filter(lambda x: x is not None, sortkey)` digunakan untuk mendapatkan nilai yang valid (bukan `None`).
 
-1. Insert Data
+```Python
+if non_none_values:
+    nilai_terkecil = min(non_none_values)
+```
 
-    ```sql
-    INSERT INTO id_mahasiswa VALUES ('Amanda', 'A11.2020.54321',);
-    ```
-2. Select Data
+- Jika `non_none_values` tidak kosong, berarti masih ada karakter yang perlu diproses.
+- `nilai_terkecil` adalah nilai terkecil dalam `non_none_values`. Ini digunakan untuk menentukan urutan karakter yang akan diberi nomor.
 
-    ```sql
-    SELECT Nama, NIM FROM id_mahasiswa;
-    ```
-3. Update Data
+```Python
+if count_key[nilai_terkecil] > 1:
+    for j in range(count_key[nilai_terkecil]):
+        marker = sortkey.index(nilai_terkecil)
+        hasil_kunci[marker] = n
+        sortkey[marker] = None
+        nilai_terkecil = min(non_none_values)
+```
 
-    ```sql
-    UPDATE id_mahasiswa SET `Prodi`='Ilmu Komunikasi' WHERE `Prodi`='';
-    ```
-4. Delete Data
+- `if count_key[nilai_terkecil] > 1`: Jika `nilai_terkecil` memiliki pengulangan (`count_key[nilai_terkecil]` adalah jumlah pengulangan karakter tersebut dalam `key_myzkowski`).
+- `for j in range(count_key[nilai_terkecil])`: Loop untuk memproses setiap pengulangan karakter.
+- `marker = sortkey.index(nilai_terkecil)`: Temukan indeks dari `nilai_terkecil` di `sortkey`.
+- `hasil_kunci[marker] = n`: Beri nomor urut `n` pada posisi yang sesuai di `hasil_kunci`.
+- `sortkey[marker] = None`: Tandai posisi yang telah diproses dengan None agar tidak diproses lagi di iterasi berikutnya.
+- `nilai_terkecil = min(non_none_values)`: Update `nilai_terkecil` dengan nilai terkecil berikutnya dari `non_none_values`.
 
-    ```sql
-    DELETE FROM id_mahasiswa WHERE `NIM`='A11.2020.54321';
-    ```
-5. Kreasikan database kalian dengan perintah dari DDL dan DML !
-:::
+```Python
+else:
+    marker = sortkey.index(nilai_terkecil)
+    hasil_kunci[marker] = n
+    sortkey[marker] = None
+```
 
+- Jika `nilai_terkecil` tidak memiliki pengulangan (`count_key[nilai_terkecil]` adalah 1), cukup tandai posisi `marker` di `hasil_kunci` dengan `n`, dan ubah nilai di `sortkey` menjadi `None`.
 
-:::{.callout title="Konsep Database"}
-*Berikut merupakan penjelasan dari konsep database!*
+## Proses Enkripsi
 
-{{< video https://youtu.be/b2fWiClQYiM >}}
+Membuat susunan plaintext sesuai dengan panjang kunci
+```python
+# membuat variabel list kosong
+enkripsi = []
+# perulangan untuk membagi plaintext menjadi potongan-potongan sepanjang panjang kunci dan menyimpan potongan-potongan tersebut ke dalam list
+for i in range (0, len(plaintext_myzkowski), len(key_myzkowski)):
+    x = plaintext_myzkowski[i:i+len(key_myzkowski)]
+    x = list(x)
+    enkripsi.append(x)
+# perulangan untuk menambahkan # ke dalam list enkripsi index terakhir jika panjangnya kurang dari panjang kunci
+while len(enkripsi[len(enkripsi)-1])<len(key_myzkowski):
+    enkripsi[len(enkripsi)-1].append(" ")
+print(hasil_kunci)
+for row in enkripsi:
+        print(row)
+```
 
-:::
+Menghitung jumlah kemunculan tiap angka dalam kunci
+```python
+# Membuat dictionary untuk melacak jumlah kemunculan setiap nilai
+count_hasil_kunci = {}
+# Loop melalui setiap nilai dalam list
+for nilai in hasil_kunci:
+    # Jika nilai sudah ada dalam dictionary, tambahkan 1 ke jumlahnya
+    if nilai in count_hasil_kunci:
+        count_hasil_kunci[nilai] += 1
+    # Jika nilai belum ada dalam dictionary, tambahkan ke dictionary dengan jumlah 1
+    else:
+        count_hasil_kunci[nilai] = 1
+# Cetak dictionary yang berisi jumlah kemunculan setiap nilai
+print(count_hasil_kunci)
+```
+
+Proses pengenkripsian susuna plainteks
+```python
+hasil_enkripsi = []
+# perulangan untuk menentukan hasil enkripsi
+i = 0
+while i < len(key_myzkowski):
+    non_none_values = list(filter(lambda x: x is not None, hasil_kunci))
+    if non_none_values:
+        nilai_terkecil = min(non_none_values)
+        if count_hasil_kunci[nilai_terkecil] == 1:
+            marker = hasil_kunci.index(nilai_terkecil)
+            for j in range(len(enkripsi)):
+                hasil_enkripsi.append(enkripsi[j][marker])
+            hasil_kunci[marker] = None
+        else:
+            temp = []
+            for k in range(i, count_hasil_kunci[nilai_terkecil] + i):
+                marker = hasil_kunci.index(nilai_terkecil)
+                temp.append(marker)
+                hasil_kunci[marker] = None
+                nilai_terkecil = min(non_none_values)
+            for j in range(len(enkripsi)):
+                for indeks in temp:
+                    hasil_enkripsi.append(enkripsi[j][indeks])
+    i += 1
+hasil_enkripsi = ''.join(hasil_enkripsi)
+print("Hasil Enkripsi = ", hasil_enkripsi)
+```
+
+Penjelasan prosesnya:
+
+```Python
+while i < len(key_myzkowski):
+    non_none_values = list(filter(lambda x: x is not None, hasil_kunci))
+```
+
+- `while i < len(key_myzkowski)`: Loop ini berjalan selama `i` kurang dari panjang `key_myzkowski`.
+- `non_none_values`: List ini berisi nilai-nilai dari `hasil_kunci` yang bukan `None`, yang menandakan kolom yang belum diproses.
+
+```Python
+if count_hasil_kunci[nilai_terkecil] == 1:
+    marker = hasil_kunci.index(nilai_terkecil)
+    for j in range(len(enkripsi)):
+        hasil_enkripsi.append(enkripsi[j][marker])
+    hasil_kunci[marker] = None
+```
+
+- `if count_hasil_kunci[nilai_terkecil] == 1`: Jika `nilai_terkecil` hanya muncul sekali (tidak ada pengulangan).
+- `marker = hasil_kunci.index(nilai_terkecil)`: Temukan indeks dari `nilai_terkecil` di `hasil_kunci`.
+- `for j in range(len(enkripsi))`: Loop melalui setiap baris dalam matriks `enkripsi`.
+- `hasil_enkripsi.append(enkripsi[j][marker])`: Tambahkan karakter di kolom `marker` dari setiap baris ke `hasil_enkripsi`.
+- `hasil_kunci[marker] = None`: Tandai kolom ini sebagai sudah diproses dengan mengubah nilai di `hasil_kunci` menjadi `None`.
+
+```Python
+else:
+    temp = []
+    for k in range(i, count_hasil_kunci[nilai_terkecil] + i):
+        marker = hasil_kunci.index(nilai_terkecil)
+        temp.append(marker)
+        hasil_kunci[marker] = None
+        nilai_terkecil = min(non_none_values)
+    for j in range(len(enkripsi)):
+        for indeks in temp:
+            hasil_enkripsi.append(enkripsi[j][indeks])
+```
+
+- `else`: Jika `nilai_terkecil` muncul lebih dari sekali.
+- `temp = []`: List sementara untuk menyimpan indeks kolom yang akan diproses.
+- `for k in range(i, count_hasil_kunci[nilai_terkecil] + i)`: Loop untuk menambahkan semua indeks kolom yang memiliki nilai `nilai_terkecil` ke `temp`.
+- `marker = hasil_kunci.index(nilai_terkecil)`: Temukan indeks dari `nilai_terkecil` di `hasil_kunci`.
+- `temp.append(marker)`: Tambahkan indeks `marker` ke `temp`.
+- `hasil_kunci[marker] = None`: Tandai kolom ini sebagai sudah diproses dengan mengubah nilai di `hasil_kunci` menjadi `None`.
+- `nilai_terkecil = min(non_none_values)`: Update `nilai_terkecil` dengan nilai terkecil berikutnya dari `non_none_values`.
+- `for j in range(len(enkripsi))`: Loop melalui setiap baris dalam matriks `enkripsi`.
+- `for indeks in temp`: Loop melalui setiap indeks yang disimpan di `temp`.
+- `hasil_enkripsi.append(enkripsi[j][indeks])`: Tambahkan karakter di kolom `indeks` dari setiap baris ke `hasil_enkripsi`.
+
+```Python
+hasil_enkripsi = ''.join(hasil_enkripsi)
+print("Hasil Enkripsi = ", hasil_enkripsi)
+```
+
+- `hasil_enkripsi = ''.join(hasil_enkripsi)`: Gabungkan semua karakter di `hasil_enkripsi` menjadi satu string.
+- `print("Hasil Enkripsi = ", hasil_enkripsi)`: Cetak hasil enkripsi.
+
+## Proses Dekripsi
+
+Memasukkan cipherteks
+```Python
+chipertext_myzkowski = input("Masukkan teks yang ingin dienkripsi: ")
+```
+
+Proses membuat list yang berisi kunci dan nomor urut hurufnya
+```Python
+# membuat variabel list kosong
+dekripsi = []
+key_myzkowski = list(key_myzkowski)
+# menambahkan kunci ke dalam list dekripsi
+dekripsi.append(key_myzkowski)
+# menambahkan list kosong yang akan berisi nomor urutan dari tiap abjad kunci
+dekripsi.append([])
+# perulangan untuk menambahkan urutan nomor dari tiap abjad kunci
+i = 0
+while i<len(key_myzkowski):
+    dekripsi[1].append(i+1)
+    i+=1
+print(dekripsi)
+```
+
+Outputnya:
+```Python
+[['u', 'd', 'i', 'n', 'u', 's', 'u', 'n', 'g', 'g', 'u', 'l'], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]]
+```
+
+Mengurutkan isi list berdasarkan dari list pertama yang berisi kunci
+```Python
+dekripsi = np.array(dekripsi)
+dekripsi = dekripsi [ :, dekripsi[0].argsort()]
+dekripsi = dekripsi.tolist()
+print(dekripsi)
+```
+
+Outputnya:
+```Python
+[['d', 'g', 'g', 'i', 'l', 'n', 'n', 's', 'u', 'u', 'u', 'u'], ['2', '9', '10', '3', '12', '4', '8', '6', '1', '5', '7', '11']]
+```
+
+Menghitung jumlah frekuensi abjad dari list yang berisi kunci
+```Python
+count_key_decrypt = {}
+for nilai in dekripsi[0]:
+    # Jika nilai sudah ada dalam dictionary, tambahkan 1 ke jumlahnya
+    if nilai in count_key_decrypt:
+        count_key_decrypt[nilai] += 1
+    # Jika nilai belum ada dalam dictionary, tambahkan ke dictionary dengan jumlah 1
+    else:
+        count_key_decrypt[nilai] = 1
+print(count_key_decrypt)
+```
+
+Membaca karakter dari ciphertext dan menempatkannya ke dalam list dekripsi berdasarkan kunci yang telah diuraikan
+```Python
+indeks = 0
+i = 0
+# perulangan untuk menambahkan abjad ciphertext ke dalam list berdasarkan kunci dan jumlah frekuensi abjad kunci
+while i<len(key_myzkowski):
+    if count_key_decrypt[dekripsi[0][i]]>1:
+        for k in range(2,int((len(chipertext_myzkowski)/len(key_myzkowski))+2)):
+            for j in range(count_key_decrypt[dekripsi[0][i]]):
+                dekripsi[k].append(chipertext_myzkowski[indeks])
+                indeks+=1
+        i+=(count_key_decrypt[dekripsi[0][i]]-1)
+    else:
+        for k in range(2, int((len(chipertext_myzkowski) / len(key_myzkowski)) + 2)):
+            dekripsi[k].append(chipertext_myzkowski[indeks])
+            indeks+=1
+    i+=1
+print(dekripsi)
+```
+
+Penjelasan prosesnya:
+
+```Python
+while i < len(key_myzkowski):
+    if count_key_decrypt[dekripsi[0][i]] > 1:
+```
+
+- `while i < len(key_myzkowski)`: Loop ini berjalan selama `i` kurang dari panjang `key_myzkowski`.
+- `if count_key_decrypt[dekripsi[0][i]] > 1`: Memeriksa apakah karakter pada posisi `i` di `dekripsi[0]` (baris kunci) memiliki pengulangan. Jika iya, berarti kita akan menangani kolom yang berulang.
+
+```Python
+for k in range(2, int((len(chipertext_myzkowski) / len(key_myzkowski)) + 2)):
+    for j in range(count_key_decrypt[dekripsi[0][i]]):
+        dekripsi[k].append(chipertext_myzkowski[indeks])
+        indeks += 1
+i += (count_key_decrypt[dekripsi[0][i]] - 1)
+```
+
+- `for k in range(2, int((len(chipertext_myzkowski) / len(key_myzkowski)) + 2))`: Loop melalui setiap baris dalam list `dekripsi`, dimulai dari baris kedua. Perulangan ini dilakukan sesuai dengan jumlah kolom dan panjang ciphertext.
+- `for j in range(count_key_decrypt[dekripsi[0][i]])`: Loop ini dilakukan sesuai dengan jumlah pengulangan karakter yang sama dalam kunci.
+- `dekripsi[k].append(chipertext_myzkowski[indeks])`: Tambahkan karakter dari `chipertext_myzkowski` pada posisi indeks ke baris `k` dalam list `dekripsi`.
+- `indeks += 1`: Update `indeks` untuk karakter berikutnya.
+- `i += (count_key_decrypt[dekripsi[0][i]] - 1)`: Lewati jumlah karakter pengulangan di `key_myzkowski`.
+
+```Python
+else:
+    for k in range(2, int((len(chipertext_myzkowski) / len(key_myzkowski)) + 2)):
+        dekripsi[k].append(chipertext_myzkowski[indeks])
+        indeks += 1
+```
+
+- `else`: Jika karakter pada posisi `i` di `dekripsi[0]` tidak memiliki pengulangan.
+- `for k in range(2, int((len(chipertext_myzkowski) / len(key_myzkowski)) + 2))`: Loop melalui setiap baris dalam list `dekripsi`, dimulai dari baris kedua.
+- `dekripsi[k].append(chipertext_myzkowski[indeks])`: Tambahkan karakter dari `chipertext_myzkowski` pada posisi `indeks` ke baris `k` dalam list `dekripsi`.
+- `indeks += 1`: Update `indeks` untuk karakter berikutnya.
+
+Outputnya:
+```Python
+[['d', 'g', 'g', 'i', 'l', 'n', 'n', 's', 'u', 'u', 'u', 'u'], ['2', '9', '10', '3', '12', '4', '8', '6', '1', '5', '7', '11'], ['E', 'N', 'F', 'K', 'R', 'N', 'I', 'K', 'T', 'I', ' ', 'O'], ['A', 'D', 'I', 'T', 'U', 'I', 'U', 'A', 'M', 'K', ' ', 'N'], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'S', ' ', ' ', ' ']]
+```
+
+Mengurutkan list dekripsi berdasarkan nilai pada list kedua dan kemudian menggabungkan karakter dari dekripsi untuk menghasilkan teks dekripsi akhir
+```Python
+dekripsi = np.array(dekripsi)
+# mengurutkan list berdasarkan list kedua dan menampilkan hasil dari dekripsinya
+dekripsi = dekripsi [ :, dekripsi[1].astype(int).argsort()]
+hasil_dekripsi = []
+for index, row in enumerate(dekripsi):
+    if index != 0 and index != 1:
+        print(row)
+for i in range(2,len(dekripsi)):
+    for j in range(len(dekripsi[0])):
+      hasil_dekripsi.append(dekripsi[i][j])
+hasil_dekripsi = ''.join(hasil_dekripsi)
+print("\nHasil Dekripsi = ", hasil_dekripsi)
+```
+
+Penjelasan Prosesnya:
+
+- `dekripsi = np.array(dekripsi)` : `dekripsi` dikonversi menjadi array NumPy untuk memudahkan manipulasi data, terutama untuk sorting.
+
+```Python
+dekripsi = dekripsi[:, dekripsi[1].astype(int).argsort()]
+```
+
+- `dekripsi[:, ...]`: Mengambil semua baris (`:`) dari `dekripsi`, tetapi hanya kolom yang diurutkan berdasarkan baris kedua.
+- `dekripsi[1]`: Mengambil baris kedua dari `dekripsi`, yang berisi nilai-nilai kunci yang digunakan untuk pengurutan.
+- `.astype(int)`: Mengonversi nilai di baris kedua menjadi tipe integer jika belum dalam tipe ini, agar bisa diurutkan.
+- `.argsort()`: Mengembalikan indeks yang akan mengurutkan array. Indeks ini digunakan untuk mengurutkan `dekripsi` berdasarkan nilai di baris kedua.
+
+```Python
+for index, row in enumerate(dekripsi):
+    if index != 0 and index != 1:
+        print(row)
+```
+
+- `for index, row in enumerate(dekripsi)`: Loop ini berjalan melalui setiap baris dalam `dekripsi`.
+- `if index != 0 and index != 1`: Memeriksa apakah indeks tidak sama dengan 0 atau 1, karena baris ini adalah kunci dan mungkin tidak perlu ditampilkan atau diproses lebih lanjut.
+- `print(row)`: Mencetak baris yang relevan untuk melihat hasil sementara dari `dekripsi`.
+
+```Python
+for i in range(2, len(dekripsi)):
+    for j in range(len(dekripsi[0])):
+        hasil_dekripsi.append(dekripsi[i][j])
+```
+
+- `for i in range(2, len(dekripsi))`: Loop melalui baris `dekripsi` dimulai dari baris ketiga, karena baris pertama dan kedua adalah kunci dan pengurutan.
+- `for j in range(len(dekripsi[0]))`: Loop melalui setiap kolom dalam baris `dekripsi`.
+- `hasil_dekripsi.append(dekripsi[i][j])`: Menambahkan karakter dari posisi `(i, j)` di `dekripsi` ke `hasil_dekripsi`.
+
+```Python
+hasil_dekripsi = ''.join(hasil_dekripsi)
+print("\nHasil Dekripsi = ", hasil_dekripsi)
+```
+
+- `hasil_dekripsi = ''.join(hasil_dekripsi)`: Menggabungkan semua karakter di `hasil_dekripsi` menjadi satu string.
+- `print("\nHasil Dekripsi = ", hasil_dekripsi)`: Mencetak hasil dekripsi akhir.

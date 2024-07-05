@@ -163,7 +163,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./1_caesar.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Caesar</span></a>
+ <span class="menu-text">1. Caesar Cipher</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -216,7 +216,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./1_caesar.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Caesar</span></a>
+ <span class="menu-text">1. Caesar Cipher</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -269,7 +269,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./1_caesar.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Caesar</span></a>
+ <span class="menu-text">1. Caesar Cipher</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -343,24 +343,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#basis-data-database" id="toc-basis-data-database" class="nav-link active" data-scroll-target="#basis-data-database">Basis Data (Database)</a></li>
-  <li><a href="#tipe-data" id="toc-tipe-data" class="nav-link" data-scroll-target="#tipe-data">Tipe Data</a>
+  <li><a href="#cara-kerja" id="toc-cara-kerja" class="nav-link active" data-scroll-target="#cara-kerja">Cara Kerja</a></li>
+  <li><a href="#implementasi-pada-python" id="toc-implementasi-pada-python" class="nav-link" data-scroll-target="#implementasi-pada-python">Implementasi Pada Python</a>
   <ul class="collapse">
-  <li><a href="#tipe-data-numerik" id="toc-tipe-data-numerik" class="nav-link" data-scroll-target="#tipe-data-numerik">Tipe Data Numerik</a></li>
-  <li><a href="#tipe-data-string" id="toc-tipe-data-string" class="nav-link" data-scroll-target="#tipe-data-string">Tipe Data String</a></li>
-  <li><a href="#tipe-data-date" id="toc-tipe-data-date" class="nav-link" data-scroll-target="#tipe-data-date">Tipe Data Date</a></li>
-  </ul></li>
-  <li><a href="#constraint-kekangan-nilai" id="toc-constraint-kekangan-nilai" class="nav-link" data-scroll-target="#constraint-kekangan-nilai">Constraint / Kekangan Nilai</a>
-  <ul class="collapse">
-  <li><a href="#constraint-not-null" id="toc-constraint-not-null" class="nav-link" data-scroll-target="#constraint-not-null">Constraint NOT NULL</a></li>
-  <li><a href="#constraint-unique" id="toc-constraint-unique" class="nav-link" data-scroll-target="#constraint-unique">Constraint UNIQUE</a></li>
-  <li><a href="#constraint-auto-increment" id="toc-constraint-auto-increment" class="nav-link" data-scroll-target="#constraint-auto-increment">Constraint AUTO INCREMENT</a></li>
-  </ul></li>
-  <li><a href="#pembuatan-database" id="toc-pembuatan-database" class="nav-link" data-scroll-target="#pembuatan-database">Pembuatan Database</a></li>
-  <li><a href="#perintah-mysql-ddl-dml-dcl" id="toc-perintah-mysql-ddl-dml-dcl" class="nav-link" data-scroll-target="#perintah-mysql-ddl-dml-dcl">Perintah MySQL (DDL, DML, DCL)</a>
-  <ul class="collapse">
-  <li><a href="#data-definition-language-ddl" id="toc-data-definition-language-ddl" class="nav-link" data-scroll-target="#data-definition-language-ddl">Data Definition Language (DDL)</a></li>
-  <li><a href="#data-manipulation-language-dml" id="toc-data-manipulation-language-dml" class="nav-link" data-scroll-target="#data-manipulation-language-dml">Data Manipulation Language (DML)</a></li>
+  <li><a href="#pemrosesan-kunci" id="toc-pemrosesan-kunci" class="nav-link" data-scroll-target="#pemrosesan-kunci">Pemrosesan Kunci</a></li>
+  <li><a href="#proses-enkripsi" id="toc-proses-enkripsi" class="nav-link" data-scroll-target="#proses-enkripsi">Proses Enkripsi</a></li>
+  <li><a href="#proses-dekripsi" id="toc-proses-dekripsi" class="nav-link" data-scroll-target="#proses-dekripsi">Proses Dekripsi</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -390,363 +378,356 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="basis-data-database" class="level2">
-<h2 class="anchored" data-anchor-id="basis-data-database">Basis Data (Database)</h2>
-<p>Secara umum, sekumpulan data terintegrasi dengan ukuran yang sangat besar, dikelola (diolah) dengan cara tertentu yang secara khusus menjelaskan aktifitas - aktifitas dari satu atau beberapa organisasi yang satu sama lain saling terkait. <br></p>
-</section>
-<section id="tipe-data" class="level2">
-<h2 class="anchored" data-anchor-id="tipe-data">Tipe Data</h2>
-<p>Tipe Data dalam ilmu komputer erat kaitannya dengan pemrgoraman dan database. Didalam pemrograman tipe data biasa digunakan untuk mendefinisikan (menetapkan) isi dari sebuah variabel.</p>
-<p>Perbedaannya dalam database, tipe data ini digunakan untuk menentukan isi dari sebuah data yang akan disimpan.</p>
-<p>Tipe data ini berbeda-beda tergantung dari bahasa pemgrograman atau jenis database yang kita gunakan.</p>
-<p>Tipe data ini akan dikelompokan menjadi 5 bagian utama. Pada tipe data dalam MySQL dibagi menjadi 3, yaitu :</p>
-<ul>
-<li>Tipe Data Numerik,</li>
-<li>Tipe Data String, dan</li>
-<li>Tipe Data Date/Time.</li>
-</ul>
-<section id="tipe-data-numerik" class="level3">
-<h3 class="anchored" data-anchor-id="tipe-data-numerik">Tipe Data Numerik</h3>
-<p>Adalah tipe data numerik untuk mengukur nilai secara matematik, misalnya mata uang, angka desimal, dll.</p>
-<div class="table-responsive">
-<table class="table-striped table-hover caption-top table">
-<caption>Tabel Tipe Data Numerik</caption>
-<colgroup>
-<col style="width: 9%">
-<col style="width: 16%">
-<col style="width: 50%">
-<col style="width: 22%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">No</th>
-<th>Tipe</th>
-<th>Keterangan</th>
-<th>Penerapan</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">1.</td>
-<td>INTEGER(size)</td>
-<td>Tipe data yang berisi kumpulan bilangan bulat, baik dalam bentuk bilangan positif maupun negatif</td>
-<td>Angka secara umum</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">2.</td>
-<td>FLOAT(size)</td>
-<td>Bilangan desimal dengan presisi tunggal (single-precision)</td>
-<td>π, desimal dengan fokus pada nilai input contoh : 3.14159265359</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">3.</td>
-<td>DOUBLE(size, d)</td>
-<td>Bilangan desimal dengan presisi ganda (double-precision). Jumlah total digit ditentukan oleh size, jumlah digit setelah titik decimal ditentukan oleh d</td>
-<td>Uang, dengan fokus jumlah desimal 2 angka di belakang koma <br> contoh: 2.500,00</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="tipe-data-string" class="level3">
-<h3 class="anchored" data-anchor-id="tipe-data-string">Tipe Data String</h3>
-<p>Merupakan suatu teks dengan panjang variabel dimana setiap huruf dapat memiliki ukuran lebih kecil atau besar daripada satuan lainnya. Misalkan nama depan, nama belakang, alamat, nomor telepon, website, serta informasi lainnya.</p>
-<div class="table-responsive">
-<table class="table-striped table-hover caption-top table">
-<caption>Tabel Tipe Data String</caption>
-<colgroup>
-<col style="width: 9%">
-<col style="width: 16%">
-<col style="width: 50%">
-<col style="width: 22%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">No</th>
-<th>Tipe</th>
-<th>Keterangan</th>
-<th>Penerapan</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">1.</td>
-<td>CHAR(size)</td>
-<td>Menyatakan deretan karakter (String) yang lebarnya tetap. <br> Size : 0 hingga 255 karakter</td>
-<td>Jenis_kelamin (L/P) <br> contoh : L</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">2.</td>
-<td>VARCHAR(size)</td>
-<td>Menyatakan data String yang lebarnya bervariasi. <br> Size : 0 hingga 255 karakter</td>
-<td>Nama pengguna <br> contoh : Amanda</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">3.</td>
-<td>TEXT(size, d)</td>
-<td>Menampung string Panjang yang lebarnya tidak dapat diprediksi.</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="tipe-data-date" class="level3">
-<h3 class="anchored" data-anchor-id="tipe-data-date">Tipe Data Date</h3>
-<p>Menyimpan tanggal dan waktu dalam format tertentu seperti tahun, bulan, dan hari, jam, menit, dan detik. Tipe data date bisa digunakan untuk mengatur kronologis dari peristiwa.</p>
-<div class="table-responsive">
-<table class="table-striped table-hover caption-top table">
-<caption>Tabel Tipe Data Date</caption>
-<colgroup>
-<col style="width: 9%">
-<col style="width: 16%">
-<col style="width: 50%">
-<col style="width: 22%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">No</th>
-<th>Tipe</th>
-<th>Keterangan</th>
-<th>Penerapan</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">1.</td>
-<td>DATE(size)</td>
-<td>Digunakan dengan tanggal dengan format “YYYY-MM-DD”</td>
-<td>2004-09-21</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">2.</td>
-<td>TIME(size)</td>
-<td>Digunakan untuk waktu dengan format “hh:mm:ss”</td>
-<td>12:33:12</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">3.</td>
-<td>DATETIME(size, d)</td>
-<td>Digunakan untuk tanggal dan waktu dengan format “YYYY-MM-DD hh:mm:ss”</td>
-<td>2012-11-29 11:55:23</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-</section>
-<section id="constraint-kekangan-nilai" class="level2">
-<h2 class="anchored" data-anchor-id="constraint-kekangan-nilai">Constraint / Kekangan Nilai</h2>
-<p>Constraint atau kekangan nilai digunakan untuk menentukan aturan yang mengizinkan atau membatasi nilai yang akan dimasukkan dalam tabel. Kekangan Nilai Menyediakan Metode Yang sesuai untuk memastikan akurasi dan integritas data di dalam table.</p>
-<p>Contoh constraint, yaitu :</p>
-<ul>
-<li>Membuat Nilai Tidak Kosong(NOT NULL)</li>
-<li>Membuat Nilai Unik(UNIQUE)</li>
-<li>Membuat kenaikan nilai secara otomatis(AUTO INCREMENT)</li>
-<li>Membuat Kunci tamu(FOREIGN KEY)</li>
-<li>Menggunakan Alias table dan query antartable (INNER JOIN)</li>
-</ul>
-<section id="constraint-not-null" class="level3">
-<h3 class="anchored" data-anchor-id="constraint-not-null">Constraint NOT NULL</h3>
-<p>Constraint NOT NULL mengatur agar data tertentu harus terisi atau tidak kosong. Ada kolom tertentu dari suatu table harus terisi dengan nilai valid. Contoh case :</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> `mahasiswa`(</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    `nama` <span class="dt">VARCHAR</span>(<span class="dv">50</span>), <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    `nim` <span class="dt">VARCHAR</span>(<span class="dv">30</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>  </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Untuk case di atas maka nama dan nim yang diinputkan ke dalam database tidak boleh kosong.</p>
-</section>
-<section id="constraint-unique" class="level3">
-<h3 class="anchored" data-anchor-id="constraint-unique">Constraint UNIQUE</h3>
-<p>Constraint UNIQUE ditujukan untuk memastikan bahwa nilai dalam kolom unik, artinya kolom tidak dapat menyimpan nilai duplikat. Contoh case:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> `mahasiswa`(</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    `nama` <span class="dt">VARCHAR</span>(<span class="dv">50</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    `nim` <span class="dt">VARCHAR</span>(<span class="dv">50</span>) <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">UNIQUE</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Untuk case di atas nama mahasiswa bisa saja sama, tapi NIM mahasiswa tidak akan pernah sama maka diberi Constraint UNIQUE</p>
-</section>
-<section id="constraint-auto-increment" class="level3">
-<h3 class="anchored" data-anchor-id="constraint-auto-increment">Constraint AUTO INCREMENT</h3>
-<p>Auto increment digunakan untuk menaikkan nilai secara otomatis pada field numerik. Ada beberapa hal yang harus diperhatikan dalam menggunakan auto increment:</p>
-<ul>
-<li>Hanya Dapat Digunakan Pada field numerik</li>
-<li>Field harus bersifat primary key atau unik</li>
-<li>Field tidak boleh bersifat null</li>
-<li>Dalam Satu Tabel hanya ada satu field yang menggunakan auto increment</li>
-</ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> `mahasiswa`(</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    `id` <span class="dt">VARCHAR</span>(<span class="dv">11</span>) <span class="kw">NOT</span> <span class="kw">NULL</span> AUTO_INCREMENT,</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    `nama` <span class="dt">VARCHAR</span>(<span class="dv">50</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    `nim` <span class="dt">VARCHAR</span>(<span class="dv">50</span>) <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">UNIQUE</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-<section id="pembuatan-database" class="level2">
-<h2 class="anchored" data-anchor-id="pembuatan-database">Pembuatan Database</h2>
-<p>Dalam pembuatan database dapat dibuat dalam 2 cara, yaitu menggunakan platform dan menggunakan scripting</p>
-<div>
-
-</div>
-<div class="quarto-layout-panel" style="text-align:center;" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="assets/database/platform.png" class="img-fluid figure-img"></p>
-<figcaption>Menggunakan Platform</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="assets/database/scripting.png" class="img-fluid figure-img"></p>
-<figcaption>Menggunakan scripting</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="perintah-mysql-ddl-dml-dcl" class="level2">
-<h2 class="anchored" data-anchor-id="perintah-mysql-ddl-dml-dcl">Perintah MySQL (DDL, DML, DCL)</h2>
-<p>Secara umum perintah fungsi MySQL dibagi menjadi 3, yaitu :</p>
-<ul>
-<li>DDL (Data Definition Language),</li>
-<li>DML(Data Manipulation), dan</li>
-<li>DCL (Data Control Language).</li>
-</ul>
-<p>Pada modul ini akan dibatasi pada DDL dan DML untuk praktek.</p>
-<div class="quarto-figure quarto-figure-center" style="text-align:center;">
-<figure class="figure">
-<p><img src="assets/database/arsitekturdb.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption>DDL, DML, DCL</figcaption>
-</figure>
-</div>
-<section id="data-definition-language-ddl" class="level3">
-<h3 class="anchored" data-anchor-id="data-definition-language-ddl">Data Definition Language (DDL)</h3>
-<p>Data Definition Language (DDL) adalah bagian dari SQL (Structured Query Language) yang digunakan untuk mendefinisikan struktur database dan objeknya, seperti tabel, tampilan, indeks, dan prosedur dalam sebuah database. Pernyataan DDL digunakan untuk membuat, mengubah, dan menghapus objek database, termasuk tabel, tampilan, indeks, dan prosedur tersimpan. Beberapa pernyataan DDL yang paling umum meliputi:</p>
-<section id="create" class="level4">
-<h4 class="anchored" data-anchor-id="create">CREATE</h4>
-<p>Pernyataan ini membuat objek database baru, seperti tabel, tampilan, atau indeks. Misalnya, pernyataan SQL berikut membuat tabel yang disebut “pelanggan”:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> pelanggan ( <span class="kw">id</span> <span class="dt">INT</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span>, name <span class="dt">VARCHAR</span>(<span class="dv">255</span>), address <span class="dt">VARCHAR</span>(<span class="dv">255</span>));</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="alter" class="level4">
-<h4 class="anchored" data-anchor-id="alter">ALTER</h4>
-<p>Pernyataan ini digunakan untuk memodifikasi objek database yang sudah ada. Misalnya, pernyataan SQL berikut menambahkan kolom baru bernama ” email ” ke tabel ” customers “:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pelanggan <span class="kw">ALTER</span> <span class="kw">TABLE</span> <span class="kw">ADD</span> email <span class="dt">VARCHAR</span>(<span class="dv">255</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="drop" class="level4">
-<h4 class="anchored" data-anchor-id="drop">DROP</h4>
-<p>Pernyataan ini digunakan untuk menghapus objek database yang sudah ada. Misalnya, pernyataan SQL berikut menghapus tabel “pelanggan”:</p>
-<p>pelanggan DROP TABLE;</p>
-</section>
-<section id="truncate" class="level4">
-<h4 class="anchored" data-anchor-id="truncate">TRUNCATE</h4>
-<p>Pernyataan ini digunakan untuk menghapus semua baris dalam tabel, tetapi tidak seperti pernyataan DROP, pernyataan ini mempertahankan struktur dan indeks tabel. <br></p>
-</section>
-<section id="rename" class="level4">
-<h4 class="anchored" data-anchor-id="rename">RENAME</h4>
-<p>Pernyataan ini digunakan untuk mengganti nama objek database yang sudah ada. Misalnya, pernyataan SQL berikut mengganti nama tabel “pelanggan” menjadi “klien”:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">RENAME</span> <span class="kw">TABLE</span> pelanggan <span class="kw">TO</span> klien;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Penting untuk dicatat bahwa pernyataan DDL dieksekusi segera dan bersifat permanen, artinya setelah objek dibuat, diubah, atau dihapus, perubahan tidak dapat diurungkan. Oleh karena itu, sangat penting untuk berhati-hati dan memastikan bahwa Anda memiliki cadangan basis data sebelum menjalankan pernyataan DDL apa pun. Selain itu, pernyataan DDL biasanya dijalankan oleh administrator database atau pengembang dengan hak istimewa dan izin yang sesuai untuk mengubah struktur database. <br></p>
-</section>
-<section id="show" class="level4">
-<h4 class="anchored" data-anchor-id="show">SHOW</h4>
-<p>Perintah DDL ini digunakan untuk menampilkan daftar database atau tabel yang ada.</p>
-<p>Penerapan :</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>SHOW <span class="kw">TABLES</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><br></p>
-<div class="callout callout-style-default callout-note callout-titled" title="Latihan DDL">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Latihan DDL
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<p>Myzkowski merupakan pengembangan dari teknik transposisi kolom. Teknik ini ditemukan oleh Émile Victor Théodore Myszkowski di tahun 1902. Pengembangan yang dilakukan adalah perubahan dalam pendefinisian dan permutasi kata kuncinya.</p>
+<p>Misalnya kata kunci “NUSWANTORO” jika didefinisikan dengan teknik transposisi kolom akan menghasilkan urutan abjad 2 9 7 10 1 3 8 4 6 5. Namun jika kita menggunakan teknik transposisi myzkowski, kata kunci tersebut akan didefinisikan dengan hasil 2 7 5 8 1 2 6 3 4 3.</p>
+<p>Pada teknik Myszkowski, huruf yang muncul berulang memiliki indeks urutan yang sama. Sementara itu proses permutasi atau pengambilan ciphertext pada indeks yang sama dilakukan dengan pengambilan secara zig-zag.</p>
+<section id="cara-kerja" class="level1">
+<h1>Cara Kerja</h1>
+<p>Misalkan kita memiliki teks “TENTUKAN PRIORITAS ANDA SEBAB KITA TIDAK DAPAT MENGERJAKAN SEMUANYA X” dengan kunci “BOROBUDUR”, maka proses pengenkripsiannya adalah sebagai berikut</p>
 <ol type="1">
-<li><p>Create Database Mahasiswa dan Table identitas <br></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">DATABASE</span> mahasiswa;</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> identitas (`Nama` <span class="dt">VARCHAR</span>(<span class="dv">250</span>) <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Alter Table <br></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">TABLE</span> identitas <span class="kw">ADD</span> NIM <span class="dt">VARCHAR</span>(<span class="dv">15</span>) <span class="kw">UNIQUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Rename Table <br></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">RENAME</span> <span class="kw">TABLE</span> identitas <span class="kw">TO</span> id_mahasiswa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Show Table <br></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>SHOW <span class="kw">TABLES</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Drop Table <br></p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DROP</span> <span class="kw">TABLE</span> id_mahasiswa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Coba kreasikan Database kalian dengan perintah DDL!<br> Buatlah Database <code>kuliah</code> berisi 2 table yaitu <code>id_dosen</code> dan <code>id_mahasiswa</code><br> Table <code>id_dosen</code> berisi kolom : nama, NIDN, Jabatan<br> Table <code>id_mahasiswa</code> berisi kolom : nama, NIM, Prodi</p></li>
+<li><p>Dari kata “BOROBUDUR” akan didefinisikan urutan abjadnya sebagai berikut : 1 3 4 3 1 5 2 5 4</p>
+<p><img src="assets/kriptografi/myzkowski1.png" class="img-fluid" style="text-align:center;;width:50.0%"></p></li>
+<li><p>Setelah itu kita akan membuat tabel yang panjangnya menyesuaikan dengan panjang kuncinya. Kemudian memasukkan setiap urutan kata kunci ke dalam baris paling atas, dan memasukkan Plainteks ke dalam tabel dengan urut dari kiri ke kanan.</p>
+<p><img src="assets/kriptografi/myzkowski2.png" class="img-fluid" style="text-align:center;;width:50.0%"></p></li>
+<li><p>Lalu baca dari urutan kunci yang paling kecil, jika hanya terdapat 1 nomor urut kunci makan membacanya dari atas ke bawah, jika lebih dari 1 maka cara membacanya dengan zig-zag.</p>
+<p><img src="assets/kriptografi/myzkowski3.png" class="img-fluid" style="text-align:center;;width:50.0%"></p></li>
+<li><p>Dari proses transposisi maka didapatkan cipherteks sebagai berikut: TURIN&nbsp;EIIAM RAUAA AAANS ETIRD STTPT JKNYN POAAK ADAEA MNKNT SBBDK EGNEX</p></li>
 </ol>
-</div>
-</div>
 </section>
+<section id="implementasi-pada-python" class="level1">
+<h1>Implementasi Pada Python</h1>
+<p>Import library</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Deklarasi urutan huruf dalam alfabet</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>abjad <span class="op">=</span> {<span class="st">'a'</span>: <span class="dv">1</span>, <span class="st">'b'</span>: <span class="dv">2</span>, <span class="st">'c'</span>: <span class="dv">3</span>, <span class="st">'d'</span>: <span class="dv">4</span>, <span class="st">'e'</span>: <span class="dv">5</span>, <span class="st">'f'</span>: <span class="dv">6</span>, <span class="st">'g'</span>: <span class="dv">7</span>, <span class="st">'h'</span>: <span class="dv">8</span>, <span class="st">'i'</span>: <span class="dv">9</span>, <span class="st">'j'</span>: <span class="dv">10</span>, <span class="st">'k'</span>: <span class="dv">11</span>, <span class="st">'l'</span>: <span class="dv">12</span>, <span class="st">'m'</span>: <span class="dv">13</span>,</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>         <span class="st">'n'</span>: <span class="dv">14</span>, <span class="st">'o'</span>: <span class="dv">15</span>, <span class="st">'p'</span>: <span class="dv">16</span>, <span class="st">'q'</span>: <span class="dv">17</span>, <span class="st">'r'</span>: <span class="dv">18</span>, <span class="st">'s'</span>: <span class="dv">19</span>, <span class="st">'t'</span>: <span class="dv">20</span>, <span class="st">'u'</span>: <span class="dv">21</span>, <span class="st">'v'</span>: <span class="dv">22</span>, <span class="st">'w'</span>: <span class="dv">23</span>, <span class="st">'x'</span>: <span class="dv">24</span>, <span class="st">'y'</span>: <span class="dv">25</span>, <span class="st">'z'</span>: <span class="dv">26</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Memasukkan plaintext</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plaintext_myzkowski <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Masukkan teks yang ingin dienkripsi: "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Menghilangkan spasi ganda dan mengubah plaintext menjadi uppercase</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plaintext_myzkowski <span class="op">=</span> plaintext_myzkowski.replace(<span class="st">"  "</span>, <span class="st">" "</span>).upper()</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(plaintext_myzkowski)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Memasukkan kunci</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>key_myzkowski <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Masukkan kunci: "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Menghilangkan spasi dalam kunci</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>key_myzkowski <span class="op">=</span> key_myzkowski.replace(<span class="st">" "</span>, <span class="st">""</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(key_myzkowski)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="pemrosesan-kunci" class="level2">
+<h2 class="anchored" data-anchor-id="pemrosesan-kunci">Pemrosesan Kunci</h2>
+<p>Membuat urutan dari tiap huruf di kunci</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>sortkey <span class="op">=</span> []</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>kolom <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Perulangan untuk menambahkan urutan huruf kunci ke list sortkey</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> huruf <span class="kw">in</span> key_myzkowski:</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Periksa apakah karakter saat ini adalah huruf alfabet</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> huruf.isalpha():</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        sortkey.append(abjad[huruf.lower()])</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        kolom <span class="op">=</span> kolom<span class="op">+</span><span class="dv">1</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Urutan kunci dari kata '</span><span class="sc">{</span>key_myzkowski<span class="sc">}</span><span class="ss">' adalah: </span><span class="sc">{</span>sortkey<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Menghitung jumlah kemunculan tiap huruf di kunci</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat dictionary untuk melacak jumlah kemunculan setiap nilai</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>count_key <span class="op">=</span> {}</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> nilai <span class="kw">in</span> sortkey:</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Jika nilai sudah ada dalam dictionary, tambahkan 1 ke jumlahnya</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> nilai <span class="kw">in</span> count_key:</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        count_key[nilai] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Jika nilai belum ada dalam dictionary, tambahkan ke dictionary dengan jumlah 1</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>        count_key[nilai] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(count_key)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Membuat urutan kolom dalam kunci</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>hasil_kunci <span class="op">=</span> [<span class="va">None</span>] <span class="op">*</span> <span class="bu">len</span>(key_myzkowski)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i<span class="op">&lt;</span><span class="bu">len</span>(key_myzkowski):</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    non_none_values <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> x: x <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>, sortkey))</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> non_none_values:</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>        nilai_terkecil <span class="op">=</span> <span class="bu">min</span>(non_none_values)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> count_key[nilai_terkecil]<span class="op">&gt;</span><span class="dv">1</span>:</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(count_key[nilai_terkecil]):</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>                marker <span class="op">=</span> sortkey.index(nilai_terkecil)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>                hasil_kunci[marker] <span class="op">=</span> n</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>                sortkey[marker] <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>                nilai_terkecil <span class="op">=</span> <span class="bu">min</span>(non_none_values)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>          marker <span class="op">=</span> sortkey.index(nilai_terkecil)</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>          hasil_kunci[marker] <span class="op">=</span> n</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>          sortkey[marker] <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    n<span class="op">+=</span><span class="dv">1</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    i<span class="op">+=</span><span class="dv">1</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hasil_kunci)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Penjelasan prosesnya - <code>hasil_kunci</code> adalah list yang panjangnya sama dengan <code>key_myzkowski</code> dan diisi dengan <code>None</code>. List ini akan diisi dengan nomor urut sesuai urutan karakter dalam <code>key_myzkowski</code>.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="bu">len</span>(key_myzkowski):</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    non_none_values <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> x: x <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>, sortkey))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>while i &lt; len(key_myzkowski)</code>: Loop ini akan berjalan hingga semua karakter dalam <code>key_myzkowski</code> diproses.</li>
+<li><code>non_none_values</code>: List yang berisi nilai dari <code>sortkey</code> yang tidak <code>None</code>. <code>sortkey</code> adalah list yang berisi urutan karakter <code>key_myzkowski</code> yang telah diurutkan. <code>filter(lambda x: x is not None, sortkey)</code> digunakan untuk mendapatkan nilai yang valid (bukan <code>None</code>).</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> non_none_values:</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    nilai_terkecil <span class="op">=</span> <span class="bu">min</span>(non_none_values)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Jika <code>non_none_values</code> tidak kosong, berarti masih ada karakter yang perlu diproses.</li>
+<li><code>nilai_terkecil</code> adalah nilai terkecil dalam <code>non_none_values</code>. Ini digunakan untuk menentukan urutan karakter yang akan diberi nomor.</li>
+</ul>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> count_key[nilai_terkecil] <span class="op">&gt;</span> <span class="dv">1</span>:</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(count_key[nilai_terkecil]):</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        marker <span class="op">=</span> sortkey.index(nilai_terkecil)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>        hasil_kunci[marker] <span class="op">=</span> n</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>        sortkey[marker] <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>        nilai_terkecil <span class="op">=</span> <span class="bu">min</span>(non_none_values)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>if count_key[nilai_terkecil] &gt; 1</code>: Jika <code>nilai_terkecil</code> memiliki pengulangan (<code>count_key[nilai_terkecil]</code> adalah jumlah pengulangan karakter tersebut dalam <code>key_myzkowski</code>).</li>
+<li><code>for j in range(count_key[nilai_terkecil])</code>: Loop untuk memproses setiap pengulangan karakter.</li>
+<li><code>marker = sortkey.index(nilai_terkecil)</code>: Temukan indeks dari <code>nilai_terkecil</code> di <code>sortkey</code>.</li>
+<li><code>hasil_kunci[marker] = n</code>: Beri nomor urut <code>n</code> pada posisi yang sesuai di <code>hasil_kunci</code>.</li>
+<li><code>sortkey[marker] = None</code>: Tandai posisi yang telah diproses dengan None agar tidak diproses lagi di iterasi berikutnya.</li>
+<li><code>nilai_terkecil = min(non_none_values)</code>: Update <code>nilai_terkecil</code> dengan nilai terkecil berikutnya dari <code>non_none_values</code>.</li>
+</ul>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    marker <span class="op">=</span> sortkey.index(nilai_terkecil)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    hasil_kunci[marker] <span class="op">=</span> n</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    sortkey[marker] <span class="op">=</span> <span class="va">None</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Jika <code>nilai_terkecil</code> tidak memiliki pengulangan (<code>count_key[nilai_terkecil]</code> adalah 1), cukup tandai posisi <code>marker</code> di <code>hasil_kunci</code> dengan <code>n</code>, dan ubah nilai di <code>sortkey</code> menjadi <code>None</code>.</li>
+</ul>
 </section>
-<section id="data-manipulation-language-dml" class="level3">
-<h3 class="anchored" data-anchor-id="data-manipulation-language-dml">Data Manipulation Language (DML)</h3>
-<p>Data Manipulation Language (DML) adalah bagian dari SQL (Structured Query Language) yang digunakan untuk memanipulasi data dalam database. Sehingga pernyataan DML ini dapat digunakan ketika database dan tabel telah dibuat. Pernyataan DML digunakan untuk menyisipkan, memperbarui, dan menghapus data dalam database. Beberapa pernyataan DML yang paling umum meliputi:</p>
-<section id="insert" class="level4">
-<h4 class="anchored" data-anchor-id="insert">INSERT</h4>
-<p>Pernyataan ini digunakan untuk memasukkan data baru ke dalam tabel. Sebagai ilustrasi, pernyataan SQL berikut menyisipkan baris baru ke dalam tabel “pelanggan”:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> pelanggan (<span class="kw">id</span>, nama, alamat) <span class="kw">VALUES</span> (<span class="dv">1</span>, <span class="st">'John Smith,'</span> <span class="st">'123 Main St'</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="proses-enkripsi" class="level2">
+<h2 class="anchored" data-anchor-id="proses-enkripsi">Proses Enkripsi</h2>
+<p>Membuat susunan plaintext sesuai dengan panjang kunci</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># membuat variabel list kosong</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>enkripsi <span class="op">=</span> []</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># perulangan untuk membagi plaintext menjadi potongan-potongan sepanjang panjang kunci dan menyimpan potongan-potongan tersebut ke dalam list</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span> (<span class="dv">0</span>, <span class="bu">len</span>(plaintext_myzkowski), <span class="bu">len</span>(key_myzkowski)):</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> plaintext_myzkowski[i:i<span class="op">+</span><span class="bu">len</span>(key_myzkowski)]</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="bu">list</span>(x)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    enkripsi.append(x)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co"># perulangan untuk menambahkan # ke dalam list enkripsi index terakhir jika panjangnya kurang dari panjang kunci</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="bu">len</span>(enkripsi[<span class="bu">len</span>(enkripsi)<span class="op">-</span><span class="dv">1</span>])<span class="op">&lt;</span><span class="bu">len</span>(key_myzkowski):</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    enkripsi[<span class="bu">len</span>(enkripsi)<span class="op">-</span><span class="dv">1</span>].append(<span class="st">" "</span>)</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hasil_kunci)</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> row <span class="kw">in</span> enkripsi:</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Menghitung jumlah kemunculan tiap angka dalam kunci</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat dictionary untuk melacak jumlah kemunculan setiap nilai</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>count_hasil_kunci <span class="op">=</span> {}</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Loop melalui setiap nilai dalam list</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> nilai <span class="kw">in</span> hasil_kunci:</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Jika nilai sudah ada dalam dictionary, tambahkan 1 ke jumlahnya</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> nilai <span class="kw">in</span> count_hasil_kunci:</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>        count_hasil_kunci[nilai] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Jika nilai belum ada dalam dictionary, tambahkan ke dictionary dengan jumlah 1</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>        count_hasil_kunci[nilai] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Cetak dictionary yang berisi jumlah kemunculan setiap nilai</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(count_hasil_kunci)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Proses pengenkripsian susuna plainteks</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>hasil_enkripsi <span class="op">=</span> []</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># perulangan untuk menentukan hasil enkripsi</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="bu">len</span>(key_myzkowski):</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    non_none_values <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> x: x <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>, hasil_kunci))</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> non_none_values:</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>        nilai_terkecil <span class="op">=</span> <span class="bu">min</span>(non_none_values)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> count_hasil_kunci[nilai_terkecil] <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>            marker <span class="op">=</span> hasil_kunci.index(nilai_terkecil)</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(enkripsi)):</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>                hasil_enkripsi.append(enkripsi[j][marker])</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>            hasil_kunci[marker] <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>            temp <span class="op">=</span> []</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(i, count_hasil_kunci[nilai_terkecil] <span class="op">+</span> i):</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>                marker <span class="op">=</span> hasil_kunci.index(nilai_terkecil)</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>                temp.append(marker)</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>                hasil_kunci[marker] <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>                nilai_terkecil <span class="op">=</span> <span class="bu">min</span>(non_none_values)</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(enkripsi)):</span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>                <span class="cf">for</span> indeks <span class="kw">in</span> temp:</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>                    hasil_enkripsi.append(enkripsi[j][indeks])</span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>    i <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>hasil_enkripsi <span class="op">=</span> <span class="st">''</span>.join(hasil_enkripsi)</span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hasil Enkripsi = "</span>, hasil_enkripsi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Penjelasan prosesnya:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="bu">len</span>(key_myzkowski):</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    non_none_values <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> x: x <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>, hasil_kunci))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>while i &lt; len(key_myzkowski)</code>: Loop ini berjalan selama <code>i</code> kurang dari panjang <code>key_myzkowski</code>.</li>
+<li><code>non_none_values</code>: List ini berisi nilai-nilai dari <code>hasil_kunci</code> yang bukan <code>None</code>, yang menandakan kolom yang belum diproses.</li>
+</ul>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> count_hasil_kunci[nilai_terkecil] <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    marker <span class="op">=</span> hasil_kunci.index(nilai_terkecil)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(enkripsi)):</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>        hasil_enkripsi.append(enkripsi[j][marker])</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    hasil_kunci[marker] <span class="op">=</span> <span class="va">None</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>if count_hasil_kunci[nilai_terkecil] == 1</code>: Jika <code>nilai_terkecil</code> hanya muncul sekali (tidak ada pengulangan).</li>
+<li><code>marker = hasil_kunci.index(nilai_terkecil)</code>: Temukan indeks dari <code>nilai_terkecil</code> di <code>hasil_kunci</code>.</li>
+<li><code>for j in range(len(enkripsi))</code>: Loop melalui setiap baris dalam matriks <code>enkripsi</code>.</li>
+<li><code>hasil_enkripsi.append(enkripsi[j][marker])</code>: Tambahkan karakter di kolom <code>marker</code> dari setiap baris ke <code>hasil_enkripsi</code>.</li>
+<li><code>hasil_kunci[marker] = None</code>: Tandai kolom ini sebagai sudah diproses dengan mengubah nilai di <code>hasil_kunci</code> menjadi <code>None</code>.</li>
+</ul>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    temp <span class="op">=</span> []</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(i, count_hasil_kunci[nilai_terkecil] <span class="op">+</span> i):</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>        marker <span class="op">=</span> hasil_kunci.index(nilai_terkecil)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>        temp.append(marker)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>        hasil_kunci[marker] <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>        nilai_terkecil <span class="op">=</span> <span class="bu">min</span>(non_none_values)</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(enkripsi)):</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> indeks <span class="kw">in</span> temp:</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>            hasil_enkripsi.append(enkripsi[j][indeks])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>else</code>: Jika <code>nilai_terkecil</code> muncul lebih dari sekali.</li>
+<li><code>temp = []</code>: List sementara untuk menyimpan indeks kolom yang akan diproses.</li>
+<li><code>for k in range(i, count_hasil_kunci[nilai_terkecil] + i)</code>: Loop untuk menambahkan semua indeks kolom yang memiliki nilai <code>nilai_terkecil</code> ke <code>temp</code>.</li>
+<li><code>marker = hasil_kunci.index(nilai_terkecil)</code>: Temukan indeks dari <code>nilai_terkecil</code> di <code>hasil_kunci</code>.</li>
+<li><code>temp.append(marker)</code>: Tambahkan indeks <code>marker</code> ke <code>temp</code>.</li>
+<li><code>hasil_kunci[marker] = None</code>: Tandai kolom ini sebagai sudah diproses dengan mengubah nilai di <code>hasil_kunci</code> menjadi <code>None</code>.</li>
+<li><code>nilai_terkecil = min(non_none_values)</code>: Update <code>nilai_terkecil</code> dengan nilai terkecil berikutnya dari <code>non_none_values</code>.</li>
+<li><code>for j in range(len(enkripsi))</code>: Loop melalui setiap baris dalam matriks <code>enkripsi</code>.</li>
+<li><code>for indeks in temp</code>: Loop melalui setiap indeks yang disimpan di <code>temp</code>.</li>
+<li><code>hasil_enkripsi.append(enkripsi[j][indeks])</code>: Tambahkan karakter di kolom <code>indeks</code> dari setiap baris ke <code>hasil_enkripsi</code>.</li>
+</ul>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>hasil_enkripsi <span class="op">=</span> <span class="st">''</span>.join(hasil_enkripsi)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hasil Enkripsi = "</span>, hasil_enkripsi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>hasil_enkripsi = ''.join(hasil_enkripsi)</code>: Gabungkan semua karakter di <code>hasil_enkripsi</code> menjadi satu string.</li>
+<li><code>print("Hasil Enkripsi = ", hasil_enkripsi)</code>: Cetak hasil enkripsi.</li>
+</ul>
 </section>
-<section id="select" class="level4">
-<h4 class="anchored" data-anchor-id="select">SELECT</h4>
-<p>Pernyataan ini digunakan untuk mengambil data dari satu atau lebih tabel dalam database. Sebagai contoh, kueri SQL berikut mengambil semua rekaman dari tabel “pelanggan”:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> pelanggan;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="update" class="level4">
-<h4 class="anchored" data-anchor-id="update">UPDATE</h4>
-<p>Pernyataan ini digunakan untuk memodifikasi data yang ada dalam sebuah tabel. Misalnya, pernyataan SQL berikut memperbarui alamat pelanggan dengan ID 1 di tabel “pelanggan”:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> pelanggan <span class="kw">SET</span> address <span class="op">=</span> <span class="st">'456 Park Ave'</span> <span class="kw">WHERE</span> <span class="kw">id</span> <span class="op">=</span> <span class="dv">1</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="delete" class="level4">
-<h4 class="anchored" data-anchor-id="delete">DELETE</h4>
-<p>Pernyataan ini digunakan untuk menghapus data dari tabel. Misalnya, pernyataan SQL berikut menghapus pelanggan dengan ID 1 dari tabel “pelanggan”:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> pelanggan <span class="kw">WHERE</span> <span class="kw">id</span> <span class="op">=</span> <span class="dv">1</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-style-default callout-note callout-titled" title="Latihan DML">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Latihan DML
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Gunakan Database yang telah kalian kerjakan pada <code>Latihan DDL</code> sebelumnya!</p>
-<ol type="1">
-<li><p>Insert Data</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> id_mahasiswa <span class="kw">VALUES</span> (<span class="st">'Amanda'</span>, <span class="st">'A11.2020.54321'</span>,);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Select Data</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Nama, NIM <span class="kw">FROM</span> id_mahasiswa;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Update Data</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> id_mahasiswa <span class="kw">SET</span> `Prodi`<span class="op">=</span><span class="st">'Ilmu Komunikasi'</span> <span class="kw">WHERE</span> `Prodi`<span class="op">=</span><span class="st">''</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Delete Data</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> id_mahasiswa <span class="kw">WHERE</span> `NIM`<span class="op">=</span><span class="st">'A11.2020.54321'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Kreasikan database kalian dengan perintah dari DDL dan DML !</p></li>
-</ol>
-</div>
-</div>
-<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Konsep Database">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Konsep Database
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><em>Berikut merupakan penjelasan dari konsep database!</em></p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/b2fWiClQYiM" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</div>
-</div>
+<section id="proses-dekripsi" class="level2">
+<h2 class="anchored" data-anchor-id="proses-dekripsi">Proses Dekripsi</h2>
+<p>Memasukkan cipherteks</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>chipertext_myzkowski <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Masukkan teks yang ingin dienkripsi: "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Proses membuat list yang berisi kunci dan nomor urut hurufnya</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># membuat variabel list kosong</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>dekripsi <span class="op">=</span> []</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>key_myzkowski <span class="op">=</span> <span class="bu">list</span>(key_myzkowski)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># menambahkan kunci ke dalam list dekripsi</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>dekripsi.append(key_myzkowski)</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co"># menambahkan list kosong yang akan berisi nomor urutan dari tiap abjad kunci</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>dekripsi.append([])</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="co"># perulangan untuk menambahkan urutan nomor dari tiap abjad kunci</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i<span class="op">&lt;</span><span class="bu">len</span>(key_myzkowski):</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    dekripsi[<span class="dv">1</span>].append(i<span class="op">+</span><span class="dv">1</span>)</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    i<span class="op">+=</span><span class="dv">1</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dekripsi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Outputnya:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>[[<span class="st">'u'</span>, <span class="st">'d'</span>, <span class="st">'i'</span>, <span class="st">'n'</span>, <span class="st">'u'</span>, <span class="st">'s'</span>, <span class="st">'u'</span>, <span class="st">'n'</span>, <span class="st">'g'</span>, <span class="st">'g'</span>, <span class="st">'u'</span>, <span class="st">'l'</span>], [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Mengurutkan isi list berdasarkan dari list pertama yang berisi kunci</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>dekripsi <span class="op">=</span> np.array(dekripsi)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>dekripsi <span class="op">=</span> dekripsi [ :, dekripsi[<span class="dv">0</span>].argsort()]</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>dekripsi <span class="op">=</span> dekripsi.tolist()</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dekripsi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Outputnya:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>[[<span class="st">'d'</span>, <span class="st">'g'</span>, <span class="st">'g'</span>, <span class="st">'i'</span>, <span class="st">'l'</span>, <span class="st">'n'</span>, <span class="st">'n'</span>, <span class="st">'s'</span>, <span class="st">'u'</span>, <span class="st">'u'</span>, <span class="st">'u'</span>, <span class="st">'u'</span>], [<span class="st">'2'</span>, <span class="st">'9'</span>, <span class="st">'10'</span>, <span class="st">'3'</span>, <span class="st">'12'</span>, <span class="st">'4'</span>, <span class="st">'8'</span>, <span class="st">'6'</span>, <span class="st">'1'</span>, <span class="st">'5'</span>, <span class="st">'7'</span>, <span class="st">'11'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Menghitung jumlah frekuensi abjad dari list yang berisi kunci</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>count_key_decrypt <span class="op">=</span> {}</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> nilai <span class="kw">in</span> dekripsi[<span class="dv">0</span>]:</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Jika nilai sudah ada dalam dictionary, tambahkan 1 ke jumlahnya</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> nilai <span class="kw">in</span> count_key_decrypt:</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>        count_key_decrypt[nilai] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Jika nilai belum ada dalam dictionary, tambahkan ke dictionary dengan jumlah 1</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>        count_key_decrypt[nilai] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(count_key_decrypt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Membaca karakter dari ciphertext dan menempatkannya ke dalam list dekripsi berdasarkan kunci yang telah diuraikan</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>indeks <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co"># perulangan untuk menambahkan abjad ciphertext ke dalam list berdasarkan kunci dan jumlah frekuensi abjad kunci</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i<span class="op">&lt;</span><span class="bu">len</span>(key_myzkowski):</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> count_key_decrypt[dekripsi[<span class="dv">0</span>][i]]<span class="op">&gt;</span><span class="dv">1</span>:</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>,<span class="bu">int</span>((<span class="bu">len</span>(chipertext_myzkowski)<span class="op">/</span><span class="bu">len</span>(key_myzkowski))<span class="op">+</span><span class="dv">2</span>)):</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(count_key_decrypt[dekripsi[<span class="dv">0</span>][i]]):</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>                dekripsi[k].append(chipertext_myzkowski[indeks])</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>                indeks<span class="op">+=</span><span class="dv">1</span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>        i<span class="op">+=</span>(count_key_decrypt[dekripsi[<span class="dv">0</span>][i]]<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="bu">int</span>((<span class="bu">len</span>(chipertext_myzkowski) <span class="op">/</span> <span class="bu">len</span>(key_myzkowski)) <span class="op">+</span> <span class="dv">2</span>)):</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>            dekripsi[k].append(chipertext_myzkowski[indeks])</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>            indeks<span class="op">+=</span><span class="dv">1</span></span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>    i<span class="op">+=</span><span class="dv">1</span></span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dekripsi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Penjelasan prosesnya:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="bu">len</span>(key_myzkowski):</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> count_key_decrypt[dekripsi[<span class="dv">0</span>][i]] <span class="op">&gt;</span> <span class="dv">1</span>:</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>while i &lt; len(key_myzkowski)</code>: Loop ini berjalan selama <code>i</code> kurang dari panjang <code>key_myzkowski</code>.</li>
+<li><code>if count_key_decrypt[dekripsi[0][i]] &gt; 1</code>: Memeriksa apakah karakter pada posisi <code>i</code> di <code>dekripsi[0]</code> (baris kunci) memiliki pengulangan. Jika iya, berarti kita akan menangani kolom yang berulang.</li>
+</ul>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="bu">int</span>((<span class="bu">len</span>(chipertext_myzkowski) <span class="op">/</span> <span class="bu">len</span>(key_myzkowski)) <span class="op">+</span> <span class="dv">2</span>)):</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(count_key_decrypt[dekripsi[<span class="dv">0</span>][i]]):</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>        dekripsi[k].append(chipertext_myzkowski[indeks])</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>        indeks <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>i <span class="op">+=</span> (count_key_decrypt[dekripsi[<span class="dv">0</span>][i]] <span class="op">-</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>for k in range(2, int((len(chipertext_myzkowski) / len(key_myzkowski)) + 2))</code>: Loop melalui setiap baris dalam list <code>dekripsi</code>, dimulai dari baris kedua. Perulangan ini dilakukan sesuai dengan jumlah kolom dan panjang ciphertext.</li>
+<li><code>for j in range(count_key_decrypt[dekripsi[0][i]])</code>: Loop ini dilakukan sesuai dengan jumlah pengulangan karakter yang sama dalam kunci.</li>
+<li><code>dekripsi[k].append(chipertext_myzkowski[indeks])</code>: Tambahkan karakter dari <code>chipertext_myzkowski</code> pada posisi indeks ke baris <code>k</code> dalam list <code>dekripsi</code>.</li>
+<li><code>indeks += 1</code>: Update <code>indeks</code> untuk karakter berikutnya.</li>
+<li><code>i += (count_key_decrypt[dekripsi[0][i]] - 1)</code>: Lewati jumlah karakter pengulangan di <code>key_myzkowski</code>.</li>
+</ul>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="bu">int</span>((<span class="bu">len</span>(chipertext_myzkowski) <span class="op">/</span> <span class="bu">len</span>(key_myzkowski)) <span class="op">+</span> <span class="dv">2</span>)):</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>        dekripsi[k].append(chipertext_myzkowski[indeks])</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>        indeks <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>else</code>: Jika karakter pada posisi <code>i</code> di <code>dekripsi[0]</code> tidak memiliki pengulangan.</li>
+<li><code>for k in range(2, int((len(chipertext_myzkowski) / len(key_myzkowski)) + 2))</code>: Loop melalui setiap baris dalam list <code>dekripsi</code>, dimulai dari baris kedua.</li>
+<li><code>dekripsi[k].append(chipertext_myzkowski[indeks])</code>: Tambahkan karakter dari <code>chipertext_myzkowski</code> pada posisi <code>indeks</code> ke baris <code>k</code> dalam list <code>dekripsi</code>.</li>
+<li><code>indeks += 1</code>: Update <code>indeks</code> untuk karakter berikutnya.</li>
+</ul>
+<p>Outputnya:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>[[<span class="st">'d'</span>, <span class="st">'g'</span>, <span class="st">'g'</span>, <span class="st">'i'</span>, <span class="st">'l'</span>, <span class="st">'n'</span>, <span class="st">'n'</span>, <span class="st">'s'</span>, <span class="st">'u'</span>, <span class="st">'u'</span>, <span class="st">'u'</span>, <span class="st">'u'</span>], [<span class="st">'2'</span>, <span class="st">'9'</span>, <span class="st">'10'</span>, <span class="st">'3'</span>, <span class="st">'12'</span>, <span class="st">'4'</span>, <span class="st">'8'</span>, <span class="st">'6'</span>, <span class="st">'1'</span>, <span class="st">'5'</span>, <span class="st">'7'</span>, <span class="st">'11'</span>], [<span class="st">'E'</span>, <span class="st">'N'</span>, <span class="st">'F'</span>, <span class="st">'K'</span>, <span class="st">'R'</span>, <span class="st">'N'</span>, <span class="st">'I'</span>, <span class="st">'K'</span>, <span class="st">'T'</span>, <span class="st">'I'</span>, <span class="st">' '</span>, <span class="st">'O'</span>], [<span class="st">'A'</span>, <span class="st">'D'</span>, <span class="st">'I'</span>, <span class="st">'T'</span>, <span class="st">'U'</span>, <span class="st">'I'</span>, <span class="st">'U'</span>, <span class="st">'A'</span>, <span class="st">'M'</span>, <span class="st">'K'</span>, <span class="st">' '</span>, <span class="st">'N'</span>], [<span class="st">' '</span>, <span class="st">' '</span>, <span class="st">' '</span>, <span class="st">' '</span>, <span class="st">' '</span>, <span class="st">' '</span>, <span class="st">' '</span>, <span class="st">' '</span>, <span class="st">'S'</span>, <span class="st">' '</span>, <span class="st">' '</span>, <span class="st">' '</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Mengurutkan list dekripsi berdasarkan nilai pada list kedua dan kemudian menggabungkan karakter dari dekripsi untuk menghasilkan teks dekripsi akhir</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>dekripsi <span class="op">=</span> np.array(dekripsi)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co"># mengurutkan list berdasarkan list kedua dan menampilkan hasil dari dekripsinya</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>dekripsi <span class="op">=</span> dekripsi [ :, dekripsi[<span class="dv">1</span>].astype(<span class="bu">int</span>).argsort()]</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>hasil_dekripsi <span class="op">=</span> []</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, row <span class="kw">in</span> <span class="bu">enumerate</span>(dekripsi):</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> index <span class="op">!=</span> <span class="dv">0</span> <span class="kw">and</span> index <span class="op">!=</span> <span class="dv">1</span>:</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(row)</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>,<span class="bu">len</span>(dekripsi)):</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(dekripsi[<span class="dv">0</span>])):</span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>      hasil_dekripsi.append(dekripsi[i][j])</span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>hasil_dekripsi <span class="op">=</span> <span class="st">''</span>.join(hasil_dekripsi)</span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Hasil Dekripsi = "</span>, hasil_dekripsi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Penjelasan Prosesnya:</p>
+<ul>
+<li><code>dekripsi = np.array(dekripsi)</code> : <code>dekripsi</code> dikonversi menjadi array NumPy untuk memudahkan manipulasi data, terutama untuk sorting.</li>
+</ul>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>dekripsi <span class="op">=</span> dekripsi[:, dekripsi[<span class="dv">1</span>].astype(<span class="bu">int</span>).argsort()]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>dekripsi[:, ...]</code>: Mengambil semua baris (<code>:</code>) dari <code>dekripsi</code>, tetapi hanya kolom yang diurutkan berdasarkan baris kedua.</li>
+<li><code>dekripsi[1]</code>: Mengambil baris kedua dari <code>dekripsi</code>, yang berisi nilai-nilai kunci yang digunakan untuk pengurutan.</li>
+<li><code>.astype(int)</code>: Mengonversi nilai di baris kedua menjadi tipe integer jika belum dalam tipe ini, agar bisa diurutkan.</li>
+<li><code>.argsort()</code>: Mengembalikan indeks yang akan mengurutkan array. Indeks ini digunakan untuk mengurutkan <code>dekripsi</code> berdasarkan nilai di baris kedua.</li>
+</ul>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, row <span class="kw">in</span> <span class="bu">enumerate</span>(dekripsi):</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> index <span class="op">!=</span> <span class="dv">0</span> <span class="kw">and</span> index <span class="op">!=</span> <span class="dv">1</span>:</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>for index, row in enumerate(dekripsi)</code>: Loop ini berjalan melalui setiap baris dalam <code>dekripsi</code>.</li>
+<li><code>if index != 0 and index != 1</code>: Memeriksa apakah indeks tidak sama dengan 0 atau 1, karena baris ini adalah kunci dan mungkin tidak perlu ditampilkan atau diproses lebih lanjut.</li>
+<li><code>print(row)</code>: Mencetak baris yang relevan untuk melihat hasil sementara dari <code>dekripsi</code>.</li>
+</ul>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="bu">len</span>(dekripsi)):</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(dekripsi[<span class="dv">0</span>])):</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>        hasil_dekripsi.append(dekripsi[i][j])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>for i in range(2, len(dekripsi))</code>: Loop melalui baris <code>dekripsi</code> dimulai dari baris ketiga, karena baris pertama dan kedua adalah kunci dan pengurutan.</li>
+<li><code>for j in range(len(dekripsi[0]))</code>: Loop melalui setiap kolom dalam baris <code>dekripsi</code>.</li>
+<li><code>hasil_dekripsi.append(dekripsi[i][j])</code>: Menambahkan karakter dari posisi <code>(i, j)</code> di <code>dekripsi</code> ke <code>hasil_dekripsi</code>.</li>
+</ul>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>hasil_dekripsi <span class="op">=</span> <span class="st">''</span>.join(hasil_dekripsi)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Hasil Dekripsi = "</span>, hasil_dekripsi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>hasil_dekripsi = ''.join(hasil_dekripsi)</code>: Menggabungkan semua karakter di <code>hasil_dekripsi</code> menjadi satu string.</li>
+<li><code>print("\nHasil Dekripsi = ", hasil_dekripsi)</code>: Mencetak hasil dekripsi akhir.</li>
+</ul>
 
 
-</section>
 </section>
 </section>
 
