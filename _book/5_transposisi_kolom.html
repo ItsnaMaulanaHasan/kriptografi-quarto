@@ -202,6 +202,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">7. Transposisi Rail Fence</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./8_transposisi_route.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8. Transposisi Route</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -425,31 +431,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="implementasi-pada-python" class="level2">
 <h2 class="anchored" data-anchor-id="implementasi-pada-python">Implementasi Pada Python</h2>
 <p>Masukkan plaintext</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>plainText <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Plaintext : "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>CONTOH : TEKNIK INFORMATIKA</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>plainText <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Plaintext : "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Masukkan kunci</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>key <span class="op">=</span> <span class="bu">input</span>(<span class="st">"masukkan kunci : "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>CONTOH : UDINUS</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>key <span class="op">=</span> <span class="bu">input</span>(<span class="st">"masukkan kunci : "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Membersihkan teks dari spasi ganda</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cleanPlainTeks <span class="op">=</span> plainTeks.replace(<span class="st">" "</span>, <span class="st">""</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cleanPlainTeks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>cleanPlainTeks <span class="op">=</span> plainTeks.replace(<span class="st">" "</span>, <span class="st">""</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cleanPlainTeks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Deklarasi urutan huruf dalam alfabet</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">ascii</span> <span class="op">=</span> {</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="st">'a'</span>: <span class="dv">1</span>, <span class="st">'b'</span>: <span class="dv">2</span>, <span class="st">'c'</span>: <span class="dv">3</span>, <span class="st">'d'</span>: <span class="dv">4</span>, <span class="st">'e'</span>: <span class="dv">5</span>, <span class="st">'f'</span>: <span class="dv">6</span>, <span class="st">'g'</span>: <span class="dv">7</span>, <span class="st">'h'</span>: <span class="dv">8</span>, <span class="st">'i'</span>: <span class="dv">9</span>, <span class="st">'j'</span>: <span class="dv">10</span>, <span class="st">'k'</span>: <span class="dv">11</span>, </span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="st">'l'</span>: <span class="dv">12</span>, <span class="st">'m'</span>: <span class="dv">13</span>, <span class="st">'n'</span>: <span class="dv">14</span>, <span class="st">'o'</span>: <span class="dv">15</span>, <span class="st">'p'</span>: <span class="dv">16</span>, <span class="st">'q'</span>: <span class="dv">17</span>, <span class="st">'r'</span>: <span class="dv">18</span>, <span class="st">'s'</span>: <span class="dv">19</span>, <span class="st">'t'</span>: <span class="dv">20</span>, <span class="st">'u'</span>: <span class="dv">21</span>, </span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="st">'v'</span>: <span class="dv">22</span>, <span class="st">'w'</span>: <span class="dv">23</span>, <span class="st">'x'</span>: <span class="dv">24</span>, <span class="st">'y'</span>: <span class="dv">25</span>, <span class="st">'z'</span>: <span class="dv">26</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">ascii</span> <span class="op">=</span> {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="st">'a'</span>: <span class="dv">1</span>, <span class="st">'b'</span>: <span class="dv">2</span>, <span class="st">'c'</span>: <span class="dv">3</span>, <span class="st">'d'</span>: <span class="dv">4</span>, <span class="st">'e'</span>: <span class="dv">5</span>, <span class="st">'f'</span>: <span class="dv">6</span>, <span class="st">'g'</span>: <span class="dv">7</span>, <span class="st">'h'</span>: <span class="dv">8</span>, <span class="st">'i'</span>: <span class="dv">9</span>, <span class="st">'j'</span>: <span class="dv">10</span>, <span class="st">'k'</span>: <span class="dv">11</span>, </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="st">'l'</span>: <span class="dv">12</span>, <span class="st">'m'</span>: <span class="dv">13</span>, <span class="st">'n'</span>: <span class="dv">14</span>, <span class="st">'o'</span>: <span class="dv">15</span>, <span class="st">'p'</span>: <span class="dv">16</span>, <span class="st">'q'</span>: <span class="dv">17</span>, <span class="st">'r'</span>: <span class="dv">18</span>, <span class="st">'s'</span>: <span class="dv">19</span>, <span class="st">'t'</span>: <span class="dv">20</span>, <span class="st">'u'</span>: <span class="dv">21</span>, </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="st">'v'</span>: <span class="dv">22</span>, <span class="st">'w'</span>: <span class="dv">23</span>, <span class="st">'x'</span>: <span class="dv">24</span>, <span class="st">'y'</span>: <span class="dv">25</span>, <span class="st">'z'</span>: <span class="dv">26</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="proses-enkripsi" class="level3">
 <h3 class="anchored" data-anchor-id="proses-enkripsi">Proses Enkripsi</h3>
-<p>Inisialisasi list untuk menyimpan urutan numerik dari setiap huruf alfabet</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>kolom <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>angka_urutan <span class="op">=</span> []</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Mengonversi setiap huruf dalam kata kunci menjadi urutan numeriknya sesuai dengan posisi dalam alfabet</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> huruf <span class="kw">in</span> key:</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> huruf.isalpha():</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        angka_urutan.append(<span class="bu">ascii</span>[huruf.lower()])</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        kolom <span class="op">=</span> kolom<span class="op">+</span><span class="dv">1</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        cleanKey <span class="op">=</span> angka_urutan</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Urutan kunci dari kata '</span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">' adalah </span><span class="sc">{</span>angka_urutan<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol type="1">
+<li>Inisialisasi list untuk menyimpan urutan numerik dari setiap huruf alfabet</li>
+</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    kolom <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    angka_urutan <span class="op">=</span> []</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>Mengonversi setiap huruf dalam kata kunci menjadi urutan numeriknya sesuai dengan posisi dalam alfabet</li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> huruf <span class="kw">in</span> key:</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> huruf.isalpha():</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>            angka_urutan.append(<span class="bu">ascii</span>[huruf.lower()])</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>            kolom <span class="op">=</span> kolom<span class="op">+</span><span class="dv">1</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>            cleanKey <span class="op">=</span> angka_urutan</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Urutan kunci dari kata '</span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">' adalah </span><span class="sc">{</span>angka_urutan<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For More Detail :</p>
 <ul>
 <li><code>for huruf in key</code> : Loop ini digunakan untuk memeriksa setiap huruf dalam variabel key, yang diharapkan merupakan kata kunci yang diberikan oleh pengguna</li>
@@ -460,103 +472,123 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>kolom = kolom + 1</code> : Menghitung jumlah kolom dengan menambah nilai kolom setiap kali huruf diproses</li>
 <li><code>cleanKey = angka_urutan</code> : Menyimpan hasil akhir urutan numerik ke dalam variabel cleanKey</li>
 </ul>
-<p>Membuat sebuah matriks kosong untuk menyimpan teks yang telah diolah dalam bentuk matriks</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>matrix <span class="op">=</span> []</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Menghitung panjang dari teks yang telah dibersihkan dan disimpan dalam variabel cleanPlainTeks</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>panjang <span class="op">=</span> <span class="bu">len</span>(cleanPlainTeks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Mencari tahu berapa kali kolom dapat digunakan untuk memuat seluruh teks, dengan membagi panjang teks dengan jumlah kolom</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>temp <span class="op">=</span> panjang<span class="op">/</span>kolom</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Membulatkan hasil pembagian sebelumnya ke bilangan bulat terdekat</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>bulat <span class="op">=</span> <span class="bu">round</span>(temp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Menghitung jumlah baris untuk memuat teks dalam matriks</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> temp <span class="op">-</span> bulat <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    baris <span class="op">=</span> bulat</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> temp <span class="op">-</span> bulat <span class="op">&lt;</span> <span class="dv">0</span>:</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>        baris <span class="op">=</span> bulat</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>        baris <span class="op">=</span> bulat <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(baris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li>Membuat sebuah matriks kosong untuk menyimpan teks yang telah diolah dalam bentuk matriks</li>
+</ol>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    matrix <span class="op">=</span> []</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="4" type="1">
+<li>Menghitung panjang dari teks yang telah dibersihkan dan disimpan dalam variabel cleanPlainTeks</li>
+</ol>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    panjang <span class="op">=</span> <span class="bu">len</span>(cleanPlainTeks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="5" type="1">
+<li>Mencari tahu berapa kali kolom dapat digunakan untuk memuat seluruh teks, dengan membagi panjang teks dengan jumlah kolom</li>
+</ol>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    temp <span class="op">=</span> panjang<span class="op">/</span>kolom</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="6" type="1">
+<li>Membulatkan hasil pembagian sebelumnya ke bilangan bulat terdekat</li>
+</ol>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    bulat <span class="op">=</span> <span class="bu">round</span>(temp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="7" type="1">
+<li>Menghitung jumlah baris untuk memuat teks dalam matriks</li>
+</ol>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> temp <span class="op">-</span> bulat <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>        baris <span class="op">=</span> bulat</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> temp <span class="op">-</span> bulat <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>            baris <span class="op">=</span> bulat</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>            baris <span class="op">=</span> bulat <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(baris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For More Detail :</p>
 <ul>
 <li><code>temp</code> : hasil pembagian panjang teks dengan jumlah kolom</li>
 <li><code>bulat</code>: hasil pembagian yang dibulatkan ke bilangan bulat terdekat. Jika <code>temp</code> adalah bilangan bulat (tidak ada sisa), jumlah baris adalah bulat. Jika ada sisa, jumlah baris adalah <code>bulat + 1</code></li>
 </ul>
-<p>Mengisi matriks dengan karakter dari teks yang telah dibersihkan (cleanPlainTeks)</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(baris):</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    row <span class="op">=</span> []</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(kolom):</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> i <span class="op">*</span> kolom <span class="op">+</span> j <span class="op">&lt;</span> <span class="bu">len</span>(cleanPlainTeks):</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>            elemen <span class="op">=</span> cleanPlainTeks[i <span class="op">*</span> kolom <span class="op">+</span> j]</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>            elemen <span class="op">=</span> <span class="st">" "</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>        row.append(elemen)</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    matrix.append(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="8" type="1">
+<li>Mengisi matriks dengan karakter dari teks yang telah dibersihkan (cleanPlainTeks)</li>
+</ol>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(baris):</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>        row <span class="op">=</span> []</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(kolom):</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> i <span class="op">*</span> kolom <span class="op">+</span> j <span class="op">&lt;</span> <span class="bu">len</span>(cleanPlainTeks):</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>                elemen <span class="op">=</span> cleanPlainTeks[i <span class="op">*</span> kolom <span class="op">+</span> j]</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>                elemen <span class="op">=</span> <span class="st">" "</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>            row.append(elemen)</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>        matrix.append(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For More Detail :</p>
 <ul>
 <li><code>for i in range(baris)</code> : Loop untuk setiap baris dalam matriks</li>
 <li><code>row = []</code> : Inisialisasi list kosong untuk setiap baris</li>
-<li><code>if i * kolom + j &lt; len(cleanPlainTeks)</code> : Memeriksa apakah indeks saat ini berada dalam rentang panjang teks yang dibersihkan.</li>
-<li><code>elemen = cleanPlainTeks[i * kolom + j]</code> : Jika indeks berada dalam rentang, maka ambil karakter dari <code>cleanPlainTeks</code> berdasarkan indeks yang dihitung.</li>
-<li><code>else</code> : Jika indeks melebihi panjang teks, isi elemen dengan spasi.</li>
-<li><code>row.append(elemen)</code> : Menambahkan elemen ke dalam baris.</li>
-<li><code>matrix.append(row)</code> : Menambahkan baris yang telah diisi ke dalam matriks.`</li>
+<li><code>if i * kolom + j &lt; len(cleanPlainTeks)</code> : Memeriksa apakah indeks saat ini berada dalam rentang panjang teks yang dibersihkan</li>
+<li><code>elemen = cleanPlainTeks[i * kolom + j]</code> : Jika indeks berada dalam rentang, maka ambil karakter dari <code>cleanPlainTeks</code> berdasarkan indeks yang dihitung</li>
+<li><code>else</code> : Jika indeks melebihi panjang teks, isi elemen dengan spasi</li>
+<li><code>row.append(elemen)</code> : Menambahkan elemen ke dalam baris</li>
+<li><code>matrix.append(row)</code> : Menambahkan baris yang telah diisi ke dalam matriks</li>
 </ul>
 <p>Mencetak matriks</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Matriks yang Anda buat:"</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> row <span class="kw">in</span> matrix:</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Mentransposisikan matriks yang telah dibuat dan kemudian mencetak matriks yang telah ditransposisikan</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>transposed_matrix <span class="op">=</span> [[row[i] <span class="cf">for</span> row <span class="kw">in</span> matrix] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(matrix[<span class="dv">0</span>]))]</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> row <span class="kw">in</span> transposed_matrix:</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Matriks yang Anda buat:"</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> matrix:</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="9" type="1">
+<li>Mentransposisikan matriks yang telah dibuat dan kemudian mencetak matriks yang telah ditransposisikan</li>
+</ol>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>    transposed_matrix <span class="op">=</span> [[row[i] <span class="cf">for</span> row <span class="kw">in</span> matrix] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(matrix[<span class="dv">0</span>]))]</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> transposed_matrix:</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For More Detail :</p>
 <ul>
 <li><code>for i in range(len(matrix[0]))</code> : Iterasi melalui indeks kolom matriks asli</li>
 <li><code>row[i] for row in matrix</code> : Untuk setiap indeks kolom i, ambil elemen i dari setiap baris dalam matriks asli dan akan menghasilkan kolom baru dari elemen-elemen tersebut, membentuk baris baru di matriks yang ditransposisikan</li>
 </ul>
-<p>Membuat list kosong dengan panjang yang sama dengan cleanKey untuk menyimpan urutan indeks</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>order <span class="op">=</span> [<span class="va">None</span>] <span class="op">*</span> <span class="bu">len</span>(cleanKey)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Mengurutkan elemen-elemen dalam cleanKey berdasarkan nilai terkecil hingga terbesar</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="bu">len</span>(cleanKey) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    non_none_values <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> x: x <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>, cleanKey))</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> non_none_values:</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>        nilai_terkecil <span class="op">=</span> <span class="bu">min</span>(non_none_values)</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>        marker <span class="op">=</span> cleanKey.index(nilai_terkecil)</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>        order[marker] <span class="op">=</span> i</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>        cleanKey[marker] <span class="op">=</span> <span class="va">None</span> </span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>        i <span class="op">=</span> i <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(order)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="10" type="1">
+<li>Membuat list kosong dengan panjang yang sama dengan cleanKey untuk menyimpan urutan indeks</li>
+</ol>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>    order <span class="op">=</span> [<span class="va">None</span>] <span class="op">*</span> <span class="bu">len</span>(cleanKey)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="11" type="1">
+<li>Mengurutkan elemen-elemen dalam cleanKey berdasarkan nilai terkecil hingga terbesar</li>
+</ol>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="bu">len</span>(cleanKey) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>        non_none_values <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> x: x <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>, cleanKey))</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> non_none_values:</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>            nilai_terkecil <span class="op">=</span> <span class="bu">min</span>(non_none_values)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>            marker <span class="op">=</span> cleanKey.index(nilai_terkecil)</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>            order[marker] <span class="op">=</span> i</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>            cleanKey[marker] <span class="op">=</span> <span class="va">None</span> </span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>            i <span class="op">=</span> i <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(order)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For More Detail :</p>
 <ul>
 <li><code>i = 0</code> : Inisialisasi counter i</li>
 <li><code>while len(cleanKey) &gt; 0</code> : Loop hingga cleanKey kosong (semua elemen None)</li>
 <li><code>non_none_values = list(filter(lambda x: x is not None, cleanKey))</code> : Membuat list yang hanya berisi elemen-elemen cleanKey yang bukan None</li>
 <li><code>if non_none_values</code> : Mengecek apakah list non_none_values tidak kosong <code>nilai_terkecil = min(non_none_values)</code> : Mencari nilai terkecil dari non_none_values</li>
-<li><code>marker = cleanKey.index(nilai_terkecil)</code> : Mendapatkan indeks dari nilai terkecil dalam cleanKey Menyimpan Urutan dan Menghapus Nilai Terkecil:</li>
+<li><code>marker = cleanKey.index(nilai_terkecil)</code> : Mendapatkan indeks dari nilai terkecil dalam cleanKey Menyimpan Urutan dan menghapus nilai terkecil</li>
 <li><code>order[marker] = i</code> : Menyimpan urutan i pada indeks marker di list order</li>
 <li><code>cleanKey[marker] = None</code> : Menghapus nilai terkecil dari cleanKey dengan mengubahnya menjadi None</li>
-<li><code>i = i + 1</code> : Increment counter i.</li>
+<li><code>i = i + 1</code> : Increment counter i</li>
 </ul>
-<p>Mengubah urutan kolom matriks <code>transposed_matrix</code> berdasarkan urutan yang telah diatur dalam <code>order</code>, dan kemudian mencetak matriks yang sudah diubah urutan kolomnya</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>new_matrix <span class="op">=</span> []</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="bu">len</span>(order) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    non_none_values <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> x: x <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>, order))</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> non_none_values:</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>        nilai_terkecil <span class="op">=</span> <span class="bu">min</span>(non_none_values)</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>        marker <span class="op">=</span> order.index(nilai_terkecil)</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>       </span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>        new_matrix.append(transposed_matrix[marker])</span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>        order[marker] <span class="op">=</span> <span class="va">None</span></span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> row <span class="kw">in</span> new_matrix:</span>
-<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="12" type="1">
+<li>Mengubah urutan kolom matriks <code>transposed_matrix</code> berdasarkan urutan yang telah diatur dalam <code>order</code>, dan kemudian mencetak matriks yang sudah diubah urutan kolomnya</li>
+</ol>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>    new_matrix <span class="op">=</span> []</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="bu">len</span>(order) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>        non_none_values <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> x: x <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>, order))</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> non_none_values:</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>            nilai_terkecil <span class="op">=</span> <span class="bu">min</span>(non_none_values)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>            marker <span class="op">=</span> order.index(nilai_terkecil)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>            new_matrix.append(transposed_matrix[marker])</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>            order[marker] <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> new_matrix:</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For More Detail :</p>
 <ul>
 <li><code>new_matrix = []</code> : Membuat list kosong new_matrix untuk menampung baris-baris matriks yang baru diurutkan Looping untuk Mengubah Urutan Kolom:</li>
@@ -569,16 +601,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>order[marker] = None</code> : Menghapus nilai yang telah diproses dengan mengubahnya menjadi None</li>
 <li><code>else: break</code> : Menghentikan loop jika <code>non_none_values kosong</code>, yang berarti semua nilai dalam order telah diproses</li>
 </ul>
-<p>Mengonversi matriks <code>new_matrix</code> menjadi string tunggal dengan menggabungkan nilai-nilainya secara berurutan dan menghapus spasi ekstra di akhir string</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>result_string <span class="op">=</span> <span class="st">""</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> row <span class="kw">in</span> new_matrix:</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> value <span class="kw">in</span> row:</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>        result_string <span class="op">+=</span> <span class="bu">str</span>(value)</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>result_string <span class="op">=</span> result_string.strip()</span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result_string)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="13" type="1">
+<li>Mengonversi matriks <code>new_matrix</code> menjadi string tunggal dengan menggabungkan nilai-nilainya secara berurutan dan menghapus spasi ekstra di akhir string</li>
+</ol>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>    result_string <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> new_matrix:</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> value <span class="kw">in</span> row:</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>            result_string <span class="op">+=</span> <span class="bu">str</span>(value)</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    result_string <span class="op">=</span> result_string.strip()</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(result_string)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For More Detail :</p>
 <ul>
 <li><code>result_string = ""</code> : Inisialisasi string kosong result_string yang akan digunakan untuk menyimpan hasil akhir</li>
@@ -587,73 +621,175 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>result_string += str(value)</code> : Mengonversi nilai value menjadi string (jika belum string) dan menambahkannya ke result_string</li>
 <li><code>result_string = result_string.strip()</code> : Menghapus spasi ekstra di awal dan akhir string menggunakan metode strip()</li>
 </ul>
-<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>Hasil Ciphertext : ENTKFINOKKM TIAIRA</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>HASIL CIPHERTEXT : ENTKFINOKKM TIAIRA</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="proses-dekripsi" class="level3">
 <h3 class="anchored" data-anchor-id="proses-dekripsi">Proses Dekripsi</h3>
-<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>cipherTeks <span class="op">=</span> <span class="bu">input</span>(<span class="st">"masukkan kata : "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>key <span class="op">=</span> <span class="bu">input</span>(<span class="st">"masukkan kunci : "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>cleanCipherTeks <span class="op">=</span> cipherTeks.replace(<span class="st">" "</span>, <span class="st">" "</span>)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cleanCipherTeks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>kolom <span class="op">=</span> <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>angka_urutan <span class="op">=</span> []</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> huruf <span class="kw">in</span> key:</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> huruf.isalpha():</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>        angka_urutan.append(<span class="bu">ascii</span>[huruf.lower()])</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>        kolom <span class="op">=</span> kolom<span class="op">+</span><span class="dv">1</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>        cleanKey <span class="op">=</span> angka_urutan</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Urutan kunci dari kata '</span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">' adalah: </span><span class="sc">{</span>angka_urutan<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>matrix <span class="op">=</span> []</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>panjang <span class="op">=</span> <span class="bu">len</span>(cleanCipherTeks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>temp <span class="op">=</span> panjang<span class="op">/</span>kolom</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>baris <span class="op">=</span> <span class="bu">round</span>(temp)</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(baris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(baris):</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    row <span class="op">=</span> []</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(kolom):</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> i <span class="op">*</span> kolom <span class="op">+</span> j <span class="op">&lt;</span> <span class="bu">len</span>(cleanCipherTeks):</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>            elemen <span class="op">=</span> cleanCipherTeks[i <span class="op">+</span> baris <span class="op">*</span> j]</span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>            elemen <span class="op">=</span> <span class="st">"a"</span></span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>        row.append(elemen)</span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>    matrix.append(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Matriks yang Anda buat:"</span>)</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> row <span class="kw">in</span> matrix:</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>transposed_matrix <span class="op">=</span> [[row[i] <span class="cf">for</span> row <span class="kw">in</span> matrix] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(matrix[<span class="dv">0</span>]))]</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> row <span class="kw">in</span> transposed_matrix:</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>order <span class="op">=</span> [<span class="va">None</span>] <span class="op">*</span> <span class="bu">len</span>(cleanKey)</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="bu">len</span>(cleanKey) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    non_none_values <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> x: x <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>, cleanKey))</span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> non_none_values:</span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>        nilai_terkecil <span class="op">=</span> <span class="bu">min</span>(non_none_values)</span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>        marker <span class="op">=</span> cleanKey.index(nilai_terkecil)</span>
-<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>        order[marker] <span class="op">=</span> i</span>
-<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>        cleanKey[marker] <span class="op">=</span> <span class="va">None</span>  </span>
-<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>        i <span class="op">=</span> i <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
-<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(order)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>transposed_matrix <span class="op">=</span> [transposed_matrix[i] <span class="cf">for</span> i <span class="kw">in</span> order]</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> row <span class="kw">in</span> transposed_matrix:</span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>matriks <span class="op">=</span> [[row[i] <span class="cf">for</span> row <span class="kw">in</span> transposed_matrix] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(transposed_matrix[<span class="dv">0</span>]))]</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> row <span class="kw">in</span> matriks:</span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>result_string <span class="op">=</span> <span class="st">""</span></span>
+<p>Masukkan ciphertext</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>cipherTeks <span class="op">=</span> <span class="bu">input</span>(<span class="st">"masukkan kata : "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Masukkan kunci</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>key <span class="op">=</span> <span class="bu">input</span>(<span class="st">"masukkan kunci : "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Membersihkan ciphertext dari spasi</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>    cleanCipherTeks <span class="op">=</span> cipherTeks.replace(<span class="st">" "</span>, <span class="st">" "</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(cleanCipherTeks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol type="1">
+<li>Inisialisasi list untuk menyimpan urutan numerik dari setiap huruf alfabet</li>
+</ol>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>    kolom <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    angka_urutan <span class="op">=</span> []</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>Mengonversi setiap huruf dalam kata kunci menjadi urutan numeriknya sesuai dengan posisi dalam alfabet</li>
+</ol>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> huruf <span class="kw">in</span> key:</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> huruf.isalpha():</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>            angka_urutan.append(<span class="bu">ascii</span>[huruf.lower()])</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>            kolom <span class="op">=</span> kolom<span class="op">+</span><span class="dv">1</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>            cleanKey <span class="op">=</span> angka_urutan</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Urutan kunci dari kata '</span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">' adalah: </span><span class="sc">{</span>angka_urutan<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For More Detail :</p>
+<ul>
+<li><code>for huruf in key</code> : Loop ini digunakan untuk memeriksa setiap huruf dalam variabel key, yang diharapkan merupakan kata kunci yang diberikan oleh pengguna</li>
+<li><code>if huruf.isalpha()</code> : Kondisi ini memastikan bahwa hanya karakter alfabet yang akan diproses. Karakter non-alfabet akan dilewati</li>
+<li>`huruf.lower(): Mengubah huruf menjadi huruf kecil untuk konsistensi, sehingga tidak ada perbedaan antara huruf besar dan kecil</li>
+<li><code>ascii[huruf.lower()]</code> : Mengambil nilai urutan numerik dari huruf. Di sini diasumsikan ada sebuah kamus (dictionary) bernama ascii yang memetakan setiap huruf ke urutan numeriknya</li>
+<li><code>angka_urutan.append(...)</code> : Menambahkan urutan numerik dari huruf ke dalam list angka_urutan</li>
+<li><code>kolom = kolom + 1</code> : Menghitung jumlah kolom dengan menambah nilai kolom setiap kali huruf diproses</li>
+<li><code>cleanKey = angka_urutan</code> : Menyimpan hasil akhir urutan numerik ke dalam variabel cleanKey</li>
+</ul>
+<ol start="3" type="1">
+<li>Membuat sebuah matriks kosong untuk menyimpan teks yang telah diolah dalam bentuk matriks</li>
+</ol>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>    matrix <span class="op">=</span> []</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="4" type="1">
+<li>Menghitung panjang dari teks yang telah dibersihkan dan disimpan dalam variabel cleanPlainTeks</li>
+</ol>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>    panjang <span class="op">=</span> <span class="bu">len</span>(cleanCipherTeks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="5" type="1">
+<li>Mencari tahu berapa kali kolom dapat digunakan untuk memuat seluruh teks, dengan membagi panjang teks dengan jumlah kolom</li>
+</ol>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>    temp <span class="op">=</span> panjang<span class="op">/</span>kolom</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="6" type="1">
+<li>Menyimpan jumlah baris yang dibutuhkan dalam matriks setelah pembulatan, membentuk matriks dengan jumlah baris yang cukup untuk menampung semua karakter dalam teks cipher</li>
+</ol>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>    baris <span class="op">=</span> <span class="bu">round</span>(temp)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(baris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="7" type="1">
+<li>Membentuk matriks dari teks cipher yang bersih (cleanCipherTeks) dengan jumlah kolom yang tetap, dan jumlah baris yang telah dihitung sebelumnya</li>
+</ol>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(baris):</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>        row <span class="op">=</span> []</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(kolom):</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> i <span class="op">*</span> kolom <span class="op">+</span> j <span class="op">&lt;</span> <span class="bu">len</span>(cleanCipherTeks):</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>                elemen <span class="op">=</span> cleanCipherTeks[i <span class="op">+</span> baris <span class="op">*</span> j]</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>                elemen <span class="op">=</span> <span class="st">"a"</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>            row.append(elemen)</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>        matrix.append(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For More Detail :</p>
+<ul>
+<li><code>for i in range(baris)</code> : Loop untuk setiap baris dalam matriks</li>
+<li><code>row = []</code> : Inisialisasi list kosong untuk setiap baris</li>
+<li><code>if i * kolom + j &lt; len(cleanCipherTeks)</code> : Memeriksa apakah indeks saat ini berada dalam rentang panjang teks yang dibersihkan.</li>
+<li><code>elemen = cleanCipherTeks[i * baris + j]</code> : Jika indeks berada dalam rentang, maka ambil karakter dari cleanCipherTeks berdasarkan indeks yang dihitung</li>
+<li><code>else</code>: Jika indeks melebihi panjang teks, isi elemen dengan spasi</li>
+<li><code>row.append(elemen)</code> : Menambahkan elemen ke dalam baris</li>
+<li><code>matrix.append(row)</code> : Menambahkan baris yang telah diisi ke dalam matriks</li>
+</ul>
+<ol start="8" type="1">
+<li>Mencetak matriks</li>
+</ol>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Matriks yang Anda buat:"</span>)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> matrix:</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="9" type="1">
+<li>Mentransposisikan matriks yang telah dibuat dan kemudian mencetak matriks yang telah ditransposisikan</li>
+</ol>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>    transposed_matrix <span class="op">=</span> [[row[i] <span class="cf">for</span> row <span class="kw">in</span> matrix] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(matrix[<span class="dv">0</span>]))]</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> transposed_matrix:</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For More Detail :</p>
+<ul>
+<li><code>for i in range(len(matrix[0]))</code> : Iterasi melalui indeks kolom matriks asli</li>
+<li><code>row[i] for row in matrix</code> : Untuk setiap indeks kolom i, ambil elemen i dari setiap baris dalam matriks asli dan akan menghasilkan kolom baru dari elemen-elemen tersebut, membentuk baris baru di matriks yang ditransposisikan</li>
+</ul>
+<ol start="10" type="1">
+<li>Membuat list kosong dengan panjang yang sama dengan cleanKey untuk menyimpan urutan indeks</li>
+</ol>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>    order <span class="op">=</span> [<span class="va">None</span>] <span class="op">*</span> <span class="bu">len</span>(cleanKey)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="11" type="1">
+<li>Mengurutkan elemen-elemen dalam cleanKey berdasarkan nilai terkecil hingga terbesar</li>
+</ol>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="bu">len</span>(cleanKey) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>        non_none_values <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> x: x <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>, cleanKey))</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> non_none_values:</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>            nilai_terkecil <span class="op">=</span> <span class="bu">min</span>(non_none_values)</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>            marker <span class="op">=</span> cleanKey.index(nilai_terkecil)</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>            order[marker] <span class="op">=</span> i</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>            cleanKey[marker] <span class="op">=</span> <span class="va">None</span>  </span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>            i <span class="op">=</span> i <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(order)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For More Detail :</p>
+<ul>
+<li><code>i = 0</code> : Inisialisasi counter i</li>
+<li><code>while len(cleanKey) &gt; 0</code> : Loop hingga cleanKey kosong (semua elemen None)</li>
+<li><code>non_none_values = list(filter(lambda x: x is not None, cleanKey))</code> : Membuat list yang hanya berisi elemen-elemen cleanKey yang bukan None</li>
+<li><code>if non_none_values</code> : Mengecek apakah list non_none_values tidak kosong</li>
+<li><code>nilai_terkecil = min(non_none_values)</code> : Mencari nilai terkecil dari non_none_values</li>
+<li><code>marker = cleanKey.index(nilai_terkecil)</code> : Mendapatkan indeks dari nilai terkecil dalam cleanKey menyimpan urutan dan menghapus nilai terkecil</li>
+<li><code>order[marker] = i</code> : Menyimpan urutan i pada indeks marker di list order</li>
+<li><code>cleanKey[marker] = None</code> : Menghapus nilai terkecil dari cleanKey dengan mengubahnya menjadi None</li>
+<li><code>i = i + 1</code> : Increment counter i</li>
+</ul>
+<ol start="12" type="1">
+<li>Menampilkan matriks setelah melakukan transposisi sesuai dengan urutan tertentu <code>(order)</code></li>
+</ol>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>    transposed_matrix <span class="op">=</span> [transposed_matrix[i] <span class="cf">for</span> i <span class="kw">in</span> order]</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> row <span class="kw">in</span> matriks:</span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> value <span class="kw">in</span> row:</span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>        result_string <span class="op">+=</span> <span class="bu">str</span>(value)</span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>result_string <span class="op">=</span> result_string.strip()</span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result_string)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><code>Hasil Dekripsi : TEKNIKINFORMATIKA</code></p>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> transposed_matrix:</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For More Detail :</p>
+<ul>
+<li><code>transposed_matrix = [transposed_matrix[i] for i in order]</code> : Membuat transposed_matrix baru berdasarkan urutan yang ditentukan dalam order</li>
+<li><code>for row in transposed_matrix</code> : Mencetak setiap baris dalam <code>transposed_matrix</code></li>
+</ul>
+<ol start="13" type="1">
+<li>Melakukan transposisi matriks dengam menukar baris dengan kolom</li>
+</ol>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>    matriks <span class="op">=</span> [[row[i] <span class="cf">for</span> row <span class="kw">in</span> transposed_matrix] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(transposed_matrix[<span class="dv">0</span>]))]</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> matriks:</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For More Detail :</p>
+<ul>
+<li><code>for i in range(len(transposed_matrix[0]))</code> : Iterasi melalui setiap indeks kolom dalam transposed_matrix</li>
+<li><code>row[i] for row in transposed_matrix</code> : Mengambil elemen ke-i dari setiap baris dalam transposed_matrix, sehingga membentuk kolom ke-i dalam matriks baru</li>
+<li><code>for row in matriks</code> : Iterasi melalui setiap baris dalam matriks yang telah ditransposisi</li>
+</ul>
+<ol start="14" type="1">
+<li>Menggabungkan semua elemen dalam matriks transposisi menjadi satu string dan menghilangkan spasi di awal dan akhir</li>
+</ol>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>    result_string <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> matriks:</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> value <span class="kw">in</span> row:</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>            result_string <span class="op">+=</span> <span class="bu">str</span>(value)</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>    result_string <span class="op">=</span> result_string.strip()</span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(result_string)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For More Detail :</p>
+<ul>
+<li><code>result_string = ""</code> : Menginisialisasi variabel result_string sebagai string kosong untuk menyimpan hasil akhir</li>
+<li><code>for row in matriks</code> : Iterasi melalui setiap baris dalam matriks yang telah ditransposisi</li>
+<li><code>for value in row</code> : Iterasi melalui setiap nilai dalam baris tersebut</li>
+<li><code>result_string += str(value)</code> : Menambahkan setiap nilai dari baris ke dalam <code>result_string</code>, nilai tersebut diubah menjadi string terlebih dahulu.</li>
+<li><code>result_string = result_string.strip()</code> : Menghapus spasi di awal dan akhir dari <code>result_string</code></li>
+<li><code>print(result_string)</code> : Mencetak result_string yang berisi semua elemen matriks yang digabungkan menjadi satu string</li>
+</ul>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>HASIL DEKRIPSI : TEKNIKINFORMATIKA</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Perbedaan Proses :</strong></p>
 <ul>
 <li>Enkripsi: Teks asli diubah menjadi matriks berdasarkan kolom kunci, kemudian kolom-kolom diurutkan berdasarkan kunci. Pada enkripsi, <code>transposed_matrix</code> adalah matriks transposisi dari matrix awal</li>

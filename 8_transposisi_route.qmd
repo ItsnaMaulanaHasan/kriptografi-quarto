@@ -7,303 +7,493 @@ toc-title: "On this page"
 
 # 8. Transposisi Route {.unnumbered}
 
-Transposisi Route merupakan metode yang dilakukan dengan cara pesan disusun dalam grid (biasanya persegi atau persegi panjang), dan huruf-huruf pesan ditempatkan di dalam sel-sel grid sesuai dengan suatu pola atau rute tertentu. Setelah pesan disusun dalam grid, pesan diambil dengan mengikuti pola atau rute yang telah ditentukan, seperti zigzag, spiral, atau pola lainnya.
+Transposisi Route merupakan metode yang dilakukan dengan cara pesan disusun dalam grid (biasanya persegi atau persegi panjang), dan huruf-huruf pesan ditempatkan di dalam sel-sel grid sesuai dengan suatu pola atau rute tertentu. 
+Setelah pesan disusun dalam grid, pesan diambil dengan mengikuti pola atau rute yang telah ditentukan, seperti zigzag, spiral, atau pola lainnya.
 
 Salah satu contoh teknik transposisi terkenal adalah Union Route yang dipakai oleh Tentara Union selama Perang Saudara Amerika. Dengan cara pesan disusun dalam grid, lalu diambil kembali dengan mengikuti pola atau rute tertentu. Ini memberikan tingkat keamanan tambahan dalam komunikasi militer.
-Penyandian Transposisi Route dilakukan dengan cara menuliskan teks asli secara kolom dari atas kebawah dalam sebuah kisi-kisi imajiner dengan ukuran yang telah disepakati. Teks sandinya dibaca dengan arah (route) sesuai perjanjian, misalnya :
 
+Transposisi route memiliki banyak variasi pembacaan teks yang dapat digunakan untuk mengambil kembali pesan dari grid yang telah disusun. Beberapa variasi algoritma pembacaan yang umum digunakan meliputi:
 
-### Analogi Transposisi Railfence
+1. Spiral (Spiral Route)
+   - Pesan diambil kembali dengan mengikuti pola spiral dari 
+     luar ke dalam atau sebaliknya.
+   - Mulai dari titik awal di salah satu sudut grid dan 
+     bergerak ke dalam dengan mengikuti pola spiral, 
+     mengambil setiap huruf pada gilirannya.
+2. Zigzag (Zigzag Route)
+   - Pesan diambil kembali dengan mengikuti pola zigzag di 
+     sepanjang baris atau kolom grid.
+   - Mulai dari titik awal, huruf-huruf pesan diambil secara 
+     bergantian dari baris ke baris atau dari kolom ke 
+     kolom, membentuk pola zigzag.
+3. Ular Tangga (Staircase Route)
+   - Pesan diambil kembali dengan mengikuti pola ular tangga 
+     yang naik atau turun.
+   - Mulai dari titik awal, huruf-huruf pesan diambil dengan 
+     bergerak secara diagonal naik atau turun, membentuk 
+     pola seperti ular tangga.
 
-Mari kita analogikan transposisi railfence dengan menyusun pesan di pagar besi sebagai proses enkripsinya dan membaca pesan tersembunyi dalam sebuah pagar besi sebagai proses dekripsinya
+### Analogi Transposisi Route
 
-**Enkripsi: Menyusun Pesan di Pagar Besi**
+Mari kita gunakan analogi kelas dengan siswa yang duduk di kursi dalam bentuk grid untuk menjelaskan algoritma transposisi route menggunakan pola spiral.
 
-Bayangkan Anda memiliki sebuah pesan yang ingin Anda sembunyikan, seperti "HELLO WORLD". Untuk mengenkripsi pesan ini dengan algoritma transposisi Rail Fence, Kita akan menggunakan sebuah pagar besi dengan beberapa tingkat atau baris (rails).
+Bayangkan kamu adalah guru yang ingin mengatur ulang tempat duduk siswa sesuai pola spiral. Anda mulai dengan siswa pertama di sudut kiri atas, lalu bergerak ke kanan hingga akhir baris, turun ke baris berikutnya di sebelah kanan, kemudian bergerak ke kiri, dan seterusnya, sampai Anda kembali ke tengah grid. Berikut langkahnya :
 
-Misalnya, jika Anda menggunakan 3 tingkat (rails), maka Anda akan menyusun pesan Anda dengan cara berikut:
+1. Susunan awal :
 
-1. Mulailah dari tingkat pertama, lalu turun ke tingkat kedua, kemudian ke tingkat ketiga, dan kembali ke tingkat kedua, lalu ke tingkat pertama, dan seterusnya.
-2. Tuliskan huruf-huruf pesan di sepanjang jalur ini.
-
-    Jadi, pesan "HELLO WORLD" akan disusun seperti ini :
-
-```
-    H - - - O - - - R - -
-    - E - L - W - L - D -
-    - - L - - - O - - - -     
-```
-
-Sekarang, Kita membaca huruf-huruf tersebut dari tingkat pertama ke tingkat terakhir:
-
-- Tingkat pertama : "HOR"
-- Tingkat kedua   : "ELWLD"
-- Tingkat ketiga  : "LO"
-
-Dengan Menggabungkan semua huruf-huruf ini, Kita akan mendapatkan pesan terenkripsi atau ciphertext: "HOR ELWLD LO"
-
-**Dekripsi: Membaca Pesan dari Pagar Besi**
-
-Sekarang, bayangkan seseorang menerima pesan terenkripsi "HOR ELWLD LO" dan ingin membacanya. Untuk mendekripsi pesan tersebut, mereka harus menggunakan pagar besi yang sama dengan jumlah tingkat yang sama (3 tingkat dalam contoh ini).
-
-1. Pertama, mereka menggambar garis-garis pada pagar besi sesuai dengan pola Rail Fence.
-2. Lalu, mereka menempatkan huruf-huruf pesan terenkripsi kembali ke jalur-jalur sesuai dengan urutan.
-
-    Jadi, mereka akan menempatkan huruf-huruf dengan cara 
-    berikut:
-
-```
-    H - - - O - - - R - -
-    - E - L - W - L - D -
-    - - L - - - O - - - - 
-```
-
-Sekarang, mereka bisa membaca pesan asli dengan mengikuti jalur dari tingkat pertama ke tingkat terakhir dan kembali:
-
-- "H" (tingkat pertama)
-- "E" (tingkat kedua)
-- "L" (tingkat ketiga)
-- "L" (kembali ke tingkat kedua)
-- "O" (tingkat pertama)
-- "W" (tingkat kedua)
-- "O" (tingkat ketiga)
-- "R" (kembali ke tingkat kedua)
-- "L" (tingkat pertama)
-- "D" (tingkat kedua)
-
-Dengan menggabungkan semua huruf-huruf ini, mereka mendapatkan hasil dekripsi atau pesan asli : "HELLO WORLD"
-
-## Contoh Soal
-
-    Plainteks   : UNIVERSITAS DIAN NUSWANTORO
-    Kunci       : 3 baris (spasi ditulis)
-
-**Langkah mengerjakan :**
-
-1. Susun huruf-huruf plainteks ke dalam pola zigzag menggunakan 3 baris
-
-    ![](assets/kriptografi/zigzag.png){width="80%"  
+   ![](assets/kriptografi/troutee.png){width="80%"  
         style="text-align:center;"}
 
-    keterangan : jika di plainteks ada spasi, maka spasi 
-                 di tulis, contohnya setelah huruf S 
-                 pada kata UNIVERSITAS ada pengosongan 
-                 tempat itu adalah spasi.
+2. Pola spiral
+   Sekarang kita akan membaca huruf-huruf dalam pola spiral, 
+   dimulai dari sudut kiri atas dan bergerak searah jarum 
+   jam.
 
-2. Baca huruf-huruf dari baris-baris tersebut secara berurutan dari baris atas ke baris bawah 
-
-    ![](assets/kriptografi/bacarail.png){width="80%"  
+3. Baca sesuai pola spiral
+   Kita mulai dari A dan mengikuti pola spiral :
+   ![](assets/kriptografi/troute2.png){width="80%"  
         style="text-align:center;"}
 
-3. Hasil Ciphertext : 
-UETD WONVRIA INNSATRISSAUNO 
+        Jika kita menulis urutan bacaan tersebut, kita 
+        mendapatkan : A B C D H L P O N M I E F G K J
+        
+4. Sekarang kita menulis ulang huruf-huruf tersebut sesuai 
+   urutan bacaan spiral :
+    ![](assets/kriptografi/troute.png){width="80%"  
+        style="text-align:center;"}
 
 ## Implementasi Pada Python
 
-Masukkan Plaintext
+Masukkan Plaintext 
+```python
+CONTOH : TENTUKAN PRIORITAS ANDA SEBAB KITA TIDAK DAPAT MENGERJAKAN SEMUANYA X
+```
+
 ```python
 plainText = input("Plaintext : ")
 ```
 
-Masukkan Kunci atau Jumlah Baris
+Masukkan Kunci 
 ```python
-railFenceKey = int(input("Kunci: "))
+CONTOH KEY : 5
 ```
 
+```python
+routeKey = int(input("Kunci: "))
+```
+
+Menghapus Spasi
+```python
+cleanPlainTeks = plainTeks.replace(" ", "")
+print(cleanPlainTeks)
+```
 ### Proses Enkripsi
 
-1. Membuat Matriks Kosong Sesuai Dengan Jumlah Baris (kunci)
+1. Menyusun teks yang sudah dibersihkan ke dalam sebuah matriks dengan kolom sebagai jumlah kolom atau lebar matriks
 ```python
-   rails = [[' ' for _ in range(len(plainText))] for _ in 
-   range(railFenceKey)]
-```
+    kolom = routeKey
+    matrix = []
+    panjang = len(cleanPlainTeks)
+    temp = panjang/kolom
+    bulat = round(temp)
 
-2. Menentukan Arah Pola Zig-Zag Dari Huruf-Huruf Dalam Plaintext, jika direction = 1 maka pola turun, jika -1 maka pola naik
-```python
-   i, j = 0, 0
-   direction = 1  
+    if temp - bulat == 0:
+        jml_baris = bulat
+    else:
+        if temp - bulat < 0:
+            jml_baris = bulat
+        else:
+            jml_baris = bulat + 1
+    print(jml_baris)
 ```
-
-3. Menempatkan karakter-karakter dari plainText ke dalam matriks dalam pola zigzag sesuai dengan kunci Rail Fence
-```python
-   for char in plainText:
-     rails[i][j] = char
-     if i == 0:
-       direction = 1
-     elif i == railFenceKey - 1:
-       direction = -1
-     i += direction
-     j += 1
-```
-
 For More Detail :
 
-- `for char in plainText` : Setiap karakter dalam teks yang ingin dienkripsi akan diproses satu per satu
-- `rails[i][j] = char` : Karakter saat ini ditempatkan di baris [i] dan kolom [j] dari matriks rails
-- `if i == 0: direction = 1` : Jika berada di baris teratas, ubah arah pergerakan ke bawah
-- `elif i == railFenceKey - 1` : direction = -1: Jika berada di baris terbawah, ubah arah pergerakan ke atas
-- `i += direction ` : Indeks baris [i] ditambah atau dikurangi sesuai dengan arah pergerakan (ke bawah atau ke atas)
-Mengupdate indeks kolom [j] untuk pindah ke karakter berikutnya:
--  `j += 1 ` : Indeks kolom [j] selalu bertambah satu untuk setiap karakter
+- `kolom = routeKey` : Menetapkan jumlah kolom pada matriks dengan nilai routeKey
+- `matrix = []` : Menginisialisasi sebuah list kosong yang akan digunakan untuk menyimpan elemen-elemen matriks
+- `panjang = len(cleanPlainTeks)` : Menghitung panjang teks yang sudah dibersihkan
+- `temp = panjang/kolom` : Menghitung berapa banyak baris yang diperlukan dengan membagi panjang teks dengan jumlah kolom dan menyimpan hasilnya dalam variabel temp
+- `bulat = round(temp)` : Membulatkan hasil pembagian temp ke angka terdekat dan menyimpannya ke dalam variabel bulat
+- `temp - bulat == 0` : hasil pembagian tepat bulat, maka `jml_baris` diambil dari `bulat`
+- `temp - bulat < 0` : hasil pembagian kurang dari bulat (mungkin karena temp lebih kecil dari bulat), dan juga mengambil `jml_baris` dari `bulat`
+- `jml_baris = bulat + 1` : Jika kondisi sebelumnya tidak terpenuhi, maka perlu satu baris tambahan
 
-4. Membentuk Teks Terenkripsi Berdasarkan Pola Zig-Zag
+2. Membuat sebuah matriks (matrix) yang berisi teks yang sudah dibersihkan (cleanPlainTeks) menggunakan nilai jml_baris dan kolom yang telah dihitung sebelumnya
 ```python
-   enkripsi_teks = '\n'.join([''.join(row) for row in rails])
-   print("* RAIL FENCE: ")
-   print(enkripsi_teks)
+    for i in range(jml_baris):
+        row = []
+        for j in range(kolom):
+            if i * kolom + j < len(cleanPlainTeks):
+                elemen = cleanPlainTeks[i * kolom + j]
+            else:
+                elemen = " "
+            row.append(elemen)
+        matrix.append(row)
 ```
-
-Fore More Detail :
-
-- `row` merepresentasikan setiap baris dalam matriks rails.
-- `''.join(row)` : Menggabungkan semua karakter dalam baris row menjadi satu string
-- `for row in rails` : Ini adalah list comprehension yang mengiterasi setiap baris dalam matriks rails
-- `'\n'.join([...])` : Menggabungkan semua string dalam daftar hasil dari list comprehension di langkah sebelumnya menjadi satu string besar
-
-5. Mempersiapkan daftar untuk setiap baris (rail) dan mengatur agar kita mulai dari baris pertama dengan pergerakan ke bawah.
-```python
-   rails = [[] for _ in range(railFenceKey)]
-   index = 0
-   direction = 1
-```
-
 For More Detail :
 
-- `rails = [[] for _ in range(railFenceKey)] ` : Membuat daftar berisi daftar kosong untuk setiap baris (rail) sesuai dengan jumlah baris yang ditentukan oleh railFenceKey
-- `index = 0 ` : Menentukan bahwa kita mulai dari baris pertama (index 0).
-- `direction = 1` : Menentukan bahwa pergerakan awalnya ke bawah (nilai 1).
+- `for i in range(jml_baris)` : Loop ini mengiterasi dari 0 hingga jml_baris - 1, yang berarti setiap iterasi mewakili satu baris dalam matriks
+- `row = []` : Membuat list kosong row yang akan menyimpan elemen-elemen untuk satu baris matriks
+- `for j in range(kolom)` : Loop ini mengiterasi dari 0 hingga kolom - 1, yang berarti setiap iterasi mewakili satu kolom dalam matriks
+- `if i * kolom + j < len(cleanPlainTeks)` : Memastikan bahwa tidak melebihi panjang dari teks yang telah dibersihkan pada saat mengakses elemen `cleanPlainTeks` untuk dimasukkan ke dalam matrix
+- `elemen = x[i * kolom + j]` : Jika ya, Mengambil elemen dari teks x pada posisi i * kolom + j
+- ` elemen = " "` : Jika tidak, Mengisi elemen dengan spasi kosong jika indeks berada di luar panjang teks x
+-`row.append(elemen)` : Menambahkan elemen yang telah ditentukan (baik dari x atau spasi kosong) ke list row
+- `matrix.append(row)` : Menambahkan list row yang berisi elemen-elemen satu baris ke dalam list matrix
 
-6. Menempatkan karakter-karakter dari plainText ke dalam daftar rails dalam pola zigzag, mengubah arah pergerakan ketika mencapai baris pertama atau terakhir
+3. Mencetak matrix
 ```python
-   for char in plainText:
-     rails[index].append(char)
-     if index == 0:
-       direction = 1
-
-     elif index == railFenceKey - 1:
-       direction = -1
-
-     index += direction
+    print("Matriks yang Anda buat:")
+    for row in matrix:
+        print(row)
 ```
 
-For More  Detail :
-
-- `for char in plainText` : Looping untuk Mengiterasi setiap karakter dalam plainText satu per satu
-- `rails[index].append(char)` : Menambahkan karakter char ke daftar rails pada posisi index saat ini
-- `if index == 0: direction = 1` : Jika index adalah 0 (baris pertama), ubah arah pergerakan ke bawah (direction = 1)
-- `elif index == railFenceKey - 1: direction = -1` : Jika index adalah railFenceKey - 1 (baris terakhir), ubah arah pergerakan ke atas (direction = -1)
-- `index += direction` : Menambah atau mengurangi `index` sesuai dengan `direction`
-
-7. menggabungkan karakter-karakter yang telah disusun dalam matriks rails menjadi satu string yang merupakan teks terenkripsi (ciphertext)
+4. Menghasilkan matriks transpose dari matrix yang telah dibuat
 ```python
-   enkripsi_teks = "".join(["".join(rail) for rail in rails])
-   print("CIPHERTEXT : " + enkripsi_teks)
+    transposed_matrix = [[row[i] for row in matrix] for i in range(len(matrix[0]))]
+    for row in transposed_matrix:
+        print(row)
 ```
-
 For More Detail :
 
-- `["".join(rail) for rail in rails]` : List comprehension yang menghasilkan daftar string, di mana setiap string adalah satu baris dari matriks rails
-- `"".join([...])` : Menggabungkan semua string dalam daftar menjadi satu string besar tanpa pemisah
-- `"".join(rail)` : Menggabungkan semua karakter dalam baris rail menjadi satu string
-- Hasilnya adalah satu string panjang yang merupakan teks terenkripsi (enkripsi_teks).
+- `row[i] for row in matrix` : Menghasilkan list elemen ke-i dari setiap baris dalam matrix
+- `for i in range(len(matrix[0]))]` : Mengiterasi setiap indeks kolom dari matrix dan membentuk baris baru dari elemen-elemen tersebut
+- `for row in transposed_matrix` : Loop ini mengiterasi melalui setiap baris dalam `transposed_matrix`
+- `print(row)` : Mencetak matriks transpose dari matrix
+
+5. String kosong yang akan digunakan untuk menyimpan teks yang terenkripsi
+```python
+    encrypted_text = ""
+```
+
+6. Menandai batas awal dan akhir dari baris dan kolom pada matriks transpose
+```python
+    start_row, end_row = len(transposed_matrix) - 1, 0
+    start_col, end_col = len(transposed_matrix[0]) - 1, 0
+```
+
+7. Mengambil baris dari kanan ke kiri
+```python
+    while start_row >= end_row and start_col >= end_col:
+        for i in range(start_col, end_col - 1, -1):
+            encrypted_text += transposed_matrix[start_row][i]
+
+        start_row -= 1
+```
+For More Detail :
+
+- `while start_row >= end_row and start_col >= end_col` : loop while yang berjalan selama `start_row` lebih besar dari atau sama dengan `end_row` dan `start_col` lebih besar dari atau sama dengan `end_col`
+- `for i in range(start_col, end_col - 1, -1)` : Loop ini mengiterasi dari kolom paling kanan `(start_col)` ke kolom paling kiri `(end_col - 1)`
+- `encrypted_text += transposed_matrix[start_row][i]` : Menambahkan elemen dari baris `start_row` dan kolom i ke `encrypted_text`
+- `start_row -= 1` : Mengurangi `start_row` untuk bergerak ke baris berikutnya ke atas
+
+8. Mengambil kolom dari atas ke bawah
+```python
+    for i in range(start_row, end_row - 1, -1):
+            encrypted_text += transposed_matrix[i][end_col]
+
+        end_col += 1
+```
+For More Detail :
+
+-  `for i in range(start_row, end_row - 1, -1)` : Loop ini mengiterasi dari baris `start_row` ke baris `end_row - 1`
+- `encrypted_text += transposed_matrix[i][end_col]` : Menambahkan elemen dari baris i dan kolom `end_col` ke `encrypted_text`
+- `end_col += 1` : Menambahkan `end_col` untuk bergerak ke kolom berikutnya ke kiri.
+9. Mengecek jika sudah mencapai kolom terakhir
+```python
+    if start_col < end_col:
+            break
+```
+For More Detail :
+
+- `if start_col < end_col:` : Mengecek apakah `start_col` lebih kecil dari `end_col`
+- `break` : Jika ya, keluar dari loop while.
+
+
+10. Mengambil baris dari kiri ke kanan
+```python
+    for i in range(end_col, start_col + 1):
+            encrypted_text += transposed_matrix[end_row][i]
+
+        end_row += 1
+```
+For More Detail : 
+
+- `for i in range(end_col, start_col + 1)` : Loop ini mengiterasi dari kolom `end_col` ke kolom `start_col + 1`
+- `encrypted_text += transposed_matrix[end_row][i]` : Menambahkan elemen dari baris `end_row` dan kolom i ke `encrypted_text`
+- `end_row += 1` : Menambahkan `end_row` untuk bergerak ke baris berikutnya ke bawah.
+
+11. Mengecek Jika Sudah Mencapai Baris Terakhir
+```python
+    if start_row < end_row:
+            break
+```
+For More Detail :
+
+- `if start_row < end_row` : Mengecek apakah `start_row` lebih kecil dari `end_row`
+- `break` : Jika ya, keluar dari loop while
+
+12. Mengambil kolom dari bawah ke atas
+```python
+    for i in range(end_row, start_row + 1):
+            encrypted_text += transposed_matrix[i][start_col]
+
+        start_col -= 1
+```
+For More Detail :
+
+- `for i in range(end_row, start_row + 1)` : Loop ini mengiterasi dari baris `end_row` ke baris `start_row + 1`
+- `encrypted_text += transposed_matrix[i][start_col]` : Menambahkan elemen dari baris i dan `kolom start_col` ke `encrypted_text`
+- `start_col -= 1` : Mengurangi `start_col` untuk bergerak ke kolom berikutnya ke kanan
+
+13. Mencetak teks terenkripsi (ciphertext)
+```python
+print("Teks terenkripsi dengan pola spiral: ", encrypted_text[:length])
+```
+For More Detail :
+
+- `encrypted_text[:length])` : Memotong `encrypted_text` hingga panjang teks asli (length) untuk memastikan panjangnya sama dengan teks asli
 
 ```python
-   CIPHERTEXT : UETD WONVRIA INNSATRISSAUNO
+HASIL CIPHERTEXT : XUAETKAADTRUTNETKIAABTDMRNANYAMKGAATBNIPNAOSSKIAEJSEANPDIEAR
 ```
+
 ### Proses Dekripsi
-
-1. Mempersiapkan daftar untuk setiap baris (rail) dan mengatur agar kita mulai dari baris pertama dengan pergerakan ke bawah
+Masukkan Ciphertext
 ```python
-   rails = [[] for _ in range(railFenceKey)]
-   index = 0
-   direction = 1
+cipherText = input("cipher : ")
 ```
 
-For More Detail :
-
-- `rails = [[] for _ in range(railFenceKey)]`: Membuat daftar berisi daftar kosong untuk setiap baris (rail) sesuai dengan jumlah baris yang ditentukan oleh railFenceKey Membuat placeholder untuk menyiapkan "kotak-kotak" yang akan mengorganisir karakter-karakter terenkripsi sehingga dapat didekripsi kembali dengan benar
-- `index = 0`: Menentukan bahwa kita mulai dari baris pertama (index 0)
-- `direction = 1`: Menentukan bahwa pergerakan awalnya ke bawah (nilai 1)
-
-2. Mempersiapkan tempat untuk karakter-karakter dari teks terenkripsi agar bisa ditempatkan di posisi yang benar selama proses dekripsi
+Masukkan kunci
 ```python
-   for char in enkripsi_teks:
-     rails[index].append(None)
-     if index == 0:
-       direction = 1
-  
-     elif index == railFenceKey - 1:
-       direction = -1
-     index += direction
+routeKey = int(input("Kunci: "))
 ```
 
-For More Detail :
-
-- `if index == 0: direction = 1` : Mengiterasi setiap karakter dalam enkripsi_teks satu persatu.
-- `elif index == railFenceKey - 1: direction = -1`: Jika index adalah railFenceKey - 1 (baris terakhir), ubah arah pergerakan ke atas (direction = -1)
-- `index += direction` : Menambah atau mengurangi index sesuai dengan direction. Jika direction = 1 bergerak ke bawah sedangkan direction = -1 bergerak ke atas
-
-3. Menempatkan karakter-karakter dari teks terenkripsi kembali ke posisi yang benar dalam matriks rails, sesuai dengan placeholder (None) yang telah ditandai sebelumnya
+1. Menentukan jumlah baris yang dibutuhkan untuk membentuk sebuah matriks dengan jumlah kolom yang telah ditentukan (routeKey). Matriks ini akan berisi teks x yang telah dibersihkan
 ```python
-   index_char = 0
-   for rail in rails:
-     for i in range(len(rail)):
-       rail[i] = enkripsi_teks[index_char]
-       index_char += 1
-```
+    kolom = routeKey
+    matrix = []
+    panjang = len(x)
+    temp = panjang/kolom
+    length = len(x)
+    bulat = round(temp)
 
-For More Detail :
-
-- `index_char` : Melacak posisi karakter dalam enkripsi_teks.
-- `for rail in rails` : Looping untuk mengiterasi setiap baris dalam matriks rails.
-- `for i in range(len(rail)):` : Mengiterasi setiap posisi dalam baris rail yang memiliki placeholder.
-- `rail[i] = enkripsi_teks[index_char]` : Menempatkan karakter dari enkripsi_teks pada posisi yang sesuai dalam rail.
-- `index_char += 1` : Meningkatkan index_char untuk berpindah ke karakter berikutnya dalam enkripsi_teks.
-
-4. Membaca kembali karakter-karakter dari matriks rails dalam urutan zigzag yang benar dan menyusunnya menjadi teks asli
-```python
-   index = 0
-   direction = 1
-   dekripsi_teks = []
-```
-
-For More Detail :
-
-- `index` : Melacak baris saat ini dalam matriks rails
-- `direction` : Menentukan arah pergerakan (ke bawah atau ke atas)
-- `dekripsi_teks = []` : Daftar yang akan menyimpan karakter karakter teks asli dalam urutan yang benar.
-
-5. Membaca kembali karakter-karakter dari matriks rails dalam urutan zigzag yang benar dan menyusunnya menjadi teks asli
-```python
-    for _ in range(len(enkripsi_teks)):
-      dekripsi_teks.append(rails[index].pop(0))
-      if index == 0:
-        direction = 1
-
-      elif index == railFenceKey - 1:
-        direction = -1
-      index += direction
-```
-
-For More Detail :
-
-- `for _ in range(len(enkripsi_teks)):` : Mengiterasi sebanyak panjang enkripsi_teks untuk memastikan semua karakter diproses.
-- `dekripsi_teks.append(rails[index])` : Mengambil karakter pertama dari baris index dalam rails dan menambahkannya ke dekripsi_teks
-- `.pop(0)` : pop(0) menghapus dan mengembalikan elemen pertama dari baris index
-- `if index == 0: direction = 1` : Jika index adalah 0 (baris pertama), ubah arah pergerakan ke bawah (direction = 1)
-- `elif index == railFenceKey - 1: direction = -1` : Jika index adalah railFenceKey - 1 (baris terakhir), ubah arah pergerakan ke atas (direction = -1)
-- `index += direction`: Mengupdate indeks baris
-
-6. Menggabungkan karakter-karakter yang telah disusun kembali dalam dekripsi_teks menjadi satu string yang merupakan teks asli hasil dekripsi
-```python
-   railFenceDecryption = "".join(dekripsi_teks)
-   print(" DECRYPTED : " + railFenceDecryption)
+    if temp - bulat == 0:
+        jml_baris = bulat
+    else:
+        if temp - bulat < 0:
+            jml_baris = bulat
+        else:
+            jml_baris = bulat + 1
+    print(jml_baris)
 ```
 For More Detail :
 
-- `''.join(dekripsi_teks)` : Menggabungkan semua elemen dalam dekripsi_teks menjadi satu string tanpa pemisah.
-- Variabel `railFenceDecryption` akan menyimpan string hasil dek
+- `kolom = routeKey` : Menetapkan jumlah kolom pada matriks dengan nilai routeKey
+- `matrix = []` : Menginisialisasi sebuah list kosong yang akan digunakan untuk menyimpan elemen-elemen matriks
+- `panjang = len(x)` : Menyimpan panjang dari teks x ke dalam variabel panjang
+- `temp = panjang/kolom` : Menghitung berapa banyak baris yang diperlukan dengan membagi panjang teks dengan jumlah kolom dan menyimpan hasilnya dalam variabel temp
+- `length = len(x)` : Menyimpan panjang teks x ke dalam variabel length
+- `bulat = round(temp)` : Membulatkan hasil pembagian temp ke angka terdekat dan menyimpannya ke dalam variabel bulat
+
+2. Membangun matriks 2D yang berisi teks x yang telah dibersihkan (tanpa spasi), Matriks ini akan memiliki jml_baris baris dan kolom kolom
+```python
+    for i in range(jml_baris):
+        row = []
+        for j in range(kolom):
+            if i * kolom + j < len(x):
+                elemen = [i * kolom + j]
+            else:
+                elemen = " "
+            row.append(elemen)
+        matrix.append(row)
+```
+For More Detail : 
+
+- `for i in range(jml_baris)` : Loop ini mengiterasi dari 0 hingga jml_baris - 1, yang berarti setiap iterasi mewakili satu baris dalam matriks
+- `row = []` : Membuat list kosong row yang akan menyimpan elemen-elemen untuk satu baris matriks
+- `for j in range(kolom)` : Loop ini mengiterasi dari 0 hingga kolom - 1, yang berarti setiap iterasi mewakili satu kolom dalam matriks
+- `if i * kolom + j < len(x)` : Mengecek apakah indeks (dihitung sebagai i * kolom + j) berada dalam rentang panjang teks x
+- `elemen = x[i * kolom + j]` : Jika ya, Mengambil elemen dari teks x pada posisi i * kolom + j
+- ` elemen = " "` : Jika tidak, Mengisi elemen dengan spasi kosong jika indeks berada di luar panjang teks x
+-`row.append(elemen)` : Menambahkan elemen yang telah ditentukan (baik dari x atau spasi kosong) ke list row
+- `matrix.append(row)` : Menambahkan list row yang berisi elemen-elemen satu baris ke dalam list matrix
+
+3. Mencetak matriks yang telah dibuat
+```python
+    print("Matriks yang Anda buat:")
+    for row in matrix:
+        print(row)
+```
+
+4. Membuat dan mencetak matriks transpose
+```python
+    transposed_matrix = [[row[i] for row in matrix] for i in range(len(matrix[0]))]
+    for row in transposed_matrix:
+        print(row)
+```
+For More Detail :
+
+- `row[i] for row in matrix` : Menghasilkan list elemen ke-i dari setiap baris dalam matrix
+- `for i in range(len(matrix[0]))]` : Mengiterasi setiap indeks kolom dari matrix dan membentuk baris baru dari elemen-elemen tersebut
+- `for row in transposed_matrix` : Loop ini mengiterasi melalui setiap baris dalam transposed_matrix
+
+5. Mengatur batas-batas dan kontrol iterasi saat mengisi transposed_matrix dalam pola spiral dengan karakter-karakter dari teks x
+```python
+    start_row, end_row = len(transposed_matrix) - 1, 0
+    start_col, end_col = len(transposed_matrix[0]) - 1, 0
+    text_index = 0
+```
+For More Detail :
+
+- `start_row` : Mengendalikan pengisian dari baris terakhir ke atas
+- `end_row` : Mengendalikan pengisian dari baris pertama ke bawah
+- `end_row = 0 ` : Menetapkan indeks baris awal ke 0, yang berarti kita mulai dari baris pertama
+- `len(transposed_matrix)` : Memberikan jumlah baris dalam `transposed_matrix`
+- Mengurangkan 1 untuk mendapatkan indeks baris terakhir dari matriks transpose
+- `start_col` : Mengendalikan pengisian dari kolom terakhir ke kiri, sedangkan 
+- `end_col` : Mengendalikan pengisian dari kolom pertama ke kanan
+- `len(transposed_matrix[0])` : Memberikan jumlah kolom dalam `transposed_matrix`
+- Mengurangkan 1 untuk mendapatkan indeks kolom terakhir dari matriks transpose
+- `end_col = 0` : Menetapkan indeks kolom awal ke 0, yang berarti kita mulai dari kolom pertama
+- `text_index` : Melacak posisi karakter dalam teks x yang sedang diproses
+
+6. Mengisi baris pertama dari kanan ke kiri
+```python
+    while start_row >= end_row and start_col >= end_col:
+        # Fill the first row from the remaining rows
+        for i in range(start_col, end_col - 1, -1):
+            if text_index < len(x):
+                transposed_matrix[start_row][i] = x[text_index]
+                text_index += 1
+
+        start_row -= 1
+```
+For More Detail :
+
+- `start_col` dan `end_col` : menentukan rentang kolom yang akan diisi
+- `text_index` : mengambil karakter dari teks x.
+- `Transposed_matrix[start_row][i]` : Setiap karakter yang diambil dari x dimasukkan ke dalam posisi yang sesuai di t.
+
+7. Mengisi kolom terakhir dari baris yang tersisa dalam matriks dengan karakter dari x dalam urutan spiral
+```python
+    for i in range(start_row, end_row - 1, -1):
+            if text_index < len(x):
+                transposed_matrix[i][end_col] = x[text_index]
+                text_index += 1
+
+        end_col += 1
+```
+For More Detail :
+
+- `for i in range(start_row, end_row - 1, -1)` : Loop ini digunakan untuk iterasi melalui baris-baris dalam matriks dari `start_row` ke `end_row - 1` dalam urutan menurun 
+- `start_row` : Posisi baris awal untuk iterasi
+- `end_row - 1` : Posisi baris akhir (tidak termasuk) untuk iterasi
+- `-1` : Menunjukkan bahwa iterasi dilakukan secara menurun 
+- `if text_index < len(cipherText)` : Kondisi ini memastikan bahwa indeks text_index masih dalam batas panjang cipherText
+- `transposed_matrix[i][end_col]` : Menunjukkan posisi kolom `end_col` dalam baris i dari matriks yang sedang diisi
+- `cipherText[text_index]` : Karakter dari cipherText pada indeks text_index
+- `text_index += 1` : Setelah menempatkan karakter dari cipherText ke dalam `transposed_matrix`, nilai `text_index` dinaikkan sebesar 1 untuk mempersiapkan karakter berikutnya pada iterasi selanjutnya
+- `end_col += 1` : Setelah menyelesaikan iterasi untuk mengisi kolom terakhir dari baris yang tersisa, `end_col` dinaikkan sebesar 1 untuk mempersempit batas kolom yang akan diisi pada iterasi berikutnya
+
+
+8. Menentukkan apakah batas kolom telah bertemu atau melewati satu sama lain, yang berarti bahwa semua kolom yang perlu diisi sudah selesai diproses
+```python
+    if start_col < end_col:
+            break
+```
+
+9. Mengisi baris terakhir dari kolom yang tersisa dalam matriks dengan karakter dari x dalam urutan spiral.
+```python
+    for i in range(end_col, start_col + 1):
+            if text_index < len(x):
+                transposed_matrix[end_row][i] = x[text_index]
+                text_index += 1
+
+        end_row += 1
+```
+For More Detail :
+
+- `for i in range(end_col, start_col + 1)`: Loop ini digunakan untuk iterasi melalui kolom dari `end_col` ke `start_col + 1`
+- `end_col`: Posisi kolom awal untuk iterasi
+- `start_col + 1`: Posisi kolom akhir (tidak termasuk) untuk iterasi, Menambah 1 untuk memasukkan start_col dalam iterasi
+- `if text_index < len(x)` : Kondisi ini memastikan bahwa indeks
+- `text_index` : Masih dalam batas panjang `x`. Hal ini untuk menghindari akses indeks yang tidak valid dari `x`
+- `transposed_matrix[end_row][i] = x[text_index]` Menetapkan karakter dari `x` pada posisi indeks `text_index` ke posisi `[end_row][i]` dalam `transposed_matrix`
+- `transposed_matrix[end_row][i]`: Menunjukkan posisi kolom `i` dalam baris end_row dari matriks yang sedang diisi.
+- `x[text_index]`: Karakter dari `x` pada indeks `text_index`
+- `text_index += 1` Setelah menempatkan karakter dari `x` ke dalam `transposed_matrix`, nilai `text_index` dinaikkan sebesar 1 untuk mempersiapkan karakter berikutnya pada iterasi selanjutnya
+- `end_row += 1` Setelah menyelesaikan iterasi untuk mengisi baris terakhir dari kolom yang tersisa, batas baris akhir (`end_row`) dinaikkan sebesar 1 untuk mempersempit batas baris yang akan diisi pada iterasi berikutnya
+
+10. Menghentikan loop while jika batas baris bertemu atau melewati satu sama lain, menandakan bahwa pengisian matriks dalam pola spiral sudah selesai 
+```python
+    if start_row < end_row:
+            break
+```
+
+11. Mengisi baris terakhir dari kolom yang tersisa dalam matriks dengan karakter dari x dalam urutan spiral
+```python
+    for i in range(end_row, start_row + 1):
+            if text_index < len(x):
+                transposed_matrix[i][start_col] = x[text_index]
+                text_index += 1
+
+        start_col -= 1
+```
+For More Detail :
+
+- `for i in range(end_row, start_row + 1)` : Loop ini digunakan untuk iterasi melalui baris dari end_row ke start_row + 1 dalam urutan meningkat
+- `end_row` : Posisi baris awal untuk iterasi
+- `start_row + 1` : Posisi baris akhir (tidak termasuk) untuk iterasi, Menambah 1 untuk memasukkan start_row dalam iterasi
+- `if text_index < len(x)` : Kondisi ini memastikan bahwa indeks text_index masih dalam batas panjang x
+- `transposed_matrix[i][start_col]` : Menunjukkan posisi kolom start_col dalam baris i dari matriks yang sedang diisi
+- `x[text_index]` : Karakter dari x pada indeks text_index
+- `text_index += 1` : Nilai text_index dinaikkan sebesar 1 untuk mempersiapkan karakter berikutnya pada iterasi selanjutnya
+- `start_col -= 1` : Batas kolom awal (start_col) dikurangi sebesar 1 untuk mempersempit batas kolom yang akan diisi pada iterasi berikutnya
+
+12. Mencetak matriks yang telah diisi dengan ciphertext
+```python
+    print("Matriks setelah diisi dengan cipher secara spiral:")
+    for row in transposed_matrix:
+        print(row)
+```
+
+13. String kosong untuk menyimpan hasil teks yang telah didekripsi
+```python
+    decrypted_text = ""
+```
+
+14. Menyimpan jumlah baris dari transposed_matrix dalam variabel num_rows
+```python
+    num_rows = len(transposed_matrix)
+```
+
+15. Menghitung jumlah kolom dalam transposed_matrix
+```python
+    num_cols = len(transposed_matrix[0])
+```
+
+16. Menggabungkan karakter-karakter dari transposed_matrix ke dalam decrypted_text dengan membaca matriks secara kolom demi kolom
+```python
+    for col in range(num_cols):  
+        for row in range(num_rows):  
+            decrypted_text += transposed_matrix[row][col]
+```
+For More Detail :
+
+- `for col in range(num_cols)`: Loop for ini digunakan untuk iterasi melalui setiap kolom dalam transposed_matrix.
+- `num_cols` : Jumlah kolom dalam transposed_matrix Ini mengontrol jumlah iterasi, memastikan bahwa setiap kolom dalam matriks diproses
+- `for row in range(num_rows)` : Loop ini digunakan untuk iterasi melalui setiap baris dalam `transposed_matrix` untuk kolom yang saat ini sedang diproses oleh loop luar
+- `num_rows` : Jumlah baris dalam transposed_matrix Ini mengontrol jumlah iterasi, memastikan bahwa setiap baris dalam kolom yang sedang diproses dipertimbangkan
+- `transposed_matrix[row][col]` : Mengakses elemen pada baris row dan kolom col dalam matriks
+- `decrypted_text +=: Operator +=` : Menambahkan karakter ke string decrypted_text
+
+17. Mencetak hasil teks terdeskripsi
+```python
+    print("Teks terdekripsi setelah membaca secara berurutan:")
+    print(decrypted_text)
+```
 
 ```python
-HASIL DECRYPTED : UNIVERSITAS DIAN NUSWANTORO
+Hasil Decrypted :
+TENTUKANPRIORITASANDASEBABKITATIDAKDAPATMENGERJAKANSEMUANYAX
 ```

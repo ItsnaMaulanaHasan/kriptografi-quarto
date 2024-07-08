@@ -67,10 +67,18 @@ Untuk lebih jelasnya, terdapat sebuah pesan yaitu
 
 Masukkan plaintext
 ```python
+CONTOH : TEKNIK INFORMATIKA
+```
+
+```python
 plainText = input("Plaintext : ")
 ```
 
 Masukkan kunci
+```python
+CONTOH : UDINUS
+```
+
 ```python
 key = input("masukkan kunci : ")
 ```
@@ -92,21 +100,21 @@ ascii = {
 
 ### Proses Enkripsi
 
-Inisialisasi list untuk menyimpan urutan numerik dari setiap huruf alfabet
+1. Inisialisasi list untuk menyimpan urutan numerik dari setiap huruf alfabet
 ```python
-kolom = 0
-angka_urutan = []
+    kolom = 0
+    angka_urutan = []
 ```
 
-Mengonversi setiap huruf dalam kata kunci menjadi urutan numeriknya sesuai dengan posisi dalam alfabet
+2. Mengonversi setiap huruf dalam kata kunci menjadi urutan numeriknya sesuai dengan posisi dalam alfabet
 ```python
-for huruf in key:
-    if huruf.isalpha():
-        angka_urutan.append(ascii[huruf.lower()])
-        kolom = kolom+1
-        cleanKey = angka_urutan
+    for huruf in key:
+        if huruf.isalpha():
+            angka_urutan.append(ascii[huruf.lower()])
+            kolom = kolom+1
+            cleanKey = angka_urutan
 
-print(f"Urutan kunci dari kata '{key}' adalah {angka_urutan}")
+    print(f"Urutan kunci dari kata '{key}' adalah {angka_urutan}")
 ```
 
 For More Detail :
@@ -119,37 +127,36 @@ For More Detail :
 - `kolom = kolom + 1` : Menghitung jumlah kolom dengan menambah nilai kolom setiap kali huruf diproses
 - `cleanKey = angka_urutan` : Menyimpan hasil akhir urutan numerik ke dalam variabel cleanKey
 
-
-Membuat sebuah matriks kosong untuk menyimpan teks yang telah diolah dalam bentuk matriks
+3. Membuat sebuah matriks kosong untuk menyimpan teks yang telah diolah dalam bentuk matriks
 ```python
-matrix = []
+    matrix = []
 ```
 
-Menghitung panjang dari teks yang telah dibersihkan dan disimpan dalam variabel cleanPlainTeks
+4. Menghitung panjang dari teks yang telah dibersihkan dan disimpan dalam variabel cleanPlainTeks
 ```python
-panjang = len(cleanPlainTeks)
+    panjang = len(cleanPlainTeks)
 ```
 
-Mencari tahu berapa kali kolom dapat digunakan untuk memuat seluruh teks, dengan membagi panjang teks dengan jumlah kolom
+5. Mencari tahu berapa kali kolom dapat digunakan untuk memuat seluruh teks, dengan membagi panjang teks dengan jumlah kolom
 ```python
-temp = panjang/kolom
+    temp = panjang/kolom
 ```
 
-Membulatkan hasil pembagian sebelumnya ke bilangan bulat terdekat
+6. Membulatkan hasil pembagian sebelumnya ke bilangan bulat terdekat
 ```python
-bulat = round(temp)
+    bulat = round(temp)
 ```
 
-Menghitung jumlah baris untuk memuat teks dalam matriks
+7. Menghitung jumlah baris untuk memuat teks dalam matriks
 ```python
-if temp - bulat == 0:
-    baris = bulat
-else:
-    if temp - bulat < 0:
+    if temp - bulat == 0:
         baris = bulat
     else:
-        baris = bulat + 1
-print(baris)
+        if temp - bulat < 0:
+            baris = bulat
+        else:
+            baris = bulat + 1
+    print(baris)
 ```
 
 For More Detail :
@@ -157,41 +164,41 @@ For More Detail :
 - `temp` : hasil pembagian panjang teks dengan jumlah kolom
 - `bulat`: hasil pembagian yang dibulatkan ke bilangan bulat terdekat. Jika `temp` adalah bilangan bulat (tidak ada sisa), jumlah baris adalah bulat. Jika ada sisa, jumlah baris adalah `bulat + 1`
 
-Mengisi matriks dengan karakter dari teks yang telah dibersihkan (cleanPlainTeks)
+8. Mengisi matriks dengan karakter dari teks yang telah dibersihkan (cleanPlainTeks)
 ```python
-for i in range(baris):
-    row = []
-    for j in range(kolom):
-        if i * kolom + j < len(cleanPlainTeks):
-            elemen = cleanPlainTeks[i * kolom + j]
-        else:
-            elemen = " "
-        row.append(elemen)
-    matrix.append(row)
+    for i in range(baris):
+        row = []
+        for j in range(kolom):
+            if i * kolom + j < len(cleanPlainTeks):
+                elemen = cleanPlainTeks[i * kolom + j]
+            else:
+                elemen = " "
+            row.append(elemen)
+        matrix.append(row)
 ```
 
 For More Detail :
 
 - `for i in range(baris)` : Loop untuk setiap baris dalam matriks
 - `row = []` : Inisialisasi list kosong untuk setiap baris
-- `if i * kolom + j < len(cleanPlainTeks)` : Memeriksa apakah indeks saat ini berada dalam rentang panjang teks yang dibersihkan.
-- `elemen = cleanPlainTeks[i * kolom + j]` : Jika indeks berada dalam rentang, maka ambil karakter dari `cleanPlainTeks` berdasarkan indeks yang dihitung.
-- `else` : Jika indeks melebihi panjang teks, isi elemen dengan spasi.
-- `row.append(elemen)` : Menambahkan elemen ke dalam baris.
-- `matrix.append(row)` : Menambahkan baris yang telah diisi ke dalam matriks.`
+- `if i * kolom + j < len(cleanPlainTeks)` : Memeriksa apakah indeks saat ini berada dalam rentang panjang teks yang dibersihkan
+- `elemen = cleanPlainTeks[i * kolom + j]` : Jika indeks berada dalam rentang, maka ambil karakter dari `cleanPlainTeks` berdasarkan indeks yang dihitung
+- `else` : Jika indeks melebihi panjang teks, isi elemen dengan spasi
+- `row.append(elemen)` : Menambahkan elemen ke dalam baris
+- `matrix.append(row)` : Menambahkan baris yang telah diisi ke dalam matriks
 
 Mencetak matriks
 ```python
-print("Matriks yang Anda buat:")
-for row in matrix:
-    print(row)
+    print("Matriks yang Anda buat:")
+    for row in matrix:
+        print(row)
 ```
 
-Mentransposisikan matriks yang telah dibuat dan kemudian mencetak matriks yang telah ditransposisikan
+9. Mentransposisikan matriks yang telah dibuat dan kemudian mencetak matriks yang telah ditransposisikan
 ```python
-transposed_matrix = [[row[i] for row in matrix] for i in range(len(matrix[0]))]
-for row in transposed_matrix:
-    print(row)
+    transposed_matrix = [[row[i] for row in matrix] for i in range(len(matrix[0]))]
+    for row in transposed_matrix:
+        print(row)
 ```
 
 For More Detail :
@@ -199,26 +206,26 @@ For More Detail :
 - `for i in range(len(matrix[0]))` : Iterasi melalui indeks kolom matriks asli
 - `row[i] for row in matrix` : Untuk setiap indeks kolom i, ambil elemen i dari setiap baris dalam matriks asli dan akan menghasilkan kolom baru dari elemen-elemen tersebut, membentuk baris baru di matriks yang ditransposisikan
 
-Membuat list kosong dengan panjang yang sama dengan cleanKey untuk menyimpan urutan indeks
+10. Membuat list kosong dengan panjang yang sama dengan cleanKey untuk menyimpan urutan indeks
 ```python
-order = [None] * len(cleanKey)
+    order = [None] * len(cleanKey)
 ```
 
-Mengurutkan elemen-elemen dalam cleanKey berdasarkan nilai terkecil hingga terbesar
+11. Mengurutkan elemen-elemen dalam cleanKey berdasarkan nilai terkecil hingga terbesar
 ```python
-i = 0
-while len(cleanKey) > 0:
-    non_none_values = list(filter(lambda x: x is not None, cleanKey))
-    if non_none_values:
-        nilai_terkecil = min(non_none_values)
-        marker = cleanKey.index(nilai_terkecil)
+    i = 0
+    while len(cleanKey) > 0:
+        non_none_values = list(filter(lambda x: x is not None, cleanKey))
+        if non_none_values:
+            nilai_terkecil = min(non_none_values)
+            marker = cleanKey.index(nilai_terkecil)
 
-        order[marker] = i
-        cleanKey[marker] = None 
-        i = i + 1
-    else:
-        break
-print(order)
+            order[marker] = i
+            cleanKey[marker] = None 
+            i = i + 1
+        else:
+            break
+    print(order)
 ```
 
 For More Detail :
@@ -229,27 +236,27 @@ For More Detail :
 - `if non_none_values` : Mengecek apakah list non_none_values tidak kosong
 ` nilai_terkecil = min(non_none_values)` : Mencari nilai terkecil dari non_none_values
 - `marker = cleanKey.index(nilai_terkecil)` : Mendapatkan indeks dari nilai terkecil dalam cleanKey
-Menyimpan Urutan dan Menghapus Nilai Terkecil:
+Menyimpan Urutan dan menghapus nilai terkecil
 - `order[marker] = i` : Menyimpan urutan i pada indeks marker di list order
 - `cleanKey[marker] = None` : Menghapus nilai terkecil dari cleanKey dengan mengubahnya menjadi None
-- `i = i + 1` : Increment counter i.
+- `i = i + 1` : Increment counter i
 
-Mengubah urutan kolom matriks `transposed_matrix` berdasarkan urutan yang telah diatur dalam `order`, dan kemudian mencetak matriks yang sudah diubah urutan kolomnya
+12. Mengubah urutan kolom matriks `transposed_matrix` berdasarkan urutan yang telah diatur dalam `order`, dan kemudian mencetak matriks yang sudah diubah urutan kolomnya
 ```python
-new_matrix = []
-while len(order) > 0:
-    non_none_values = list(filter(lambda x: x is not None, order))
-    if non_none_values:
-        nilai_terkecil = min(non_none_values)
-        marker = order.index(nilai_terkecil)
-       
-        new_matrix.append(transposed_matrix[marker])
-        order[marker] = None
-    else:
-        break
+    new_matrix = []
+    while len(order) > 0:
+        non_none_values = list(filter(lambda x: x is not None, order))
+        if non_none_values:
+            nilai_terkecil = min(non_none_values)
+            marker = order.index(nilai_terkecil)
+        
+            new_matrix.append(transposed_matrix[marker])
+            order[marker] = None
+        else:
+            break
 
-for row in new_matrix:
-    print(row)
+    for row in new_matrix:
+        print(row)
 ```
 
 For More Detail :
@@ -265,17 +272,17 @@ Looping untuk Mengubah Urutan Kolom:
 - `order[marker] = None` : Menghapus nilai yang telah diproses dengan mengubahnya menjadi None
 - `else: break` : Menghentikan loop jika `non_none_values kosong`, yang berarti semua nilai dalam order telah diproses
 
-Mengonversi matriks `new_matrix` menjadi string tunggal dengan menggabungkan nilai-nilainya secara berurutan dan menghapus spasi ekstra di akhir string
+13. Mengonversi matriks `new_matrix` menjadi string tunggal dengan menggabungkan nilai-nilainya secara berurutan dan menghapus spasi ekstra di akhir string
 ```python
-result_string = ""
+    result_string = ""
 
-for row in new_matrix:
-    for value in row:
-        result_string += str(value)
+    for row in new_matrix:
+        for value in row:
+            result_string += str(value)
 
-result_string = result_string.strip()
+    result_string = result_string.strip()
 
-print(result_string)
+    print(result_string)
 ```
 
 For More Detail :
@@ -287,125 +294,195 @@ For More Detail :
 - `result_string = result_string.strip()` : Menghapus spasi ekstra di awal dan akhir string menggunakan metode strip()
 
 ```python
-Hasil Ciphertext : ENTKFINOKKM TIAIRA
+HASIL CIPHERTEXT : ENTKFINOKKM TIAIRA
 ```
 
 ### Proses Dekripsi
 
+Masukkan ciphertext
 ```python
 cipherTeks = input("masukkan kata : ")
 ```
 
+Masukkan kunci
 ```python
 key = input("masukkan kunci : ")
 ```
 
+Membersihkan ciphertext dari spasi
 ```python
-cleanCipherTeks = cipherTeks.replace(" ", " ")
-print(cleanCipherTeks)
+    cleanCipherTeks = cipherTeks.replace(" ", " ")
+    print(cleanCipherTeks)
 ```
 
+1. Inisialisasi list untuk menyimpan urutan numerik dari setiap huruf alfabet
 ```python
-kolom = 0
+    kolom = 0
+    angka_urutan = []
 ```
 
+2. Mengonversi setiap huruf dalam kata kunci menjadi urutan numeriknya sesuai dengan posisi dalam alfabet
 ```python
-angka_urutan = []
+    for huruf in key:
+        if huruf.isalpha():
+            angka_urutan.append(ascii[huruf.lower()])
+            kolom = kolom+1
+            cleanKey = angka_urutan
+
+    print(f"Urutan kunci dari kata '{key}' adalah: {angka_urutan}")
 ```
+For More Detail :
 
-```python
-for huruf in key:
-    if huruf.isalpha():
-        angka_urutan.append(ascii[huruf.lower()])
-        kolom = kolom+1
-        cleanKey = angka_urutan
+- `for huruf in key` : Loop ini digunakan untuk memeriksa setiap huruf dalam variabel key, yang diharapkan merupakan kata kunci yang diberikan oleh pengguna
+-  `if huruf.isalpha()` : Kondisi ini memastikan bahwa hanya karakter alfabet yang akan diproses. Karakter non-alfabet akan dilewati
+- `huruf.lower(): Mengubah huruf menjadi huruf kecil untuk konsistensi, sehingga tidak ada perbedaan antara huruf besar dan kecil
+- `ascii[huruf.lower()]` : Mengambil nilai urutan numerik dari huruf. Di sini diasumsikan ada sebuah kamus (dictionary) bernama ascii yang memetakan setiap huruf ke urutan numeriknya
+- `angka_urutan.append(...)` : Menambahkan urutan numerik dari huruf ke dalam list angka_urutan
+- `kolom = kolom + 1` : Menghitung jumlah kolom dengan menambah nilai kolom setiap kali huruf diproses
+- `cleanKey = angka_urutan` : Menyimpan hasil akhir urutan numerik ke dalam variabel cleanKey
 
-print(f"Urutan kunci dari kata '{key}' adalah: {angka_urutan}")
-```
-
+3. Membuat sebuah matriks kosong untuk menyimpan teks yang telah diolah dalam bentuk matriks
 ```Python
-matrix = []
+    matrix = []
 ```
 
+4. Menghitung panjang dari teks yang telah dibersihkan dan disimpan dalam variabel cleanPlainTeks
 ```python
-panjang = len(cleanCipherTeks)
+    panjang = len(cleanCipherTeks)
 ```
 
+5. Mencari tahu berapa kali kolom dapat digunakan untuk memuat seluruh teks, dengan membagi panjang teks dengan jumlah kolom
 ```python
-temp = panjang/kolom
+    temp = panjang/kolom
 ```
 
+6. Menyimpan jumlah baris yang dibutuhkan dalam matriks setelah pembulatan, membentuk matriks dengan jumlah baris yang cukup untuk menampung semua karakter dalam teks cipher
 ```python
-baris = round(temp)
-print(baris)
+    baris = round(temp)
+    print(baris)
 ```
 
+7. Membentuk matriks dari teks cipher yang bersih (cleanCipherTeks) dengan jumlah kolom yang tetap, dan jumlah baris yang telah dihitung sebelumnya
 ```python
-for i in range(baris):
-    row = []
-    for j in range(kolom):
-        if i * kolom + j < len(cleanCipherTeks):
-            elemen = cleanCipherTeks[i + baris * j]
+    for i in range(baris):
+        row = []
+        for j in range(kolom):
+            if i * kolom + j < len(cleanCipherTeks):
+                elemen = cleanCipherTeks[i + baris * j]
+            else:
+                elemen = "a"
+            row.append(elemen)
+        matrix.append(row)
+```
+For More Detail :
+
+- `for i in range(baris)` : Loop untuk setiap baris dalam matriks
+- `row = []` : Inisialisasi list kosong untuk setiap baris
+- `if i * kolom + j < len(cleanCipherTeks)` : Memeriksa apakah indeks saat ini berada dalam rentang panjang teks yang dibersihkan.
+- `elemen = cleanCipherTeks[i * baris + j]` : Jika indeks berada dalam rentang, maka ambil karakter dari cleanCipherTeks berdasarkan indeks yang dihitung
+- `else `: Jika indeks melebihi panjang teks, isi elemen dengan spasi
+- `row.append(elemen)` : Menambahkan elemen ke dalam baris
+- `matrix.append(row)` : Menambahkan baris yang telah diisi ke dalam matriks
+
+
+8. Mencetak matriks
+```python
+    print("Matriks yang Anda buat:")
+    for row in matrix:
+        print(row)
+```
+
+9. Mentransposisikan matriks yang telah dibuat dan kemudian mencetak matriks yang telah ditransposisikan
+```python
+    transposed_matrix = [[row[i] for row in matrix] for i in range(len(matrix[0]))]
+    for row in transposed_matrix:
+        print(row)
+```
+For More Detail :
+
+- `for i in range(len(matrix[0]))` : Iterasi melalui indeks kolom matriks asli
+- `row[i] for row in matrix` : Untuk setiap indeks kolom i, ambil elemen i dari setiap baris dalam matriks asli dan akan menghasilkan kolom baru dari elemen-elemen tersebut, membentuk baris baru di matriks yang ditransposisikan
+
+
+10. Membuat list kosong dengan panjang yang sama dengan cleanKey untuk menyimpan urutan indeks
+```python
+    order = [None] * len(cleanKey)
+```
+11. Mengurutkan elemen-elemen dalam cleanKey berdasarkan nilai terkecil hingga terbesar
+```python
+    i = 0
+    while len(cleanKey) > 0:
+        non_none_values = list(filter(lambda x: x is not None, cleanKey))
+        if non_none_values:
+            nilai_terkecil = min(non_none_values)
+            marker = cleanKey.index(nilai_terkecil)
+            order[marker] = i
+            cleanKey[marker] = None  
+            i = i + 1
         else:
-            elemen = "a"
-        row.append(elemen)
-    matrix.append(row)
+            break
+    print(order)
 ```
+For More Detail :
+
+- `i = 0` : Inisialisasi counter i
+- `while len(cleanKey) > 0` : Loop hingga cleanKey kosong (semua elemen None)
+- `non_none_values = list(filter(lambda x: x is not None, cleanKey))` : Membuat list yang hanya berisi elemen-elemen cleanKey yang bukan None
+- `if non_none_values` : Mengecek apakah list non_none_values tidak kosong 
+- `nilai_terkecil = min(non_none_values)` : Mencari nilai terkecil dari non_none_values
+- `marker = cleanKey.index(nilai_terkecil)` : Mendapatkan indeks dari nilai terkecil dalam cleanKey menyimpan urutan dan menghapus nilai terkecil
+- `order[marker] = i` : Menyimpan urutan i pada indeks marker di list order
+- `cleanKey[marker] = None` : Menghapus nilai terkecil dari cleanKey dengan mengubahnya menjadi None
+- `i = i + 1` : Increment counter i
+
+12. Menampilkan matriks setelah melakukan transposisi sesuai dengan urutan tertentu `(order)`
+```python
+    transposed_matrix = [transposed_matrix[i] for i in order]
+
+    for row in transposed_matrix:
+        print(row)
+```
+For More Detail :
+
+- `transposed_matrix = [transposed_matrix[i] for i in order]` : Membuat transposed_matrix baru berdasarkan urutan yang ditentukan dalam order
+- `for row in transposed_matrix` : Mencetak setiap baris dalam `transposed_matrix`
+
+13. Melakukan transposisi matriks dengam menukar baris dengan kolom
+```python
+    matriks = [[row[i] for row in transposed_matrix] for i in range(len(transposed_matrix[0]))]
+    for row in matriks:
+        print(row)
+```
+For More Detail :
+
+- `for i in range(len(transposed_matrix[0]))` : Iterasi melalui setiap indeks kolom dalam transposed_matrix
+- `row[i] for row in transposed_matrix` : Mengambil elemen ke-i dari setiap baris dalam transposed_matrix, sehingga membentuk kolom ke-i dalam matriks baru
+- `for row in matriks` : Iterasi melalui setiap baris dalam matriks yang telah ditransposisi
+
+14. Menggabungkan semua elemen dalam matriks transposisi menjadi satu string dan menghilangkan spasi di awal dan akhir
+```python
+    result_string = ""
+
+    for row in matriks:
+        for value in row:
+            result_string += str(value)
+
+    result_string = result_string.strip()
+
+    print(result_string)
+```
+For More Detail :
+
+- `result_string = ""` : Menginisialisasi variabel result_string sebagai string kosong untuk menyimpan hasil akhir
+- `for row in matriks` : Iterasi melalui setiap baris dalam matriks yang telah ditransposisi
+- `for value in row` : Iterasi melalui setiap nilai dalam baris tersebut
+- `result_string += str(value)` : Menambahkan setiap nilai dari baris ke dalam `result_string`, nilai tersebut diubah menjadi string terlebih dahulu.
+- `result_string = result_string.strip()` : Menghapus spasi di awal dan akhir dari `result_string`
+- `print(result_string)` : Mencetak result_string yang berisi semua elemen matriks yang digabungkan menjadi satu string
 
 ```python
-print("Matriks yang Anda buat:")
-for row in matrix:
-    print(row)
+HASIL DEKRIPSI : TEKNIKINFORMATIKA
 ```
-
-```python
-transposed_matrix = [[row[i] for row in matrix] for i in range(len(matrix[0]))]
-for row in transposed_matrix:
-    print(row)
-```
-
-```python
-order = [None] * len(cleanKey)
-i = 0
-while len(cleanKey) > 0:
-    non_none_values = list(filter(lambda x: x is not None, cleanKey))
-    if non_none_values:
-        nilai_terkecil = min(non_none_values)
-        marker = cleanKey.index(nilai_terkecil)
-        order[marker] = i
-        cleanKey[marker] = None  
-        i = i + 1
-    else:
-        break
-print(order)
-```
-
-```python
-transposed_matrix = [transposed_matrix[i] for i in order]
-
-for row in transposed_matrix:
-    print(row)
-```
-
-```python
-matriks = [[row[i] for row in transposed_matrix] for i in range(len(transposed_matrix[0]))]
-for row in matriks:
-    print(row)
-```
-
-```python
-result_string = ""
-
-for row in matriks:
-    for value in row:
-        result_string += str(value)
-
-result_string = result_string.strip()
-
-print(result_string)
-```
-
-`Hasil Dekripsi : TEKNIKINFORMATIKA`
 
 **Perbedaan Proses :**
 

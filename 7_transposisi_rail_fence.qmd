@@ -100,10 +100,18 @@ UETD WONVRIA INNSATRISSAUNO
 
 Masukkan Plaintext
 ```python
+CONTOH : UNIVERSITAS DIAN NUSWANTORO
+```
+
+```python
 plainText = input("Plaintext : ")
 ```
 
 Masukkan Kunci atau Jumlah Baris
+```python
+CONTOH KEY : 3
+```
+
 ```python
 railFenceKey = int(input("Kunci: "))
 ```

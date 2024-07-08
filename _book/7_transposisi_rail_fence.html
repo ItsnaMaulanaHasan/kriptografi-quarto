@@ -449,32 +449,34 @@ Kunci       : 3 baris (spasi ditulis)</code></pre>
 <section id="implementasi-pada-python" class="level2">
 <h2 class="anchored" data-anchor-id="implementasi-pada-python">Implementasi Pada Python</h2>
 <p>Masukkan Plaintext</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plainText <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Plaintext : "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>CONTOH : UNIVERSITAS DIAN NUSWANTORO</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plainText <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Plaintext : "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Masukkan Kunci atau Jumlah Baris</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>railFenceKey <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Kunci: "</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>CONTOH KEY : <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>railFenceKey <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Kunci: "</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="proses-enkripsi" class="level3">
 <h3 class="anchored" data-anchor-id="proses-enkripsi">Proses Enkripsi</h3>
 <ol type="1">
 <li>Membuat Matriks Kosong Sesuai Dengan Jumlah Baris (kunci)</li>
 </ol>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>   rails <span class="op">=</span> [[<span class="st">' '</span> <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(plainText))] <span class="cf">for</span> _ <span class="kw">in</span> </span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>   <span class="bu">range</span>(railFenceKey)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>   rails <span class="op">=</span> [[<span class="st">' '</span> <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(plainText))] <span class="cf">for</span> _ <span class="kw">in</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>   <span class="bu">range</span>(railFenceKey)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="2" type="1">
 <li>Menentukan Arah Pola Zig-Zag Dari Huruf-Huruf Dalam Plaintext, jika direction = 1 maka pola turun, jika -1 maka pola naik</li>
 </ol>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>   i, j <span class="op">=</span> <span class="dv">0</span>, <span class="dv">0</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>   direction <span class="op">=</span> <span class="dv">1</span>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>   i, j <span class="op">=</span> <span class="dv">0</span>, <span class="dv">0</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>   direction <span class="op">=</span> <span class="dv">1</span>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="3" type="1">
 <li>Menempatkan karakter-karakter dari plainText ke dalam matriks dalam pola zigzag sesuai dengan kunci Rail Fence</li>
 </ol>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>   <span class="cf">for</span> char <span class="kw">in</span> plainText:</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>     rails[i][j] <span class="op">=</span> char</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>     <span class="cf">if</span> i <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>       direction <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>     <span class="cf">elif</span> i <span class="op">==</span> railFenceKey <span class="op">-</span> <span class="dv">1</span>:</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>       direction <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>     i <span class="op">+=</span> direction</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>     j <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>   <span class="cf">for</span> char <span class="kw">in</span> plainText:</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>     rails[i][j] <span class="op">=</span> char</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>     <span class="cf">if</span> i <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>       direction <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>     <span class="cf">elif</span> i <span class="op">==</span> railFenceKey <span class="op">-</span> <span class="dv">1</span>:</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>       direction <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>     i <span class="op">+=</span> direction</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>     j <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For More Detail :</p>
 <ul>
 <li><code>for char in plainText</code> : Setiap karakter dalam teks yang ingin dienkripsi akan diproses satu per satu</li>
@@ -487,9 +489,9 @@ Kunci       : 3 baris (spasi ditulis)</code></pre>
 <ol start="4" type="1">
 <li>Membentuk Teks Terenkripsi Berdasarkan Pola Zig-Zag</li>
 </ol>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>   enkripsi_teks <span class="op">=</span> <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>.join([<span class="st">''</span>.join(row) <span class="cf">for</span> row <span class="kw">in</span> rails])</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"* RAIL FENCE: "</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(enkripsi_teks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>   enkripsi_teks <span class="op">=</span> <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>.join([<span class="st">''</span>.join(row) <span class="cf">for</span> row <span class="kw">in</span> rails])</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"* RAIL FENCE: "</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(enkripsi_teks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Fore More Detail :</p>
 <ul>
 <li><code>row</code> merepresentasikan setiap baris dalam matriks rails.</li>
@@ -500,9 +502,9 @@ Kunci       : 3 baris (spasi ditulis)</code></pre>
 <ol start="5" type="1">
 <li>Mempersiapkan daftar untuk setiap baris (rail) dan mengatur agar kita mulai dari baris pertama dengan pergerakan ke bawah.</li>
 </ol>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>   rails <span class="op">=</span> [[] <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(railFenceKey)]</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>   index <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>   direction <span class="op">=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>   rails <span class="op">=</span> [[] <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(railFenceKey)]</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>   index <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>   direction <span class="op">=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For More Detail :</p>
 <ul>
 <li><code>rails = [[] for _ in range(railFenceKey)]</code> : Membuat daftar berisi daftar kosong untuk setiap baris (rail) sesuai dengan jumlah baris yang ditentukan oleh railFenceKey</li>
@@ -512,15 +514,15 @@ Kunci       : 3 baris (spasi ditulis)</code></pre>
 <ol start="6" type="1">
 <li>Menempatkan karakter-karakter dari plainText ke dalam daftar rails dalam pola zigzag, mengubah arah pergerakan ketika mencapai baris pertama atau terakhir</li>
 </ol>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>   <span class="cf">for</span> char <span class="kw">in</span> plainText:</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>     rails[index].append(char)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>     <span class="cf">if</span> index <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>       direction <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>     <span class="cf">elif</span> index <span class="op">==</span> railFenceKey <span class="op">-</span> <span class="dv">1</span>:</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>       direction <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>     index <span class="op">+=</span> direction</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>   <span class="cf">for</span> char <span class="kw">in</span> plainText:</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>     rails[index].append(char)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>     <span class="cf">if</span> index <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>       direction <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>     <span class="cf">elif</span> index <span class="op">==</span> railFenceKey <span class="op">-</span> <span class="dv">1</span>:</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>       direction <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>     index <span class="op">+=</span> direction</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For More Detail :</p>
 <ul>
 <li><code>for char in plainText</code> : Looping untuk Mengiterasi setiap karakter dalam plainText satu per satu</li>
@@ -532,8 +534,8 @@ Kunci       : 3 baris (spasi ditulis)</code></pre>
 <ol start="7" type="1">
 <li>menggabungkan karakter-karakter yang telah disusun dalam matriks rails menjadi satu string yang merupakan teks terenkripsi (ciphertext)</li>
 </ol>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>   enkripsi_teks <span class="op">=</span> <span class="st">""</span>.join([<span class="st">""</span>.join(rail) <span class="cf">for</span> rail <span class="kw">in</span> rails])</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"CIPHERTEXT : "</span> <span class="op">+</span> enkripsi_teks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>   enkripsi_teks <span class="op">=</span> <span class="st">""</span>.join([<span class="st">""</span>.join(rail) <span class="cf">for</span> rail <span class="kw">in</span> rails])</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"CIPHERTEXT : "</span> <span class="op">+</span> enkripsi_teks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For More Detail :</p>
 <ul>
 <li><code>["".join(rail) for rail in rails]</code> : List comprehension yang menghasilkan daftar string, di mana setiap string adalah satu baris dari matriks rails</li>
@@ -541,16 +543,16 @@ Kunci       : 3 baris (spasi ditulis)</code></pre>
 <li><code>"".join(rail)</code> : Menggabungkan semua karakter dalam baris rail menjadi satu string</li>
 <li>Hasilnya adalah satu string panjang yang merupakan teks terenkripsi (enkripsi_teks).</li>
 </ul>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>   CIPHERTEXT : UETD WONVRIA INNSATRISSAUNO</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>   CIPHERTEXT : UETD WONVRIA INNSATRISSAUNO</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="proses-dekripsi" class="level3">
 <h3 class="anchored" data-anchor-id="proses-dekripsi">Proses Dekripsi</h3>
 <ol type="1">
 <li>Mempersiapkan daftar untuk setiap baris (rail) dan mengatur agar kita mulai dari baris pertama dengan pergerakan ke bawah</li>
 </ol>
-<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>   rails <span class="op">=</span> [[] <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(railFenceKey)]</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>   index <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>   direction <span class="op">=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>   rails <span class="op">=</span> [[] <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(railFenceKey)]</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>   index <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>   direction <span class="op">=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For More Detail :</p>
 <ul>
 <li><code>rails = [[] for _ in range(railFenceKey)]</code>: Membuat daftar berisi daftar kosong untuk setiap baris (rail) sesuai dengan jumlah baris yang ditentukan oleh railFenceKey Membuat placeholder untuk menyiapkan “kotak-kotak” yang akan mengorganisir karakter-karakter terenkripsi sehingga dapat didekripsi kembali dengan benar</li>
@@ -560,14 +562,14 @@ Kunci       : 3 baris (spasi ditulis)</code></pre>
 <ol start="2" type="1">
 <li>Mempersiapkan tempat untuk karakter-karakter dari teks terenkripsi agar bisa ditempatkan di posisi yang benar selama proses dekripsi</li>
 </ol>
-<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>   <span class="cf">for</span> char <span class="kw">in</span> enkripsi_teks:</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>     rails[index].append(<span class="va">None</span>)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>     <span class="cf">if</span> index <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>       direction <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>     <span class="cf">elif</span> index <span class="op">==</span> railFenceKey <span class="op">-</span> <span class="dv">1</span>:</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>       direction <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>     index <span class="op">+=</span> direction</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>   <span class="cf">for</span> char <span class="kw">in</span> enkripsi_teks:</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>     rails[index].append(<span class="va">None</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>     <span class="cf">if</span> index <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>       direction <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>     <span class="cf">elif</span> index <span class="op">==</span> railFenceKey <span class="op">-</span> <span class="dv">1</span>:</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>       direction <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>     index <span class="op">+=</span> direction</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For More Detail :</p>
 <ul>
 <li><code>if index == 0: direction = 1</code> : Mengiterasi setiap karakter dalam enkripsi_teks satu persatu.</li>
@@ -577,11 +579,11 @@ Kunci       : 3 baris (spasi ditulis)</code></pre>
 <ol start="3" type="1">
 <li>Menempatkan karakter-karakter dari teks terenkripsi kembali ke posisi yang benar dalam matriks rails, sesuai dengan placeholder (None) yang telah ditandai sebelumnya</li>
 </ol>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>   index_char <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>   <span class="cf">for</span> rail <span class="kw">in</span> rails:</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>     <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(rail)):</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>       rail[i] <span class="op">=</span> enkripsi_teks[index_char]</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>       index_char <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>   index_char <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>   <span class="cf">for</span> rail <span class="kw">in</span> rails:</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>     <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(rail)):</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>       rail[i] <span class="op">=</span> enkripsi_teks[index_char]</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>       index_char <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For More Detail :</p>
 <ul>
 <li><code>index_char</code> : Melacak posisi karakter dalam enkripsi_teks.</li>
@@ -593,9 +595,9 @@ Kunci       : 3 baris (spasi ditulis)</code></pre>
 <ol start="4" type="1">
 <li>Membaca kembali karakter-karakter dari matriks rails dalam urutan zigzag yang benar dan menyusunnya menjadi teks asli</li>
 </ol>
-<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>   index <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>   direction <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>   dekripsi_teks <span class="op">=</span> []</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>   index <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>   direction <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>   dekripsi_teks <span class="op">=</span> []</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For More Detail :</p>
 <ul>
 <li><code>index</code> : Melacak baris saat ini dalam matriks rails</li>
@@ -605,14 +607,14 @@ Kunci       : 3 baris (spasi ditulis)</code></pre>
 <ol start="5" type="1">
 <li>Membaca kembali karakter-karakter dari matriks rails dalam urutan zigzag yang benar dan menyusunnya menjadi teks asli</li>
 </ol>
-<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(enkripsi_teks)):</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>      dekripsi_teks.append(rails[index].pop(<span class="dv">0</span>))</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> index <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>        direction <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>      <span class="cf">elif</span> index <span class="op">==</span> railFenceKey <span class="op">-</span> <span class="dv">1</span>:</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>        direction <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>      index <span class="op">+=</span> direction</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(enkripsi_teks)):</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>      dekripsi_teks.append(rails[index].pop(<span class="dv">0</span>))</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> index <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>        direction <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>      <span class="cf">elif</span> index <span class="op">==</span> railFenceKey <span class="op">-</span> <span class="dv">1</span>:</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>        direction <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>      index <span class="op">+=</span> direction</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For More Detail :</p>
 <ul>
 <li><code>for _ in range(len(enkripsi_teks)):</code> : Mengiterasi sebanyak panjang enkripsi_teks untuk memastikan semua karakter diproses.</li>
@@ -625,14 +627,14 @@ Kunci       : 3 baris (spasi ditulis)</code></pre>
 <ol start="6" type="1">
 <li>Menggabungkan karakter-karakter yang telah disusun kembali dalam dekripsi_teks menjadi satu string yang merupakan teks asli hasil dekripsi</li>
 </ol>
-<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>   railFenceDecryption <span class="op">=</span> <span class="st">""</span>.join(dekripsi_teks)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">" DECRYPTED : "</span> <span class="op">+</span> railFenceDecryption)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>   railFenceDecryption <span class="op">=</span> <span class="st">""</span>.join(dekripsi_teks)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">" DECRYPTED : "</span> <span class="op">+</span> railFenceDecryption)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For More Detail :</p>
 <ul>
 <li><code>''.join(dekripsi_teks)</code> : Menggabungkan semua elemen dalam dekripsi_teks menjadi satu string tanpa pemisah.</li>
 <li>Variabel <code>railFenceDecryption</code> akan menyimpan string hasil dek</li>
 </ul>
-<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>HASIL DECRYPTED : UNIVERSITAS DIAN NUSWANTORO</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>HASIL DECRYPTED : UNIVERSITAS DIAN NUSWANTORO</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>

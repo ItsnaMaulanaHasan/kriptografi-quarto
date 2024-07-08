@@ -348,8 +348,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#analogi-transposisi-railfence" id="toc-analogi-transposisi-railfence" class="nav-link active" data-scroll-target="#analogi-transposisi-railfence">Analogi Transposisi Railfence</a></li>
-  <li><a href="#contoh-soal" id="toc-contoh-soal" class="nav-link" data-scroll-target="#contoh-soal">Contoh Soal</a></li>
+  <li><a href="#analogi-transposisi-route" id="toc-analogi-transposisi-route" class="nav-link active" data-scroll-target="#analogi-transposisi-route">Analogi Transposisi Route</a></li>
   <li><a href="#implementasi-pada-python" id="toc-implementasi-pada-python" class="nav-link" data-scroll-target="#implementasi-pada-python">Implementasi Pada Python</a>
   <ul class="collapse">
   <li><a href="#proses-enkripsi" id="toc-proses-enkripsi" class="nav-link" data-scroll-target="#proses-enkripsi">Proses Enkripsi</a></li>
@@ -384,254 +383,437 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Transposisi Route merupakan metode yang dilakukan dengan cara pesan disusun dalam grid (biasanya persegi atau persegi panjang), dan huruf-huruf pesan ditempatkan di dalam sel-sel grid sesuai dengan suatu pola atau rute tertentu. Setelah pesan disusun dalam grid, pesan diambil dengan mengikuti pola atau rute yang telah ditentukan, seperti zigzag, spiral, atau pola lainnya.</p>
-<p>Salah satu contoh teknik transposisi terkenal adalah Union Route yang dipakai oleh Tentara Union selama Perang Saudara Amerika. Dengan cara pesan disusun dalam grid, lalu diambil kembali dengan mengikuti pola atau rute tertentu. Ini memberikan tingkat keamanan tambahan dalam komunikasi militer. Penyandian Transposisi Route dilakukan dengan cara menuliskan teks asli secara kolom dari atas kebawah dalam sebuah kisi-kisi imajiner dengan ukuran yang telah disepakati. Teks sandinya dibaca dengan arah (route) sesuai perjanjian, misalnya :</p>
-<section id="analogi-transposisi-railfence" class="level3">
-<h3 class="anchored" data-anchor-id="analogi-transposisi-railfence">Analogi Transposisi Railfence</h3>
-<p>Mari kita analogikan transposisi railfence dengan menyusun pesan di pagar besi sebagai proses enkripsinya dan membaca pesan tersembunyi dalam sebuah pagar besi sebagai proses dekripsinya</p>
-<p><strong>Enkripsi: Menyusun Pesan di Pagar Besi</strong></p>
-<p>Bayangkan Anda memiliki sebuah pesan yang ingin Anda sembunyikan, seperti “HELLO WORLD”. Untuk mengenkripsi pesan ini dengan algoritma transposisi Rail Fence, Kita akan menggunakan sebuah pagar besi dengan beberapa tingkat atau baris (rails).</p>
-<p>Misalnya, jika Anda menggunakan 3 tingkat (rails), maka Anda akan menyusun pesan Anda dengan cara berikut:</p>
+<p>Salah satu contoh teknik transposisi terkenal adalah Union Route yang dipakai oleh Tentara Union selama Perang Saudara Amerika. Dengan cara pesan disusun dalam grid, lalu diambil kembali dengan mengikuti pola atau rute tertentu. Ini memberikan tingkat keamanan tambahan dalam komunikasi militer.</p>
+<p>Transposisi route memiliki banyak variasi pembacaan teks yang dapat digunakan untuk mengambil kembali pesan dari grid yang telah disusun. Beberapa variasi algoritma pembacaan yang umum digunakan meliputi:</p>
 <ol type="1">
-<li><p>Mulailah dari tingkat pertama, lalu turun ke tingkat kedua, kemudian ke tingkat ketiga, dan kembali ke tingkat kedua, lalu ke tingkat pertama, dan seterusnya.</p></li>
-<li><p>Tuliskan huruf-huruf pesan di sepanjang jalur ini.</p>
-<p>Jadi, pesan “HELLO WORLD” akan disusun seperti ini :</p></li>
-</ol>
-<pre><code>    H - - - O - - - R - -
-    - E - L - W - L - D -
-    - - L - - - O - - - -     </code></pre>
-<p>Sekarang, Kita membaca huruf-huruf tersebut dari tingkat pertama ke tingkat terakhir:</p>
+<li>Spiral (Spiral Route)
 <ul>
-<li>Tingkat pertama : “HOR”</li>
-<li>Tingkat kedua : “ELWLD”</li>
-<li>Tingkat ketiga : “LO”</li>
-</ul>
-<p>Dengan Menggabungkan semua huruf-huruf ini, Kita akan mendapatkan pesan terenkripsi atau ciphertext: “HOR ELWLD LO”</p>
-<p><strong>Dekripsi: Membaca Pesan dari Pagar Besi</strong></p>
-<p>Sekarang, bayangkan seseorang menerima pesan terenkripsi “HOR ELWLD LO” dan ingin membacanya. Untuk mendekripsi pesan tersebut, mereka harus menggunakan pagar besi yang sama dengan jumlah tingkat yang sama (3 tingkat dalam contoh ini).</p>
-<ol type="1">
-<li><p>Pertama, mereka menggambar garis-garis pada pagar besi sesuai dengan pola Rail Fence.</p></li>
-<li><p>Lalu, mereka menempatkan huruf-huruf pesan terenkripsi kembali ke jalur-jalur sesuai dengan urutan.</p>
-<p>Jadi, mereka akan menempatkan huruf-huruf dengan cara berikut:</p></li>
-</ol>
-<pre><code>    H - - - O - - - R - -
-    - E - L - W - L - D -
-    - - L - - - O - - - - </code></pre>
-<p>Sekarang, mereka bisa membaca pesan asli dengan mengikuti jalur dari tingkat pertama ke tingkat terakhir dan kembali:</p>
+<li>Pesan diambil kembali dengan mengikuti pola spiral dari luar ke dalam atau sebaliknya.</li>
+<li>Mulai dari titik awal di salah satu sudut grid dan bergerak ke dalam dengan mengikuti pola spiral, mengambil setiap huruf pada gilirannya.</li>
+</ul></li>
+<li>Zigzag (Zigzag Route)
 <ul>
-<li>“H” (tingkat pertama)</li>
-<li>“E” (tingkat kedua)</li>
-<li>“L” (tingkat ketiga)</li>
-<li>“L” (kembali ke tingkat kedua)</li>
-<li>“O” (tingkat pertama)</li>
-<li>“W” (tingkat kedua)</li>
-<li>“O” (tingkat ketiga)</li>
-<li>“R” (kembali ke tingkat kedua)</li>
-<li>“L” (tingkat pertama)</li>
-<li>“D” (tingkat kedua)</li>
-</ul>
-<p>Dengan menggabungkan semua huruf-huruf ini, mereka mendapatkan hasil dekripsi atau pesan asli : “HELLO WORLD”</p>
-</section>
-<section id="contoh-soal" class="level2">
-<h2 class="anchored" data-anchor-id="contoh-soal">Contoh Soal</h2>
-<pre><code>Plainteks   : UNIVERSITAS DIAN NUSWANTORO
-Kunci       : 3 baris (spasi ditulis)</code></pre>
-<p><strong>Langkah mengerjakan :</strong></p>
+<li>Pesan diambil kembali dengan mengikuti pola zigzag di sepanjang baris atau kolom grid.</li>
+<li>Mulai dari titik awal, huruf-huruf pesan diambil secara bergantian dari baris ke baris atau dari kolom ke kolom, membentuk pola zigzag.</li>
+</ul></li>
+<li>Ular Tangga (Staircase Route)
+<ul>
+<li>Pesan diambil kembali dengan mengikuti pola ular tangga yang naik atau turun.</li>
+<li>Mulai dari titik awal, huruf-huruf pesan diambil dengan bergerak secara diagonal naik atau turun, membentuk pola seperti ular tangga.</li>
+</ul></li>
+</ol>
+<section id="analogi-transposisi-route" class="level3">
+<h3 class="anchored" data-anchor-id="analogi-transposisi-route">Analogi Transposisi Route</h3>
+<p>Mari kita gunakan analogi kelas dengan siswa yang duduk di kursi dalam bentuk grid untuk menjelaskan algoritma transposisi route menggunakan pola spiral.</p>
+<p>Bayangkan kamu adalah guru yang ingin mengatur ulang tempat duduk siswa sesuai pola spiral. Anda mulai dengan siswa pertama di sudut kiri atas, lalu bergerak ke kanan hingga akhir baris, turun ke baris berikutnya di sebelah kanan, kemudian bergerak ke kiri, dan seterusnya, sampai Anda kembali ke tengah grid. Berikut langkahnya :</p>
 <ol type="1">
-<li><p>Susun huruf-huruf plainteks ke dalam pola zigzag menggunakan 3 baris</p>
-<p><img src="assets/kriptografi/zigzag.png" class="img-fluid" style="text-align:center;;width:80.0%"></p>
-<p>keterangan : jika di plainteks ada spasi, maka spasi di tulis, contohnya setelah huruf S pada kata UNIVERSITAS ada pengosongan tempat itu adalah spasi.</p></li>
-<li><p>Baca huruf-huruf dari baris-baris tersebut secara berurutan dari baris atas ke baris bawah</p>
-<p><img src="assets/kriptografi/bacarail.png" class="img-fluid" style="text-align:center;;width:80.0%"></p></li>
-<li><p>Hasil Ciphertext : UETD WONVRIA INNSATRISSAUNO</p></li>
+<li><p>Susunan awal :</p>
+<p><img src="assets/kriptografi/troutee.png" class="img-fluid" style="text-align:center;;width:80.0%"></p></li>
+<li><p>Pola spiral Sekarang kita akan membaca huruf-huruf dalam pola spiral, dimulai dari sudut kiri atas dan bergerak searah jarum jam.</p></li>
+<li><p>Baca sesuai pola spiral Kita mulai dari A dan mengikuti pola spiral : <img src="assets/kriptografi/troute2.png" class="img-fluid" style="text-align:center;;width:80.0%"></p>
+<pre><code> Jika kita menulis urutan bacaan tersebut, kita 
+ mendapatkan : A B C D H L P O N M I E F G K J</code></pre></li>
+<li><p>Sekarang kita menulis ulang huruf-huruf tersebut sesuai urutan bacaan spiral : <img src="assets/kriptografi/troute.png" class="img-fluid" style="text-align:center;;width:80.0%"></p></li>
 </ol>
 </section>
 <section id="implementasi-pada-python" class="level2">
 <h2 class="anchored" data-anchor-id="implementasi-pada-python">Implementasi Pada Python</h2>
 <p>Masukkan Plaintext</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plainText <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Plaintext : "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Masukkan Kunci atau Jumlah Baris</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>railFenceKey <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Kunci: "</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>CONTOH : TENTUKAN PRIORITAS ANDA SEBAB KITA TIDAK DAPAT MENGERJAKAN SEMUANYA X</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plainText <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Plaintext : "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Masukkan Kunci</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>CONTOH KEY : <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>routeKey <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Kunci: "</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Menghapus Spasi</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>cleanPlainTeks <span class="op">=</span> plainTeks.replace(<span class="st">" "</span>, <span class="st">""</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cleanPlainTeks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="proses-enkripsi" class="level3">
 <h3 class="anchored" data-anchor-id="proses-enkripsi">Proses Enkripsi</h3>
 <ol type="1">
-<li>Membuat Matriks Kosong Sesuai Dengan Jumlah Baris (kunci)</li>
+<li>Menyusun teks yang sudah dibersihkan ke dalam sebuah matriks dengan kolom sebagai jumlah kolom atau lebar matriks</li>
 </ol>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>   rails <span class="op">=</span> [[<span class="st">' '</span> <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(plainText))] <span class="cf">for</span> _ <span class="kw">in</span> </span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>   <span class="bu">range</span>(railFenceKey)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="2" type="1">
-<li>Menentukan Arah Pola Zig-Zag Dari Huruf-Huruf Dalam Plaintext, jika direction = 1 maka pola turun, jika -1 maka pola naik</li>
-</ol>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>   i, j <span class="op">=</span> <span class="dv">0</span>, <span class="dv">0</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>   direction <span class="op">=</span> <span class="dv">1</span>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="3" type="1">
-<li>Menempatkan karakter-karakter dari plainText ke dalam matriks dalam pola zigzag sesuai dengan kunci Rail Fence</li>
-</ol>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>   <span class="cf">for</span> char <span class="kw">in</span> plainText:</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>     rails[i][j] <span class="op">=</span> char</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>     <span class="cf">if</span> i <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>       direction <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>     <span class="cf">elif</span> i <span class="op">==</span> railFenceKey <span class="op">-</span> <span class="dv">1</span>:</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>       direction <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>     i <span class="op">+=</span> direction</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>     j <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    kolom <span class="op">=</span> routeKey</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    matrix <span class="op">=</span> []</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    panjang <span class="op">=</span> <span class="bu">len</span>(cleanPlainTeks)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    temp <span class="op">=</span> panjang<span class="op">/</span>kolom</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    bulat <span class="op">=</span> <span class="bu">round</span>(temp)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> temp <span class="op">-</span> bulat <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        jml_baris <span class="op">=</span> bulat</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> temp <span class="op">-</span> bulat <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>            jml_baris <span class="op">=</span> bulat</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>            jml_baris <span class="op">=</span> bulat <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(jml_baris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For More Detail :</p>
 <ul>
-<li><code>for char in plainText</code> : Setiap karakter dalam teks yang ingin dienkripsi akan diproses satu per satu</li>
-<li><code>rails[i][j] = char</code> : Karakter saat ini ditempatkan di baris [i] dan kolom [j] dari matriks rails</li>
-<li><code>if i == 0: direction = 1</code> : Jika berada di baris teratas, ubah arah pergerakan ke bawah</li>
-<li><code>elif i == railFenceKey - 1</code> : direction = -1: Jika berada di baris terbawah, ubah arah pergerakan ke atas</li>
-<li><code>i += direction</code> : Indeks baris [i] ditambah atau dikurangi sesuai dengan arah pergerakan (ke bawah atau ke atas) Mengupdate indeks kolom [j] untuk pindah ke karakter berikutnya:</li>
-<li><code>j += 1</code> : Indeks kolom [j] selalu bertambah satu untuk setiap karakter</li>
+<li><code>kolom = routeKey</code> : Menetapkan jumlah kolom pada matriks dengan nilai routeKey</li>
+<li><code>matrix = []</code> : Menginisialisasi sebuah list kosong yang akan digunakan untuk menyimpan elemen-elemen matriks</li>
+<li><code>panjang = len(cleanPlainTeks)</code> : Menghitung panjang teks yang sudah dibersihkan</li>
+<li><code>temp = panjang/kolom</code> : Menghitung berapa banyak baris yang diperlukan dengan membagi panjang teks dengan jumlah kolom dan menyimpan hasilnya dalam variabel temp</li>
+<li><code>bulat = round(temp)</code> : Membulatkan hasil pembagian temp ke angka terdekat dan menyimpannya ke dalam variabel bulat</li>
+<li><code>temp - bulat == 0</code> : hasil pembagian tepat bulat, maka <code>jml_baris</code> diambil dari <code>bulat</code></li>
+<li><code>temp - bulat &lt; 0</code> : hasil pembagian kurang dari bulat (mungkin karena temp lebih kecil dari bulat), dan juga mengambil <code>jml_baris</code> dari <code>bulat</code></li>
+<li><code>jml_baris = bulat + 1</code> : Jika kondisi sebelumnya tidak terpenuhi, maka perlu satu baris tambahan</li>
 </ul>
-<ol start="4" type="1">
-<li>Membentuk Teks Terenkripsi Berdasarkan Pola Zig-Zag</li>
+<ol start="2" type="1">
+<li>Membuat sebuah matriks (matrix) yang berisi teks yang sudah dibersihkan (cleanPlainTeks) menggunakan nilai jml_baris dan kolom yang telah dihitung sebelumnya</li>
 </ol>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>   enkripsi_teks <span class="op">=</span> <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>.join([<span class="st">''</span>.join(row) <span class="cf">for</span> row <span class="kw">in</span> rails])</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"* RAIL FENCE: "</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(enkripsi_teks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Fore More Detail :</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(jml_baris):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>        row <span class="op">=</span> []</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(kolom):</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> i <span class="op">*</span> kolom <span class="op">+</span> j <span class="op">&lt;</span> <span class="bu">len</span>(cleanPlainTeks):</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>                elemen <span class="op">=</span> cleanPlainTeks[i <span class="op">*</span> kolom <span class="op">+</span> j]</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>                elemen <span class="op">=</span> <span class="st">" "</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>            row.append(elemen)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>        matrix.append(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For More Detail :</p>
 <ul>
-<li><code>row</code> merepresentasikan setiap baris dalam matriks rails.</li>
-<li><code>''.join(row)</code> : Menggabungkan semua karakter dalam baris row menjadi satu string</li>
-<li><code>for row in rails</code> : Ini adalah list comprehension yang mengiterasi setiap baris dalam matriks rails</li>
-<li><code>'\n'.join([...])</code> : Menggabungkan semua string dalam daftar hasil dari list comprehension di langkah sebelumnya menjadi satu string besar</li>
+<li><code>for i in range(jml_baris)</code> : Loop ini mengiterasi dari 0 hingga jml_baris - 1, yang berarti setiap iterasi mewakili satu baris dalam matriks</li>
+<li><code>row = []</code> : Membuat list kosong row yang akan menyimpan elemen-elemen untuk satu baris matriks</li>
+<li><code>for j in range(kolom)</code> : Loop ini mengiterasi dari 0 hingga kolom - 1, yang berarti setiap iterasi mewakili satu kolom dalam matriks</li>
+<li><code>if i * kolom + j &lt; len(cleanPlainTeks)</code> : Memastikan bahwa tidak melebihi panjang dari teks yang telah dibersihkan pada saat mengakses elemen <code>cleanPlainTeks</code> untuk dimasukkan ke dalam matrix</li>
+<li><code>elemen = x[i * kolom + j]</code> : Jika ya, Mengambil elemen dari teks x pada posisi i * kolom + j</li>
+<li><code>elemen = " "</code> : Jika tidak, Mengisi elemen dengan spasi kosong jika indeks berada di luar panjang teks x -<code>row.append(elemen)</code> : Menambahkan elemen yang telah ditentukan (baik dari x atau spasi kosong) ke list row</li>
+<li><code>matrix.append(row)</code> : Menambahkan list row yang berisi elemen-elemen satu baris ke dalam list matrix</li>
+</ul>
+<ol start="3" type="1">
+<li>Mencetak matrix</li>
+</ol>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Matriks yang Anda buat:"</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> matrix:</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="4" type="1">
+<li>Menghasilkan matriks transpose dari matrix yang telah dibuat</li>
+</ol>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    transposed_matrix <span class="op">=</span> [[row[i] <span class="cf">for</span> row <span class="kw">in</span> matrix] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(matrix[<span class="dv">0</span>]))]</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> transposed_matrix:</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For More Detail :</p>
+<ul>
+<li><code>row[i] for row in matrix</code> : Menghasilkan list elemen ke-i dari setiap baris dalam matrix</li>
+<li><code>for i in range(len(matrix[0]))]</code> : Mengiterasi setiap indeks kolom dari matrix dan membentuk baris baru dari elemen-elemen tersebut</li>
+<li><code>for row in transposed_matrix</code> : Loop ini mengiterasi melalui setiap baris dalam <code>transposed_matrix</code></li>
+<li><code>print(row)</code> : Mencetak matriks transpose dari matrix</li>
 </ul>
 <ol start="5" type="1">
-<li>Mempersiapkan daftar untuk setiap baris (rail) dan mengatur agar kita mulai dari baris pertama dengan pergerakan ke bawah.</li>
+<li>String kosong yang akan digunakan untuk menyimpan teks yang terenkripsi</li>
 </ol>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>   rails <span class="op">=</span> [[] <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(railFenceKey)]</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>   index <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>   direction <span class="op">=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>For More Detail :</p>
-<ul>
-<li><code>rails = [[] for _ in range(railFenceKey)]</code> : Membuat daftar berisi daftar kosong untuk setiap baris (rail) sesuai dengan jumlah baris yang ditentukan oleh railFenceKey</li>
-<li><code>index = 0</code> : Menentukan bahwa kita mulai dari baris pertama (index 0).</li>
-<li><code>direction = 1</code> : Menentukan bahwa pergerakan awalnya ke bawah (nilai 1).</li>
-</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    encrypted_text <span class="op">=</span> <span class="st">""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="6" type="1">
-<li>Menempatkan karakter-karakter dari plainText ke dalam daftar rails dalam pola zigzag, mengubah arah pergerakan ketika mencapai baris pertama atau terakhir</li>
+<li>Menandai batas awal dan akhir dari baris dan kolom pada matriks transpose</li>
 </ol>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>   <span class="cf">for</span> char <span class="kw">in</span> plainText:</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>     rails[index].append(char)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>     <span class="cf">if</span> index <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>       direction <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>     <span class="cf">elif</span> index <span class="op">==</span> railFenceKey <span class="op">-</span> <span class="dv">1</span>:</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>       direction <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>     index <span class="op">+=</span> direction</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>For More Detail :</p>
-<ul>
-<li><code>for char in plainText</code> : Looping untuk Mengiterasi setiap karakter dalam plainText satu per satu</li>
-<li><code>rails[index].append(char)</code> : Menambahkan karakter char ke daftar rails pada posisi index saat ini</li>
-<li><code>if index == 0: direction = 1</code> : Jika index adalah 0 (baris pertama), ubah arah pergerakan ke bawah (direction = 1)</li>
-<li><code>elif index == railFenceKey - 1: direction = -1</code> : Jika index adalah railFenceKey - 1 (baris terakhir), ubah arah pergerakan ke atas (direction = -1)</li>
-<li><code>index += direction</code> : Menambah atau mengurangi <code>index</code> sesuai dengan <code>direction</code></li>
-</ul>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    start_row, end_row <span class="op">=</span> <span class="bu">len</span>(transposed_matrix) <span class="op">-</span> <span class="dv">1</span>, <span class="dv">0</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    start_col, end_col <span class="op">=</span> <span class="bu">len</span>(transposed_matrix[<span class="dv">0</span>]) <span class="op">-</span> <span class="dv">1</span>, <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="7" type="1">
-<li>menggabungkan karakter-karakter yang telah disusun dalam matriks rails menjadi satu string yang merupakan teks terenkripsi (ciphertext)</li>
+<li>Mengambil baris dari kanan ke kiri</li>
 </ol>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>   enkripsi_teks <span class="op">=</span> <span class="st">""</span>.join([<span class="st">""</span>.join(rail) <span class="cf">for</span> rail <span class="kw">in</span> rails])</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"CIPHERTEXT : "</span> <span class="op">+</span> enkripsi_teks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> start_row <span class="op">&gt;=</span> end_row <span class="kw">and</span> start_col <span class="op">&gt;=</span> end_col:</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(start_col, end_col <span class="op">-</span> <span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>            encrypted_text <span class="op">+=</span> transposed_matrix[start_row][i]</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>        start_row <span class="op">-=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For More Detail :</p>
 <ul>
-<li><code>["".join(rail) for rail in rails]</code> : List comprehension yang menghasilkan daftar string, di mana setiap string adalah satu baris dari matriks rails</li>
-<li><code>"".join([...])</code> : Menggabungkan semua string dalam daftar menjadi satu string besar tanpa pemisah</li>
-<li><code>"".join(rail)</code> : Menggabungkan semua karakter dalam baris rail menjadi satu string</li>
-<li>Hasilnya adalah satu string panjang yang merupakan teks terenkripsi (enkripsi_teks).</li>
+<li><code>while start_row &gt;= end_row and start_col &gt;= end_col</code> : loop while yang berjalan selama <code>start_row</code> lebih besar dari atau sama dengan <code>end_row</code> dan <code>start_col</code> lebih besar dari atau sama dengan <code>end_col</code></li>
+<li><code>for i in range(start_col, end_col - 1, -1)</code> : Loop ini mengiterasi dari kolom paling kanan <code>(start_col)</code> ke kolom paling kiri <code>(end_col - 1)</code></li>
+<li><code>encrypted_text += transposed_matrix[start_row][i]</code> : Menambahkan elemen dari baris <code>start_row</code> dan kolom i ke <code>encrypted_text</code></li>
+<li><code>start_row -= 1</code> : Mengurangi <code>start_row</code> untuk bergerak ke baris berikutnya ke atas</li>
 </ul>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>   CIPHERTEXT : UETD WONVRIA INNSATRISSAUNO</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="8" type="1">
+<li>Mengambil kolom dari atas ke bawah</li>
+</ol>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(start_row, end_row <span class="op">-</span> <span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>            encrypted_text <span class="op">+=</span> transposed_matrix[i][end_col]</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>        end_col <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For More Detail :</p>
+<ul>
+<li><code>for i in range(start_row, end_row - 1, -1)</code> : Loop ini mengiterasi dari baris <code>start_row</code> ke baris <code>end_row - 1</code></li>
+<li><code>encrypted_text += transposed_matrix[i][end_col]</code> : Menambahkan elemen dari baris i dan kolom <code>end_col</code> ke <code>encrypted_text</code></li>
+<li><code>end_col += 1</code> : Menambahkan <code>end_col</code> untuk bergerak ke kolom berikutnya ke kiri.</li>
+</ul>
+<ol start="9" type="1">
+<li>Mengecek jika sudah mencapai kolom terakhir</li>
+</ol>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> start_col <span class="op">&lt;</span> end_col:</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For More Detail :</p>
+<ul>
+<li><code>if start_col &lt; end_col:</code> : Mengecek apakah <code>start_col</code> lebih kecil dari <code>end_col</code></li>
+<li><code>break</code> : Jika ya, keluar dari loop while.</li>
+</ul>
+<ol start="10" type="1">
+<li>Mengambil baris dari kiri ke kanan</li>
+</ol>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(end_col, start_col <span class="op">+</span> <span class="dv">1</span>):</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>            encrypted_text <span class="op">+=</span> transposed_matrix[end_row][i]</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>        end_row <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For More Detail :</p>
+<ul>
+<li><code>for i in range(end_col, start_col + 1)</code> : Loop ini mengiterasi dari kolom <code>end_col</code> ke kolom <code>start_col + 1</code></li>
+<li><code>encrypted_text += transposed_matrix[end_row][i]</code> : Menambahkan elemen dari baris <code>end_row</code> dan kolom i ke <code>encrypted_text</code></li>
+<li><code>end_row += 1</code> : Menambahkan <code>end_row</code> untuk bergerak ke baris berikutnya ke bawah.</li>
+</ul>
+<ol start="11" type="1">
+<li>Mengecek Jika Sudah Mencapai Baris Terakhir</li>
+</ol>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> start_row <span class="op">&lt;</span> end_row:</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For More Detail :</p>
+<ul>
+<li><code>if start_row &lt; end_row</code> : Mengecek apakah <code>start_row</code> lebih kecil dari <code>end_row</code></li>
+<li><code>break</code> : Jika ya, keluar dari loop while</li>
+</ul>
+<ol start="12" type="1">
+<li>Mengambil kolom dari bawah ke atas</li>
+</ol>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(end_row, start_row <span class="op">+</span> <span class="dv">1</span>):</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>            encrypted_text <span class="op">+=</span> transposed_matrix[i][start_col]</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>        start_col <span class="op">-=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For More Detail :</p>
+<ul>
+<li><code>for i in range(end_row, start_row + 1)</code> : Loop ini mengiterasi dari baris <code>end_row</code> ke baris <code>start_row + 1</code></li>
+<li><code>encrypted_text += transposed_matrix[i][start_col]</code> : Menambahkan elemen dari baris i dan <code>kolom start_col</code> ke <code>encrypted_text</code></li>
+<li><code>start_col -= 1</code> : Mengurangi <code>start_col</code> untuk bergerak ke kolom berikutnya ke kanan</li>
+</ul>
+<ol start="13" type="1">
+<li>Mencetak teks terenkripsi (ciphertext)</li>
+</ol>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Teks terenkripsi dengan pola spiral: "</span>, encrypted_text[:length])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For More Detail :</p>
+<ul>
+<li><code>encrypted_text[:length])</code> : Memotong <code>encrypted_text</code> hingga panjang teks asli (length) untuk memastikan panjangnya sama dengan teks asli</li>
+</ul>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>HASIL CIPHERTEXT : XUAETKAADTRUTNETKIAABTDMRNANYAMKGAATBNIPNAOSSKIAEJSEANPDIEAR</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="proses-dekripsi" class="level3">
 <h3 class="anchored" data-anchor-id="proses-dekripsi">Proses Dekripsi</h3>
+<p>Masukkan Ciphertext</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>cipherText <span class="op">=</span> <span class="bu">input</span>(<span class="st">"cipher : "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Masukkan kunci</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>routeKey <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Kunci: "</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol type="1">
-<li>Mempersiapkan daftar untuk setiap baris (rail) dan mengatur agar kita mulai dari baris pertama dengan pergerakan ke bawah</li>
+<li>Menentukan jumlah baris yang dibutuhkan untuk membentuk sebuah matriks dengan jumlah kolom yang telah ditentukan (routeKey). Matriks ini akan berisi teks x yang telah dibersihkan</li>
 </ol>
-<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>   rails <span class="op">=</span> [[] <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(railFenceKey)]</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>   index <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>   direction <span class="op">=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>    kolom <span class="op">=</span> routeKey</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    matrix <span class="op">=</span> []</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    panjang <span class="op">=</span> <span class="bu">len</span>(x)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    temp <span class="op">=</span> panjang<span class="op">/</span>kolom</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    length <span class="op">=</span> <span class="bu">len</span>(x)</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    bulat <span class="op">=</span> <span class="bu">round</span>(temp)</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> temp <span class="op">-</span> bulat <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>        jml_baris <span class="op">=</span> bulat</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> temp <span class="op">-</span> bulat <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>            jml_baris <span class="op">=</span> bulat</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>            jml_baris <span class="op">=</span> bulat <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(jml_baris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For More Detail :</p>
 <ul>
-<li><code>rails = [[] for _ in range(railFenceKey)]</code>: Membuat daftar berisi daftar kosong untuk setiap baris (rail) sesuai dengan jumlah baris yang ditentukan oleh railFenceKey Membuat placeholder untuk menyiapkan “kotak-kotak” yang akan mengorganisir karakter-karakter terenkripsi sehingga dapat didekripsi kembali dengan benar</li>
-<li><code>index = 0</code>: Menentukan bahwa kita mulai dari baris pertama (index 0)</li>
-<li><code>direction = 1</code>: Menentukan bahwa pergerakan awalnya ke bawah (nilai 1)</li>
+<li><code>kolom = routeKey</code> : Menetapkan jumlah kolom pada matriks dengan nilai routeKey</li>
+<li><code>matrix = []</code> : Menginisialisasi sebuah list kosong yang akan digunakan untuk menyimpan elemen-elemen matriks</li>
+<li><code>panjang = len(x)</code> : Menyimpan panjang dari teks x ke dalam variabel panjang</li>
+<li><code>temp = panjang/kolom</code> : Menghitung berapa banyak baris yang diperlukan dengan membagi panjang teks dengan jumlah kolom dan menyimpan hasilnya dalam variabel temp</li>
+<li><code>length = len(x)</code> : Menyimpan panjang teks x ke dalam variabel length</li>
+<li><code>bulat = round(temp)</code> : Membulatkan hasil pembagian temp ke angka terdekat dan menyimpannya ke dalam variabel bulat</li>
 </ul>
 <ol start="2" type="1">
-<li>Mempersiapkan tempat untuk karakter-karakter dari teks terenkripsi agar bisa ditempatkan di posisi yang benar selama proses dekripsi</li>
+<li>Membangun matriks 2D yang berisi teks x yang telah dibersihkan (tanpa spasi), Matriks ini akan memiliki jml_baris baris dan kolom kolom</li>
 </ol>
-<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>   <span class="cf">for</span> char <span class="kw">in</span> enkripsi_teks:</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>     rails[index].append(<span class="va">None</span>)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>     <span class="cf">if</span> index <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>       direction <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>     <span class="cf">elif</span> index <span class="op">==</span> railFenceKey <span class="op">-</span> <span class="dv">1</span>:</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>       direction <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>     index <span class="op">+=</span> direction</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(jml_baris):</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>        row <span class="op">=</span> []</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(kolom):</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> i <span class="op">*</span> kolom <span class="op">+</span> j <span class="op">&lt;</span> <span class="bu">len</span>(x):</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>                elemen <span class="op">=</span> [i <span class="op">*</span> kolom <span class="op">+</span> j]</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>                elemen <span class="op">=</span> <span class="st">" "</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>            row.append(elemen)</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>        matrix.append(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For More Detail :</p>
 <ul>
-<li><code>if index == 0: direction = 1</code> : Mengiterasi setiap karakter dalam enkripsi_teks satu persatu.</li>
-<li><code>elif index == railFenceKey - 1: direction = -1</code>: Jika index adalah railFenceKey - 1 (baris terakhir), ubah arah pergerakan ke atas (direction = -1)</li>
-<li><code>index += direction</code> : Menambah atau mengurangi index sesuai dengan direction. Jika direction = 1 bergerak ke bawah sedangkan direction = -1 bergerak ke atas</li>
+<li><code>for i in range(jml_baris)</code> : Loop ini mengiterasi dari 0 hingga jml_baris - 1, yang berarti setiap iterasi mewakili satu baris dalam matriks</li>
+<li><code>row = []</code> : Membuat list kosong row yang akan menyimpan elemen-elemen untuk satu baris matriks</li>
+<li><code>for j in range(kolom)</code> : Loop ini mengiterasi dari 0 hingga kolom - 1, yang berarti setiap iterasi mewakili satu kolom dalam matriks</li>
+<li><code>if i * kolom + j &lt; len(x)</code> : Mengecek apakah indeks (dihitung sebagai i * kolom + j) berada dalam rentang panjang teks x</li>
+<li><code>elemen = x[i * kolom + j]</code> : Jika ya, Mengambil elemen dari teks x pada posisi i * kolom + j</li>
+<li><code>elemen = " "</code> : Jika tidak, Mengisi elemen dengan spasi kosong jika indeks berada di luar panjang teks x -<code>row.append(elemen)</code> : Menambahkan elemen yang telah ditentukan (baik dari x atau spasi kosong) ke list row</li>
+<li><code>matrix.append(row)</code> : Menambahkan list row yang berisi elemen-elemen satu baris ke dalam list matrix</li>
 </ul>
 <ol start="3" type="1">
-<li>Menempatkan karakter-karakter dari teks terenkripsi kembali ke posisi yang benar dalam matriks rails, sesuai dengan placeholder (None) yang telah ditandai sebelumnya</li>
+<li>Mencetak matriks yang telah dibuat</li>
 </ol>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>   index_char <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>   <span class="cf">for</span> rail <span class="kw">in</span> rails:</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>     <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(rail)):</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>       rail[i] <span class="op">=</span> enkripsi_teks[index_char]</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>       index_char <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>For More Detail :</p>
-<ul>
-<li><code>index_char</code> : Melacak posisi karakter dalam enkripsi_teks.</li>
-<li><code>for rail in rails</code> : Looping untuk mengiterasi setiap baris dalam matriks rails.</li>
-<li><code>for i in range(len(rail)):</code> : Mengiterasi setiap posisi dalam baris rail yang memiliki placeholder.</li>
-<li><code>rail[i] = enkripsi_teks[index_char]</code> : Menempatkan karakter dari enkripsi_teks pada posisi yang sesuai dalam rail.</li>
-<li><code>index_char += 1</code> : Meningkatkan index_char untuk berpindah ke karakter berikutnya dalam enkripsi_teks.</li>
-</ul>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Matriks yang Anda buat:"</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> matrix:</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="4" type="1">
-<li>Membaca kembali karakter-karakter dari matriks rails dalam urutan zigzag yang benar dan menyusunnya menjadi teks asli</li>
+<li>Membuat dan mencetak matriks transpose</li>
 </ol>
-<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>   index <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>   direction <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>   dekripsi_teks <span class="op">=</span> []</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>    transposed_matrix <span class="op">=</span> [[row[i] <span class="cf">for</span> row <span class="kw">in</span> matrix] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(matrix[<span class="dv">0</span>]))]</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> transposed_matrix:</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For More Detail :</p>
 <ul>
-<li><code>index</code> : Melacak baris saat ini dalam matriks rails</li>
-<li><code>direction</code> : Menentukan arah pergerakan (ke bawah atau ke atas)</li>
-<li><code>dekripsi_teks = []</code> : Daftar yang akan menyimpan karakter karakter teks asli dalam urutan yang benar.</li>
+<li><code>row[i] for row in matrix</code> : Menghasilkan list elemen ke-i dari setiap baris dalam matrix</li>
+<li><code>for i in range(len(matrix[0]))]</code> : Mengiterasi setiap indeks kolom dari matrix dan membentuk baris baru dari elemen-elemen tersebut</li>
+<li><code>for row in transposed_matrix</code> : Loop ini mengiterasi melalui setiap baris dalam transposed_matrix</li>
 </ul>
 <ol start="5" type="1">
-<li>Membaca kembali karakter-karakter dari matriks rails dalam urutan zigzag yang benar dan menyusunnya menjadi teks asli</li>
+<li>Mengatur batas-batas dan kontrol iterasi saat mengisi transposed_matrix dalam pola spiral dengan karakter-karakter dari teks x</li>
 </ol>
-<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(enkripsi_teks)):</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>      dekripsi_teks.append(rails[index].pop(<span class="dv">0</span>))</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> index <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>        direction <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>      <span class="cf">elif</span> index <span class="op">==</span> railFenceKey <span class="op">-</span> <span class="dv">1</span>:</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>        direction <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>      index <span class="op">+=</span> direction</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>    start_row, end_row <span class="op">=</span> <span class="bu">len</span>(transposed_matrix) <span class="op">-</span> <span class="dv">1</span>, <span class="dv">0</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    start_col, end_col <span class="op">=</span> <span class="bu">len</span>(transposed_matrix[<span class="dv">0</span>]) <span class="op">-</span> <span class="dv">1</span>, <span class="dv">0</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    text_index <span class="op">=</span> <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For More Detail :</p>
 <ul>
-<li><code>for _ in range(len(enkripsi_teks)):</code> : Mengiterasi sebanyak panjang enkripsi_teks untuk memastikan semua karakter diproses.</li>
-<li><code>dekripsi_teks.append(rails[index])</code> : Mengambil karakter pertama dari baris index dalam rails dan menambahkannya ke dekripsi_teks</li>
-<li><code>.pop(0)</code> : pop(0) menghapus dan mengembalikan elemen pertama dari baris index</li>
-<li><code>if index == 0: direction = 1</code> : Jika index adalah 0 (baris pertama), ubah arah pergerakan ke bawah (direction = 1)</li>
-<li><code>elif index == railFenceKey - 1: direction = -1</code> : Jika index adalah railFenceKey - 1 (baris terakhir), ubah arah pergerakan ke atas (direction = -1)</li>
-<li><code>index += direction</code>: Mengupdate indeks baris</li>
+<li><code>start_row</code> : Mengendalikan pengisian dari baris terakhir ke atas</li>
+<li><code>end_row</code> : Mengendalikan pengisian dari baris pertama ke bawah</li>
+<li><code>end_row = 0</code> : Menetapkan indeks baris awal ke 0, yang berarti kita mulai dari baris pertama</li>
+<li><code>len(transposed_matrix)</code> : Memberikan jumlah baris dalam <code>transposed_matrix</code></li>
+<li>Mengurangkan 1 untuk mendapatkan indeks baris terakhir dari matriks transpose</li>
+<li><code>start_col</code> : Mengendalikan pengisian dari kolom terakhir ke kiri, sedangkan</li>
+<li><code>end_col</code> : Mengendalikan pengisian dari kolom pertama ke kanan</li>
+<li><code>len(transposed_matrix[0])</code> : Memberikan jumlah kolom dalam <code>transposed_matrix</code></li>
+<li>Mengurangkan 1 untuk mendapatkan indeks kolom terakhir dari matriks transpose</li>
+<li><code>end_col = 0</code> : Menetapkan indeks kolom awal ke 0, yang berarti kita mulai dari kolom pertama</li>
+<li><code>text_index</code> : Melacak posisi karakter dalam teks x yang sedang diproses</li>
 </ul>
 <ol start="6" type="1">
-<li>Menggabungkan karakter-karakter yang telah disusun kembali dalam dekripsi_teks menjadi satu string yang merupakan teks asli hasil dekripsi</li>
+<li>Mengisi baris pertama dari kanan ke kiri</li>
 </ol>
-<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>   railFenceDecryption <span class="op">=</span> <span class="st">""</span>.join(dekripsi_teks)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">" DECRYPTED : "</span> <span class="op">+</span> railFenceDecryption)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> start_row <span class="op">&gt;=</span> end_row <span class="kw">and</span> start_col <span class="op">&gt;=</span> end_col:</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Fill the first row from the remaining rows</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(start_col, end_col <span class="op">-</span> <span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> text_index <span class="op">&lt;</span> <span class="bu">len</span>(x):</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>                transposed_matrix[start_row][i] <span class="op">=</span> x[text_index]</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>                text_index <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>        start_row <span class="op">-=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For More Detail :</p>
 <ul>
-<li><code>''.join(dekripsi_teks)</code> : Menggabungkan semua elemen dalam dekripsi_teks menjadi satu string tanpa pemisah.</li>
-<li>Variabel <code>railFenceDecryption</code> akan menyimpan string hasil dek</li>
+<li><code>start_col</code> dan <code>end_col</code> : menentukan rentang kolom yang akan diisi</li>
+<li><code>text_index</code> : mengambil karakter dari teks x.</li>
+<li><code>Transposed_matrix[start_row][i]</code> : Setiap karakter yang diambil dari x dimasukkan ke dalam posisi yang sesuai di t.</li>
 </ul>
-<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>HASIL DECRYPTED : UNIVERSITAS DIAN NUSWANTORO</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="7" type="1">
+<li>Mengisi kolom terakhir dari baris yang tersisa dalam matriks dengan karakter dari x dalam urutan spiral</li>
+</ol>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(start_row, end_row <span class="op">-</span> <span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> text_index <span class="op">&lt;</span> <span class="bu">len</span>(x):</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>                transposed_matrix[i][end_col] <span class="op">=</span> x[text_index]</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>                text_index <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>        end_col <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For More Detail :</p>
+<ul>
+<li><code>for i in range(start_row, end_row - 1, -1)</code> : Loop ini digunakan untuk iterasi melalui baris-baris dalam matriks dari <code>start_row</code> ke <code>end_row - 1</code> dalam urutan menurun</li>
+<li><code>start_row</code> : Posisi baris awal untuk iterasi</li>
+<li><code>end_row - 1</code> : Posisi baris akhir (tidak termasuk) untuk iterasi</li>
+<li><code>-1</code> : Menunjukkan bahwa iterasi dilakukan secara menurun</li>
+<li><code>if text_index &lt; len(cipherText)</code> : Kondisi ini memastikan bahwa indeks text_index masih dalam batas panjang cipherText</li>
+<li><code>transposed_matrix[i][end_col]</code> : Menunjukkan posisi kolom <code>end_col</code> dalam baris i dari matriks yang sedang diisi</li>
+<li><code>cipherText[text_index]</code> : Karakter dari cipherText pada indeks text_index</li>
+<li><code>text_index += 1</code> : Setelah menempatkan karakter dari cipherText ke dalam <code>transposed_matrix</code>, nilai <code>text_index</code> dinaikkan sebesar 1 untuk mempersiapkan karakter berikutnya pada iterasi selanjutnya</li>
+<li><code>end_col += 1</code> : Setelah menyelesaikan iterasi untuk mengisi kolom terakhir dari baris yang tersisa, <code>end_col</code> dinaikkan sebesar 1 untuk mempersempit batas kolom yang akan diisi pada iterasi berikutnya</li>
+</ul>
+<ol start="8" type="1">
+<li>Menentukkan apakah batas kolom telah bertemu atau melewati satu sama lain, yang berarti bahwa semua kolom yang perlu diisi sudah selesai diproses</li>
+</ol>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> start_col <span class="op">&lt;</span> end_col:</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="9" type="1">
+<li>Mengisi baris terakhir dari kolom yang tersisa dalam matriks dengan karakter dari x dalam urutan spiral.</li>
+</ol>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(end_col, start_col <span class="op">+</span> <span class="dv">1</span>):</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> text_index <span class="op">&lt;</span> <span class="bu">len</span>(x):</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>                transposed_matrix[end_row][i] <span class="op">=</span> x[text_index]</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>                text_index <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>        end_row <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For More Detail :</p>
+<ul>
+<li><code>for i in range(end_col, start_col + 1)</code>: Loop ini digunakan untuk iterasi melalui kolom dari <code>end_col</code> ke <code>start_col + 1</code></li>
+<li><code>end_col</code>: Posisi kolom awal untuk iterasi</li>
+<li><code>start_col + 1</code>: Posisi kolom akhir (tidak termasuk) untuk iterasi, Menambah 1 untuk memasukkan start_col dalam iterasi</li>
+<li><code>if text_index &lt; len(x)</code> : Kondisi ini memastikan bahwa indeks</li>
+<li><code>text_index</code> : Masih dalam batas panjang <code>x</code>. Hal ini untuk menghindari akses indeks yang tidak valid dari <code>x</code></li>
+<li><code>transposed_matrix[end_row][i] = x[text_index]</code> Menetapkan karakter dari <code>x</code> pada posisi indeks <code>text_index</code> ke posisi <code>[end_row][i]</code> dalam <code>transposed_matrix</code></li>
+<li><code>transposed_matrix[end_row][i]</code>: Menunjukkan posisi kolom <code>i</code> dalam baris end_row dari matriks yang sedang diisi.</li>
+<li><code>x[text_index]</code>: Karakter dari <code>x</code> pada indeks <code>text_index</code></li>
+<li><code>text_index += 1</code> Setelah menempatkan karakter dari <code>x</code> ke dalam <code>transposed_matrix</code>, nilai <code>text_index</code> dinaikkan sebesar 1 untuk mempersiapkan karakter berikutnya pada iterasi selanjutnya</li>
+<li><code>end_row += 1</code> Setelah menyelesaikan iterasi untuk mengisi baris terakhir dari kolom yang tersisa, batas baris akhir (<code>end_row</code>) dinaikkan sebesar 1 untuk mempersempit batas baris yang akan diisi pada iterasi berikutnya</li>
+</ul>
+<ol start="10" type="1">
+<li>Menghentikan loop while jika batas baris bertemu atau melewati satu sama lain, menandakan bahwa pengisian matriks dalam pola spiral sudah selesai</li>
+</ol>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> start_row <span class="op">&lt;</span> end_row:</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="11" type="1">
+<li>Mengisi baris terakhir dari kolom yang tersisa dalam matriks dengan karakter dari x dalam urutan spiral</li>
+</ol>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(end_row, start_row <span class="op">+</span> <span class="dv">1</span>):</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> text_index <span class="op">&lt;</span> <span class="bu">len</span>(x):</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>                transposed_matrix[i][start_col] <span class="op">=</span> x[text_index]</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>                text_index <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>        start_col <span class="op">-=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For More Detail :</p>
+<ul>
+<li><code>for i in range(end_row, start_row + 1)</code> : Loop ini digunakan untuk iterasi melalui baris dari end_row ke start_row + 1 dalam urutan meningkat</li>
+<li><code>end_row</code> : Posisi baris awal untuk iterasi</li>
+<li><code>start_row + 1</code> : Posisi baris akhir (tidak termasuk) untuk iterasi, Menambah 1 untuk memasukkan start_row dalam iterasi</li>
+<li><code>if text_index &lt; len(x)</code> : Kondisi ini memastikan bahwa indeks text_index masih dalam batas panjang x</li>
+<li><code>transposed_matrix[i][start_col]</code> : Menunjukkan posisi kolom start_col dalam baris i dari matriks yang sedang diisi</li>
+<li><code>x[text_index]</code> : Karakter dari x pada indeks text_index</li>
+<li><code>text_index += 1</code> : Nilai text_index dinaikkan sebesar 1 untuk mempersiapkan karakter berikutnya pada iterasi selanjutnya</li>
+<li><code>start_col -= 1</code> : Batas kolom awal (start_col) dikurangi sebesar 1 untuk mempersempit batas kolom yang akan diisi pada iterasi berikutnya</li>
+</ul>
+<ol start="12" type="1">
+<li>Mencetak matriks yang telah diisi dengan ciphertext</li>
+</ol>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Matriks setelah diisi dengan cipher secara spiral:"</span>)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> transposed_matrix:</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="13" type="1">
+<li>String kosong untuk menyimpan hasil teks yang telah didekripsi</li>
+</ol>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>    decrypted_text <span class="op">=</span> <span class="st">""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="14" type="1">
+<li>Menyimpan jumlah baris dari transposed_matrix dalam variabel num_rows</li>
+</ol>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>    num_rows <span class="op">=</span> <span class="bu">len</span>(transposed_matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="15" type="1">
+<li>Menghitung jumlah kolom dalam transposed_matrix</li>
+</ol>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>    num_cols <span class="op">=</span> <span class="bu">len</span>(transposed_matrix[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="16" type="1">
+<li>Menggabungkan karakter-karakter dari transposed_matrix ke dalam decrypted_text dengan membaca matriks secara kolom demi kolom</li>
+</ol>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> col <span class="kw">in</span> <span class="bu">range</span>(num_cols):  </span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> row <span class="kw">in</span> <span class="bu">range</span>(num_rows):  </span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>            decrypted_text <span class="op">+=</span> transposed_matrix[row][col]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For More Detail :</p>
+<ul>
+<li><code>for col in range(num_cols)</code>: Loop for ini digunakan untuk iterasi melalui setiap kolom dalam transposed_matrix.</li>
+<li><code>num_cols</code> : Jumlah kolom dalam transposed_matrix Ini mengontrol jumlah iterasi, memastikan bahwa setiap kolom dalam matriks diproses</li>
+<li><code>for row in range(num_rows)</code> : Loop ini digunakan untuk iterasi melalui setiap baris dalam <code>transposed_matrix</code> untuk kolom yang saat ini sedang diproses oleh loop luar</li>
+<li><code>num_rows</code> : Jumlah baris dalam transposed_matrix Ini mengontrol jumlah iterasi, memastikan bahwa setiap baris dalam kolom yang sedang diproses dipertimbangkan</li>
+<li><code>transposed_matrix[row][col]</code> : Mengakses elemen pada baris row dan kolom col dalam matriks</li>
+<li><code>decrypted_text +=: Operator +=</code> : Menambahkan karakter ke string decrypted_text</li>
+</ul>
+<ol start="17" type="1">
+<li>Mencetak hasil teks terdeskripsi</li>
+</ol>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Teks terdekripsi setelah membaca secara berurutan:"</span>)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(decrypted_text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>Hasil Decrypted :</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>TENTUKANPRIORITASANDASEBABKITATIDAKDAPATMENGERJAKANSEMUANYAX</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
