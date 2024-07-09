@@ -5,7 +5,7 @@ categories: [teori]
 toc-title: "On this page"
 ---
 
-# 8. Transposisi Route {.unnumbered}
+# 7. Diffie Hellman {.unnumbered}
 
 Transposisi Route merupakan metode yang dilakukan dengan cara pesan disusun dalam grid (biasanya persegi atau persegi panjang), dan huruf-huruf pesan ditempatkan di dalam sel-sel grid sesuai dengan suatu pola atau rute tertentu. 
 Setelah pesan disusun dalam grid, pesan diambil dengan mengikuti pola atau rute yang telah ditentukan, seperti zigzag, spiral, atau pola lainnya.
@@ -33,7 +33,7 @@ Transposisi route memiliki banyak variasi pembacaan teks yang dapat digunakan un
      bergerak secara diagonal naik atau turun, membentuk 
      pola seperti ular tangga.
 
-## Analogi Transposisi Route
+### Analogi Transposisi Route
 
 Mari kita gunakan analogi kelas dengan siswa yang duduk di kursi dalam bentuk grid untuk menjelaskan algoritma transposisi route menggunakan pola spiral.
 
@@ -87,7 +87,7 @@ Menghapus Spasi
 cleanPlainTeks = plainTeks.replace(" ", "")
 print(cleanPlainTeks)
 ```
-## Proses Enkripsi
+### Proses Enkripsi
 
 1. Menyusun teks yang sudah dibersihkan ke dalam sebuah matriks dengan kolom sebagai jumlah kolom atau lebar matriks
 ```python
@@ -257,7 +257,7 @@ For More Detail :
 HASIL CIPHERTEXT : XUAETKAADTRUTNETKIAABTDMRNANYAMKGAATBNIPNAOSSKIAEJSEANPDIEAR
 ```
 
-## Proses Dekripsi
+### Proses Dekripsi
 Masukkan Ciphertext
 ```python
 cipherText = input("cipher : ")

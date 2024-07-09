@@ -11,7 +11,7 @@ Transposisi rail fence merupakan salah satu jenis transposisi cipher di mana hur
 
 Dalam transposisi rail fence,  jumlah baris yang digunakan biasanya menjadi bagian dari kunci untuk enkripsi dan dekripsi pesan. Jumlah baris yang digunakan mempengaruhi pola zigzag dalam menyusun huruf-huruf pesan, sehingga jumlah baris dapat dianggap sebagai bagian dari kunci untuk proses enkripsi dan dekripsi.
 
-### Analogi Transposisi Railfence
+## Analogi Transposisi Railfence
 
 Mari kita analogikan transposisi railfence dengan menyusun pesan di pagar besi sebagai proses enkripsinya dan membaca pesan tersembunyi dalam sebuah pagar besi sebagai proses dekripsinya
 
@@ -116,7 +116,7 @@ CONTOH KEY : 3
 railFenceKey = int(input("Kunci: "))
 ```
 
-### Proses Enkripsi
+## Proses Enkripsi
 
 1. Membuat Matriks Kosong Sesuai Dengan Jumlah Baris (kunci)
 ```python
@@ -216,7 +216,7 @@ For More Detail :
 ```python
    CIPHERTEXT : UETD WONVRIA INNSATRISSAUNO
 ```
-### Proses Dekripsi
+## Proses Dekripsi
 
 1. Mempersiapkan daftar untuk setiap baris (rail) dan mengatur agar kita mulai dari baris pertama dengan pergerakan ke bawah
 ```python

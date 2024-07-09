@@ -19,13 +19,13 @@ book:
         - 8_transposisi_route.qmd
     - part: "Kriptografi Modern"
       chapters:
-        - 1_caesar.qmd
-        - 2_monoalphabetic_random_key.qmd
-        - 3_vigenere_cipher.qmd
-        - 4_playfair.qmd
-        - 5_transposisi_kolom.qmd
-        - 6_transposisi_myzkowski.qmd
-        - 7_transposisi_rail_fence.qmd
+        - 9_stream_cipher.qmd
+        - 10_DES.qmd
+        - 11_3DES.qmd
+        - 12_AES.qm d
+        - 13_RSA.qmd
+        - 14_Elgamal.qmd
+        - 15_Diffie_Hellman.qmd
     - part: "Steganografi"
       chapters:
         - 1_caesar.qmd

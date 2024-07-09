@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./9_stream_cipher.html" rel="next">
-<link href="./7_transposisi_rail_fence.html" rel="prev">
+<link href="./15_Diffie_Helman.html" rel="next">
+<link href="./13_RSA.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1_caesar.html">Kriptografi Klasik</a></li><li class="breadcrumb-item"><a href="./8_transposisi_route.html">8. Transposisi Route</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./9_stream_cipher.html">Kriptografi Modern</a></li><li class="breadcrumb-item"><a href="./14_Elgamal.html">8. Transposisi Route</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -204,7 +204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./8_transposisi_route.html" class="sidebar-item-text sidebar-link active">
+  <a href="./8_transposisi_route.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">8. Transposisi Route</span></a>
   </div>
 </li>
@@ -222,43 +222,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./9_stream_cipher.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Stream Cipher</span></a>
+ <span class="menu-text">8. Transposisi Route</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./10_DES.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Data Encryption Standard</span></a>
+ <span class="menu-text">8. Transposisi Route</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11_3DES.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3. 3DES</span></a>
+ <span class="menu-text">8. Transposisi Route</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./12_AES.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4. AES</span></a>
+ <span class="menu-text">8. Transposisi Route</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./13_RSA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5. RSA</span></a>
+ <span class="menu-text">8. Transposisi Route</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./14_Elgamal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6. Elgamal</span></a>
+  <a href="./14_Elgamal.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">8. Transposisi Route</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./15_Diffie_Hellman.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7. Diffie Hellman</span></a>
+  <a href="./15_Diffie_Helman.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8. Transposisi Route</span></a>
   </div>
 </li>
       </ul>
@@ -350,16 +350,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#analogi-transposisi-route" id="toc-analogi-transposisi-route" class="nav-link active" data-scroll-target="#analogi-transposisi-route">Analogi Transposisi Route</a></li>
-  <li><a href="#implementasi-pada-python" id="toc-implementasi-pada-python" class="nav-link" data-scroll-target="#implementasi-pada-python">Implementasi Pada Python</a></li>
+  <li><a href="#implementasi-pada-python" id="toc-implementasi-pada-python" class="nav-link" data-scroll-target="#implementasi-pada-python">Implementasi Pada Python</a>
+  <ul class="collapse">
   <li><a href="#proses-enkripsi" id="toc-proses-enkripsi" class="nav-link" data-scroll-target="#proses-enkripsi">Proses Enkripsi</a></li>
   <li><a href="#proses-dekripsi" id="toc-proses-dekripsi" class="nav-link" data-scroll-target="#proses-dekripsi">Proses Dekripsi</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1_caesar.html">Kriptografi Klasik</a></li><li class="breadcrumb-item"><a href="./8_transposisi_route.html">8. Transposisi Route</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./9_stream_cipher.html">Kriptografi Modern</a></li><li class="breadcrumb-item"><a href="./14_Elgamal.html">8. Transposisi Route</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">8. Transposisi Route</h1>
   <div class="quarto-categories">
@@ -401,8 +403,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Mulai dari titik awal, huruf-huruf pesan diambil dengan bergerak secara diagonal naik atau turun, membentuk pola seperti ular tangga.</li>
 </ul></li>
 </ol>
-<section id="analogi-transposisi-route" class="level2">
-<h2 class="anchored" data-anchor-id="analogi-transposisi-route">Analogi Transposisi Route</h2>
+<section id="analogi-transposisi-route" class="level3">
+<h3 class="anchored" data-anchor-id="analogi-transposisi-route">Analogi Transposisi Route</h3>
 <p>Mari kita gunakan analogi kelas dengan siswa yang duduk di kursi dalam bentuk grid untuk menjelaskan algoritma transposisi route menggunakan pola spiral.</p>
 <p>Bayangkan kamu adalah guru yang ingin mengatur ulang tempat duduk siswa sesuai pola spiral. Anda mulai dengan siswa pertama di sudut kiri atas, lalu bergerak ke kanan hingga akhir baris, turun ke baris berikutnya di sebelah kanan, kemudian bergerak ke kiri, dan seterusnya, sampai Anda kembali ke tengah grid. Berikut langkahnya :</p>
 <ol type="1">
@@ -426,9 +428,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Menghapus Spasi</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>cleanPlainTeks <span class="op">=</span> plainTeks.replace(<span class="st">" "</span>, <span class="st">""</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cleanPlainTeks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="proses-enkripsi" class="level2">
-<h2 class="anchored" data-anchor-id="proses-enkripsi">Proses Enkripsi</h2>
+<section id="proses-enkripsi" class="level3">
+<h3 class="anchored" data-anchor-id="proses-enkripsi">Proses Enkripsi</h3>
 <ol type="1">
 <li>Menyusun teks yang sudah dibersihkan ke dalam sebuah matriks dengan kolom sebagai jumlah kolom atau lebar matriks</li>
 </ol>
@@ -591,8 +592,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>HASIL CIPHERTEXT : XUAETKAADTRUTNETKIAABTDMRNANYAMKGAATBNIPNAOSSKIAEJSEANPDIEAR</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="proses-dekripsi" class="level2">
-<h2 class="anchored" data-anchor-id="proses-dekripsi">Proses Dekripsi</h2>
+<section id="proses-dekripsi" class="level3">
+<h3 class="anchored" data-anchor-id="proses-dekripsi">Proses Dekripsi</h3>
 <p>Masukkan Ciphertext</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>cipherText <span class="op">=</span> <span class="bu">input</span>(<span class="st">"cipher : "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Masukkan kunci</p>
@@ -816,6 +817,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>TENTUKANPRIORITASANDASEBABKITATIDAKDAPATMENGERJAKANSEMUANYAX</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1385,13 +1387,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./7_transposisi_rail_fence.html" class="pagination-link" aria-label="7. Transposisi Rail Fence">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">7. Transposisi Rail Fence</span>
+      <a href="./13_RSA.html" class="pagination-link" aria-label="8. Transposisi Route">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">8. Transposisi Route</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./9_stream_cipher.html" class="pagination-link" aria-label="1. Stream Cipher">
-        <span class="nav-page-text">1. Stream Cipher</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./15_Diffie_Helman.html" class="pagination-link" aria-label="8. Transposisi Route">
+        <span class="nav-page-text">8. Transposisi Route</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

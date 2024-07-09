@@ -9,7 +9,7 @@ toc-title: "On this page"
 
 Transposisi kolom dalam kriptografi adalah teknik enkripsi yang melibatkan pengubahan urutan karakter atau simbol dalam sebuah pesan atau teks dengan cara mengatur ulang posisi karakter berdasarkan aturan tertentu yang ditentukan oleh kunci. Dalam transposisi kolom, teks asli dibagi menjadi kolom-kolom, kemudian urutan kolom tersebut diubah sesuai dengan aturan yang ditentukan oleh kunci enkripsi. Kunci enkripsi transposisi kolom biasanya berupa susunan angka atau urutan yang menentukan urutan kolom mana yang harus diambil dan dalam urutan apa.
 
-# Analogi Transposisi Kolom
+## Analogi Transposisi Kolom
 Bayangkan Kita memiliki rak buku dengan beberapa kolom dan setiap kolom berisi tumpukan buku. 
 
 1. **Susunan Awal:**
@@ -27,7 +27,7 @@ Bayangkan Kita memiliki rak buku dengan beberapa kolom dan setiap kolom berisi t
 
 Dengan kata lain, transposisi kolom mengubah urutan kolom tanpa mengubah isi kolom. Dalam kriptografi, ini dilakukan untuk mengacak data agar lebih sulit ditebak oleh pihak yang tidak berwenang.
 
-# Contoh Soal
+## Contoh Soal
 Untuk lebih jelasnya, terdapat sebuah pesan yaitu
 “TENTUKAN PRIORITAS ANDA SEBAB KITA TIDAK DAPAT MENGERJAKAN SEMUANYA X” yang akan dienkripsi menggunakan metode transposisi kolom dengan kata kunci “PENTING” Maka proses enkripsi nya adalah sebagai berikut:
 
@@ -98,7 +98,7 @@ ascii = {
 }
 ```
 
-### Proses Enkripsi
+## Proses Enkripsi
 
 1. Inisialisasi list untuk menyimpan urutan numerik dari setiap huruf alfabet
 ```python
@@ -297,7 +297,7 @@ For More Detail :
 HASIL CIPHERTEXT : ENTKFINOKKM TIAIRA
 ```
 
-### Proses Dekripsi
+## Proses Dekripsi
 
 Masukkan ciphertext
 ```python
