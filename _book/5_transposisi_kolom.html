@@ -221,44 +221,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1_caesar.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Caesar Cipher</span></a>
+  <a href="./9_stream_cipher.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Stream Cipher</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2_monoalphabetic_random_key.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Monoalphabetic Random Key</span></a>
+  <a href="./10_DES.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Data Encryption Standard</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3_vigenere_cipher.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3. Vigenere Cipher</span></a>
+  <a href="./11_3DES.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. 3DES</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./4_playfair.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4. Playfair</span></a>
+  <a href="./12_AES.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. AES</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./5_transposisi_kolom.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5. Transposisi Kolom</span></a>
+  <a href="./13_RSA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5. RSA</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./6_transposisi_myzkowski.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6. Transposisi Myzkowski</span></a>
+  <a href="./14_Elgamal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6. Elgamal</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./7_transposisi_rail_fence.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7. Transposisi Rail Fence</span></a>
+  <a href="./15_Diffie_Hellman.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7. Diffie Hellman</span></a>
   </div>
 </li>
       </ul>
@@ -350,14 +350,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#analogi-transposisi-kolom" id="toc-analogi-transposisi-kolom" class="nav-link active" data-scroll-target="#analogi-transposisi-kolom">Analogi Transposisi Kolom</a></li>
-  <li><a href="#contoh-soal" id="toc-contoh-soal" class="nav-link" data-scroll-target="#contoh-soal">Contoh Soal</a>
-  <ul class="collapse">
-  <li><a href="#implementasi-pada-python" id="toc-implementasi-pada-python" class="nav-link" data-scroll-target="#implementasi-pada-python">Implementasi Pada Python</a>
-  <ul class="collapse">
+  <li><a href="#contoh-soal" id="toc-contoh-soal" class="nav-link" data-scroll-target="#contoh-soal">Contoh Soal</a></li>
+  <li><a href="#implementasi-pada-python" id="toc-implementasi-pada-python" class="nav-link" data-scroll-target="#implementasi-pada-python">Implementasi Pada Python</a></li>
   <li><a href="#proses-enkripsi" id="toc-proses-enkripsi" class="nav-link" data-scroll-target="#proses-enkripsi">Proses Enkripsi</a></li>
   <li><a href="#proses-dekripsi" id="toc-proses-dekripsi" class="nav-link" data-scroll-target="#proses-dekripsi">Proses Dekripsi</a></li>
-  </ul></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
@@ -387,8 +383,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Transposisi kolom dalam kriptografi adalah teknik enkripsi yang melibatkan pengubahan urutan karakter atau simbol dalam sebuah pesan atau teks dengan cara mengatur ulang posisi karakter berdasarkan aturan tertentu yang ditentukan oleh kunci. Dalam transposisi kolom, teks asli dibagi menjadi kolom-kolom, kemudian urutan kolom tersebut diubah sesuai dengan aturan yang ditentukan oleh kunci enkripsi. Kunci enkripsi transposisi kolom biasanya berupa susunan angka atau urutan yang menentukan urutan kolom mana yang harus diambil dan dalam urutan apa.</p>
-<section id="analogi-transposisi-kolom" class="level1">
-<h1>Analogi Transposisi Kolom</h1>
+<section id="analogi-transposisi-kolom" class="level2">
+<h2 class="anchored" data-anchor-id="analogi-transposisi-kolom">Analogi Transposisi Kolom</h2>
 <p>Bayangkan Kita memiliki rak buku dengan beberapa kolom dan setiap kolom berisi tumpukan buku.</p>
 <ol type="1">
 <li><strong>Susunan Awal:</strong>
@@ -410,8 +406,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <p>Dengan kata lain, transposisi kolom mengubah urutan kolom tanpa mengubah isi kolom. Dalam kriptografi, ini dilakukan untuk mengacak data agar lebih sulit ditebak oleh pihak yang tidak berwenang.</p>
 </section>
-<section id="contoh-soal" class="level1">
-<h1>Contoh Soal</h1>
+<section id="contoh-soal" class="level2">
+<h2 class="anchored" data-anchor-id="contoh-soal">Contoh Soal</h2>
 <p>Untuk lebih jelasnya, terdapat sebuah pesan yaitu “TENTUKAN PRIORITAS ANDA SEBAB KITA TIDAK DAPAT MENGERJAKAN SEMUANYA X” yang akan dienkripsi menggunakan metode transposisi kolom dengan kata kunci “PENTING” Maka proses enkripsi nya adalah sebagai berikut:</p>
 <p><strong>Proses Penyandian</strong></p>
 <ol type="1">
@@ -428,6 +424,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Baca huruf ciphertext dari atas kebawah kemudian dimulai lagi dari atas sesuai dengan kolom yang sudah diurutkan</p>
 <p><img src="assets/kriptografi/tkolom6.png" class="img-fluid" style="text-align:center;;width:70.0%"></p></li>
 </ol>
+</section>
 <section id="implementasi-pada-python" class="level2">
 <h2 class="anchored" data-anchor-id="implementasi-pada-python">Implementasi Pada Python</h2>
 <p>Masukkan plaintext</p>
@@ -445,8 +442,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="st">'l'</span>: <span class="dv">12</span>, <span class="st">'m'</span>: <span class="dv">13</span>, <span class="st">'n'</span>: <span class="dv">14</span>, <span class="st">'o'</span>: <span class="dv">15</span>, <span class="st">'p'</span>: <span class="dv">16</span>, <span class="st">'q'</span>: <span class="dv">17</span>, <span class="st">'r'</span>: <span class="dv">18</span>, <span class="st">'s'</span>: <span class="dv">19</span>, <span class="st">'t'</span>: <span class="dv">20</span>, <span class="st">'u'</span>: <span class="dv">21</span>, </span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="st">'v'</span>: <span class="dv">22</span>, <span class="st">'w'</span>: <span class="dv">23</span>, <span class="st">'x'</span>: <span class="dv">24</span>, <span class="st">'y'</span>: <span class="dv">25</span>, <span class="st">'z'</span>: <span class="dv">26</span></span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="proses-enkripsi" class="level3">
-<h3 class="anchored" data-anchor-id="proses-enkripsi">Proses Enkripsi</h3>
+</section>
+<section id="proses-enkripsi" class="level2">
+<h2 class="anchored" data-anchor-id="proses-enkripsi">Proses Enkripsi</h2>
 <ol type="1">
 <li>Inisialisasi list untuk menyimpan urutan numerik dari setiap huruf alfabet</li>
 </ol>
@@ -623,8 +621,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>HASIL CIPHERTEXT : ENTKFINOKKM TIAIRA</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="proses-dekripsi" class="level3">
-<h3 class="anchored" data-anchor-id="proses-dekripsi">Proses Dekripsi</h3>
+<section id="proses-dekripsi" class="level2">
+<h2 class="anchored" data-anchor-id="proses-dekripsi">Proses Dekripsi</h2>
 <p>Masukkan ciphertext</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>cipherTeks <span class="op">=</span> <span class="bu">input</span>(<span class="st">"masukkan kata : "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Masukkan kunci</p>
@@ -797,8 +795,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 
 
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->

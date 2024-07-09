@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7. Transposisi Rail Fence – Kriptografi</title>
+<title>2. Data Encryption Standard – Kriptografi</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,8 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./8_transposisi_route.html" rel="next">
-<link href="./6_transposisi_myzkowski.html" rel="prev">
+<link href="./11_3DES.html" rel="next">
+<link href="./9_stream_cipher.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -117,7 +83,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1_caesar.html">Kriptografi Klasik</a></li><li class="breadcrumb-item"><a href="./7_transposisi_rail_fence.html">7. Transposisi Rail Fence</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./9_stream_cipher.html">Kriptografi Modern</a></li><li class="breadcrumb-item"><a href="./10_DES.html">2. Data Encryption Standard</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -198,7 +164,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./7_transposisi_rail_fence.html" class="sidebar-item-text sidebar-link active">
+  <a href="./7_transposisi_rail_fence.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">7. Transposisi Rail Fence</span></a>
   </div>
 </li>
@@ -227,7 +193,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10_DES.html" class="sidebar-item-text sidebar-link">
+  <a href="./10_DES.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">2. Data Encryption Standard</span></a>
   </div>
 </li>
@@ -349,20 +315,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#analogi-transposisi-railfence" id="toc-analogi-transposisi-railfence" class="nav-link active" data-scroll-target="#analogi-transposisi-railfence">Analogi Transposisi Railfence</a></li>
+  <li><a href="#skema-global-des" id="toc-skema-global-des" class="nav-link active" data-scroll-target="#skema-global-des">Skema Global DES</a></li>
+  <li><a href="#skema-membangkitkan-kunci-external" id="toc-skema-membangkitkan-kunci-external" class="nav-link" data-scroll-target="#skema-membangkitkan-kunci-external">Skema Membangkitkan Kunci External</a></li>
   <li><a href="#contoh-soal" id="toc-contoh-soal" class="nav-link" data-scroll-target="#contoh-soal">Contoh Soal</a></li>
-  <li><a href="#implementasi-pada-python" id="toc-implementasi-pada-python" class="nav-link" data-scroll-target="#implementasi-pada-python">Implementasi Pada Python</a></li>
-  <li><a href="#proses-enkripsi" id="toc-proses-enkripsi" class="nav-link" data-scroll-target="#proses-enkripsi">Proses Enkripsi</a></li>
-  <li><a href="#proses-dekripsi" id="toc-proses-dekripsi" class="nav-link" data-scroll-target="#proses-dekripsi">Proses Dekripsi</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1_caesar.html">Kriptografi Klasik</a></li><li class="breadcrumb-item"><a href="./7_transposisi_rail_fence.html">7. Transposisi Rail Fence</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./9_stream_cipher.html">Kriptografi Modern</a></li><li class="breadcrumb-item"><a href="./10_DES.html">2. Data Encryption Standard</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">7. Transposisi Rail Fence</h1>
+<h1 class="title">2. Data Encryption Standard</h1>
   <div class="quarto-categories">
     <div class="quarto-category">teori</div>
   </div>
@@ -382,258 +346,181 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Transposisi rail fence merupakan salah satu jenis transposisi cipher di mana huruf-huruf dalam pesan dibagi menjadi beberapa “rail” atau baris. Kemudian huruf-huruf tersebut diurutkan secara zigzag antara baris-baris tersebut.</p>
-<p>Dalam transposisi rail fence, jumlah baris yang digunakan biasanya menjadi bagian dari kunci untuk enkripsi dan dekripsi pesan. Jumlah baris yang digunakan mempengaruhi pola zigzag dalam menyusun huruf-huruf pesan, sehingga jumlah baris dapat dianggap sebagai bagian dari kunci untuk proses enkripsi dan dekripsi.</p>
-<section id="analogi-transposisi-railfence" class="level2">
-<h2 class="anchored" data-anchor-id="analogi-transposisi-railfence">Analogi Transposisi Railfence</h2>
-<p>Mari kita analogikan transposisi railfence dengan menyusun pesan di pagar besi sebagai proses enkripsinya dan membaca pesan tersembunyi dalam sebuah pagar besi sebagai proses dekripsinya</p>
-<p><strong>Enkripsi: Menyusun Pesan di Pagar Besi</strong></p>
-<p>Bayangkan Anda memiliki sebuah pesan yang ingin Anda sembunyikan, seperti “HELLO WORLD”. Untuk mengenkripsi pesan ini dengan algoritma transposisi Rail Fence, Kita akan menggunakan sebuah pagar besi dengan beberapa tingkat atau baris (rails).</p>
-<p>Misalnya, jika Anda menggunakan 3 tingkat (rails), maka Anda akan menyusun pesan Anda dengan cara berikut:</p>
+<p>DES (Data Encryption Standard) merupakan salah satu algoritma enkripsi yang termasuk ke dalam kriptografi kunci-simetri dan tergolong jenis cipher blok. Panjang kunci ekternal 64 bit (sesuai ukuran blok), tetapi hanya 56 bit yang dipakai (8 bit paritas tidak digunakan)</p>
+<section id="skema-global-des" class="level2">
+<h2 class="anchored" data-anchor-id="skema-global-des">Skema Global DES</h2>
 <ol type="1">
-<li><p>Mulailah dari tingkat pertama, lalu turun ke tingkat kedua, kemudian ke tingkat ketiga, dan kembali ke tingkat kedua, lalu ke tingkat pertama, dan seterusnya.</p></li>
-<li><p>Tuliskan huruf-huruf pesan di sepanjang jalur ini.</p>
-<p>Jadi, pesan “HELLO WORLD” akan disusun seperti ini :</p></li>
+<li>Setiap blok (plainteks atau cipherteks) dienkripsi dalam 16 putaran</li>
+<li>Setiap putaran menggunakan kunci internal berbeda</li>
+<li>Kunci internal (56-bit) dibangkitkan dari kunci eksternal</li>
+<li>Setiap blok mengalami permutasi awal (IP), 16 putaran enciphering, dan inversi permutasi awal (IP-1)</li>
 </ol>
-<pre><code>    H - - - O - - - R - -
-    - E - L - W - L - D -
-    - - L - - - O - - - -     </code></pre>
-<p>Sekarang, Kita membaca huruf-huruf tersebut dari tingkat pertama ke tingkat terakhir:</p>
+<div class="quarto-figure quarto-figure-center" style="text-align:center;">
+<figure class="figure">
+<p><img src="assets/kriptografi/des.png" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption>Skema Global Algoritma DES</figcaption>
+</figure>
+</div>
+<p>Keterangan :</p>
 <ul>
-<li>Tingkat pertama : “HOR”</li>
-<li>Tingkat kedua : “ELWLD”</li>
-<li>Tingkat ketiga : “LO”</li>
+<li>Blok plainteks dipermutasi dengan matriks permutasi awal (initial permutation atau IP)</li>
+<li>Hasil permutasi awal kemudian di-enciphering- sebanyak 16 kali (16 putaran). Setiap putaran menggunakan kunci internal yang berbeda</li>
+<li>Hasil enciphering kemudian dipermutasi dengan matriks permutasi balikan (invers initial permutation atau IP-1 ) menjadi blok cipherteks</li>
 </ul>
-<p>Dengan Menggabungkan semua huruf-huruf ini, Kita akan mendapatkan pesan terenkripsi atau ciphertext: “HOR ELWLD LO”</p>
-<p><strong>Dekripsi: Membaca Pesan dari Pagar Besi</strong></p>
-<p>Sekarang, bayangkan seseorang menerima pesan terenkripsi “HOR ELWLD LO” dan ingin membacanya. Untuk mendekripsi pesan tersebut, mereka harus menggunakan pagar besi yang sama dengan jumlah tingkat yang sama (3 tingkat dalam contoh ini).</p>
-<ol type="1">
-<li><p>Pertama, mereka menggambar garis-garis pada pagar besi sesuai dengan pola Rail Fence.</p></li>
-<li><p>Lalu, mereka menempatkan huruf-huruf pesan terenkripsi kembali ke jalur-jalur sesuai dengan urutan.</p>
-<p>Jadi, mereka akan menempatkan huruf-huruf dengan cara berikut:</p></li>
-</ol>
-<pre><code>    H - - - O - - - R - -
-    - E - L - W - L - D -
-    - - L - - - O - - - - </code></pre>
-<p>Sekarang, mereka bisa membaca pesan asli dengan mengikuti jalur dari tingkat pertama ke tingkat terakhir dan kembali:</p>
-<ul>
-<li>“H” (tingkat pertama)</li>
-<li>“E” (tingkat kedua)</li>
-<li>“L” (tingkat ketiga)</li>
-<li>“L” (kembali ke tingkat kedua)</li>
-<li>“O” (tingkat pertama)</li>
-<li>“W” (tingkat kedua)</li>
-<li>“O” (tingkat ketiga)</li>
-<li>“R” (kembali ke tingkat kedua)</li>
-<li>“L” (tingkat pertama)</li>
-<li>“D” (tingkat kedua)</li>
-</ul>
-<p>Dengan menggabungkan semua huruf-huruf ini, mereka mendapatkan hasil dekripsi atau pesan asli : “HELLO WORLD”</p>
+<div class="quarto-figure quarto-figure-center" style="text-align:center;">
+<figure class="figure">
+<p><img src="assets/kriptografi/des2.jpg" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption>Skema Global Algoritma DES Lebih Rinci</figcaption>
+</figure>
+</div>
+</section>
+<section id="skema-membangkitkan-kunci-external" class="level2">
+<h2 class="anchored" data-anchor-id="skema-membangkitkan-kunci-external">Skema Membangkitkan Kunci External</h2>
+<div class="quarto-figure quarto-figure-center" style="text-align:center;">
+<figure class="figure">
+<p><img src="assets/kriptografi/des4.jpg" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Skema Pembangkitan Kunci External</figcaption>
+</figure>
+</div>
 </section>
 <section id="contoh-soal" class="level2">
 <h2 class="anchored" data-anchor-id="contoh-soal">Contoh Soal</h2>
-<pre><code>Plainteks   : UNIVERSITAS DIAN NUSWANTORO
-Kunci       : 3 baris (spasi ditulis)</code></pre>
-<p><strong>Langkah mengerjakan :</strong></p>
+<p>Plaintext = COMPUTER Kunci (dalam Hex) = 13 34 57 79 9B BC DF F1 (64 Bit)</p>
 <ol type="1">
-<li><p>Susun huruf-huruf plainteks ke dalam pola zigzag menggunakan 3 baris</p>
-<p><img src="assets/kriptografi/zigzag.png" class="img-fluid" style="text-align:center;;width:80.0%"></p>
-<p>keterangan : jika di plainteks ada spasi, maka spasi di tulis, contohnya setelah huruf S pada kata UNIVERSITAS ada pengosongan tempat itu adalah spasi.</p></li>
-<li><p>Baca huruf-huruf dari baris-baris tersebut secara berurutan dari baris atas ke baris bawah</p>
-<p><img src="assets/kriptografi/bacarail.png" class="img-fluid" style="text-align:center;;width:80.0%"></p></li>
-<li><p>Hasil Ciphertext : UETD WONVRIA INNSATRISSAUNO</p></li>
+<li><p>Ubah plaintext menjadi Biner</p>
+<p>C, ascii = 67, binary = 01000011</p>
+<p>O, ascii = 79, binary = 01001111</p>
+<p>M, ascii = 77, binary = 01001101</p>
+<p>P, ascii = 80, binary = 01010000</p>
+<p>U, ascii = 85, binary = 01010101</p>
+<p>T, ascii = 84, binary = 01010100</p>
+<p>E, ascii = 69, binary = 01000101</p>
+<p>R, ascii = 82, binary = 01010010</p>
+<p>Total ada 64 bit plaintex</p></li>
+<li><p>Permutasi Awal</p>
+<p>Tujuan : mengacak plainteks sehingga urutan bit-bit di dalamnya berubah</p></li>
 </ol>
-</section>
-<section id="implementasi-pada-python" class="level2">
-<h2 class="anchored" data-anchor-id="implementasi-pada-python">Implementasi Pada Python</h2>
-<p>Masukkan Plaintext</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>CONTOH : UNIVERSITAS DIAN NUSWANTORO</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plainText <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Plaintext : "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Masukkan Kunci atau Jumlah Baris</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>CONTOH KEY : <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>railFenceKey <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Kunci: "</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="proses-enkripsi" class="level2">
-<h2 class="anchored" data-anchor-id="proses-enkripsi">Proses Enkripsi</h2>
-<ol type="1">
-<li>Membuat Matriks Kosong Sesuai Dengan Jumlah Baris (kunci)</li>
-</ol>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>   rails <span class="op">=</span> [[<span class="st">' '</span> <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(plainText))] <span class="cf">for</span> _ <span class="kw">in</span> </span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>   <span class="bu">range</span>(railFenceKey)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="2" type="1">
-<li>Menentukan Arah Pola Zig-Zag Dari Huruf-Huruf Dalam Plaintext, jika direction = 1 maka pola turun, jika -1 maka pola naik</li>
-</ol>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>   i, j <span class="op">=</span> <span class="dv">0</span>, <span class="dv">0</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>   direction <span class="op">=</span> <span class="dv">1</span>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center" style="text-align:center;">
+<figure class="figure">
+<p><img src="assets/kriptografi/p1.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Urutan bit plaintext awal</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center" style="text-align:center;">
+<figure class="figure">
+<p><img src="assets/kriptografi/p2.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Urutan bit permutasi awal</figcaption>
+</figure>
+</div>
 <ol start="3" type="1">
-<li>Menempatkan karakter-karakter dari plainText ke dalam matriks dalam pola zigzag sesuai dengan kunci Rail Fence</li>
+<li>Encoding setiap 64 bit data pada Plaintext dengan IP (Initial Permutation)</li>
 </ol>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>   <span class="cf">for</span> char <span class="kw">in</span> plainText:</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>     rails[i][j] <span class="op">=</span> char</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>     <span class="cf">if</span> i <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>       direction <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>     <span class="cf">elif</span> i <span class="op">==</span> railFenceKey <span class="op">-</span> <span class="dv">1</span>:</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>       direction <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>     i <span class="op">+=</span> direction</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>     j <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>For More Detail :</p>
+<div class="quarto-figure quarto-figure-center" style="text-align:center;">
+<figure class="figure">
+<p><img src="assets/kriptografi/p3.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Urutan bit permutasi awal</figcaption>
+</figure>
+</div>
 <ul>
-<li><code>for char in plainText</code> : Setiap karakter dalam teks yang ingin dienkripsi akan diproses satu per satu</li>
-<li><code>rails[i][j] = char</code> : Karakter saat ini ditempatkan di baris [i] dan kolom [j] dari matriks rails</li>
-<li><code>if i == 0: direction = 1</code> : Jika berada di baris teratas, ubah arah pergerakan ke bawah</li>
-<li><code>elif i == railFenceKey - 1</code> : direction = -1: Jika berada di baris terbawah, ubah arah pergerakan ke atas</li>
-<li><code>i += direction</code> : Indeks baris [i] ditambah atau dikurangi sesuai dengan arah pergerakan (ke bawah atau ke atas) Mengupdate indeks kolom [j] untuk pindah ke karakter berikutnya:</li>
-<li><code>j += 1</code> : Indeks kolom [j] selalu bertambah satu untuk setiap karakter</li>
+<li><p>P = 01000011 01001111 01001101 01010000 01010101 01010100 01000101 01010010</p></li>
+<li><p>Hasil akhir permutasi awal :</p>
+<p>IP = 11111111 10111000 01110110 01010111 00000000 00000000 00000110 10000011</p></li>
 </ul>
 <ol start="4" type="1">
-<li>Membentuk Teks Terenkripsi Berdasarkan Pola Zig-Zag</li>
+<li>Memecah Hasil IP</li>
 </ol>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>   enkripsi_teks <span class="op">=</span> <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>.join([<span class="st">''</span>.join(row) <span class="cf">for</span> row <span class="kw">in</span> rails])</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"* RAIL FENCE: "</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(enkripsi_teks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Fore More Detail :</p>
+<div class="quarto-figure quarto-figure-center" style="text-align:center;">
+<figure class="figure">
+<p><img src="assets/kriptografi/des3.jpg" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Pecah menjadi L0 dan R0</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center" style="text-align:center;">
+<figure class="figure">
+<p><img src="assets/kriptografi/l0.png" class="img-fluid figure-img" style="width:85.0%"></p>
+<figcaption>Pecah hasil IP menjadi bagian kiri sebanyak 32 bit (L0) dan kanan sebanyak 32 bit (R0)</figcaption>
+</figure>
+</div>
 <ul>
-<li><code>row</code> merepresentasikan setiap baris dalam matriks rails.</li>
-<li><code>''.join(row)</code> : Menggabungkan semua karakter dalam baris row menjadi satu string</li>
-<li><code>for row in rails</code> : Ini adalah list comprehension yang mengiterasi setiap baris dalam matriks rails</li>
-<li><code>'\n'.join([...])</code> : Menggabungkan semua string dalam daftar hasil dari list comprehension di langkah sebelumnya menjadi satu string besar</li>
+<li><p>Jadi hasilnya :</p>
+<p>L0 = 11111111 10111000 01110110 01010111</p>
+<p>R0 = 00000000 00000000 00000110 10000011</p></li>
 </ul>
 <ol start="5" type="1">
-<li>Mempersiapkan daftar untuk setiap baris (rail) dan mengatur agar kita mulai dari baris pertama dengan pergerakan ke bawah.</li>
+<li>Pembangkitan Kunci</li>
 </ol>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>   rails <span class="op">=</span> [[] <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(railFenceKey)]</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>   index <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>   direction <span class="op">=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>For More Detail :</p>
 <ul>
-<li><code>rails = [[] for _ in range(railFenceKey)]</code> : Membuat daftar berisi daftar kosong untuk setiap baris (rail) sesuai dengan jumlah baris yang ditentukan oleh railFenceKey</li>
-<li><code>index = 0</code> : Menentukan bahwa kita mulai dari baris pertama (index 0).</li>
-<li><code>direction = 1</code> : Menentukan bahwa pergerakan awalnya ke bawah (nilai 1).</li>
+<li><p>Kunci = 13 34 57 79 9B BC DF F1</p></li>
+<li><p>Ubah K ke dalam fungsi Hexadecimal:</p>
+<p>K = 00010011 00110100 01010111 01111001 10011011 10111100 11011111 11110001</p></li>
+<li><p>Permutasikan menggunakan Tabel PC-1</p></li>
 </ul>
+<div class="quarto-figure quarto-figure-center" style="text-align:center;">
+<figure class="figure">
+<p><img src="assets/kriptografi/pc1.jpg" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption>Kolom ke 8 dihilangkan</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center" style="text-align:center;">
+<figure class="figure">
+<p><img src="assets/kriptografi/pc12.jpg" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption>Yang tadiya berukuran 8x8, sekarang menjadi 7x8</figcaption>
+</figure>
+</div>
 <ol start="6" type="1">
-<li>Menempatkan karakter-karakter dari plainText ke dalam daftar rails dalam pola zigzag, mengubah arah pergerakan ketika mencapai baris pertama atau terakhir</li>
+<li>Permutasi PC-1</li>
 </ol>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>   <span class="cf">for</span> char <span class="kw">in</span> plainText:</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>     rails[index].append(char)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>     <span class="cf">if</span> index <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>       direction <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>     <span class="cf">elif</span> index <span class="op">==</span> railFenceKey <span class="op">-</span> <span class="dv">1</span>:</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>       direction <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>     index <span class="op">+=</span> direction</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>For More Detail :</p>
+<div class="quarto-figure quarto-figure-center" style="text-align:center;">
+<figure class="figure">
+<p><img src="assets/kriptografi/pc13.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Gunakan permutasi PC-1 terhadap Key</figcaption>
+</figure>
+</div>
 <ul>
-<li><code>for char in plainText</code> : Looping untuk Mengiterasi setiap karakter dalam plainText satu per satu</li>
-<li><code>rails[index].append(char)</code> : Menambahkan karakter char ke daftar rails pada posisi index saat ini</li>
-<li><code>if index == 0: direction = 1</code> : Jika index adalah 0 (baris pertama), ubah arah pergerakan ke bawah (direction = 1)</li>
-<li><code>elif index == railFenceKey - 1: direction = -1</code> : Jika index adalah railFenceKey - 1 (baris terakhir), ubah arah pergerakan ke atas (direction = -1)</li>
-<li><code>index += direction</code> : Menambah atau mengurangi <code>index</code> sesuai dengan <code>direction</code></li>
+<li>K = 00010011 00110100 01010111 01111001 10011011 10111100 11011111 11110001</li>
+<li>K+= 1111000 0110011 0010101 0101111 0101010 1011001 1001111 0001111</li>
 </ul>
 <ol start="7" type="1">
-<li>menggabungkan karakter-karakter yang telah disusun dalam matriks rails menjadi satu string yang merupakan teks terenkripsi (ciphertext)</li>
+<li>Pecah menjadi C0 dan D0</li>
 </ol>
-<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>   enkripsi_teks <span class="op">=</span> <span class="st">""</span>.join([<span class="st">""</span>.join(rail) <span class="cf">for</span> rail <span class="kw">in</span> rails])</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"CIPHERTEXT : "</span> <span class="op">+</span> enkripsi_teks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>For More Detail :</p>
+<div class="quarto-figure quarto-figure-center" style="text-align:center;">
+<figure class="figure">
+<p><img src="assets/kriptografi/co.jpg" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption>Pecah permutasi PC-1 menjadi C0 dan D0</figcaption>
+</figure>
+</div>
 <ul>
-<li><code>["".join(rail) for rail in rails]</code> : List comprehension yang menghasilkan daftar string, di mana setiap string adalah satu baris dari matriks rails</li>
-<li><code>"".join([...])</code> : Menggabungkan semua string dalam daftar menjadi satu string besar tanpa pemisah</li>
-<li><code>"".join(rail)</code> : Menggabungkan semua karakter dalam baris rail menjadi satu string</li>
-<li>Hasilnya adalah satu string panjang yang merupakan teks terenkripsi (enkripsi_teks).</li>
+<li><p>Selanjutnya nilai K+ dibagi menjadi 2 bagian kanan dan kiri,C0 dan D0 yang setiap bagian 28 bit panjangnya <img src="assets/kriptografi/co1.png" class="img-fluid" style="text-align:center;;width:90.0%"></p></li>
+<li><p>Hasilnya mendapatkan :</p>
+<p>C0 = 1111000 0110011 0010101 0101111</p>
+<p>D0 = 0101010 1011001 1001111 0001111</p></li>
 </ul>
-<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>   CIPHERTEXT : UETD WONVRIA INNSATRISSAUNO</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="proses-dekripsi" class="level2">
-<h2 class="anchored" data-anchor-id="proses-dekripsi">Proses Dekripsi</h2>
-<ol type="1">
-<li>Mempersiapkan daftar untuk setiap baris (rail) dan mengatur agar kita mulai dari baris pertama dengan pergerakan ke bawah</li>
+<ol start="8" type="1">
+<li>Membuat Block Cn dan Dn</li>
 </ol>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>   rails <span class="op">=</span> [[] <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(railFenceKey)]</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>   index <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>   direction <span class="op">=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>For More Detail :</p>
+<div class="quarto-figure quarto-figure-center" style="text-align:center;">
+<figure class="figure">
+<p><img src="assets/kriptografi/c1d1.png" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption>Blok Cn-1 dan Dn-1 Di geser ke kiri</figcaption>
+</figure>
+</div>
 <ul>
-<li><code>rails = [[] for _ in range(railFenceKey)]</code>: Membuat daftar berisi daftar kosong untuk setiap baris (rail) sesuai dengan jumlah baris yang ditentukan oleh railFenceKey Membuat placeholder untuk menyiapkan “kotak-kotak” yang akan mengorganisir karakter-karakter terenkripsi sehingga dapat didekripsi kembali dengan benar</li>
-<li><code>index = 0</code>: Menentukan bahwa kita mulai dari baris pertama (index 0)</li>
-<li><code>direction = 1</code>: Menentukan bahwa pergerakan awalnya ke bawah (nilai 1)</li>
+<li>Setelah mendapatkan C0 dan D0, sekarang kita membuat 6 blok Cn dan Dn yang setiap blok berasal dari Cn-1 dan Dn-1</li>
+<li>Selanjutnya, kedua bagian digeser ke kiri (left shift) sepanjang satu atau dua bit bergantung pada tiap putaran</li>
+<li>Operasi pergeseran bersifat wrapping atau round-shift</li>
 </ul>
-<ol start="2" type="1">
-<li>Mempersiapkan tempat untuk karakter-karakter dari teks terenkripsi agar bisa ditempatkan di posisi yang benar selama proses dekripsi</li>
+<div class="quarto-figure quarto-figure-center" style="text-align:center;">
+<figure class="figure">
+<p><img src="assets/kriptografi/tabel.png" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption>Tabel Jumlah Pergeseran Bit Pada Setiap Putaran</figcaption>
+</figure>
+</div>
+<ol start="9" type="1">
+<li>Hasil C0 dan D0 yang di dapatkan</li>
 </ol>
-<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>   <span class="cf">for</span> char <span class="kw">in</span> enkripsi_teks:</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>     rails[index].append(<span class="va">None</span>)</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>     <span class="cf">if</span> index <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>       direction <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>     <span class="cf">elif</span> index <span class="op">==</span> railFenceKey <span class="op">-</span> <span class="dv">1</span>:</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>       direction <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>     index <span class="op">+=</span> direction</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>For More Detail :</p>
 <ul>
-<li><code>if index == 0: direction = 1</code> : Mengiterasi setiap karakter dalam enkripsi_teks satu persatu.</li>
-<li><code>elif index == railFenceKey - 1: direction = -1</code>: Jika index adalah railFenceKey - 1 (baris terakhir), ubah arah pergerakan ke atas (direction = -1)</li>
-<li><code>index += direction</code> : Menambah atau mengurangi index sesuai dengan direction. Jika direction = 1 bergerak ke bawah sedangkan direction = -1 bergerak ke atas</li>
+<li>Dari C0 dan D0 awal kita mendapatkan : <img src="assets/kriptografi/codo.png" class="img-fluid" style="text-align:center;;width:60.0%"></li>
 </ul>
-<ol start="3" type="1">
-<li>Menempatkan karakter-karakter dari teks terenkripsi kembali ke posisi yang benar dalam matriks rails, sesuai dengan placeholder (None) yang telah ditandai sebelumnya</li>
-</ol>
-<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>   index_char <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>   <span class="cf">for</span> rail <span class="kw">in</span> rails:</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>     <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(rail)):</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>       rail[i] <span class="op">=</span> enkripsi_teks[index_char]</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>       index_char <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>For More Detail :</p>
-<ul>
-<li><code>index_char</code> : Melacak posisi karakter dalam enkripsi_teks.</li>
-<li><code>for rail in rails</code> : Looping untuk mengiterasi setiap baris dalam matriks rails.</li>
-<li><code>for i in range(len(rail)):</code> : Mengiterasi setiap posisi dalam baris rail yang memiliki placeholder.</li>
-<li><code>rail[i] = enkripsi_teks[index_char]</code> : Menempatkan karakter dari enkripsi_teks pada posisi yang sesuai dalam rail.</li>
-<li><code>index_char += 1</code> : Meningkatkan index_char untuk berpindah ke karakter berikutnya dalam enkripsi_teks.</li>
-</ul>
-<ol start="4" type="1">
-<li>Membaca kembali karakter-karakter dari matriks rails dalam urutan zigzag yang benar dan menyusunnya menjadi teks asli</li>
-</ol>
-<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>   index <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>   direction <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>   dekripsi_teks <span class="op">=</span> []</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>For More Detail :</p>
-<ul>
-<li><code>index</code> : Melacak baris saat ini dalam matriks rails</li>
-<li><code>direction</code> : Menentukan arah pergerakan (ke bawah atau ke atas)</li>
-<li><code>dekripsi_teks = []</code> : Daftar yang akan menyimpan karakter karakter teks asli dalam urutan yang benar.</li>
-</ul>
-<ol start="5" type="1">
-<li>Membaca kembali karakter-karakter dari matriks rails dalam urutan zigzag yang benar dan menyusunnya menjadi teks asli</li>
-</ol>
-<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(enkripsi_teks)):</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>      dekripsi_teks.append(rails[index].pop(<span class="dv">0</span>))</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> index <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>        direction <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>      <span class="cf">elif</span> index <span class="op">==</span> railFenceKey <span class="op">-</span> <span class="dv">1</span>:</span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>        direction <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>      index <span class="op">+=</span> direction</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>For More Detail :</p>
-<ul>
-<li><code>for _ in range(len(enkripsi_teks)):</code> : Mengiterasi sebanyak panjang enkripsi_teks untuk memastikan semua karakter diproses.</li>
-<li><code>dekripsi_teks.append(rails[index])</code> : Mengambil karakter pertama dari baris index dalam rails dan menambahkannya ke dekripsi_teks</li>
-<li><code>.pop(0)</code> : pop(0) menghapus dan mengembalikan elemen pertama dari baris index</li>
-<li><code>if index == 0: direction = 1</code> : Jika index adalah 0 (baris pertama), ubah arah pergerakan ke bawah (direction = 1)</li>
-<li><code>elif index == railFenceKey - 1: direction = -1</code> : Jika index adalah railFenceKey - 1 (baris terakhir), ubah arah pergerakan ke atas (direction = -1)</li>
-<li><code>index += direction</code>: Mengupdate indeks baris</li>
-</ul>
-<ol start="6" type="1">
-<li>Menggabungkan karakter-karakter yang telah disusun kembali dalam dekripsi_teks menjadi satu string yang merupakan teks asli hasil dekripsi</li>
-</ol>
-<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>   railFenceDecryption <span class="op">=</span> <span class="st">""</span>.join(dekripsi_teks)</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">" DECRYPTED : "</span> <span class="op">+</span> railFenceDecryption)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>For More Detail :</p>
-<ul>
-<li><code>''.join(dekripsi_teks)</code> : Menggabungkan semua elemen dalam dekripsi_teks menjadi satu string tanpa pemisah.</li>
-<li>Variabel <code>railFenceDecryption</code> akan menyimpan string hasil dek</li>
-</ul>
-<div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>HASIL DECRYPTED : UNIVERSITAS DIAN NUSWANTORO</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
@@ -1205,13 +1092,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./6_transposisi_myzkowski.html" class="pagination-link" aria-label="6. Transposisi Myzkowski">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">6. Transposisi Myzkowski</span>
+      <a href="./9_stream_cipher.html" class="pagination-link" aria-label="1. Stream Cipher">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">1. Stream Cipher</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./8_transposisi_route.html" class="pagination-link" aria-label="8. Transposisi Route">
-        <span class="nav-page-text">8. Transposisi Route</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./11_3DES.html" class="pagination-link" aria-label="3. 3DES">
+        <span class="nav-page-text">3. 3DES</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
