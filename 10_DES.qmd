@@ -5,7 +5,7 @@ categories: [teori]
 toc-title: "On this page"
 ---
 
-# 2. Data Encryption Standard {.unnumbered}
+# 2. DES {.unnumbered}
 
 DES (Data Encryption Standard) merupakan salah satu algoritma enkripsi yang termasuk ke dalam kriptografi kunci-simetri dan tergolong jenis cipher blok. Panjang kunci ekternal 64 bit (sesuai ukuran blok), tetapi hanya 56 bit yang dipakai (8 bit paritas tidak digunakan)
 
@@ -36,7 +36,7 @@ Plaintext = COMPUTER
 Kunci (dalam Hex) = 13 34 57 79 9B BC DF F1 (64 Bit)
 
 1. Ubah plaintext menjadi Biner
-
+```sh
    C, ascii = 67,    binary = 01000011
 
    O, ascii = 79, 	 binary = 01001111
@@ -54,7 +54,7 @@ Kunci (dalam Hex) = 13 34 57 79 9B BC DF F1 (64 Bit)
    R, ascii = 82, 	 binary = 01010010
 
    Total ada 64 bit plaintex
-
+```
 
 2. Permutasi Awal 
 
@@ -68,11 +68,13 @@ Kunci (dalam Hex) = 13 34 57 79 9B BC DF F1 (64 Bit)
 3. Encoding setiap 64 bit data pada Plaintext dengan IP (Initial Permutation) 
 
 ![Urutan bit permutasi awal](assets/kriptografi/p3.png){width="50%"style="text-align:center;"}
-
+```sh
 - P = 01000011 01001111 01001101 01010000 01010101 01010100 01000101 01010010
+```
 - Hasil akhir permutasi awal :
-  
-  IP = 11111111 10111000 01110110 01010111 00000000 00000000 00000110 10000011
+```sh  
+IP = 11111111 10111000 01110110 01010111 00000000 00000000 00000110 10000011
+```
 
 4. Memecah Hasil IP
 
@@ -81,17 +83,19 @@ Kunci (dalam Hex) = 13 34 57 79 9B BC DF F1 (64 Bit)
 ![Pecah hasil IP menjadi bagian kiri sebanyak 32 bit (L0) dan kanan sebanyak 32 bit (R0)](assets/kriptografi/l0.png){width="85%"style="text-align:center;"}
 
 - Jadi hasilnya :
-
-  L0 = 11111111 10111000 01110110 01010111
-
-  R0 = 00000000 00000000 00000110 10000011
-
+```sh
+L0 = 11111111 10111000 01110110 01010111
+```
+```sh
+R0 = 00000000 00000000 00000110 10000011
+```
 5. Pembangkitan Kunci
 
 - Kunci = 13 34 57 79 9B BC DF F1
 - Ubah K ke dalam fungsi Hexadecimal:
-
-  K = 00010011 00110100 01010111 01111001  10011011 10111100 11011111 11110001 
+```sh
+K = 00010011 00110100 01010111 01111001  10011011 10111100 11011111 11110001 
+```
 
 - Permutasikan menggunakan Tabel PC-1
 
@@ -102,9 +106,12 @@ Kunci (dalam Hex) = 13 34 57 79 9B BC DF F1 (64 Bit)
 6. Permutasi PC-1
 
 ![Gunakan permutasi PC-1 terhadap Key](assets/kriptografi/pc13.png){width="50%"style="text-align:center;"}
-
-- K = 00010011 00110100 01010111 01111001  10011011 10111100 11011111 11110001
+```sh
+K = 00010011 00110100 01010111 01111001  10011011 10111100 11011111 11110001
+```
+```sh
 - K+= 1111000  0110011  0010101  0101111  0101010  1011001  1001111  0001111
+```
 
 7. Pecah menjadi C0 dan D0
 
@@ -114,10 +121,12 @@ Kunci (dalam Hex) = 13 34 57 79 9B BC DF F1 (64 Bit)
 ![](assets/kriptografi/co1.png){width="90%"style="text-align:center;"}
 
 - Hasilnya mendapatkan :
-
+```sh
   C0 = 1111000 0110011 0010101 0101111 
-
+```
+```sh
   D0 = 0101010 1011001 1001111 0001111 
+```
 
 8. Membuat Block Cn dan Dn
 
@@ -129,7 +138,169 @@ Kunci (dalam Hex) = 13 34 57 79 9B BC DF F1 (64 Bit)
 
 ![Tabel Jumlah Pergeseran Bit Pada Setiap Putaran](assets/kriptografi/tabel.png){width="40%"style="text-align:center;"}
 
-9. Hasil C0 dan D0 zhghc
+9. Hasil C0 dan D0 
 
 - Dari C0 dan D0 awal kita mendapatkan :
-![](assets/kriptografi/codo.png){width="60%"style="text-align:center;"}
+```sh
+C0 = 1111000011001100101010101111 
+```
+```sh
+D0 = 0101010101100110011110001111 
+```
+
+- Untuk putaran 1, maka kita geser C0 dan D0 ke kiri sebanyak 1 kali
+```sh
+C1 = 1110000110011001010101011111
+```
+```sh
+D1 = 1010101011001100111100011110
+```
+
+- Untuk putaran 2, mencari C1 dan D1 geser 1 kali. Selalu perhatikan tabel wrapping di slide sebelumnya dikarenakan untuk putaran 3 – 8 bergeser 2 kali. Dan lakukan seterusnya sampai C16 dan D16 
+
+```sh
+C16 = 111100001100110010101010111
+```
+```sh
+D16 = 010101010110011001111000111
+```
+
+10. Permutasi PC-2
+
+![Skema Permutasi PC-2](assets/kriptografi/pc2.png){width="45%"style="text-align:center;"}
+
+- Gunakan permutasi PC-2
+
+![Permutasi PC-2](assets/kriptografi/pcc.png){width="45%"style="text-align:center;"}
+
+- Untuk C1D1 kita mendapatkan
+```sh
+C1D1 = 11100001 10011001 01010101 11111010 10101100 11001111 00011110
+```
+- Dipermutasi menjadi
+```sh
+K1 = 000110 110000 001011 101111 111111 000111 000001 110010
+```
+
+**Key Hasil PC-2**
+```sh
+K1  = 000110 110000 001011 101111 111111 000111 000001 110010
+```
+```sh
+K2  = 011110 011010 111011 011001 110110 111100 100111 100101
+```
+```sh
+K3  = 010101 011111 110010 001010 010000 101100 111110 011001 
+```
+```sh
+K4  = 011100 101010 110111 010110 110110 110011 010100 011101 
+```
+```sh
+K5  = 011111 001110 110000 000111 111010 110101 001110 101000 
+```
+```sh
+K6  = 011000 111010 010100 111110 010100 000111 101100 101111
+```
+```sh
+K7  = 111011 001000 010010 110111 111101 100001 100010 111100
+```
+```sh
+K8  = 111101 111000 101000 111010 110000 010011 101111 111011 
+```
+```sh
+K9  = 111000 001101 101111 101011 111011 011110 011110 000001
+```
+```sh
+K10 = 101100 011111 001101 000111 101110 100100 011001 001111 
+```
+```sh
+K11 = 001000 010101 111111 010011 110111 101101 001110 000110 
+```
+```sh
+K12 = 011101 010111 000111 110101 100101 000110 011111 101001 
+```
+```sh
+K13 = 100101 111100 010111 010001 111110 101011 101001 000001 
+```
+```sh
+K14 = 010111 110100 001110 110111 111100 101110 011100 111010 
+```
+```sh
+K15 = 101111 111001 000110 001101 001111 010011 111100 001010 
+```
+```sh
+K16 = 110010 110011 110110 001011 000011 100001 011111 110101
+```
+**Hasil Sementara**
+
+- Dari hasil proses sebelumnya sudah dilakukan proses permutasi awal terhadap plaintext yang mendapatkan nilai
+```sh
+L0 = 11111111 10111000 01110110 01010111
+```
+```sh
+R0 = 00000000 00000000 00000110 10000011
+```
+- Berikutnya sudah didapatkan pula kunci sebanyak 16 buah untuk proses enchipering
+
+## Proses Enchiphering
+Dalam proses enchipering, setiap blok plainteks mengalami 16 kali putaran, Setiap putaran enciphering merupakan jaringan Feistel :
+
+![Skema Enchipering](assets/kriptografi/enchip.png){width="45%"style="text-align:center;"}
+  
+```sh
+Li = Ri – 1 
+Ri = Li – 1  f(Ri – 1, Ki)
+```
+
+keterangan :
+
+- Ri – 1, Dimulai dari L0 dan R0 yang sudah kita dapatkan
+- K1, Sudah disiapkan 16 kunci dari proses sebelumnya
+
+**Berikut Langkah-Langkah Proses Enchiphering**
+
+1. Fungsi f
+
+![Alur Fungsi f](assets/kriptografi/fungsif.png){width="55%"style="text-align:center;"}
+
+keterangan :
+
+- ![Alur ini merupakan turunan dari fungsi f sebelumnya](assets/kriptografi/turunanf.png){width="10%"style="text-align:center;"}
+
+2. Tabel Ekspansi 
+
+- Berdasarkan diagram alur sebelumnya, proses selanjutnya adalah ekspansi pada blok Ri – 1 32-bit menjadi blok 48 bit 
+- Fungsi ekspansi direalisasikan dengan matriks permutasi ekspansi :
+
+![Bagian kuning merupakan bit ekspansi yang diambil dari kolom Ri – 1](assets/kriptografi/eks.png){width="50%"style="text-align:center;"}
+
+3. Expansi R0
+- Hasil ekpansi, yaitu E(Ri – 1) di-XOR-kan dengan Ki menghasilkan vektor A 48-bit :
+
+  ![](assets/kriptografi/ro.png){width="25%"style="text-  align:center;"}
+
+- R0 = 00000000 00000000 00000110 10000011
+     ![](assets/kriptografi/r00.png){width="50%"style="text-  align:center;"}
+
+- E(R0)= 100000 000000 000000 000000 000000 001101 010000 000110
+
+4. Fungsi XOR untuk hasil A1
+- Hasil ekpansi, yaitu E(Ri – 1) di-XOR-kan dengan Ki menghasilkan vektor A 48-bit :
+
+    ![](assets/kriptografi/a1.png){width="20%"style="text-align:center;"}
+
+- ```sh
+E(R0)= 100000 000000 000000 000000 000000 001101 010000 000110
+K1   = 000110 110000 001011 101111 111111 000111 000001 110010
+-----------------------------------------------------------XOR
+A1   = 100110 110000 001011 101111 111111 001010 010001 110100
+```
+
+5. Persiapan subtitusi S-Box
+
+- Vektor A dikelompokkan menjadi 8 kelompok, masing-masing 6 bit, dan menjadi masukan bagi proses substitusi
+- Ada 8 matriks substitusi, masing-masing dinyatakan dengan S-Box
+- S-Box menerima masukan 6 bit dan memberikan keluaran 4 bit
+- Subtitusikan dengan S1, S2, S3 dan seterusnya
+
+    ![](assets/kriptografi/mrh.png){width="70%"style="text-align:center;"}

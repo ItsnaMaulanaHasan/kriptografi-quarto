@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>8. Transposisi Route – Kriptografi</title>
+<title>6. Elgamal – Kriptografi</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./15_Diffie_Helman.html" rel="next">
+<link href="./15_Diffie_Hellman.html" rel="next">
 <link href="./13_RSA.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./9_stream_cipher.html">Kriptografi Modern</a></li><li class="breadcrumb-item"><a href="./14_Elgamal.html">8. Transposisi Route</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./9_stream_cipher.html">Kriptografi Modern</a></li><li class="breadcrumb-item"><a href="./14_Elgamal.html">6. Elgamal</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -222,43 +222,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./9_stream_cipher.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8. Transposisi Route</span></a>
+ <span class="menu-text">1. Stream Cipher</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./10_DES.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8. Transposisi Route</span></a>
+ <span class="menu-text">2. Data Encryption Standard</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11_3DES.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8. Transposisi Route</span></a>
+ <span class="menu-text">3. 3DES</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./12_AES.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8. Transposisi Route</span></a>
+ <span class="menu-text">4. AES</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./13_RSA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8. Transposisi Route</span></a>
+ <span class="menu-text">5. RSA</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./14_Elgamal.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">8. Transposisi Route</span></a>
+ <span class="menu-text">6. Elgamal</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./15_Diffie_Helman.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8. Transposisi Route</span></a>
+  <a href="./15_Diffie_Hellman.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7. Diffie Hellman</span></a>
   </div>
 </li>
       </ul>
@@ -361,9 +361,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./9_stream_cipher.html">Kriptografi Modern</a></li><li class="breadcrumb-item"><a href="./14_Elgamal.html">8. Transposisi Route</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./9_stream_cipher.html">Kriptografi Modern</a></li><li class="breadcrumb-item"><a href="./14_Elgamal.html">6. Elgamal</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">8. Transposisi Route</h1>
+<h1 class="title">6. Elgamal</h1>
   <div class="quarto-categories">
     <div class="quarto-category">teori</div>
   </div>
@@ -1387,13 +1387,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./13_RSA.html" class="pagination-link" aria-label="8. Transposisi Route">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">8. Transposisi Route</span>
+      <a href="./13_RSA.html" class="pagination-link" aria-label="5. RSA">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">5. RSA</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./15_Diffie_Helman.html" class="pagination-link" aria-label="8. Transposisi Route">
-        <span class="nav-page-text">8. Transposisi Route</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./15_Diffie_Hellman.html" class="pagination-link" aria-label="7. Diffie Hellman">
+        <span class="nav-page-text">7. Diffie Hellman</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -22,7 +22,7 @@ book:
         - 9_stream_cipher.qmd
         - 10_DES.qmd
         - 11_3DES.qmd
-        - 12_AES.qm d
+        - 12_AES.qmd
         - 13_RSA.qmd
         - 14_Elgamal.qmd
         - 15_Diffie_Hellman.qmd
